@@ -1,4 +1,4 @@
-package com.whdx.data.net.interceptor
+package com.whdx.base.net.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Request

@@ -1,27 +1,19 @@
 package com.whdx.base.app.provider
 
-import android.app.Application
 import android.content.ContentProvider
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
-import android.util.TypedValue
 import com.coder.zzq.smartshow.core.SmartShow
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.kingja.loadsir.core.LoadSir
-import com.scwang.smart.refresh.header.ClassicsHeader
-import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.mmkv.MMKV
 import com.whdx.base.BuildConfig
-import com.whdx.base.R
-import com.whdx.base.app.BaseApplication
 import com.whdx.base.app.BaseApplication.Companion.APPLICATION
-import com.whdx.base.app.BaseApplication.Companion.CONTEXT
 import com.whdx.base.app.init.InitializerFactory
 import com.whdx.base.common.callback.EmptyCallBack
 import com.whdx.base.common.callback.ErrorCallBack
 import com.whdx.base.common.callback.LoadingCallBack
-import com.whdx.base.ext.resourceId
 import com.whdx.base.util.ActivityHelper
 import timber.log.Timber
 
@@ -31,12 +23,12 @@ import timber.log.Timber
  * @Date 2020/9/22 0022 23:36
  */
 class InitProvider : ContentProvider() {
-    private val LOG_TAG = InitProvider::class.java.name
 
     override fun onCreate(): Boolean {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+        Timber.i("onCreate:InitProvider")
         initLoadSir()
         InitializerFactory.init(APPLICATION)
 

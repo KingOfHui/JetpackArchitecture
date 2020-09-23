@@ -1,4 +1,4 @@
-package com.whdx.data.net.exception
+package com.whdx.base.net.exception
 
 import android.net.ParseException
 import com.google.gson.JsonParseException

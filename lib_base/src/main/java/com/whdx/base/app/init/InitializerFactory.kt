@@ -1,7 +1,6 @@
 package com.whdx.base.app.init
 
 import android.app.Application
-import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 /**
  * @Description

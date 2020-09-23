@@ -1,16 +1,9 @@
 package com.whdx.base.app.init
 
 import android.app.Application
-import android.content.Context
-import androidx.annotation.NonNull
-import com.scwang.smart.refresh.header.ClassicsHeader
-import com.scwang.smart.refresh.layout.SmartRefreshLayout
-import com.scwang.smart.refresh.layout.api.RefreshFooter
-import com.scwang.smart.refresh.layout.api.RefreshHeader
-import com.scwang.smart.refresh.layout.api.RefreshLayout
-import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator
-import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator
-import com.scwang.smart.refresh.layout.listener.DefaultRefreshInitializer
+import com.scwang.smartrefresh.header.StoreHouseHeader
+import com.scwang.smartrefresh.layout.SmartRefreshLayout
+import com.scwang.smartrefresh.layout.footer.FalsifyFooter
 import com.whdx.base.R
 
 /**
@@ -34,34 +27,13 @@ class SmartRefreshLayoutInitializer : Initializer() {
                 setHeaderHeight(110f)
                 setHeaderTriggerRate(0.8f)
                 setDisableContentWhenLoading(false)
-                setPrimaryColorsId(R.color.accent_brown,R.color.colorPrimary)
+                setPrimaryColorsId(R.color.colorPrimary, R.color.white)
             }
         }
-//        SmartRefreshLayout.setDefaultRefreshHeaderCreator{ClassicsHeader()}
-        /*
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { _, _ ->
+            StoreHouseHeader(application).initWithString("WHDX")
+        }
 
-        SmartRefreshLayout.setDefaultRefreshFooterCreator(object : DefaultRefreshFooterCreator() {
-            @NonNull
-            fun createRefreshFooter(
-                @NonNull context: Context?,
-                @NonNull layout: RefreshLayout?
-            ): RefreshFooter? {
-                return FalsifyFooter(context)
-            }
-        })
-
-
-        //全局设置默认的 Header
-        SmartRefreshLayout.setDefaultRefreshHeaderCreator(object : DefaultRefreshHeaderCreator() {
-            @NonNull
-            fun createRefreshHeader(
-                @NonNull context: Context?,
-                @NonNull layout: RefreshLayout?
-            ): RefreshHeader? {
-                //开始设置全局的基本参数（这里设置的属性只跟下面的MaterialHeader绑定，其他Header不会生效，能覆盖DefaultRefreshInitializer的属性和Xml设置的属性）
-//				return new ClassicsHeader(context);
-                return StoreHouseHeader(context).initWithString("JIN GUI")
-            }
-        })*/
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  FalsifyFooter(application) }
     }
 }

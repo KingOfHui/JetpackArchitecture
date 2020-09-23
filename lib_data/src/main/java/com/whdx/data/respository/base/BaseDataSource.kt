@@ -6,8 +6,8 @@ import com.wwy.android.data.api.ApiService
 import com.wwy.android.data.api.RetrofitClient
 import com.whdx.data.net.WHDX_STUDENT
 import com.whdx.data.net.WHDX_TEACHER
-import com.whdx.data.net.exception.DealException
-import com.whdx.data.net.exception.ResultException
+import com.whdx.base.net.exception.DealException
+import com.whdx.base.net.exception.ResultException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 
