@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
+import com.kingja.loadsir.core.LoadService
+import com.kingja.loadsir.core.LoadSir
 
 
 /**
@@ -48,6 +50,13 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun initData()
 
+    open fun reLoad() {}
+
+    val loadService:LoadService<*> by lazy {
+        LoadSir.getDefault().register(this){
+            reLoad()
+        }
+    }
     /**
      * 显示加载(转圈)对话框
      */
