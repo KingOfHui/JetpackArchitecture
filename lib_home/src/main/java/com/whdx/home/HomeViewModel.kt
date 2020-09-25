@@ -1,6 +1,7 @@
 package com.whdx.home
 
 import androidx.lifecycle.MutableLiveData
+import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.User
@@ -12,10 +13,15 @@ import kotlinx.coroutines.delay
  * @Author dinghui
  * @Date 2020/9/24 0024 9:56
  */
-class HomeViewModel(val userRepository: UserRepository) : BaseViewModel(){
+class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<List<String>>() {
     val mUser: MutableLiveData<User> = MutableLiveData()
+    val mList: MutableLiveData<MutableList<String>> = MutableLiveData()
+        get() {
+            if (field.value == null) field.value = mutableListOf()
+            return field
+        }
 
-    fun login(userName:String, password:String) {
+    fun login(userName: String, password: String) {
         launchUI {
             doLoading()
             delay(2000)
@@ -26,9 +32,26 @@ class HomeViewModel(val userRepository: UserRepository) : BaseViewModel(){
             } else if (login is ResultData.Error) {
 //                SmartToast.complete("空")
 //                doneEmpty()
-                doneError(login.exception.message?:"")
+                doneError(login.exception.message ?: "")
             }
         }
+    }
 
+    override suspend fun load(isClear: Boolean, pageNum: Int) {
+        val mutableListOf = mutableListOf<String>()
+        for (i in 0..18) {
+            mutableListOf.add("position $i")
+        }
+        mList.value?.let {
+            if (isClear) {
+                it.clear()
+            }
+            it.addAll(mutableListOf)
+            mList.value = it
+        }
+        notifyResultToTopViewModel(mutableListOf)
+
+        delay(2000)
+        refreshing.value = false
     }
 }

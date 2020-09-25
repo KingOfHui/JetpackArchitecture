@@ -3,11 +3,7 @@ package com.whdx.base.ui.fragment
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.coder.zzq.smartshow.toast.SmartToast
-import com.kingja.loadsir.callback.SuccessCallback
 import com.whdx.base.R
-import com.whdx.base.common.callback.EmptyCallBack
-import com.whdx.base.common.callback.ErrorCallBack
-import com.whdx.base.common.callback.LoadingCallBack
 import com.whdx.base.common.state.State
 import com.whdx.base.common.state.StateType
 import com.whdx.base.vm.BaseViewModel
@@ -23,9 +19,9 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     protected lateinit var mViewModel: VM
 
     override fun onFragmentFirstVisible() {
-        super.onFragmentFirstVisible()
         mViewModel = initVM()
-        mViewModel.loadState.observe(this, observer)
+        super.onFragmentFirstVisible()
+//        mViewModel.loadState.observe(this, observer)
         startObserve()
     }
 
@@ -34,23 +30,23 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     abstract fun startObserve()
 
     open fun showLoading() {
-        loadService.showCallback(LoadingCallBack::class.java)
+//        loadService.showCallback(LoadingCallBack::class.java)
     }
 
     open fun showSuccess() {
-        loadService.showCallback(SuccessCallback::class.java)
+//        loadService.showCallback(SuccessCallback::class.java)
     }
 
     open fun showError(msg: String) {
-        loadService.setCallBack(ErrorCallBack::class.java) { _, view ->
-            view.find<TextView>(R.id.tv_error).text = msg
-        }
-        loadService.showCallback(ErrorCallBack::class.java)
+//        loadService.setCallBack(ErrorCallBack::class.java) { _, view ->
+//            view.find<TextView>(R.id.tv_error).text = msg
+//        }
+//        loadService.showCallback(ErrorCallBack::class.java)
         SmartToast.show(msg)
     }
 
     open fun showEmpty() {
-        loadService.showCallback(EmptyCallBack::class.java)
+//        loadService.showCallback(EmptyCallBack::class.java)
     }
 
     /**

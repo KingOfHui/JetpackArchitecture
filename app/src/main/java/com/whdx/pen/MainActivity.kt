@@ -28,7 +28,7 @@ class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
         val homeNavController = findNavController(R.id.nav_main_host_fragment)
         val appBarConfiguration =
             AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
-        setupActionBarWithNavController(homeNavController,appBarConfiguration)
+//        setupActionBarWithNavController(homeNavController,appBarConfiguration)
         bottom_navigation_view.setupWithNavController(homeNavController)
     }
 

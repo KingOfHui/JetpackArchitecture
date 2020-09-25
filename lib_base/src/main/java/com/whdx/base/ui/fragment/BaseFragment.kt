@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.coder.zzq.smartshow.toast.SmartToast
-import com.kingja.loadsir.core.LoadService
-import com.kingja.loadsir.core.LoadSir
 
 
 /**
@@ -18,7 +16,7 @@ import com.kingja.loadsir.core.LoadSir
  */
 abstract class BaseFragment : Fragment() {
     lateinit var mRootView:View
-    lateinit var loadService:LoadService<*>
+//    lateinit var loadService:LoadService<*>
     private lateinit var progressDialogFragment: ProgressDialogFragment
     private var isLoaded = false
     override fun onCreateView(
@@ -27,8 +25,9 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         mRootView = inflater.inflate(setLayoutResId(), container, false)
-        loadService= LoadSir.getDefault().register(mRootView){ reLoad()}
-        return loadService.loadLayout
+//        loadService= LoadSir.getDefault().register(mRootView){ reLoad()}
+//        return loadService.loadLayout
+        return mRootView
     }
 
     override fun onResume() {

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.kingja.loadsir.core.LoadSir
 import com.whdx.base.vm.BaseViewModel
 
 /**
@@ -24,7 +23,8 @@ abstract class BaseBindingFragment<VM: BaseViewModel,DB: ViewDataBinding> :BaseV
     ): View? {
         mDataBinding = DataBindingUtil.inflate(inflater, setLayoutResId(), container, false)
         mDataBinding.lifecycleOwner = this
-        loadService = LoadSir.getDefault().register(mDataBinding.root) { reLoad() }
-        return loadService.loadLayout
+//        loadService = LoadSir.getDefault().register(mDataBinding.root) { reLoad() }
+//        return loadService.loadLayout
+        return mDataBinding.root
     }
 }

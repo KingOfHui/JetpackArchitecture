@@ -6,14 +6,10 @@ import android.database.Cursor
 import android.net.Uri
 import com.coder.zzq.smartshow.core.SmartShow
 import com.jeremyliao.liveeventbus.LiveEventBus
-import com.kingja.loadsir.core.LoadSir
 import com.tencent.mmkv.MMKV
 import com.whdx.base.BuildConfig
 import com.whdx.base.app.BaseApplication.Companion.APPLICATION
 import com.whdx.base.app.init.InitializerFactory
-import com.whdx.base.common.callback.EmptyCallBack
-import com.whdx.base.common.callback.ErrorCallBack
-import com.whdx.base.common.callback.LoadingCallBack
 import com.whdx.base.util.ActivityHelper
 import timber.log.Timber
 
@@ -41,11 +37,6 @@ class InitProvider : ContentProvider() {
         return true
     }
     private fun initLoadSir() {
-        LoadSir.beginBuilder()
-            .addCallback(ErrorCallBack())
-            .addCallback(LoadingCallBack())
-            .addCallback(EmptyCallBack())
-            .commit()
     }
 
     override fun insert(p0: Uri, p1: ContentValues?): Uri? = null

@@ -11,8 +11,6 @@ import com.gyf.immersionbar.ktx.immersionBar
 import com.whdx.base.util.ext.getAppTheme
 import com.whdx.base.util.ext.resourceId
 import com.whdx.base.ui.fragment.ProgressDialogFragment
-import com.kingja.loadsir.core.LoadService
-import com.kingja.loadsir.core.LoadSir
 
 /**
  * @Description
@@ -68,11 +66,11 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
-    val loadService:LoadService<*> by lazy {
-        LoadSir.getDefault().register(this){
-            reLoad()
-        }
-    }
+//    val loadService:LoadService<*> by lazy {
+//        LoadSir.getDefault().register(this){
+//            reLoad()
+//        }
+//    }
 
     /**
      * 显示加载(转圈)对话框
