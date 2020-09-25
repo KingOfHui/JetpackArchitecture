@@ -3,7 +3,7 @@ package com.whdx.base.app
 import android.app.Application
 import android.app.UiModeManager
 import android.content.Context
-import com.whdx.base.ext.getNightMode
+import com.whdx.base.util.ext.getNightMode
 import kotlin.properties.Delegates
 
 /**

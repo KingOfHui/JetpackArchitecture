@@ -1,18 +1,22 @@
 package com.whdx.base.ui.activity
 
+import android.content.Context
 import android.os.Bundle
-import android.text.TextUtils
-import android.widget.Toast
+import android.view.View
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.kingja.loadsir.callback.SuccessCallback
+import com.kingja.loadsir.core.Transport
+import com.whdx.base.R
 import com.whdx.base.common.callback.EmptyCallBack
 import com.whdx.base.common.callback.ErrorCallBack
 import com.whdx.base.common.callback.LoadingCallBack
-import com.whdx.base.vm.BaseViewModel
-import com.kingja.loadsir.callback.SuccessCallback
 import com.whdx.base.common.state.State
 import com.whdx.base.common.state.StateType
+import com.whdx.base.vm.BaseViewModel
 import com.wwy.android.ui.base.BaseActivity
+import org.jetbrains.anko.find
 
 
 /**
@@ -42,8 +46,11 @@ abstract class BaseVMActivity<VM : BaseViewModel> : BaseActivity() {
     }
 
     open fun showError(msg: String) {
-        SmartToast.show(msg)
+        loadService.setCallBack(ErrorCallBack::class.java) { _, view ->
+            view.find<TextView>(R.id.tv_error).text = msg
+        }
         loadService.showCallback(ErrorCallBack::class.java)
+        SmartToast.show(msg)
     }
 
     open fun showEmpty() {
@@ -57,11 +64,11 @@ abstract class BaseVMActivity<VM : BaseViewModel> : BaseActivity() {
         Observer<State> {
             it?.let {
                 when (it.code) {
-                   StateType.SUCCESS -> showSuccess()
-                   StateType.LOADING -> showLoading()
-                   StateType.ERROR -> showError(it.message)
-                   StateType.NETWORK_ERROR -> showError("网络出现问题啦")
-                   StateType.EMPTY -> showEmpty()
+                    StateType.SUCCESS -> showSuccess()
+                    StateType.LOADING -> showLoading()
+                    StateType.ERROR -> showError(it.message)
+                    StateType.NETWORK_ERROR -> showError("网络出现问题啦")
+                    StateType.EMPTY -> showEmpty()
                 }
             }
         }

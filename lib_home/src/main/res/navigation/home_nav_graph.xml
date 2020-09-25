@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.whdx.home.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.whdx.home.ui.MineFragment"
+        android:label="MineFragment"
+        tools:layout="@layout/fragment_mine"/>
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.whdx.home.ui.MineFragment"
+        android:label="MineFragment"
+        tools:layout="@layout/fragment_mine"/>
+</navigation>

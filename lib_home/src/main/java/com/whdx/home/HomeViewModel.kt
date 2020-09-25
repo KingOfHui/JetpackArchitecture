@@ -1,23 +1,18 @@
-package com.whdx.data.respository
+package com.whdx.home
 
-import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.coder.zzq.smartshow.toast.SmartToast
-import com.google.android.material.tabs.TabLayout
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.User
-import kotlinx.coroutines.Dispatchers
+import com.whdx.data.respository.UserRepository
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
 
 /**
  * @Description
  * @Author dinghui
- * @Date 2020/9/22 0020 23:27
+ * @Date 2020/9/24 0024 9:56
  */
-class UserViewModel(private val userRepository: UserRepository) : BaseViewModel() {
-
+class HomeViewModel(val userRepository: UserRepository) : BaseViewModel(){
     val mUser: MutableLiveData<User> = MutableLiveData()
 
     fun login(userName:String, password:String) {

@@ -5,10 +5,11 @@ import android.util.TypedValue
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.coder.zzq.smartshow.snackbar.SmartSnackbar
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.R
 import com.gyf.immersionbar.ktx.immersionBar
-import com.whdx.base.ext.getAppTheme
-import com.whdx.base.ext.resourceId
+import com.whdx.base.util.ext.getAppTheme
+import com.whdx.base.util.ext.resourceId
 import com.whdx.base.ui.fragment.ProgressDialogFragment
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
@@ -52,7 +53,9 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract fun setLayoutId(): Int
     abstract fun initView(savedInstanceState: Bundle?)
     abstract fun initData()
-    open fun reLoad() {}
+    open fun reLoad() {
+        SmartToast.complete("重试成功")
+    }
 
     open fun initImmersionBar() {
         immersionBar {

@@ -1,6 +1,6 @@
 package com.wwy.android.data.api
 
-import com.whdx.base.ext.CookieClass.cookieJar
+import com.whdx.base.util.ext.CookieClass.cookieJar
 import com.whdx.data.net.WHDX_TEACHER
 import com.whdx.data.net.getHost
 import com.whdx.base.net.interceptor.CommonInterceptor

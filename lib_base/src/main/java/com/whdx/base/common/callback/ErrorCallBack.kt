@@ -15,7 +15,7 @@ class ErrorCallBack : Callback() {
         view?.find<TextView>(R.id.tv_error)?.setOnClickListener {
 
         }
-        return super.onReloadEvent(context, view)
+        return true
     }
 
 }

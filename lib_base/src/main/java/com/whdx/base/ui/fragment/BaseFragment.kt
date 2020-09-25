@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
 
@@ -16,6 +17,8 @@ import com.kingja.loadsir.core.LoadSir
  * @Date 2020/9/22 0018 16:29
  */
 abstract class BaseFragment : Fragment() {
+    lateinit var mRootView:View
+    lateinit var loadService:LoadService<*>
     private lateinit var progressDialogFragment: ProgressDialogFragment
     private var isLoaded = false
     override fun onCreateView(
@@ -23,7 +26,9 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(setLayoutResId(), container, false)
+        mRootView = inflater.inflate(setLayoutResId(), container, false)
+        loadService= LoadSir.getDefault().register(mRootView){ reLoad()}
+        return loadService.loadLayout
     }
 
     override fun onResume() {
@@ -50,13 +55,11 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun initData()
 
-    open fun reLoad() {}
-
-    val loadService:LoadService<*> by lazy {
-        LoadSir.getDefault().register(this){
-            reLoad()
-        }
+    open fun reLoad() {
+        SmartToast.complete("wanc")
     }
+
+
     /**
      * 显示加载(转圈)对话框
      */
