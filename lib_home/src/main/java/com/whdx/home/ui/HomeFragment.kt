@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import timber.log.Timber
 
 /**
  * @Description
@@ -25,7 +26,7 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun initVM(): HomeViewModel = getViewModel()
 
-    lateinit var adapter: BaseQuickAdapter<String,BaseViewHolder>;
+    lateinit var adapter: BaseQuickAdapter<String, BaseViewHolder>;
     override fun startObserve() {
         mViewModel.mList.observe(viewLifecycleOwner,
             Observer<MutableList<String>> {
@@ -49,10 +50,9 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     override fun initData() {
+        Timber.tag("dhdhdh   initData")
         mDataBinding.vm = mViewModel
-        lifecycleScope.launch {
-            mViewModel.login("9241885", "111111")
-
-        }
+        mViewModel.login("9241885", "111111")
+        mViewModel.refresh()
     }
 }

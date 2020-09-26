@@ -3,12 +3,15 @@ package com.whdx.pen
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
+import com.whdx.base.util.FixFragmentNavigator
 import com.whdx.data.respository.UserViewModel
 import com.whdx.paper.pen.R
 import com.whdx.paper.pen.databinding.ActivityMainBinding
@@ -25,11 +28,17 @@ class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
     override fun setLayoutId() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
-        val homeNavController = findNavController(R.id.nav_main_host_fragment)
+//        val homeNavController = findNavController(R.id.nav_main_host_fragment)
+        val navController = Navigation.findNavController(this, R.id.nav_main_host_fragment)
+        val fragment =
+            supportFragmentManager.findFragmentById(R.id.nav_main_host_fragment) as NavHostFragment
+        val fragmentNavigator =
+            FixFragmentNavigator(this, supportFragmentManager, fragment!!.id)
+        navController.navigatorProvider.addNavigator(fragmentNavigator)
         val appBarConfiguration =
             AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
 //        setupActionBarWithNavController(homeNavController,appBarConfiguration)
-        bottom_navigation_view.setupWithNavController(homeNavController)
+        bottom_navigation_view.setupWithNavController(navController)
     }
 
     override fun initData() {

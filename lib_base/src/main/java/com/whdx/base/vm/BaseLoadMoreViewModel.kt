@@ -14,16 +14,6 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
     private val INIT_PAGE_NUM = 1
     private var pageNum = 1
 
-    init {
-        autoRefresh()
-    }
-    /**
-     * 自动刷新
-     */
-    fun autoRefresh() {
-        autoRefresh.value = true
-    }
-
     fun refresh() {
         pageNum = INIT_PAGE_NUM
         launchUI {

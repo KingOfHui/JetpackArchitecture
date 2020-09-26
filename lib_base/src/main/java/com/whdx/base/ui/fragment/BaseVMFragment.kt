@@ -8,6 +8,7 @@ import com.whdx.base.common.state.State
 import com.whdx.base.common.state.StateType
 import com.whdx.base.vm.BaseViewModel
 import org.jetbrains.anko.find
+import timber.log.Timber
 
 
 /**
@@ -21,7 +22,7 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     override fun onFragmentFirstVisible() {
         mViewModel = initVM()
         super.onFragmentFirstVisible()
-//        mViewModel.loadState.observe(this, observer)
+        mViewModel.loadState.observe(this, observer)
         startObserve()
     }
 
@@ -42,6 +43,7 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
 //            view.find<TextView>(R.id.tv_error).text = msg
 //        }
 //        loadService.showCallback(ErrorCallBack::class.java)
+        Timber.tag("dhdhdh").e(msg)
         SmartToast.show(msg)
     }
 
