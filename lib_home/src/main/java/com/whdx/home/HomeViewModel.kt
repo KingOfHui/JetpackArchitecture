@@ -1,12 +1,15 @@
 package com.whdx.home
 
+import android.view.View
 import androidx.lifecycle.MutableLiveData
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.User
 import com.whdx.data.respository.UserRepository
 import kotlinx.coroutines.delay
+import timber.log.Timber
 
 /**
  * @Description
@@ -53,5 +56,13 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
 
         delay(2000)
         refreshing.value = false
+    }
+
+    fun onClick() {
+        Timber.tag("dhdhdh").e("clicked")
+        val user = User()
+        user.username = "jflskd"
+        mUser.value = user
+
     }
 }

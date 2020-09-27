@@ -4,6 +4,7 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
+import com.alibaba.android.arouter.launcher.ARouter
 import com.coder.zzq.smartshow.core.SmartShow
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.tencent.mmkv.MMKV
@@ -27,7 +28,7 @@ class InitProvider : ContentProvider() {
         Timber.i("onCreate:InitProvider")
         initLoadSir()
         InitializerFactory.init(APPLICATION)
-
+        ARouter.init(APPLICATION)
 //        LoadMoreModuleConfig.defLoadMoreView = CustomLoadMoreView()
         MMKV.initialize(context)
         ActivityHelper.init(APPLICATION)

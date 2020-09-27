@@ -5,20 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/navigation_home">
 
-    <fragment
+    <keep_state_fragment
         android:id="@+id/navigation_home"
         android:name="com.whdx.home.ui.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
 
-    <fragment
+    <keep_state_fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.whdx.home.ui.MineFragment"
         android:label="MineFragment"
         tools:layout="@layout/fragment_mine"/>
-    <fragment
+    <keep_state_fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.whdx.home.ui.MineFragment"
-        android:label="MineFragment"
-        tools:layout="@layout/fragment_mine"/>
+        android:name="com.whdx.home.ui.ThirdFragment"
+        android:label="ThirdFragment"
+        tools:layout="@layout/fragment_third"/>
 </navigation>

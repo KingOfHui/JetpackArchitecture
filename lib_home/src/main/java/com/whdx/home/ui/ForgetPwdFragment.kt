@@ -4,6 +4,7 @@ import com.whdx.base.ui.fragment.BaseVMFragment
 import com.whdx.home.HomeViewModel
 import com.whdx.home.R
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import timber.log.Timber
 
 /**
  * @Description
@@ -22,5 +23,7 @@ class ForgetPwdFragment :BaseVMFragment<HomeViewModel>() {
     }
 
     override fun initData() {
+        Timber.tag("dhdhdh").e("initData ForgetPwdFragment")
+
     }
 }

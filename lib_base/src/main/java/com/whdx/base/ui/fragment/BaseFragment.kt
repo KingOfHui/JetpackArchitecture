@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.coder.zzq.smartshow.toast.SmartToast
+import timber.log.Timber
 
 
 /**
@@ -30,6 +31,11 @@ abstract class BaseFragment : Fragment() {
         return mRootView
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Timber.tag("dhdhdh").e("Fragment onCreate")
+    }
+
     override fun onResume() {
         super.onResume()
         if (!isLoaded && !isHidden) {
@@ -45,6 +51,7 @@ abstract class BaseFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        Timber.tag("dhdhdh").e("Fragment onDestroyView")
         isLoaded = false
     }
 

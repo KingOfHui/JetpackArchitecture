@@ -50,9 +50,9 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     override fun initData() {
-        Timber.tag("dhdhdh   initData")
-        mDataBinding.vm = mViewModel
-        mViewModel.login("9241885", "111111")
+        Timber.tag("dhdhdh").e("initData HomeFragment")
+//        mDataBinding.vm = mViewModel
+//        mViewModel.login("9241885", "111111")
         mViewModel.refresh()
     }
 }

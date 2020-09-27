@@ -20,5 +20,5 @@ data class User(
     @ColumnInfo(name = "user_public_name")
     var publicName: String? = null,
     @ColumnInfo(name = "user_name")
-    val username: String? = null
+    var username: String? = null
 ) : Serializable

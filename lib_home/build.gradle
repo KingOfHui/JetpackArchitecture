@@ -15,6 +15,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -40,7 +45,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 //    kapt "com.android.databinding:compiler:3.1.4"
-    api project(":lib_data")
+    kapt "com.alibaba:arouter-compiler:1.2.2"
+    api project(":lib_provider")
 }

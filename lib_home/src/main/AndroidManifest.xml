@@ -3,7 +3,9 @@
     package="com.whdx.home">
 
     <application>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" >
+            <nav-graph android:value="@navigation/login_navigation" />
+        </activity>
     </application>
 
 </manifest>
