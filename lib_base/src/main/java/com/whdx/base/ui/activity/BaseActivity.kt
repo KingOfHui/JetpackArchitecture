@@ -63,6 +63,7 @@ abstract class BaseActivity : AppCompatActivity() {
                     theme
                 )
             ).autoStatusBarDarkModeEnable(true, 0.2f)
+                .fitsSystemWindows(true)
         }
     }
 

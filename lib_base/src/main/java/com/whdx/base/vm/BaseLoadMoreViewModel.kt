@@ -30,7 +30,7 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
     protected fun notifyResultToTopViewModel(data: DATA?, size: Int = 20) {
         if (data != null && data.size > 0) {
             pageNum++
-            hasMore.value = data.size < 20
+            hasMore.value = data.size >= size
         }
     }
 

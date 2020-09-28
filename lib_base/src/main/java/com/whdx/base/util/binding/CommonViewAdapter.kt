@@ -30,7 +30,10 @@ import com.whdx.base.R
 import com.whdx.base.util.binding.recyclerview.LineManagers
 
 @BindingAdapter("linearManager")
-fun setLineManager(recyclerView: RecyclerView, lineManagerFactory: LineManagers.LineManagerFactory) {
+fun setLineManager(
+    recyclerView: RecyclerView,
+    lineManagerFactory: LineManagers.LineManagerFactory
+) {
     recyclerView.addItemDecoration(lineManagerFactory.create(recyclerView))
 }
 
@@ -39,10 +42,7 @@ fun setItemAnimator(recyclerView: RecyclerView, itemAnimator: RecyclerView.ItemA
     recyclerView.itemAnimator = itemAnimator
 }
 
-@BindingAdapter(
-    value = ["refreshing", "moreLoading", "hasMore"],
-    requireAll = false
-)
+@BindingAdapter(value = ["refreshing", "moreLoading", "hasMore"], requireAll = false)
 fun bindSmartRefreshLayout(
     smartLayout: SmartRefreshLayout,
     refreshing: Boolean,
@@ -66,7 +66,7 @@ fun bindSmartRefreshLayoutRefresh(
     smartLayout: SmartRefreshLayout,
     refreshEnable: Boolean
 ) {
-//    smartLayout.setEnableRefresh(refreshEnable)
+    smartLayout.setEnableRefresh(refreshEnable)
 }
 
 @BindingAdapter(

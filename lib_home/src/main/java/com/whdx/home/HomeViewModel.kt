@@ -41,6 +41,7 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
     }
 
     override suspend fun load(isClear: Boolean, pageNum: Int) {
+        refreshing.value = false
         val mutableListOf = mutableListOf<String>()
         for (i in 0..18) {
             mutableListOf.add("position $i")
@@ -54,8 +55,7 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
         }
         notifyResultToTopViewModel(mutableListOf)
 
-        delay(2000)
-        refreshing.value = false
+//        delay(2000)
     }
 
     fun onClick() {
