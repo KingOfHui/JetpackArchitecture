@@ -1,4 +1,4 @@
-package com.whdx.pen
+package com.whdx.home
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -8,8 +8,7 @@ import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
 import com.whdx.base.util.navigation.KeepStateNavigator
 import com.whdx.data.respository.UserViewModel
-import com.whdx.paper.pen.R
-import com.whdx.paper.pen.databinding.ActivityMainBinding
+import com.whdx.home.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 

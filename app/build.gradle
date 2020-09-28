@@ -42,7 +42,10 @@ android {
 }
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
-    implementation project(":lib_home")
+    if (!Boolean.valueOf(isModule)) {
+        implementation project(":lib_home")
+    }
+    implementation project(":lib_provider")
     kapt "com.alibaba:arouter-compiler:1.2.2"
 
 }
