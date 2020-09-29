@@ -14,19 +14,52 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00BCD4">
+        android:background="@color/colorPrimary">
 
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_background"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            />
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/accent_green"
-            android:text="HomeFragment"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="阿联酋云算力"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/tvTopic"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_topic"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这里是后续的公告内容，展示区域"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/tvTopic"
+            app:layout_constraintLeft_toRightOf="@id/tvTopic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020.09.23"
+            android:textSize="12sp"
+            android:textColor="@color/color_94A0C1"
+            app:layout_constraintTop_toTopOf="@id/tvTopic"
+            app:layout_constraintRight_toRightOf="parent"/>
+
 
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/refreshLayout"
@@ -35,8 +68,8 @@
             bind:refreshing="@{vm.refreshing}"
             bind:autoRefresh="@{vm.autoRefresh}"
             bind:hasMore="@{vm.hasMore}"
-            android:background="@color/dark_blue"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTopic"
+            android:layout_marginTop="80dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_width="0dp"
