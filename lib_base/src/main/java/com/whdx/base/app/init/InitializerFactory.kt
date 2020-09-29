@@ -11,7 +11,7 @@ class InitializerFactory {
 
     companion object {
         private val configs = listOf(
-            AutoSizeInitializer(),
+//            AutoSizeInitializer(),
             SmartRefreshLayoutInitializer()
         )
 

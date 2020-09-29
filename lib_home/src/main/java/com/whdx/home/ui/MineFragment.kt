@@ -12,6 +12,7 @@ import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMineBinding
 import com.whdx.provider.user.UserProviderWrap
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_mine.*
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
