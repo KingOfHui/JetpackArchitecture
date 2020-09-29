@@ -14,7 +14,7 @@ import com.whdx.provider.PROVIDER_PATH_USER
  */
 
 @Route(path = PROVIDER_PATH_USER)
-class UserProviderImpl:UserProvider {
+class UserProviderImpl : UserProvider {
     override fun getUserInfo(): User? {
         SmartToast.complete("返回用户信息")
         return User()

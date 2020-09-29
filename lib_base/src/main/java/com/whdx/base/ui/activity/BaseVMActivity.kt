@@ -34,9 +34,12 @@ abstract class BaseVMActivity<VM : BaseViewModel> : BaseActivity() {
 
     open fun showLoading() {
 //        loadService.showCallback(LoadingCallBack::class.java)
+        showProgressDialog(R.string.agentweb_download)
     }
 
     open fun showSuccess() {
+        SmartToast.complete("加载完成~")
+        dismissProgressDialog()
 //        loadService.showCallback(SuccessCallback::class.java)
     }
 
@@ -45,11 +48,14 @@ abstract class BaseVMActivity<VM : BaseViewModel> : BaseActivity() {
 //            view.find<TextView>(R.id.tv_error).text = msg
 //        }
 //        loadService.showCallback(ErrorCallBack::class.java)
-        SmartToast.show(msg)
+        SmartToast.error(msg)
+        dismissProgressDialog()
     }
 
     open fun showEmpty() {
 //        loadService.showCallback(EmptyCallBack::class.java)
+        SmartToast.showInCenter("空内容~")
+        dismissProgressDialog()
     }
 
     /**

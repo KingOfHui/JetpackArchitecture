@@ -28,6 +28,10 @@ class InitProvider : ContentProvider() {
         Timber.i("onCreate:InitProvider")
         initLoadSir()
         InitializerFactory.init(APPLICATION)
+        if (BuildConfig.DEBUG) {
+            ARouter.openDebug()
+            ARouter.openLog()
+        }
         ARouter.init(APPLICATION)
 //        LoadMoreModuleConfig.defLoadMoreView = CustomLoadMoreView()
         MMKV.initialize(context)

@@ -29,12 +29,14 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     abstract fun initVM(): VM
 
     abstract fun startObserve()
-
     open fun showLoading() {
 //        loadService.showCallback(LoadingCallBack::class.java)
+        showProgressDialog(R.string.agentweb_download)
     }
 
     open fun showSuccess() {
+        SmartToast.complete("加载完成~")
+        dismissProgressDialog()
 //        loadService.showCallback(SuccessCallback::class.java)
     }
 
@@ -43,12 +45,14 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
 //            view.find<TextView>(R.id.tv_error).text = msg
 //        }
 //        loadService.showCallback(ErrorCallBack::class.java)
-        Timber.tag("dhdhdh").e(msg)
-        SmartToast.show(msg)
+        SmartToast.error(msg)
+        dismissProgressDialog()
     }
 
     open fun showEmpty() {
 //        loadService.showCallback(EmptyCallBack::class.java)
+        SmartToast.showInCenter("空内容~")
+        dismissProgressDialog()
     }
 
     /**

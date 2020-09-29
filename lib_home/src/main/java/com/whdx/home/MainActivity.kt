@@ -16,7 +16,6 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
     override fun initVM(): UserViewModel = getViewModel()
 
-
     override fun setLayoutId() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
