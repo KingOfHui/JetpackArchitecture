@@ -3,10 +3,7 @@ package com.whdx.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.navigation.findNavController
 import com.whdx.base.ui.activity.BaseVMActivity
-import com.whdx.base.util.navigation.NormalKeepStateNavigator
-import com.whdx.base.util.navigation.TabNavHostFragment
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithTabNav
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 

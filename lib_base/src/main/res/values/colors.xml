@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#293154</color>
+    <color name="colorPrimaryDark">#2B3450</color>
+    <color name="colorPrimaryLight">#7184FF</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorTextUnSelected">#5C6DA1</color>
+
     <color name="color_00000000">#00000000</color>//透明
     <color name="color_000000">#000000</color>//黑色
     <color name="color_DE000000">#DE000000</color>//主要黑色文字颜色

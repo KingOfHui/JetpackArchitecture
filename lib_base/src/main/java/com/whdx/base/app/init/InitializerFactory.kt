@@ -9,10 +9,12 @@ import android.app.Application
  */
 class InitializerFactory {
 
-    companion object{
-        private val configs = listOf<Initializer>(
+    companion object {
+        private val configs = listOf(
+            AutoSizeInitializer(),
             SmartRefreshLayoutInitializer()
         )
+
         fun init(application: Application) {
             configs.forEach { it.init(application) }
         }

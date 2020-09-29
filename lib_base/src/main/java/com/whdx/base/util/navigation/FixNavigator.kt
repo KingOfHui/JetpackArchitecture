@@ -15,7 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
  * @Author dinghui
  * @Date 2020/9/27 0027 17:16
  */
-class TabNavHostFragment : NavHostFragment() {
+class KeepStateNavHostFragment : NavHostFragment() {
     override fun createFragmentNavigator(): Navigator<out FragmentNavigator.Destination> {
         return NormalNavigator(requireContext(), childFragmentManager, id)
     }

@@ -1,11 +1,9 @@
 package com.whdx.base.util.navigation
 
-import android.app.Activity
 import androidx.annotation.IdRes
 import androidx.annotation.NavigationRes
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.whdx.base.R
 import com.wwy.android.ui.base.BaseActivity
 
 /**
@@ -22,7 +20,7 @@ fun BaseActivity.setupBottomNavigationViewWithTabNav(
     val navHostFragment =
         supportFragmentManager.findFragmentById(viewId)!!
 
-    val navigator = TabNavHostFragment.NormalNavigator(
+    val navigator = KeepStateNavHostFragment.NormalNavigator(
         this,
         navHostFragment.childFragmentManager,
         viewId
@@ -40,7 +38,7 @@ fun BaseActivity.setupBottomNavigationViewWithKeepStateNav(
     val navHostFragment =
         supportFragmentManager.findFragmentById(viewId)!!
 
-    val navigator = TabNavHostFragment.NormalNavigator(
+    val navigator = KeepStateNavigator(
         this,
         navHostFragment.childFragmentManager,
         viewId

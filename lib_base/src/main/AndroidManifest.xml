@@ -7,5 +7,11 @@
             android:name=".app.provider.InitProvider"
             android:authorities="${applicationId}.InitProvider"
             android:exported="false" />
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360"/>
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640"/>
     </application>
 </manifest>
