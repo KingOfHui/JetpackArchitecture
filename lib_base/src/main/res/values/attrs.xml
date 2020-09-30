@@ -209,4 +209,8 @@
         <attr name="srlDropHeight" format="dimension" />
         <attr name="srlEnableFadeAnimation" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="PickerView">
+        <attr name="isLoop" format="boolean" />
+    </declare-styleable>
 </resources>
