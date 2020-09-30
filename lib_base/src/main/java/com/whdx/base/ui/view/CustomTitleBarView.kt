@@ -179,6 +179,10 @@ class CustomTitleBarView @JvmOverloads constructor(
         ivRightNavigationBarOne.visibility = View.VISIBLE
         ivRightNavigationBarOne.setImageResource(drawableRes)
     }
+    fun setOnLeftClickListener(block: () -> Unit) {
+        ivBackNavigationBar.clickWithTrigger { block() }
+        tvLeftTitleNavigationBar.clickWithTrigger { block() }
+    }
 
 
     fun setTabLayoutData(tablayoutTitle: Array<String?>, viewPager2: ViewPager2) {
