@@ -2,11 +2,9 @@ package com.whdx.home
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
-import com.whdx.base.util.navigation.KeepStateNavigator
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithKeepStateNav
 import com.whdx.data.respository.UserViewModel
 import com.whdx.home.databinding.ActivityMainBinding
@@ -20,7 +18,7 @@ class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
     override fun setLayoutId() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
-        val navController = setupBottomNavigationViewWithKeepStateNav(R.id.nav_main_host_fragment, R.navigation.home_nav_graph)
+        val navController = setupBottomNavigationViewWithKeepStateNav(R.id.nav_main_host_fragment, R.navigation.nav_graph_home)
         bottom_navigation_view.setupWithNavController(navController)
     }
 

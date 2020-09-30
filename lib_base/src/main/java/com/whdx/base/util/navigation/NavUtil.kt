@@ -11,7 +11,7 @@ import com.wwy.android.ui.base.BaseActivity
  * @Author dinghui
  * @Date 2020/9/29 0029 11:19
  */
-fun BaseActivity.setupBottomNavigationViewWithTabNav(
+fun BaseActivity.setupWithKeepStateNav(
     @IdRes viewId: Int,
     @NavigationRes graphResId: Int
 ) {

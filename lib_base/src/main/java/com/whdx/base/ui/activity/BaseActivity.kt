@@ -6,6 +6,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.coder.zzq.smartshow.snackbar.SmartSnackbar
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.gyf.immersionbar.BarHide
 import com.whdx.base.R
 import com.gyf.immersionbar.ktx.immersionBar
 import com.whdx.base.util.ext.getAppTheme
@@ -63,9 +64,17 @@ abstract class BaseActivity : AppCompatActivity() {
                     theme
                 )
             ).autoStatusBarDarkModeEnable(true, 0.2f)
-                .fitsSystemWindows(true)
+                .fitsSystemWindows(fitsSystemWindows())
+            if (fullScreen()) {
+                fullScreen(true)
+                hideBar(BarHide.FLAG_HIDE_BAR)
+                fitsSystemWindows(false)
+            }
         }
     }
+
+    open fun fitsSystemWindows() = true
+    open fun fullScreen() = false
 
 //    val loadService:LoadService<*> by lazy {
 //        LoadSir.getDefault().register(this){

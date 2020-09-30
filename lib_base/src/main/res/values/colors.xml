@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#293154</color>
-    <color name="colorPrimaryDark">#2B3450</color>
+    <color name="colorPrimary">#63D3FF</color>
+    <color name="colorPrimaryDark">#63D3FF</color>
     <color name="colorPrimaryLight">#7184FF</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorTextUnSelected">#5C6DA1</color>
+    <color name="default_text_color">#333333</color>//默认标题颜色
+    <color name="normal_text_color">#1A110D</color>//正常字体颜色
+    <color name="second_text_color">#F6F7F9</color>//二级(次级)字体颜色
+
 
     <color name="color_00000000">#00000000</color>//透明
     <color name="color_000000">#000000</color>//黑色
