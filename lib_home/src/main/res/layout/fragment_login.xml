@@ -9,7 +9,7 @@
             type="com.whdx.data.data.user.User" />
         <variable
             name="vm"
-            type="com.whdx.home.HomeViewModel" />
+            type="com.whdx.home.vm.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

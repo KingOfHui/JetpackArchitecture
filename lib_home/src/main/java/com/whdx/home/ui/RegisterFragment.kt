@@ -1,9 +1,8 @@
 package com.whdx.home.ui
 
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.whdx.base.ui.fragment.BaseVMFragment
-import com.whdx.home.HomeViewModel
+import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import kotlinx.android.synthetic.main.fragment_register.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -15,7 +14,7 @@ import timber.log.Timber
  * @Date 2020/9/24 0024 11:50
  */
 class RegisterFragment :BaseVMFragment<HomeViewModel>() {
-    override fun initVM(): HomeViewModel= getViewModel()
+    override fun initVM(): HomeViewModel = getViewModel()
 
     override fun startObserve() {
     }

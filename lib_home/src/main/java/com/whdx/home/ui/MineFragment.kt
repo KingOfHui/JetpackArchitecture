@@ -1,13 +1,8 @@
 package com.whdx.home.ui
 
-import android.content.Intent
-import androidx.lifecycle.lifecycleScope
-import com.whdx.base.provider.home.HomeProviderWrap
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.data.data.user.User
-import com.whdx.home.HomeViewModel
-import com.whdx.home.LoginActivity
-import com.whdx.home.MineViewModel
+import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMineBinding
 import com.whdx.provider.user.UserProviderWrap

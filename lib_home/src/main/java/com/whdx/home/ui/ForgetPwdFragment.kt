@@ -1,7 +1,7 @@
 package com.whdx.home.ui
 
 import com.whdx.base.ui.fragment.BaseVMFragment
-import com.whdx.home.HomeViewModel
+import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
@@ -12,7 +12,7 @@ import timber.log.Timber
  * @Date 2020/9/24 0024 11:50
  */
 class ForgetPwdFragment :BaseVMFragment<HomeViewModel>() {
-    override fun initVM(): HomeViewModel= getViewModel()
+    override fun initVM(): HomeViewModel = getViewModel()
 
     override fun startObserve() {
     }

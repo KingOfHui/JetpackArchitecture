@@ -1,10 +1,7 @@
-package com.whdx.home
+package com.whdx.home.vm
 
-import android.view.View
 import androidx.lifecycle.MutableLiveData
-import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.vm.BaseLoadMoreViewModel
-import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.User
 import com.whdx.data.respository.UserRepository

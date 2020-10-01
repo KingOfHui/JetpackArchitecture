@@ -7,7 +7,7 @@
     <data>
         <variable
             name="vm"
-            type="com.whdx.home.HomeViewModel" />
+            type="com.whdx.home.vm.HomeViewModel" />
         <import type="com.whdx.base.util.binding.recyclerview.LineManagers"/>
     </data>
 
@@ -18,10 +18,13 @@
 
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:src="@mipmap/img_background"
             app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:scaleType="fitXY"
             />
         <TextView
             android:id="@+id/tvTitle"
@@ -49,6 +52,7 @@
             android:text="这里是后续的公告内容，展示区域"
             android:textColor="@color/white"
             android:textSize="12sp"
+            android:layout_marginLeft="10dp"
             app:layout_constraintTop_toTopOf="@id/tvTopic"
             app:layout_constraintLeft_toRightOf="@id/tvTopic"/>
         <TextView
@@ -56,33 +60,45 @@
             android:layout_height="wrap_content"
             android:text="2020.09.23"
             android:textSize="12sp"
+            android:layout_marginRight="3dp"
             android:textColor="@color/color_94A0C1"
             app:layout_constraintTop_toTopOf="@id/tvTopic"
-            app:layout_constraintRight_toRightOf="parent"/>
-
-
-        <com.scwang.smartrefresh.layout.SmartRefreshLayout
-            android:id="@+id/refreshLayout"
-            bind:onRefreshListener="@{()->vm.refresh()}"
-            bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
-            bind:refreshing="@{vm.refreshing}"
-            bind:autoRefresh="@{vm.autoRefresh}"
-            bind:hasMore="@{vm.hasMore}"
-            app:layout_constraintTop_toBottomOf="@id/tvTopic"
-            android:layout_marginTop="80dp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/iv_arrow"/>
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_right_arrow"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toTopOf="@id/tvTopic"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopic"
+            android:layout_marginRight="20dp"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv"
-                bind:linearManager="@{LineManagers.INSTANCE.horizontal()}"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-           <!-- <com.scwang.smartrefresh.layout.footer.ClassicsFooter
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>-->
-        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTopic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/shape_rect_primary"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:background="#333D61"
+            android:id="@+id/tab_title"
+            android:layout_width="match_parent"
+            app:tabTextColor="@color/color_94A0C1"
+            app:tabSelectedTextColor="@color/white"
+            android:layout_height="60dp"
+            app:tabIndicator="@null"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

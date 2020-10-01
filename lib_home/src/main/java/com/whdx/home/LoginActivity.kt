@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.navigation.setupWithKeepStateNav
+import com.whdx.home.vm.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**

@@ -1,9 +1,8 @@
 package com.whdx.home.ui
 
 import android.content.Intent
-import androidx.lifecycle.lifecycleScope
 import com.whdx.base.ui.fragment.BaseBindingFragment
-import com.whdx.home.HomeViewModel
+import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.LoginActivity
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentThirdBinding

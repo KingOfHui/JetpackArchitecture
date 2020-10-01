@@ -3,9 +3,8 @@ package com.whdx.home.ui
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.whdx.base.ui.fragment.BaseBindingFragment
-import com.whdx.base.ui.fragment.BaseVMFragment
 import com.whdx.data.data.user.User
-import com.whdx.home.HomeViewModel
+import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentHomeBinding
 import com.whdx.home.databinding.FragmentLoginBinding
@@ -19,7 +18,7 @@ import timber.log.Timber
  * @Date 2020/9/24 0024 11:50
  */
 class LoginFragment :BaseBindingFragment<HomeViewModel,FragmentLoginBinding>() {
-    override fun initVM(): HomeViewModel= getViewModel()
+    override fun initVM(): HomeViewModel = getViewModel()
 
     override fun startObserve() {
         mViewModel.mUser.observe(this,Observer<User>{

@@ -1,4 +1,4 @@
-package com.whdx.home
+package com.whdx.home.vm
 
 import com.whdx.base.vm.BaseViewModel
 
