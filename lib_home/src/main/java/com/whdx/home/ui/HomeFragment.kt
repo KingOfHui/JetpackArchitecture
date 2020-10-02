@@ -6,6 +6,8 @@ import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentHomeBinding
+import com.whdx.home.ui.fragment.MyCloudComputeFragment
+import com.whdx.home.ui.fragment.SelectCloudComputeFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
@@ -25,7 +27,9 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
 
 
         activity?.let {
-            view_pager.adapter = SimpleFragmentStateAdapter(it, listOf(SelectCloudComputeFragment(),MyCloudComputeFragment()))
+            view_pager.adapter = SimpleFragmentStateAdapter(it, listOf(SelectCloudComputeFragment(),
+                MyCloudComputeFragment()
+            ))
             TabLayoutMediator(tab_title,view_pager){tab, position ->
                 tab.text = tabArr[position]
             }.attach()

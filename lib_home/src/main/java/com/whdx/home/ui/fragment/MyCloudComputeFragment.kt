@@ -1,4 +1,4 @@
-package com.whdx.home.ui
+package com.whdx.home.ui.fragment
 
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
@@ -12,7 +12,7 @@ import com.whdx.home.vm.SelectCloudViewModel
 import kotlinx.android.synthetic.main.fragment_select_cloud.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
-class SelectCloudComputeFragment : BaseBindingFragment<SelectCloudViewModel, ViewDataBinding>() {
+class MyCloudComputeFragment : BaseBindingFragment<SelectCloudViewModel,ViewDataBinding>() {
     lateinit var adapter: BaseQuickAdapter<String, BaseViewHolder>;
     override fun initVM(): SelectCloudViewModel = getViewModel()
 

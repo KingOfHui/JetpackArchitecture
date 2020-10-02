@@ -3,7 +3,7 @@ package com.whdx.home.provider
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.whdx.base.provider.home.HomeProvider
-import com.whdx.home.LoginActivity
+import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.provider.PROVIDER_PATH_HOME
 
 /**

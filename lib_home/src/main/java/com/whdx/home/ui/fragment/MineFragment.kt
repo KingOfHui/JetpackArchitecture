@@ -1,12 +1,12 @@
-package com.whdx.home.ui
+package com.whdx.home.ui.fragment
 
 import android.content.Intent
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.home.vm.HomeViewModel
-import com.whdx.home.LoginActivity
+import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.home.R
-import com.whdx.home.databinding.FragmentThirdBinding
-import kotlinx.android.synthetic.main.fragment_third.*
+import com.whdx.home.databinding.FragmentMineBinding
+import kotlinx.android.synthetic.main.fragment_mine.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
 
@@ -15,13 +15,13 @@ import timber.log.Timber
  * @Author dinghui
  * @Date 2020/9/24 0024 9:56
  */
-class ThirdFragment:BaseBindingFragment<HomeViewModel, FragmentThirdBinding>() {
+class MineFragment:BaseBindingFragment<HomeViewModel, FragmentMineBinding>() {
     override fun initVM(): HomeViewModel = getViewModel()
 
     override fun startObserve() {
     }
 
-    override fun setLayoutResId() = R.layout.fragment_third;
+    override fun setLayoutResId() = R.layout.fragment_mine;
 
     override fun initView() {
         textView.setOnClickListener {

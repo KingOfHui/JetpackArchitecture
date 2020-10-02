@@ -13,12 +13,12 @@
 
     <keep_state_fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.whdx.home.ui.MineFragment"
+        android:name="com.whdx.home.ui.fragment.NetDataFragment"
         android:label="MineFragment"
-        tools:layout="@layout/fragment_mine"/>
+        tools:layout="@layout/fragment_net_data"/>
     <keep_state_fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.whdx.home.ui.ThirdFragment"
+        android:name="com.whdx.home.ui.fragment.MineFragment"
         android:label="ThirdFragment"
-        tools:layout="@layout/fragment_third"/>
+        tools:layout="@layout/fragment_mine"/>
 </navigation>

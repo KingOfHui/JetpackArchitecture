@@ -1,4 +1,4 @@
-package com.whdx.home
+package com.whdx.home.ui.activity
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -7,6 +7,7 @@ import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithKeepStateNav
 import com.whdx.data.respository.UserViewModel
+import com.whdx.home.R
 import com.whdx.home.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -18,7 +19,10 @@ class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
     override fun setLayoutId() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
-        val navController = setupBottomNavigationViewWithKeepStateNav(R.id.nav_main_host_fragment, R.navigation.nav_graph_home)
+        val navController = setupBottomNavigationViewWithKeepStateNav(
+            R.id.nav_main_host_fragment,
+            R.navigation.nav_graph_home
+        )
         bottom_navigation_view.setupWithNavController(navController)
     }
 

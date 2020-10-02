@@ -1,10 +1,11 @@
-package com.whdx.home
+package com.whdx.home.ui.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.navigation.setupWithKeepStateNav
+import com.whdx.home.R
 import com.whdx.home.vm.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
@@ -22,7 +23,10 @@ class LoginActivity : BaseVMActivity<HomeViewModel>() {
     override fun setLayoutId() = R.layout.activity_login;
 
     override fun initView(savedInstanceState: Bundle?) {
-        setupWithKeepStateNav(R.id.nav_login_host_fragment, R.navigation.nav_graph_login)
+        setupWithKeepStateNav(
+            R.id.nav_login_host_fragment,
+            R.navigation.nav_graph_login
+        )
     }
 
     override fun initData() {
