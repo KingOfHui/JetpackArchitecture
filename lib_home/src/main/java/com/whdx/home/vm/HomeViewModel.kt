@@ -1,6 +1,8 @@
 package com.whdx.home.vm
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.User
@@ -28,7 +30,15 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
             val login: ResultData<User>? = userRepository.login(userName, password)
             if (login is ResultData.Success) {
                 doneSuccess()
+                val map = Transformations.map(mUser) {
+                    it.icon
+                }
+                val s :LiveData<String> = Transformations.switchMap(mUser){
+                    val live = MutableLiveData<String>()
+                    live
+                }
                 mUser.value = login.data
+                mList.value?.addAll(login.data.id_list?: listOf())
             } else if (login is ResultData.Error) {
 //                SmartToast.complete("空")
 //                doneEmpty()
@@ -48,7 +58,6 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
                 it.clear()
             }
             it.addAll(mutableListOf)
-            mList.value = it
         }
         notifyResultToTopViewModel(mutableListOf)
 

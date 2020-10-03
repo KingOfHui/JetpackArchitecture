@@ -58,7 +58,7 @@
     <style name="SystemTextStyle" parent="text_color_primary_alpha_50_14">
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:background">@drawable/shape_pink_border</item>
+        <item name="android:background">@drawable/shape_rect_text_border</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">8dp</item>

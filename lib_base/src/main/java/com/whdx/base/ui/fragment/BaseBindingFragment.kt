@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.whdx.base.BR
 import com.whdx.base.vm.BaseViewModel
 
 /**

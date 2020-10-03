@@ -3,6 +3,7 @@ package com.whdx.data.data.user
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import java.io.Serializable
 
 /**
@@ -11,6 +12,7 @@ import java.io.Serializable
  * @Date 2020/9/22 0018 16:29
  */
 @Entity
+@TypeConverters(IdConverters::class)
 data class User(
     @PrimaryKey
     @ColumnInfo(name = "user_id")
@@ -20,5 +22,7 @@ data class User(
     @ColumnInfo(name = "user_public_name")
     var publicName: String? = null,
     @ColumnInfo(name = "user_name")
-    var username: String? = null
+    var username: String? = null,
+    @ColumnInfo(name = "id_list")
+    var id_list: List<String>? = null
 ) : Serializable
