@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <com.whdx.base.ui.view.CustomTitleBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title_textStr="备份助记词"
+            app:text_color="@color/white"
+            app:isShow_left_img="true" />
+
+        <!--        app:typeface="@string/universal_text_typeface_bold"-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginRight="@dimen/dimen_15dp"
+            android:lineHeight="@dimen/dimen_25dp"
+            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingBottom="@dimen/dimen_10dp"
+            android:textSize="@dimen/sp_18"
+            android:text="@string/zjc_title_tip"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_15dp"
+            android:gravity="center|left"
+            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingBottom="@dimen/dimen_10dp"
+            android:text="@string/zjc_tip"
+            android:textColor="@color/text_color_tip_94A0C1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="@string/zjc_long_copy"
+            android:textColor="@color/text_color_tip_94A0C1"
+            android:visibility="gone" />
+
+
+        <com.qmuiteam.qmui.widget.QMUIFloatLayout
+            android:id="@+id/qfl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginRight="@dimen/dimen_15dp"
+            android:padding="@dimen/dimen_5dp"
+            android:background="@color/color_edit_bg" />
+
+
+        <TextView
+            android:id="@+id/walletCreateWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginRight="@dimen/dimen_15dp"
+            android:background="@color/color_edit_bg"
+            android:lineHeight="@dimen/dimen_25dp"
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="@dimen/dimen_15dp"
+            android:backgroundTint="@color/color_4D66FF"
+            android:text="@string/trade_next_step"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</layout>

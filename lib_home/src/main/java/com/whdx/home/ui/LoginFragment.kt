@@ -6,7 +6,6 @@ import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.data.data.user.User
 import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
-import com.whdx.home.databinding.FragmentHomeBinding
 import com.whdx.home.databinding.FragmentLoginBinding
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -30,7 +29,7 @@ class LoginFragment :BaseBindingFragment<HomeViewModel,FragmentLoginBinding>() {
 
     override fun initView() {
         login.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_navigation_login_to_navigation_register);
+            Navigation.findNavController(it).navigate(R.id.action_navigation_create_to_navigation_zjc);
             val user = User()
             user.username = "jflskd"
             mViewModel.mUser.value = user

@@ -7,6 +7,7 @@ import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.navigation.setupWithKeepStateNav
 import com.whdx.home.R
 import com.whdx.home.vm.HomeViewModel
+import com.whdx.home.vm.WalletViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -14,8 +15,8 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
  * @Author dinghui
  * @Date 2020/9/24 0024 11:47
  */
-class LoginActivity : BaseVMActivity<HomeViewModel>() {
-    override fun initVM(): HomeViewModel = getViewModel()
+class LoginActivity : BaseVMActivity<WalletViewModel>() {
+    override fun initVM(): WalletViewModel = getViewModel()
 
     override fun startObserve() {
     }

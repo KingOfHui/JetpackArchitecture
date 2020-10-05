@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.whdx.base.ui.view.CustomTitleBarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isShow_left_img="true"
+                app:text_color="@color/white"
+                app:title_textStr="备份钱包" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_70dp"
+                    android:src="@mipmap/img_backup" />
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:textStyle="bold"
+                    android:text="@string/create_wallet_last_step"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18" />
+
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt1"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:gravity="center"
+                    android:text="@string/back_up_private_sign_view"
+                    android:textColor="@color/text_color_tip_94A0C1"
+                    android:textSize="@dimen/dimen_15dp" />
+
+                <TextView
+                    android:id="@id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text2"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
+                    android:text="@string/public_key"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/txtPublicKey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt3"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:textColor="@color/text_color_tip_94A0C1"
+                    android:textSize="@dimen/dimen_15dp" />
+
+                <TextView
+                    android:id="@+id/editPrivateKey"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_120dp"
+                    android:layout_below="@+id/txtPublicKey"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
+                    android:background="@color/color_edit_bg"
+                    android:gravity="top"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_below="@+id/editPrivateKey"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/back_up_private_txt"
+                    android:textColor="@color/text_color_tip_94A0C1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt2"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnLeadToLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_marginLeft="@dimen/dimen_15dp"
+                        android:layout_marginRight="@dimen/dimen_15dp"
+                        android:backgroundTint="@color/color_4D66FF"
+                        android:text="@string/direct_import_login"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnCopy"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_marginLeft="@dimen/dimen_15dp"
+                        android:layout_marginTop="@dimen/dimen_15dp"
+                        android:layout_marginRight="@dimen/dimen_15dp"
+                        android:background="@drawable/shape_rect_text_stroke"
+                        android:text="@string/copy"
+                        android:textColor="@color/color_4D66FF"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+    </ScrollView>
+</layout>

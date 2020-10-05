@@ -1,5 +1,7 @@
 package com.whdx.home.ui.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.navigation.ui.setupWithNavController
@@ -35,6 +37,13 @@ class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
                 SmartToast.complete(mUser.value?.username)
             })
         }
+    }
+
+    companion object{
+        fun start(context: Context) {
+            context.startActivity(Intent(context, MainActivity::class.java))
+        }
+
     }
 
 

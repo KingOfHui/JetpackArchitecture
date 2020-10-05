@@ -22,4 +22,7 @@ interface ApiService {
         @Field("password") passWord: String
     ): BaseResponse<User>
 
+    @GET("v1/product/list")
+    suspend fun getProduceList()
+
 }

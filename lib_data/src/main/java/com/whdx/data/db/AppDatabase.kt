@@ -5,6 +5,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.whdx.base.app.BaseApplication
 import com.whdx.data.data.user.User
+import com.whdx.data.data.wallet.WalletModel
 import com.wwy.android.data.db.UserDao
 
 
@@ -13,10 +14,11 @@ import com.wwy.android.data.db.UserDao
  * @Author dinghui
  * @Date 2020/9/22 0018 16:29
  */
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [/*User::class*/WalletModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun userDao(): UserDao
+//    abstract fun userDao(): UserDao
 
+    abstract fun walletDao():WalletDao
     companion object {
 
         @Volatile
@@ -30,7 +32,7 @@ abstract class AppDatabase : RoomDatabase() {
         private fun buildDatabase() =
             Room.databaseBuilder(
                 BaseApplication.CONTEXT,
-                AppDatabase::class.java, "user.db"
+                AppDatabase::class.java, "wallet.db"
             )
                 .build()
     }

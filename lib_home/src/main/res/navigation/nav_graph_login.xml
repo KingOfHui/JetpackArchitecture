@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navigation"
-    app:startDestination="@+id/navigation_login">
+    app:startDestination="@+id/navigation_create_wallet">
 
     <keep_state_fragment
-        android:id="@+id/navigation_login"
-        android:name="com.whdx.home.ui.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" >
+        android:id="@+id/navigation_create_wallet"
+        android:name="com.whdx.home.ui.fragment.CreateWalletFragment"
+        android:label="CreateWalletFragment"
+        tools:layout="@layout/fragment_wallet_create" >
         <action
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_navigation_login_to_navigation_register"
-            app:destination="@id/navigation_register" />
+            android:id="@+id/action_navigation_create_to_navigation_zjc"
+            app:destination="@id/navigation_zjc" />
         <action
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -27,10 +27,10 @@
     </keep_state_fragment>
 
     <keep_state_fragment
-        android:id="@+id/navigation_register"
-        android:name="com.whdx.home.ui.RegisterFragment"
-        android:label="RegisterFragment"
-        tools:layout="@layout/fragment_register" >
+        android:id="@+id/navigation_zjc"
+        android:name="com.whdx.home.ui.fragment.WalletZJCFragment"
+        android:label="WalletZJCFragment"
+        tools:layout="@layout/fragment_wallet_zjc" >
         <action
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -38,6 +38,9 @@
             app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_navigation_register_to_navigation_forget"
             app:destination="@id/navigation_forget" />
+        <action
+            android:id="@+id/action_navigation_zjc_to_checkZJCFragment"
+            app:destination="@id/checkZJCFragment" />
     </keep_state_fragment>
 
     <keep_state_fragment
@@ -45,4 +48,36 @@
         android:name="com.whdx.home.ui.ForgetPwdFragment"
         android:label="ForgetPwdFragment"
         tools:layout="@layout/fragment_forget_password" />
+    <keep_state_fragment
+        android:id="@+id/checkZJCFragment"
+        android:name="com.whdx.home.ui.fragment.CheckZJCFragment"
+        android:label="CheckZJCFragment"
+        tools:layout="@layout/fragment_check_zjc">
+        <action
+            android:id="@+id/action_checkZJCFragment_to_backupWalletFirstFragment"
+            app:destination="@id/backupWalletFirstFragment" />
+    </keep_state_fragment>
+    <keep_state_fragment
+        android:id="@+id/backupWalletFirstFragment"
+        android:name="com.whdx.home.ui.fragment.BackupWalletFirstFragment"
+        android:label="BackupWalletFirstFragment"
+        tools:layout="@layout/fragment_backup_wallet_first">
+        <action
+            android:id="@+id/action_backupWalletFirstFragment_to_backupWalletSecondFragment"
+            app:destination="@id/backupWalletSecondFragment" />
+    </keep_state_fragment>
+    <keep_state_fragment
+        android:id="@+id/backupWalletSecondFragment"
+        android:name="com.whdx.home.ui.fragment.BackupWalletSecondFragment"
+        android:label="BackupWalletSecondFragment"
+        tools:layout="@layout/fragment_backup_wallet_second">
+        <action
+            android:id="@+id/action_backupWalletSecondFragment_to_prohibitionStatementFragment"
+            app:destination="@id/prohibitionStatementFragment" />
+    </keep_state_fragment>
+    <keep_state_fragment
+        android:id="@+id/prohibitionStatementFragment"
+        android:name="com.whdx.home.ui.fragment.ProhibitionStatementFragment"
+        android:label="ProhibitionStatementFragment"
+        tools:layout="@layout/fragment_prohibition_statement"/>
 </navigation>
