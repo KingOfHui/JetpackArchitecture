@@ -1,14 +1,11 @@
 package com.whdx.base.ui.fragment
 
-import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.R
 import com.whdx.base.common.state.State
 import com.whdx.base.common.state.StateType
 import com.whdx.base.vm.BaseViewModel
-import org.jetbrains.anko.find
-import timber.log.Timber
 
 
 /**
@@ -29,9 +26,9 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     abstract fun initVM(): VM
 
     abstract fun startObserve()
-    open fun showLoading() {
+    open fun showLoading(message: String? = getString(R.string.loading)) {
 //        loadService.showCallback(LoadingCallBack::class.java)
-        showProgressDialog(R.string.agentweb_download)
+        showProgressDialog(message)
     }
 
     open fun showSuccess() {
@@ -40,12 +37,12 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
 //        loadService.showCallback(SuccessCallback::class.java)
     }
 
-    open fun showError(msg: String) {
+    open fun showError(msg: String?) {
 //        loadService.setCallBack(ErrorCallBack::class.java) { _, view ->
 //            view.find<TextView>(R.id.tv_error).text = msg
 //        }
 //        loadService.showCallback(ErrorCallBack::class.java)
-        SmartToast.error(msg)
+        SmartToast.error(msg ?: requireContext().getString(R.string.errorMsg))
         dismissProgressDialog()
     }
 
@@ -63,7 +60,7 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
             it?.let {
                 when (it.code) {
                     StateType.SUCCESS -> showSuccess()
-                    StateType.LOADING -> showLoading()
+                    StateType.LOADING -> showLoading(it.message)
                     StateType.ERROR -> showError(it.message)
                     StateType.NETWORK_ERROR -> showError("网络出现问题啦")
                     StateType.EMPTY -> showEmpty()

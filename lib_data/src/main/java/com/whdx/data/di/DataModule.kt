@@ -9,5 +9,5 @@ import org.koin.dsl.module
  * @Date 2020/9/28 0028 14:39
  */
 val dataSourceModule = module {
-    single { RemoteDataSource() }
+    single { RemoteDataSource(get()) }
 }

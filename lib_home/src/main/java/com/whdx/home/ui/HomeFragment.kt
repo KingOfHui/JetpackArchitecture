@@ -1,5 +1,6 @@
 package com.whdx.home.ui
 
+import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayoutMediator
 import com.whdx.base.adapter.SimpleFragmentStateAdapter
 import com.whdx.base.ui.fragment.BaseBindingFragment
@@ -40,10 +41,16 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun initData() {
         Timber.tag("dhdhdh").e("initData HomeFragment")
         mDataBinding.vm = mViewModel
-        mViewModel.login("9241885", "111111")
-        mViewModel.refresh()
+        mViewModel.getTopic()
     }
 
     override fun startObserve() {
+        mViewModel.mTopic.observe(viewLifecycleOwner, Observer {
+            if (!it.isNullOrEmpty()) {
+                val topic = it[0]
+                tvTopicTitle.text = topic.title
+                tvTopicTime.text = topic.create_at
+            }
+        })
     }
 }

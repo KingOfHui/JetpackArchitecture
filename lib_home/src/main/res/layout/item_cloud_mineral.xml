@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="model"
+            type="com.whdx.data.data.product.ProductItem" />
     </data>
 
     <com.whdx.base.ui.view.RoundConstraintLayout
@@ -25,24 +27,27 @@
             android:textSize="11sp"
             android:textColor="@color/white"
             android:paddingTop="7dp"
-            app:layout_constraintBaseline_toBaselineOf="@id/textView4"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvAmount"
             android:paddingBottom="6dp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:background="@drawable/shape_rect_text_border"
+            tools:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView4" />
+            app:layout_constraintTop_toTopOf="@+id/tvAmount" />
+<!--            app:invisible="@{safeUnbox(model.state)==1}"-->
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvStorage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="分储算力合约 2.5T"
+            android:text="@{`分储算力合约`+ model.storage+`T`}"
+            tools:text="分出算例合约2.5T"
             android:textColor="@color/color_94A0C1"
             android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
+            app:layout_constraintTop_toBottomOf="@+id/tvReleaseMutiple" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -56,26 +61,26 @@
             app:srcCompat="@mipmap/img_mineral" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvReleaseMutiple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="20dp"
-            android:text="倍 算力收益"
+            android:text="@{model.release_multiple+`倍 算力收益`}"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="50USDT"
+            android:text="@{model.amount+model.symbol}"
             android:textColor="@color/white"
             android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintStart_toStartOf="@+id/tvStorage"
+            app:layout_constraintTop_toBottomOf="@+id/tvStorage" />
     </com.whdx.base.ui.view.RoundConstraintLayout>
 </layout>

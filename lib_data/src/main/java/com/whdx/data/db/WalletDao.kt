@@ -33,4 +33,8 @@ interface WalletDao {
     @Transaction
     @Query("UPDATE WalletModel SET currentSelect = 0")
     suspend fun updateAllUnSelected()
+
+    @Transaction
+    @Query("Select * FROM WALLETMODEL WHERE currentSelect =1")
+    fun getCurrent():List<WalletModel>
 }

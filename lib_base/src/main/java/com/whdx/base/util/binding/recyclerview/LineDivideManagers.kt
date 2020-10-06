@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
  * @Author dinghui
  * @Date 2020/9/25 0025 11:09
  */
-object LineManagers {
+object LineDivideManagers {
     fun both(): LineManagerFactory {
         return object : LineManagerFactory {
             override fun create(recyclerView: RecyclerView): RecyclerView.ItemDecoration {
@@ -19,7 +19,7 @@ object LineManagers {
     fun horizontal(): LineManagerFactory {
         return object : LineManagerFactory {
             override fun create(recyclerView: RecyclerView): RecyclerView.ItemDecoration {
-                return DividerLine(recyclerView.getContext(), DividerLine.LineDrawMode.HORIZONTAL)
+                return DividerLine(recyclerView.context, DividerLine.LineDrawMode.HORIZONTAL)
             }
         }
     }

@@ -1,12 +1,13 @@
 package com.whdx.base.util.binding.recyclerview
 
-import android.R
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.whdx.base.R
 
 /**
  * @Description
@@ -22,7 +23,11 @@ class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize:
     private val DEFAULT_DIVIDER_SIZE = 1
 
     //控制分隔线的属性,值为一个drawable
-    private val ATTRS = intArrayOf(R.attr.listDivider)
+    private val ATTRS = intArrayOf(android.R.attr.listDivider)
+
+    private val drawables = intArrayOf(R.drawable.shape_line_divider_gray,R.drawable.shape_line_divider_transport);
+    private val drawableSizes = intArrayOf(1,15)
+
 
     //divider对应的drawable
     private var dividerDrawable: Drawable? = null
@@ -37,6 +42,7 @@ class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize:
         val attrArray = context.obtainStyledAttributes(ATTRS)
         dividerDrawable = attrArray.getDrawable(0)
         attrArray.recycle()
+//        dividerDrawable = ContextCompat.getDrawable(context, drawables[0])
         mMode = mode
         this.dividerSize = dividerSize
     }

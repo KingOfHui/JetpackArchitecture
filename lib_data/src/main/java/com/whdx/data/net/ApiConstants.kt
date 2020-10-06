@@ -11,7 +11,7 @@ const val WHDX_TEACHER = 1
 const val WHDX_STUDENT = 2
 val teacherUrl:String by lazy {
     if (BuildConfig.DEBUG) {
-        "https://admin-test.bvw.im/minerManagement/"
+        "https://t.bvw.im/finance/"
     } else{
         "https://t.bvw.im/finance/"
     }

@@ -8,15 +8,15 @@ import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithKeepStateNav
-import com.whdx.data.respository.UserViewModel
 import com.whdx.home.R
 import com.whdx.home.databinding.ActivityMainBinding
+import com.whdx.home.vm.HomeViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
-class MainActivity : BaseBindingActivity<UserViewModel, ActivityMainBinding>() {
-    override fun initVM(): UserViewModel = getViewModel()
+class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
+    override fun initVM(): HomeViewModel = getViewModel()
 
     override fun setLayoutId() = R.layout.activity_main
 

@@ -38,7 +38,7 @@ abstract class BaseDataSource {
         errorBlock: (suspend CoroutineScope.() -> Unit)? = null
     ): ResultData<T> {
         return coroutineScope {
-            if (response.code == 1) {
+            if (response.code == 0) {
                 successBlock?.let { it() }
                 ResultData.Success(response.data)
             } else {

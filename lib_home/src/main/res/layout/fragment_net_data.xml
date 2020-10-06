@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.whdx.home.vm.NetDataViewModel" />
+        <variable
+            name="netData"
+            type="com.whdx.data.data.NetData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,14 +29,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.whdx.base.ui.view.RoundConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rcl_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             app:rv_cornerRadius="5dp"
-            app:rv_backgroundStartColor="#5A6892"
-            app:rv_backgroundEndColor="#333D61"
+            android:background="@mipmap/img_net_data_bg"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             tools:layout_editor_absoluteX="20dp">
 
@@ -50,8 +54,9 @@
                 app:layout_constraintRight_toLeftOf="@id/gl_v_50"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                app:bottom_textStr="全网总算力"
-                app:top_textStr="7643.06" />
+                app:top_textStr="@{vm.MNetDataLive.net_all_power , default =`0`}"
+                app:bottom_textStr="全网总算力 (T)" />
+
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -60,8 +65,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50"
-                app:bottom_textStr="全网总能量（BTW）"
-                app:top_textStr="3444.04" />
+                app:top_textStr="@{vm.MNetDataLive.net_all_energy,default =`0`}"
+                app:bottom_textStr="全网总能量（BTW）" />
+
+<!--            app:top_textStr="@{String.valueOf(vm.MNetDataLive.net_all_energy)}"-->
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -72,9 +79,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
-                app:bottom_textStr="全网总算力"
-                app:top_textStr="7643.06" />
-        </com.whdx.base.ui.view.RoundConstraintLayout>
+                app:top_textStr="@{vm.MNetDataLive.btw_price,default =`0`}"
+                app:bottom_textStr="BTW价格（USDT）" />
+
+<!--            app:top_textStr="@{String.valueOf(vm.MNetDataLive.btw_price)}"-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <com.whdx.base.ui.view.RoundConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,7 +109,7 @@
                 app:layout_constraintRight_toLeftOf="@id/gl_v_50_2"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                app:bottom_textStr="全网总算力"
+                app:bottom_textStr="总矿机数（个）"
                 app:top_textStr="7643.06" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:id="@+id/cvv_max_energy"
@@ -111,7 +120,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
-                app:bottom_textStr="全网总能量（BTW）"
+                app:bottom_textStr="最大节点能量（BTW）"
                 app:top_textStr="3444.04" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:id="@+id/cvv_my_star"
@@ -124,7 +133,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
-                app:bottom_textStr="全网总算力"
+                app:bottom_textStr="我的星级有效业绩"
                 app:top_textStr="7643.06" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
@@ -133,7 +142,7 @@
                 app:layout_constraintTop_toTopOf="@id/cvv_my_star"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
-                app:bottom_textStr="全网总能量（BTW）"
+                app:bottom_textStr="节点总业绩（BTW）"
                 app:top_textStr="3444.04" />
         </com.whdx.base.ui.view.RoundConstraintLayout>
 

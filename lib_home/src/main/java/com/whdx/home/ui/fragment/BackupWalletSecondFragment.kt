@@ -1,5 +1,7 @@
 package com.whdx.home.ui.fragment
 
+import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentBackupWalletFirstBinding
@@ -14,15 +16,18 @@ class BackupWalletSecondFragment:BaseBindingFragment<WalletViewModel,FragmentBac
     override fun initVM(): WalletViewModel= requireActivity().getViewModel()
 
     override fun startObserve() {
+        mViewModel.insertSuccess.observe(viewLifecycleOwner, Observer {
+            if (it){
+                Navigation.findNavController(btnLeadToLogin).navigate(R.id.action_backupWalletSecondFragment_to_prohibitionStatementFragment)
+            }
+        })
     }
 
     override fun setLayoutResId()= R.layout.fragment_backup_wallet_second
 
     override fun initView() {
         btnLeadToLogin.setOnClickListener {
-
             mViewModel.insertWallet()
-
         }
     }
 

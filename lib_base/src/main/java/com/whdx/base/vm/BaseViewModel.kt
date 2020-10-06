@@ -17,6 +17,7 @@ open class BaseViewModel() : ViewModel(), LifecycleObserver {
     val loadState by lazy {
         MutableLiveData<State>()
     }
+
     /**
      * 运行在UI线程的协程 viewModelScope 已经实现了在onCleared取消协程
      */
@@ -25,12 +26,12 @@ open class BaseViewModel() : ViewModel(), LifecycleObserver {
     }
 
     //回调加载中视图
-    fun doLoading() {
-        loadState.postValue(State(StateType.LOADING))
+    fun doLoading(msg: String? = null) {
+        loadState.postValue(State(StateType.LOADING, msg))
     }
 
     //回调错误视图
-    fun doneError(msg: String = "") {
+    fun doneError(msg: String? = null) {
         loadState.postValue(State(StateType.ERROR, msg))
     }
 

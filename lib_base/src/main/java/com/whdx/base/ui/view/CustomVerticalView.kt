@@ -36,6 +36,10 @@ class CustomVerticalView @JvmOverloads constructor(
         setMeasuredDimension(widthMeasureSpec, heigh)
     }
 
+    fun setTop_textStr(topText:String?){
+        tv_top.text = topText?:"0"
+    }
+
 /*
 
     //控件默认的宽高

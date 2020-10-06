@@ -5,9 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
+import com.whdx.data.data.base.ResultData
+import com.whdx.data.data.product.ProductItem
+import com.whdx.data.respository.UserRepository
 
-class SelectCloudViewModel : BaseLoadMoreViewModel<List<String>>() {
-    val mList: MutableLiveData<MutableList<String>> = MutableLiveData<MutableList<String>>()
+class SelectCloudViewModel(private val userRepository: UserRepository) :
+    BaseLoadMoreViewModel<List<ProductItem>>() {
+    val mProductItemList: MutableLiveData<MutableList<ProductItem>> = MutableLiveData()
         get() {
             if (field.value == null) field.value = mutableListOf()
             return field
@@ -15,18 +19,24 @@ class SelectCloudViewModel : BaseLoadMoreViewModel<List<String>>() {
 
     override suspend fun load(isClear: Boolean, pageNum: Int) {
         refreshing.value = true
-        val mutableListOf = mutableListOf<String>()
-        for (i in 0..18) {
-            mutableListOf.add("position $i")
+        if (isClear) {
+            mProductItemList.value?.clear()
         }
-        mList.value?.let {
-            if (isClear) {
-                it.clear()
+        val productList = userRepository.getProductList(pageNum, 20)
+        if (productList is ResultData.Success) {
+            val items = productList.data.items
+            mProductItemList.value?.let {
+                it.addAll(items)
+                mProductItemList.value = it
+            }?:let {
+                if (isClear) {
+                    doneEmpty()
+                }
             }
-            it.addAll(mutableListOf)
-            mList.value = it
+            notifyResultToTopViewModel(items)
+        } else if (productList is ResultData.Error) {
+            doneError(productList.exception.message ?: "")
         }
-        notifyResultToTopViewModel(mutableListOf)
         refreshing.value = false
     }
 }

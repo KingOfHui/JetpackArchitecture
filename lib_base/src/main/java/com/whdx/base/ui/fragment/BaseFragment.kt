@@ -69,7 +69,7 @@ abstract class BaseFragment : Fragment() {
     /**
      * 显示加载(转圈)对话框
      */
-    fun showProgressDialog(@StringRes message: Int) {
+    fun showProgressDialog(message: String?) {
         if (!this::progressDialogFragment.isInitialized) {
             progressDialogFragment = ProgressDialogFragment.newInstance()
         }

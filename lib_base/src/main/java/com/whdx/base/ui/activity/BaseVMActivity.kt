@@ -12,6 +12,7 @@ import com.whdx.base.common.state.StateType
 import com.whdx.base.vm.BaseViewModel
 import com.wwy.android.ui.base.BaseActivity
 import org.jetbrains.anko.find
+import timber.log.Timber
 
 
 /**
@@ -32,23 +33,24 @@ abstract class BaseVMActivity<VM : BaseViewModel> : BaseActivity() {
 
     abstract fun startObserve()
 
-    open fun showLoading() {
+    open fun showLoading(message: String? = getString(R.string.loading)) {
 //        loadService.showCallback(LoadingCallBack::class.java)
-        showProgressDialog(R.string.agentweb_download)
+        showProgressDialog(message)
     }
 
     open fun showSuccess() {
+        Timber.tag("dhdhdh").e("加载完成~~~")
         SmartToast.complete("加载完成~")
         dismissProgressDialog()
 //        loadService.showCallback(SuccessCallback::class.java)
     }
 
-    open fun showError(msg: String) {
+    open fun showError(msg: String?) {
 //        loadService.setCallBack(ErrorCallBack::class.java) { _, view ->
 //            view.find<TextView>(R.id.tv_error).text = msg
 //        }
 //        loadService.showCallback(ErrorCallBack::class.java)
-        SmartToast.error(msg)
+        SmartToast.error(msg ?: getString(R.string.errorMsg))
         dismissProgressDialog()
     }
 

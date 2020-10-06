@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.whdx.base.util.binding.recyclerview.LineDivideManagers"/>
 
     </data>
 
@@ -31,9 +32,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:rv_backgroundEndColor="#333D61"
                         app:rv_backgroundStartColor="#5A6892"
                         app:rv_cornerRadius="5dp"
+                        android:layout_marginBottom="@dimen/dimen_15dp"
                         tools:layout_editor_absoluteX="20dp">
 
                         <androidx.constraintlayout.widget.Guideline
@@ -106,7 +109,6 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="15dp"
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -1,12 +1,9 @@
 package com.whdx.home.di
 
-import com.whdx.data.db.LocalDataSource
+import com.whdx.data.respository.base.LocalDataSource
 import com.whdx.data.respository.UserRepository
 import com.whdx.data.respository.UserViewModel
-import com.whdx.home.vm.HomeViewModel
-import com.whdx.home.vm.MineViewModel
-import com.whdx.home.vm.SelectCloudViewModel
-import com.whdx.home.vm.WalletViewModel
+import com.whdx.home.vm.*
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -19,8 +16,9 @@ val homeViewModelModule = module {
     viewModel { UserViewModel(get()) }
     viewModel { HomeViewModel(get()) }
     viewModel { MineViewModel() }
-    viewModel { SelectCloudViewModel() }
+    viewModel { SelectCloudViewModel(get()) }
     viewModel { WalletViewModel(get()) }
+    viewModel { NetDataViewModel(get()) }
 }
 
 val homeRepositoryModule = module {

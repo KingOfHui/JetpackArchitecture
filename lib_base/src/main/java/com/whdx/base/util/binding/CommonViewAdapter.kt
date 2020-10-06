@@ -1,38 +1,23 @@
 package com.whdx.base.util.binding
 
 import android.app.Activity
-import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Rect
 import android.text.Html
-import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.app.ActivityOptionsCompat
 import androidx.databinding.BindingAdapter
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.SimpleTarget
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
-import com.whdx.base.R
-import com.whdx.base.util.binding.recyclerview.LineManagers
+import com.whdx.base.util.binding.recyclerview.LineDivideManagers
 
 @BindingAdapter("linearManager")
 fun setLineManager(
     recyclerView: RecyclerView,
-    lineManagerFactory: LineManagers.LineManagerFactory
+    lineManagerFactory: LineDivideManagers.LineManagerFactory
 ) {
     recyclerView.addItemDecoration(lineManagerFactory.create(recyclerView))
 }

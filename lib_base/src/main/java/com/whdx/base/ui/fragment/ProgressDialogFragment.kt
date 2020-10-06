@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.StringRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.whdx.base.R
@@ -17,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_progress_dialog.*
  */
 class ProgressDialogFragment : DialogFragment() {
 
-    private var messageResId: Int? = null
+    private var message: String? = null
 
     companion object {
         fun newInstance() =
@@ -34,15 +33,15 @@ class ProgressDialogFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvMessage.text = getString(messageResId ?: R.string.loading)
+        tvMessage.text = message ?: getString(R.string.loading)
     }
 
     fun show(
         fragmentManager: FragmentManager,
-        @StringRes messageResId: Int,
+        message: String?,
         isCancelable: Boolean = false
     ) {
-        this.messageResId = messageResId
+        this.message = message
         this.isCancelable = isCancelable
         try {
             show(fragmentManager, "progressDialogFragment")

@@ -31,11 +31,11 @@ abstract class BaseRetrofitClient {
             } else {
                 logging.level = HttpLoggingInterceptor.Level.BASIC
             }
+            handleBuilder(builder)
             builder.addInterceptor(logging)
                 .addInterceptor(mLoggingInterceptor)
                 .connectTimeout(TIME_OUT.toLong(), TimeUnit.SECONDS)
                 .readTimeout(TIME_OUT.toLong(), TimeUnit.SECONDS)
-            handleBuilder(builder)
             return builder.build()
         }
 
