@@ -10,6 +10,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="7643.06"
+        android:lines="1"
+        android:ellipsize="end"
         android:textSize="28sp"
         android:textColor="@color/white"/>
     <TextView

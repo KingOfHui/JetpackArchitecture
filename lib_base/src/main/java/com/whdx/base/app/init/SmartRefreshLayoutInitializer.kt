@@ -28,7 +28,7 @@ class SmartRefreshLayoutInitializer : Initializer() {
                 setHeaderHeight(110f)
                 setHeaderTriggerRate(0.8f)
                 setDisableContentWhenLoading(false)
-                setPrimaryColorsId(R.color.colorPrimary, R.color.white)
+                setPrimaryColorsId(R.color.qmui_config_color_transparent, R.color.white)
             }
         }
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { _, _ ->

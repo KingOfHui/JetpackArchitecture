@@ -1,16 +1,16 @@
 package com.whdx.home.ui.fragment
 
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.fragment.BaseBindingFragment
-import com.whdx.base.util.CollectionUtil
+import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.data.data.product.ProductItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentSelectCloudBinding
 import com.whdx.home.databinding.ItemCloudMineralBinding
+import com.whdx.home.ui.dialog.LeaseDialog
 import com.whdx.home.vm.SelectCloudViewModel
 import kotlinx.android.synthetic.main.fragment_select_cloud.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -41,6 +41,13 @@ class SelectCloudComputeFragment :
                 item: ProductItem
             ) {
                 holder.dataBinding?.let {
+                    it.textView5.clickWithTrigger {
+                        mViewModel.mBalanceLive.value?.let {
+                            LeaseDialog.show(requireContext(),it.balance,item.amount,item.id,mViewModel,viewLifecycleOwner)
+                        }?:let {
+                            SmartToast.error("获取余额信息失败~")
+                        }
+                    }
                     it.model = item
                     it.executePendingBindings()
                 }

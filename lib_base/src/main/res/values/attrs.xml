@@ -197,7 +197,7 @@
     </declare-styleable>
     <attr name="colorPrimary" format="color" />
     <attr name="colorAccent" format="color" />
-    <attr name="textColorPrimary" format="color"/>
+    <attr name="textColorPrimary" format="color" />
 
     <declare-styleable name="StoreHouseHeader">
         <attr name="shhText" format="string" />
@@ -213,10 +213,30 @@
     <declare-styleable name="PickerView">
         <attr name="isLoop" format="boolean" />
     </declare-styleable>
-    <attr name="top_textStr" format="string"/>
-    <attr name="bottom_textStr" format="string"/>
+    <attr name="topStr" format="string" />
+    <attr name="bottom_textStr" format="string" />
     <declare-styleable name="CustomVerticalView">
-        <attr name="top_textStr"/>
-        <attr name="bottom_textStr"/>
+        <attr name="topStr" />
+        <attr name="bottom_textStr" />
+    </declare-styleable>
+    <declare-styleable name="CommonTitleBarView">
+        <attr name="left_img" />
+        <attr name="left_textStr" />
+        <attr name="left_textId" />
+        <attr name="right_textStr" />
+        <attr name="right_textId" />
+        <attr name="right_text_color" />
+        <attr name="isShow_left_img" />
+        <attr name="right_img1" />
+        <attr name="isShow_right_img1" />
+        <attr name="right_img2" />
+        <attr name="isShow_right_img2" />
+        <attr name="right_img3" />
+        <attr name="isShow_right_img3" />
+        <attr name="title_textStr" />
+        <attr name="title_textId" />
+        <attr name="text_color" />
+        <attr name="isShow_tab_layout" />
+        <attr name="bg_color" />
     </declare-styleable>
 </resources>

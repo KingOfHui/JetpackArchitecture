@@ -12,10 +12,13 @@
             type="com.whdx.data.data.NetData" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
         <TextView
@@ -54,7 +57,7 @@
                 app:layout_constraintRight_toLeftOf="@id/gl_v_50"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                app:top_textStr="@{vm.MNetDataLive.net_all_power , default =`0`}"
+                app:topStr="@{vm.MNetDataLive.net_all_storage , default =`0`}"
                 app:bottom_textStr="全网总算力 (T)" />
 
             <com.whdx.base.ui.view.CustomVerticalView
@@ -65,10 +68,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50"
-                app:top_textStr="@{vm.MNetDataLive.net_all_energy,default =`0`}"
+                app:topStr="@{vm.MNetDataLive.net_all_bonus,default =`0`}"
                 app:bottom_textStr="全网总能量（BTW）" />
 
-<!--            app:top_textStr="@{String.valueOf(vm.MNetDataLive.net_all_energy)}"-->
+<!--            app:topStr="@{String.valueOf(vm.MNetDataLive.net_all_energy)}"-->
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -79,12 +82,13 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
-                app:top_textStr="@{vm.MNetDataLive.btw_price,default =`0`}"
+                app:topStr="@{vm.MNetDataLive.btw_price,default =`0`}"
                 app:bottom_textStr="BTW价格（USDT）" />
 
-<!--            app:top_textStr="@{String.valueOf(vm.MNetDataLive.btw_price)}"-->
+<!--            app:topStr="@{String.valueOf(vm.MNetDataLive.btw_price)}"-->
         </androidx.constraintlayout.widget.ConstraintLayout>
         <com.whdx.base.ui.view.RoundConstraintLayout
+            android:id="@+id/cl_middle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -110,7 +114,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 app:bottom_textStr="总矿机数（个）"
-                app:top_textStr="7643.06" />
+                app:topStr="@{vm.MNetDataLive.count_invest, default=`0`}" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:id="@+id/cvv_max_energy"
                 android:layout_width="0dp"
@@ -120,8 +124,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
-                app:bottom_textStr="最大节点能量（BTW）"
-                app:top_textStr="3444.04" />
+                app:bottom_textStr="最大节点日收益(USDT)"
+                app:topStr="@{vm.MNetDataLive.max_node_bonus, default=`0`}" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:id="@+id/cvv_my_star"
                 android:layout_width="0dp"
@@ -133,8 +137,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
-                app:bottom_textStr="我的星级有效业绩"
-                app:top_textStr="7643.06" />
+                app:bottom_textStr="我的星级有效业绩(U)"
+                app:topStr="@{vm.MNetDataLive.mine_performance, default=`0`}" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -142,9 +146,231 @@
                 app:layout_constraintTop_toTopOf="@id/cvv_my_star"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
-                app:bottom_textStr="节点总业绩（BTW）"
-                app:top_textStr="3444.04" />
+                app:bottom_textStr="节点总业绩(U)"
+                app:topStr="@{vm.MNetDataLive.mine_performance_node, default=`0`}" />
         </com.whdx.base.ui.view.RoundConstraintLayout>
 
+        <TextView
+            android:id="@+id/tv_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最大节点日收益"
+            app:layout_constraintTop_toBottomOf="@id/cl_middle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+
+        <com.whdx.base.ui.view.RoundConstraintLayout
+            android:id="@+id/cl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_bottom"
+            app:rv_backgroundEndColor="#333D61"
+            app:rv_backgroundStartColor="#5A6892"
+            app:rv_cornerRadius="5dp"
+            tools:layout_editor_absoluteX="20dp"
+            android:paddingBottom="@dimen/dimen_20dp">
+
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:paddingBottom="@dimen/dimen_20dp"
+                android:text="全网等级分布"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toBottomOf="@id/tv_level"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_net_level_5" />
+
+                <TextView
+                    android:id="@+id/tv_level_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:text="卫星"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_level_5_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_level_5"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:text="@{String.valueOf(vm.MNetDataLive.count_level1)+`人`}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/relativeLayout3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relativeLayout2"
+                app:layout_constraintTop_toBottomOf="@id/tv_level">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_net_level_4" />
+
+                <TextView
+                    android:id="@+id/tv_level_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:text="恒星"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_level_4_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_level_4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:text="@{String.valueOf(vm.MNetDataLive.count_level2)+`人`}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relativeLayout4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+                app:layout_constraintTop_toBottomOf="@id/tv_level">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_net_level_3" />
+
+                <TextView
+                    android:id="@+id/tv_level_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:text="行星"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_level_3_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_level_3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:text="@{String.valueOf(vm.MNetDataLive.count_level3)+`人`}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relativeLayout5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relativeLayout3"
+                app:layout_constraintTop_toBottomOf="@id/tv_level">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_net_level_2" />
+
+                <TextView
+                    android:id="@+id/tv_level_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:text="星系"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_level_2_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_level_2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:text="@{String.valueOf(vm.MNetDataLive.count_level4)+`人`}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relativeLayout4"
+                app:layout_constraintTop_toBottomOf="@id/tv_level">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_net_level_1" />
+
+                <TextView
+                    android:id="@+id/tv_level_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:text="宇宙"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_level_1_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_level_1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:text="@{String.valueOf(vm.MNetDataLive.count_level5)+`人`}"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </com.whdx.base.ui.view.RoundConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </layout>

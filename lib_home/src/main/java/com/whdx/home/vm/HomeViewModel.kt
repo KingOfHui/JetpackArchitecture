@@ -9,6 +9,7 @@ import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.ProductItem
 import com.whdx.data.data.topic.Topic
 import com.whdx.data.data.user.User
+import com.whdx.data.data.wallet.USDTBalance
 import com.whdx.data.respository.UserRepository
 import kotlinx.coroutines.delay
 import timber.log.Timber
@@ -18,7 +19,7 @@ import timber.log.Timber
  * @Author dinghui
  * @Date 2020/9/24 0024 9:56
  */
-class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<List<String>>() {
+class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<List<ProductItem>>() {
 
     val mUser: MutableLiveData<User> = MutableLiveData()
     val mTopic: MutableLiveData<List<Topic>> = MutableLiveData()
@@ -48,11 +49,10 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
                 it.addAll(items)
                 mProductItemList.value = it
             }
+            notifyResultToTopViewModel(items)
         } else if (productList is ResultData.Error) {
             doneError(productList.exception.message ?: "")
         }
-//        notifyResultToTopViewModel(mutableListOf)
-
     }
 
     fun onClick() {

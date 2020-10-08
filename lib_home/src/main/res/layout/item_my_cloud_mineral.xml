@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.whdx.data.data.product.InvestProductItem" />
+    </data>
+
+    <com.whdx.base.ui.view.RoundConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="#5A6892"
+        app:rv_backgroundEndColor="#333D61"
+        app:rv_backgroundStartColor="#5A6892"
+        app:rv_cornerRadius="4dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="5dp"
+            android:padding="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/img_mineral" />
+
+        <TextView
+            android:id="@+id/tvReleaseMutiple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:text="@{model.prod_release_multiple+`倍 算力收益`}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{`分储算力:合约`+ model.prod_storage+`P`}"
+            android:textColor="@color/color_94A0C1"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
+            app:layout_constraintTop_toBottomOf="@+id/tvReleaseMutiple"
+            tools:text="分储算例合约2.5T" />
+        <TextView
+            android:id="@+id/tvPerPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{`单价: `+ model.amount+`USDT`}"
+            android:textColor="@color/color_94A0C1"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
+            app:layout_constraintTop_toBottomOf="@+id/tvStorage"
+            tools:text="分储算例合约2.5T" />
+        <TextView
+            android:id="@+id/tvBuyNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{`购买数量: `+ model.quantity}"
+            android:textColor="@color/color_94A0C1"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
+            app:layout_constraintTop_toBottomOf="@+id/tvPerPrice"
+            tools:text="分储算例合约2.5T" />
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`总额度: `+model.prod_amount+model.prod_symbol}"
+            android:textColor="@color/text_color_tip_94A0C1"
+            android:textSize="10sp"
+            tools:text="总额度:10000USDT"
+            app:layout_constraintStart_toStartOf="@+id/tvStorage"
+            app:layout_constraintTop_toBottomOf="@+id/tvBuyNum" />
+
+        <View
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:id="@+id/divider2"
+            android:layout_width="345dp"
+            android:layout_height="1px"
+            android:background="#4C587D"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmount"
+            tools:layout_editor_absoluteX="14dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="收益详情"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/divider2"
+            app:layout_constraintRight_toLeftOf="@id/iv_arrow_forward"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:textColor="@color/text_color_tip_94A0C1"
+            />
+        <ImageView
+            android:id="@+id/iv_arrow_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_40dp"
+            android:src="@drawable/ic_arrow_forward"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2"
+            android:paddingRight="@dimen/dimen_20dp"/>
+
+
+
+
+        <!-- <TextView
+             android:id="@+id/textView5"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="15dp"
+             android:text="立即租借"
+             android:textSize="11sp"
+             android:textColor="@color/white"
+             android:paddingTop="7dp"
+             app:layout_constraintBaseline_toBaselineOf="@id/tvAmount"
+             android:paddingBottom="6dp"
+             android:paddingStart="12dp"
+             android:paddingEnd="12dp"
+             android:background="@drawable/shape_rect_text_border"
+             tools:visibility="invisible"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/tvAmount" />
+         &lt;!&ndash;            app:invisible="@{safeUnbox(model.state)==1}"&ndash;&gt;
+ -->
+    </com.whdx.base.ui.view.RoundConstraintLayout>
+</layout>

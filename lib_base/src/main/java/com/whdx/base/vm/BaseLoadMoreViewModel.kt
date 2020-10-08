@@ -31,6 +31,8 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
         if (data != null && data.size > 0) {
             pageNum++
             hasMore.value = data.size >= size
+        } else{
+            hasMore.value = false
         }
     }
 

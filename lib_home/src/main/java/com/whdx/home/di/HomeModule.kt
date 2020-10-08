@@ -15,8 +15,10 @@ import org.koin.dsl.module
 val homeViewModelModule = module {
     viewModel { UserViewModel(get()) }
     viewModel { HomeViewModel(get()) }
-    viewModel { MineViewModel() }
+    viewModel { MineViewModel(get()) }
     viewModel { SelectCloudViewModel(get()) }
+    viewModel { MyCloudViewModel(get()) }
+    viewModel { RankViewModel(get()) }
     viewModel { WalletViewModel(get()) }
     viewModel { NetDataViewModel(get()) }
 }

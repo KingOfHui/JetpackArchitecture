@@ -6,6 +6,7 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.whdx.base.R
 import kotlinx.android.synthetic.main.layout_custom_vertical_view.view.*
+import java.math.BigDecimal
 
 
 class CustomVerticalView @JvmOverloads constructor(
@@ -14,7 +15,7 @@ class CustomVerticalView @JvmOverloads constructor(
     init {
         val obtainStyledAttributes =
             context.obtainStyledAttributes(attrs, R.styleable.CustomVerticalView)
-        val topText = obtainStyledAttributes.getString(R.styleable.CustomVerticalView_top_textStr)
+        val topText = obtainStyledAttributes.getString(R.styleable.CustomVerticalView_topStr)
         val bottomText = obtainStyledAttributes.getString(R.styleable.CustomVerticalView_bottom_textStr)
         obtainStyledAttributes.recycle()
         val view = View.inflate(context, R.layout.layout_custom_vertical_view, this)
@@ -36,8 +37,12 @@ class CustomVerticalView @JvmOverloads constructor(
         setMeasuredDimension(widthMeasureSpec, heigh)
     }
 
-    fun setTop_textStr(topText:String?){
+    fun setTopStr(topText:String?){
         tv_top.text = topText?:"0"
+    }
+
+    fun setTopStr(top: BigDecimal?) {
+        tv_top.text = "${top?: BigDecimal.ZERO}"
     }
 
 /*

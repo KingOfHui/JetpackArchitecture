@@ -13,7 +13,7 @@ data class Product(
 data class ProductItem(
     val amount: BigDecimal,
     val create_time: String,
-    val id: Int,
+    val id: String,
     val name: String,
     val rate: BigDecimal,
     val release_multiple: BigDecimal,

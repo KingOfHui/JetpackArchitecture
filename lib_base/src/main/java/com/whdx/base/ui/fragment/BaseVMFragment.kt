@@ -32,7 +32,7 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     }
 
     open fun showSuccess() {
-        SmartToast.complete("加载完成~")
+//        SmartToast.complete("加载完成~")
         dismissProgressDialog()
 //        loadService.showCallback(SuccessCallback::class.java)
     }
