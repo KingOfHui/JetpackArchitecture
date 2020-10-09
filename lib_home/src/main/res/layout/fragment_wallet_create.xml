@@ -190,7 +190,7 @@
             android:layout_above="@id/wallet_select_import_view"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="@color/color_4D66FF"
+            android:background="@color/color_4D66FF"
             android:text="@string/trade_next_step"
             android:textSize="18sp"
             android:textStyle="bold" />

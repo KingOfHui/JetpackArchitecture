@@ -21,4 +21,9 @@
         android:name="com.whdx.home.ui.fragment.MineFragment"
         android:label="ThirdFragment"
         tools:layout="@layout/fragment_mine"/>
+    <keep_state_fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.whdx.home.ui.fragment.MyWalletFragment"
+        android:label="ThirdFragment"
+        tools:layout="@layout/fragment_my_wallet"/>
 </navigation>

@@ -15,5 +15,9 @@
         android:id="@+id/navigation_notifications"
         android:icon="@mipmap/icon_mine"
         android:title="@string/title_mine" />
+    <item
+        android:id="@+id/navigation_wallet"
+        android:icon="@mipmap/icon_mine"
+        android:title="余额" />
 
 </menu>

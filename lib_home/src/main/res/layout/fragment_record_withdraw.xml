@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.whdx.home.vm.MyWalletViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:hasMore="@{vm.hasMore}"
+            bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
+            bind:onRefreshListener="@{()->vm.refresh()}"
+            bind:refreshing="@{vm.refreshing}">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecord"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                bind:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

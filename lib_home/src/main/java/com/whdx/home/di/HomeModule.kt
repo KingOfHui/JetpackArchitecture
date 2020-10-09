@@ -21,6 +21,7 @@ val homeViewModelModule = module {
     viewModel { RankViewModel(get()) }
     viewModel { WalletViewModel(get()) }
     viewModel { NetDataViewModel(get()) }
+    viewModel { MyWalletViewModel(get()) }
 }
 
 val homeRepositoryModule = module {
