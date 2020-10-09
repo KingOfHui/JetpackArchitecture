@@ -3,6 +3,7 @@ package com.whdx.data.respository.base
 import com.bumptech.glide.load.engine.cache.SafeKeyGenerator
 import com.google.gson.Gson
 import com.whdx.base.util.bitcoinj.BitcoinjKit
+import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.InviteData
 import com.whdx.data.data.user.InviteListResponse
@@ -87,4 +88,19 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
     suspend fun getInviteList(page: Int, limit: Int): ResultData<InviteListResponse> {
         return safeApiCall { call(teacherService.getInviteList(getHeaderMap(),page, limit)) }
     }
+
+    suspend fun getDepositAddress(): BaseResponse<Any> {
+        return teacherService.getDepositAddress(getHeaderMap())
+    }
+
+    suspend fun getDepositList(page: Int,limit: Int)= safeApiCall {
+        call(
+            teacherService.getDepositList(
+                getHeaderMap(),
+                page,
+                limit
+            )
+        ) }
+    suspend fun getInvestBonusList(page: Int,limit: Int,investId:Int)=
+        safeApiCall { call(teacherService.getInvestBonusList(getHeaderMap(),page, limit, investId)) }
 }

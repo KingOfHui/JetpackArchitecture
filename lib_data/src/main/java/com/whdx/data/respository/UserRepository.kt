@@ -4,6 +4,7 @@ import com.whdx.base.reponsitory.BaseRepository
 import com.whdx.data.data.MyStorage
 import com.whdx.data.data.NetData
 import com.whdx.data.data.Rank
+import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.InvestProduct
 import com.whdx.data.data.product.Product
@@ -64,4 +65,11 @@ class UserRepository(private val dataSource: RemoteDataSource) : BaseRepository(
     suspend fun requestInviteData(): ResultData<InviteData> {
         return dataSource.requestInviteData()
     }
+
+    suspend fun getDepositAddress(): BaseResponse<Any> {
+        return dataSource.getDepositAddress()
+    }
+
+    suspend fun getDepositList(page: Int,limit: Int) = dataSource.getDepositList(page, limit)
+    suspend fun getInvestBonusList(page: Int,limit: Int,investId:Int) = dataSource.getInvestBonusList(page, limit, investId)
 }

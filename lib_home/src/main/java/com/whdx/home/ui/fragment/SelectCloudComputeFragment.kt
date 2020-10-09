@@ -18,6 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 class SelectCloudComputeFragment :
     BaseBindingFragment<SelectCloudViewModel, FragmentSelectCloudBinding>() {
     lateinit var adapter: BaseQuickAdapter<ProductItem, BaseDataBindingHolder<ItemCloudMineralBinding>>;
+    var dialog: LeaseDialog?=null
     override fun initVM(): SelectCloudViewModel = getViewModel()
 
     override fun startObserve() {
@@ -43,7 +44,14 @@ class SelectCloudComputeFragment :
                 holder.dataBinding?.let {
                     it.textView5.clickWithTrigger {
                         mViewModel.mBalanceLive.value?.let {
-                            LeaseDialog.show(requireContext(),it.balance,item.amount,item.id,mViewModel,viewLifecycleOwner)
+                             dialog = LeaseDialog.show(
+                                requireContext(),
+                                it.balance,
+                                item.amount,
+                                item.id,
+                                mViewModel,
+                                viewLifecycleOwner
+                            )
                         }?:let {
                             SmartToast.error("获取余额信息失败~")
                         }

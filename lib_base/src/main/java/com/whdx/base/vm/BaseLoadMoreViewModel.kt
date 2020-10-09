@@ -13,8 +13,10 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
     val autoRefresh = MutableLiveData<Boolean>()//SmartRefreshLayout自动刷新标记
     private val INIT_PAGE_NUM = 1
     private var pageNum = 1
+    var any:Any?= null
 
-    fun refresh() {
+    fun refresh(any: Any?=null) {
+        this.any = any
         pageNum = INIT_PAGE_NUM
         launchUI {
             load(true, pageNum)

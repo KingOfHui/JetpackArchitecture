@@ -27,7 +27,6 @@ class WalletViewModel(private val localDataSource: LocalDataSource) : BaseViewMo
 
 
     fun insertWallet() {
-        doLoading("导入钱包中")
         launchUI {
             walletModel.value?.let {
                 it.address = mBtcDo.value?.address
@@ -48,6 +47,7 @@ class WalletViewModel(private val localDataSource: LocalDataSource) : BaseViewMo
                 doneSuccess()
                 _insertSuccess.value = true
             }
+            SmartToast.showInCenter("导入钱包成功")
         }
     }
 

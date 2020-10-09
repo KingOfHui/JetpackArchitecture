@@ -11,11 +11,6 @@ import com.whdx.home.R
 import com.whdx.home.util.BtcWalletUtils
 import com.whdx.home.vm.WalletViewModel
 import kotlinx.android.synthetic.main.fragment_lead_private_key.*
-import kotlinx.android.synthetic.main.fragment_zjc_lead.import_zjc_content
-import kotlinx.android.synthetic.main.fragment_zjc_lead.input_account_pwd
-import kotlinx.android.synthetic.main.fragment_zjc_lead.input_account_pwd_two
-import kotlinx.android.synthetic.main.fragment_zjc_lead.input_submit_view
-import kotlinx.android.synthetic.main.fragment_zjc_lead.lead_in_create_view
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -24,12 +19,12 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
  * @Date 2020/10/9 0009 10:39
  */
 class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding>() {
-    override fun initVM(): WalletViewModel = requireActivity().getViewModel()
+    override fun initVM(): WalletViewModel = getViewModel()
 
     override fun startObserve() {
         mViewModel.insertSuccess.observe(viewLifecycleOwner, Observer {
             if (it){
-                Navigation.findNavController(input_submit_view).navigate(R.id.action_backupWalletSecondFragment_to_prohibitionStatementFragment)
+                Navigation.findNavController(lead_in_create_view).navigate(R.id.action_leadInAccountFragment_to_prohibitionStatementFragment)
             }
         })
     }

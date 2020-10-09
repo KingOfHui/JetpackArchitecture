@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.whdx.home.vm.MyWalletViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_20dp"
-                app:topStr="fjdsljfdlsjf"
+                app:topStr="@{vm.MBalanceLive.balance.toPlainString(),default=`0`}"
                 app:bottom_textStr="我的可体现余额(USDT)"/>
             <View
                 app:layout_constraintTop_toBottomOf="@id/cvv_top"
@@ -51,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:topStr="fjdsljfdlsjf"
+                app:topStr="@{vm.MBalanceLive.btw_price.toPlainString(),default=`0`}"
                 app:bottom_textStr="今日BTW实时价格"/>
         </com.whdx.base.ui.view.RoundConstraintLayout>
 
@@ -70,7 +73,13 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                style="@style/HomeTabLayoutTextAppearance"
+                app:tabTextColor="@color/color_94A0C1"
+                app:tabSelectedTextColor="@color/white"
+                app:tabIndicator="@drawable/tab_indicator"
                 android:background="@color/qmui_config_color_transparent"/>
+            <View style="@style/LineStyle"
+                app:layout_constraintBottom_toTopOf="@id/viewPager"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
@@ -88,15 +97,18 @@
             android:layout_marginRight="@dimen/dimen_20dp"
             android:layout_marginLeft="@dimen/dimen_20dp">
             <TextView
+                android:id="@+id/tv_chongzhi"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_40"
                 android:layout_weight="1"
                 android:textSize="16sp"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
+                android:onClick="@{()->vm.getDepositAddress()}"
                 android:textColor="@color/color_4D66FF"
                 android:text="充值"/>
             <TextView
+                android:id="@+id/tv_withdraw"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_40"
                 android:layout_weight="1"

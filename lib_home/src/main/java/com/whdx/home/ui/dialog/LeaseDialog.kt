@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.dialog.BaseBottomDialog
 import com.whdx.base.util.WeakRefHandler
 import com.whdx.base.util.ext.clickWithTrigger
@@ -79,15 +80,6 @@ class LeaseDialog(
                 SmartToast.error("请输入正确数量")
             }
         }
-        viewModel?.mLeaseSuccessLive?.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                SmartToast.showInCenter("租借成功")
-                dismiss()
-            } else {
-                SmartToast.showInCenter("租借失败")
-            }
-        })
-
     }
 
     companion object {
@@ -98,8 +90,11 @@ class LeaseDialog(
             id: String,
             mViewModel: SelectCloudViewModel,
             viewLifecycleOwner: LifecycleOwner
-        ) {
-            LeaseDialog(context, balance, amount, id, mViewModel, viewLifecycleOwner).show()
+        ):LeaseDialog {
+            val leaseDialog =
+                LeaseDialog(context, balance, amount, id, mViewModel, viewLifecycleOwner)
+            leaseDialog.show()
+            return leaseDialog
         }
     }
 }

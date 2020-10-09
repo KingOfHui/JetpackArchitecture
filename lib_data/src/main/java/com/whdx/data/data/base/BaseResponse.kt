@@ -7,4 +7,9 @@ import android.text.TextUtils
  * @Author dinghui
  * @Date 2020/9/22 0018 17:34
  */
-data class BaseResponse<out T>(val code: Int, val msg: String, val data: T)
+data class BaseResponse<out T>(
+    val code: Int,
+    val msg: String,
+    val data: T,
+    val sign: String? = null
+)

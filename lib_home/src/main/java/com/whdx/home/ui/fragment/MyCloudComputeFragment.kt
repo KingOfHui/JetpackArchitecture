@@ -5,12 +5,16 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.coder.zzq.smartshow.toast.SmartToast
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.data.data.product.InvestProductItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyCloudBinding
 import com.whdx.home.databinding.ItemCloudMineralBinding
 import com.whdx.home.databinding.ItemMyCloudMineralBinding
+import com.whdx.home.ui.activity.CloudBonusActivity
 import com.whdx.home.vm.MyCloudViewModel
 import com.whdx.home.vm.SelectCloudViewModel
 import kotlinx.android.synthetic.main.fragment_select_cloud.*
@@ -28,6 +32,11 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
                 adapter.setList(it)
             }
         })
+        LiveEventBus.get("investSuccess").observe(viewLifecycleOwner, Observer {
+            if ((it as Boolean)) {
+                mViewModel.refresh()
+            }
+        })
     }
 
     override fun setLayoutResId() = R.layout.fragment_my_cloud;
@@ -41,6 +50,9 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
                     it.model = item
                     it.executePendingBindings()
                 }
+                holder.itemView.clickWithTrigger {
+                    CloudBonusActivity.start(requireContext(),item)
+                }
             }
 
         }
@@ -50,6 +62,5 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
 
     override fun initData() {
         mViewModel.getMyStorage()
-        mViewModel.refresh()
     }
 }

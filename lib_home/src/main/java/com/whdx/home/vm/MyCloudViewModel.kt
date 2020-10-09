@@ -23,6 +23,7 @@ class MyCloudViewModel(private val userRepository: UserRepository) :
             if (response is ResultData.Success) {
                 mMyStorage.value = response.data
             }
+            refresh()
         }
     }
 
@@ -40,6 +41,7 @@ class MyCloudViewModel(private val userRepository: UserRepository) :
             }
             notifyResultToTopViewModel(items)
         }
+        refreshing.value = false
     }
 
 }

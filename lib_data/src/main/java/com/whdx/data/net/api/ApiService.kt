@@ -11,6 +11,8 @@ import com.whdx.data.data.user.InviteData
 import com.whdx.data.data.user.InviteListResponse
 import com.whdx.data.data.user.TokenBean
 import com.whdx.data.data.user.User
+import com.whdx.data.data.wallet.DepositRecord
+import com.whdx.data.data.wallet.InvestBonus
 import com.whdx.data.data.wallet.USDTBalance
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -83,4 +85,20 @@ interface ApiService {
         @Query("page") page: Int,
         @Query("limit") limit: Int
     ): BaseResponse<InviteListResponse>
+
+    @GET("v1/wallet/getDepositAddress/USDT")
+    suspend fun getDepositAddress(@HeaderMap headers: Map<String, String>): BaseResponse<Any>
+
+    @GET("v1/wallet/depositList")
+    suspend fun getDepositList(
+        @HeaderMap headers: Map<String, String>,
+        @Query("page") page: Int,
+        @Query("limit") limit: Int
+    ): BaseResponse<DepositRecord>
+
+    @GET("v1/invest/bonusList")
+    suspend fun getInvestBonusList(
+        @HeaderMap headers: Map<String, String>, @Query("page") page: Int,
+        @Query("limit") limit: Int, @Query("investId") investId: Int
+    ): BaseResponse<InvestBonus>
 }

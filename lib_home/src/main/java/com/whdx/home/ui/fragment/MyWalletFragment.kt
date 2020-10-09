@@ -5,6 +5,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.whdx.base.adapter.SimpleFragmentStateAdapter
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.ui.fragment.BaseVMFragment
+import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyWalletBinding
 import com.whdx.home.vm.MyWalletViewModel
@@ -27,11 +28,18 @@ class MyWalletFragment:BaseBindingFragment<MyWalletViewModel,FragmentMyWalletBin
     override fun setLayoutResId()= R.layout.fragment_my_wallet
 
     override fun initView() {
+        mDataBinding.vm = mViewModel
         viewPager.adapter = SimpleFragmentStateAdapter(requireActivity(), listOf(RecordChongZhiFragment(),RecordWithdrawFragment()))
         TabLayoutMediator(tabLayout,viewPager) { tab, position -> tab.text = titleArr[position] }.attach()
+        tv_chongzhi.clickWithTrigger {
 
+        }
+        tv_withdraw.clickWithTrigger {
+
+        }
     }
 
     override fun initData() {
+        mViewModel.getMyBalance()
     }
 }

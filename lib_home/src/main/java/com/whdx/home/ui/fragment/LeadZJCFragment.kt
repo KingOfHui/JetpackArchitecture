@@ -19,12 +19,12 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
  * @Date 2020/10/9 0009 10:39
  */
 class LeadZJCFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding>() {
-    override fun initVM(): WalletViewModel = requireActivity().getViewModel()
+    override fun initVM(): WalletViewModel = getViewModel()
 
     override fun startObserve() {
         mViewModel.insertSuccess.observe(viewLifecycleOwner, Observer {
             if (it){
-                Navigation.findNavController(input_submit_view).navigate(R.id.action_backupWalletSecondFragment_to_prohibitionStatementFragment)
+                Navigation.findNavController(input_submit_view).navigate(R.id.action_leadInAccountFragment_to_prohibitionStatementFragment)
             }
         })
     }
