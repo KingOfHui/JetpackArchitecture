@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.whdx.base.ui.view.CustomTitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_textStr="导入钱包"
+        app:text_color="@color/white"
+        app:isShow_left_img="true"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_15dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioZjc"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="10dip"
+            android:gravity="center"
+            android:text="@string/lead_in_zjc_sign"
+            android:textSize="15sp"
+            android:textColor="@drawable/selector_radio_text_color"/>
+
+        <RadioButton
+            android:id="@+id/radioKeyStore"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:drawablePadding="10dip"
+            android:gravity="center"
+            android:text="KeyStore"
+            android:visibility="gone"
+            android:textColor="@drawable/selector_radio_text_color"/>
+
+        <RadioButton
+            android:id="@+id/radioPrivateKey"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:background="@drawable/selector_radio"
+            android:button="@null"
+            android:drawablePadding="10dip"
+            android:gravity="center"
+            android:text="@string/lead_in_sy_sign"
+            android:textColor="@drawable/selector_radio_text_color"/>
+    </RadioGroup>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+
+</LinearLayout>
