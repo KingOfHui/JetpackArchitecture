@@ -47,6 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_15dp"
             android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginRight="@dimen/dimen_20dp"
             android:background="#5A6892"
             app:layout_constraintTop_toBottomOf="@id/tvTime"
             app:rv_backgroundEndColor="#333D61"
@@ -194,6 +196,8 @@
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:layout_marginTop="@dimen/dimen_15dp"
             android:layout_marginRight="@dimen/dimen_20dp"
+            app:rv_backgroundColor="#3B4669"
+            app:rv_cornerRadius="4dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/tv_tip">
 

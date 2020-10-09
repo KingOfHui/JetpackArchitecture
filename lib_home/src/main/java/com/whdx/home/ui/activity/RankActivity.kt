@@ -17,6 +17,7 @@ import com.whdx.home.databinding.ActivityRankBinding
 import com.whdx.home.databinding.ItemRankBinding
 import com.whdx.home.vm.RankViewModel
 import kotlinx.android.synthetic.main.activity_rank.*
+import org.jetbrains.anko.image
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class RankActivity : BaseBindingActivity<RankViewModel,ActivityRankBinding>() {
@@ -41,13 +42,14 @@ class RankActivity : BaseBindingActivity<RankViewModel,ActivityRankBinding>() {
             BaseQuickAdapter<Rank, BaseDataBindingHolder<ItemRankBinding>>(R.layout.item_rank) {
             override fun convert(holder: BaseDataBindingHolder<ItemRankBinding>, item: Rank) {
                 holder.dataBinding?.let {
-                    it.tvUser.isInvisible = holder.adapterPosition >= 3
-                    it.ivRank.isInvisible = holder.adapterPosition < 3
-                    it.ivRank.background = when (holder.adapterPosition) {
-                        0 -> ResourcesCompat.getDrawable(resources, R.mipmap.ic_rank_first, null)
-                        1 -> ResourcesCompat.getDrawable(resources, R.mipmap.ic_rank_second, null)
+                    it.tvNo.isInvisible = holder.adapterPosition < 3
+                    it.ivRank.isInvisible = holder.adapterPosition >= 3
+                    it.ivRank.image = when (item.rank) {
+                        1 -> ResourcesCompat.getDrawable(resources, R.mipmap.ic_rank_first, null)
+                        2 -> ResourcesCompat.getDrawable(resources, R.mipmap.ic_rank_second, null)
                         else -> ResourcesCompat.getDrawable(resources, R.mipmap.ic_rank_three, null)
                     }
+                    it.tvNo.text= item.rank.toString()
                     it.model = item
                     it.executePendingBindings()
                 }

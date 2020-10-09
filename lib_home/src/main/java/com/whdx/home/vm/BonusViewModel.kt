@@ -17,6 +17,9 @@ class BonusViewModel(private val userRepository: UserRepository):BaseLoadMoreVie
     override suspend fun load(isClear: Boolean, pageNum: Int) {
 
         val bonus = userRepository.getInvestBonusList(pageNum, 20, any as Int)
+        if (isClear) {
+            mInvestBonusItemLive.value?.clear()
+        }
         if (bonus is ResultData.Success) {
             val items = bonus.data.items
             mInvestBonusItemLive.value?.let {

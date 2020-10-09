@@ -9,7 +9,7 @@ data class InvestBonus(
 )
 
 data class InvestBonusItem(
-    val bonus: Int,
+    val bonus: String,
     val bonus_date: String,
     val create_time: String,
     val id: Int,

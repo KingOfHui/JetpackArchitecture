@@ -15,6 +15,7 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
     private var pageNum = 1
     var any:Any?= null
 
+    @JvmOverloads
     fun refresh(any: Any?=null) {
         this.any = any
         pageNum = INIT_PAGE_NUM
