@@ -21,6 +21,7 @@ class WalletZJCFragment:BaseBindingFragment<WalletViewModel,FragmentWalletZjcBin
     override fun setLayoutResId()= R.layout.fragment_wallet_zjc
 
     override fun initView() {
+        titleBar.setOnLeftClickListener { Navigation.findNavController(titleBar).navigateUp() }
 
         val btcDo = BtcWalletUtils.create()
         val listZjc = btcDo.listZjc

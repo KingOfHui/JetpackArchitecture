@@ -4,10 +4,14 @@ import android.text.TextUtils
 import androidx.navigation.Navigation
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentWalletCreateBinding
 import com.whdx.home.vm.WalletViewModel
 import kotlinx.android.synthetic.main.fragment_wallet_create.*
+import kotlinx.android.synthetic.main.fragment_wallet_create.btnNext
+import kotlinx.android.synthetic.main.fragment_wallet_create.titleBar
+import kotlinx.android.synthetic.main.fragment_wallet_zjc.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCreateBinding>() {
@@ -19,6 +23,8 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
     override fun setLayoutResId()= R.layout.fragment_wallet_create
 
     override fun initView() {
+        titleBar.setOnLeftClickListener { requireActivity().finish() }
+
         btnNext.setOnClickListener {
             if (!checkbox.isChecked) {
                 SmartToast.showInCenter(getString(R.string.wallet_create_xieyi))
@@ -48,10 +54,10 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
                 model.name = walletName
             }
             Navigation.findNavController(it).navigate(R.id.action_navigation_create_to_navigation_zjc)
-
-
         }
-
+        wallet_select_import_view.clickWithTrigger {
+            Navigation.findNavController(it).navigate(R.id.action_navigation_create_wallet_to_leadInAccountFragment)
+        }
     }
 
     override fun initData() {

@@ -3,6 +3,8 @@ package com.whdx.home.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.app.BaseApplication
+import com.whdx.base.util.ext.clickToCopy
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.wallet.BtcDo
 import com.whdx.data.data.wallet.WalletModel
@@ -47,6 +49,10 @@ class WalletViewModel(private val localDataSource: LocalDataSource) : BaseViewMo
                 _insertSuccess.value = true
             }
         }
+    }
+
+    fun copy() {
+        mBtcDo.value?.privateKey?.clickToCopy(BaseApplication.CONTEXT)
     }
 
     fun loadAll() {

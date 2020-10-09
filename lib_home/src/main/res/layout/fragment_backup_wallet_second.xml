@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.whdx.home.vm.WalletViewModel" />
     </data>
 
     <ScrollView
@@ -14,7 +17,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.whdx.base.ui.view.CustomTitleBarView
                 android:layout_width="match_parent"
@@ -81,6 +84,7 @@
                     android:layout_marginLeft="@dimen/dimen_15dp"
                     android:layout_marginRight="@dimen/dimen_15dp"
                     android:layout_marginTop="@dimen/dimen_5dp"
+                    android:text="@{vm.MBtcDo.publicKey,default=``}"
                     android:textColor="@color/text_color_tip_94A0C1"
                     android:textSize="@dimen/dimen_15dp" />
 
@@ -95,6 +99,7 @@
                     android:background="@color/color_edit_bg"
                     android:gravity="top"
                     android:padding="@dimen/dimen_5dp"
+                    android:text="@{vm.MBtcDo.privateKey}"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -135,6 +140,7 @@
                         android:layout_marginRight="@dimen/dimen_15dp"
                         android:background="@drawable/shape_rect_text_stroke"
                         android:text="@string/copy"
+                        android:onClick="@{()->vm.copy()}"
                         android:textColor="@color/color_4D66FF"
                         android:textStyle="bold" />
 

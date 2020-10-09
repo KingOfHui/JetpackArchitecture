@@ -40,7 +40,6 @@ abstract class BaseVMActivity<VM : BaseViewModel> : BaseActivity() {
 
     open fun showSuccess() {
         Timber.tag("dhdhdh").e("加载完成~~~")
-        SmartToast.complete("加载完成~")
         dismissProgressDialog()
 //        loadService.showCallback(SuccessCallback::class.java)
     }

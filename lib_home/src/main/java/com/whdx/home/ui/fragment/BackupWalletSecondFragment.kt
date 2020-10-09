@@ -26,6 +26,7 @@ class BackupWalletSecondFragment:BaseBindingFragment<WalletViewModel,FragmentBac
     override fun setLayoutResId()= R.layout.fragment_backup_wallet_second
 
     override fun initView() {
+        mDataBinding.vm = mViewModel
         btnLeadToLogin.setOnClickListener {
             mViewModel.insertWallet()
         }

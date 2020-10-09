@@ -1,6 +1,8 @@
 package com.whdx.base.util.ext
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.res.Resources
@@ -12,6 +14,8 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
+import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.util.TipHelper
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -175,3 +179,11 @@ fun Long.toDateTime(pattern: String): String =
 }*/
 
 fun isLogin(): Boolean = getLoginState() && CookieClass.hasCookie()
+
+fun String.clickToCopy(context: Context) {
+    val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val newPlainText = ClipData.newPlainText(null, this)
+    clipboardManager.setPrimaryClip(newPlainText)
+    SmartToast.showInCenter("已复制到粘贴板")
+    TipHelper.Vibrate(context, longArrayOf(200,300),false)
+}

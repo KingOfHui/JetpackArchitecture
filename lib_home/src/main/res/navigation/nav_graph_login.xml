@@ -24,6 +24,12 @@
             app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_navigation_login_to_navigation_forget"
             app:destination="@id/navigation_forget" />
+        <action
+            android:id="@+id/action_navigation_create_wallet_to_leadInAccountFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/leadInAccountFragment"
+            app:destination="@id/leadInAccountFragment" />
     </keep_state_fragment>
 
     <keep_state_fragment
@@ -80,4 +86,22 @@
         android:name="com.whdx.home.ui.fragment.ProhibitionStatementFragment"
         android:label="ProhibitionStatementFragment"
         tools:layout="@layout/fragment_prohibition_statement"/>
+    <keep_state_fragment
+        android:id="@+id/leadInAccountFragment"
+        android:name="com.whdx.home.ui.activity.LeadInAccountFragment"
+        android:label="LeadInAccountFragment"
+        tools:layout="@layout/fragment_account_leadin">
+        <action
+            android:id="@+id/action_leadInAccountFragment_to_prohibitionStatementFragment"
+            app:destination="@id/prohibitionStatementFragment" />
+        <action
+            android:id="@+id/action_leadInAccountFragment_to_navigation_create_wallet"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_create_wallet"
+            app:destination="@id/navigation_create_wallet" />
+        <action
+            android:id="@+id/action_leadInAccountFragment_to_navigation_forget"
+            app:destination="@id/navigation_forget" />
+    </keep_state_fragment>
 </navigation>

@@ -192,6 +192,7 @@
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/color_4D66FF"
             android:text="@string/trade_next_step"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
