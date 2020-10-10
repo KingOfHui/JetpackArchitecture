@@ -52,14 +52,12 @@ class MyWalletViewModel(private val userRepository: UserRepository) :
     fun copy() {
         mAddressLive.value?.let {
             it.clickToCopy(BaseApplication.CONTEXT)
-            SmartToast.showInCenter("复制成功")
         }
     }
 
     fun saveBitmap() {
         mAddressBitmapLive.value?.let {
-            QrCodeUtil.saveImageToGallery(BaseApplication.CONTEXT, it)
-            SmartToast.showInCenter("保存成功")
+            QrCodeUtil.saveImage(it)
         }
     }
 

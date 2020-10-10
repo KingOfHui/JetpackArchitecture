@@ -79,9 +79,9 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 tvTopicTitle.clickWithTrigger {
                     CommonWebActivity.start(requireContext(),topic.content,topic.title)
                 }
-//                group.isVisible = true
+                llTopic.isVisible = true
             } else{
-//                group.isVisible = false
+                llTopic.isVisible = false
             }
         })
     }

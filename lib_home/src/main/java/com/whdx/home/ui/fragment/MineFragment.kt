@@ -14,6 +14,9 @@ import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMineBinding
 import com.whdx.home.databinding.ItemMyInviteBinding
 import com.whdx.home.ui.activity.SettingActivity
+import com.whdx.home.ui.dialog.InputPasswordDialog
+import com.whdx.home.ui.dialog.InviteCodeDialog
+import com.whdx.home.ui.dialog.WarningDialog
 import com.whdx.home.vm.MineViewModel
 import kotlinx.android.synthetic.main.fragment_mine.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -40,7 +43,7 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             }
         })
         mViewModel.userInfoLive.observe(viewLifecycleOwner, Observer {
-            tv_chongzhi.text = if (it.referer_id.isNullOrEmpty()) {
+            tv_open_bid.text = if (it.referer_id.isNullOrEmpty()) {
                 "未开通BID"
             } else {
                 "已开通BID"
@@ -60,12 +63,15 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             )
         }
         iv_setting.clickWithTrigger { SettingActivity.start(requireContext()) }
+        tv_open_bid.clickWithTrigger {
+            showOpenDialog()
+        }
         tv_withdraw.clickWithTrigger {
             mViewModel.userInfoLive.value?.let {
                 if (it.referer_id.isNullOrEmpty()) {
-                    SmartToast.show("未开通BID")
+                    showOpenDialog()
                 } else{
-                    SmartToast.show(it.invite_code)
+                    InviteCodeDialog.show(requireContext(),it.invite_code)
                 }
             }
         }
@@ -85,6 +91,18 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
         }
         rvInvite.adapter = mAdapter
         mDataBinding.vm = mViewModel
+    }
+
+    private fun showOpenDialog() {
+        val warningDialog = WarningDialog(requireContext())
+        warningDialog.setOnClickListener {
+            val inputPasswordDialog = InputPasswordDialog(requireContext(), "请输入邀请码")
+            inputPasswordDialog.setInputListener { code ->
+                mViewModel.openBid(code)
+            }
+            inputPasswordDialog.show()
+        }
+        warningDialog.show()
     }
 
     override fun initData() {

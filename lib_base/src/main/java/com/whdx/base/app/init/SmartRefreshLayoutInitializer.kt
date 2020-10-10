@@ -5,6 +5,7 @@ import com.scwang.smartrefresh.header.StoreHouseHeader
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.footer.FalsifyFooter
+import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.whdx.base.R
 
 /**
@@ -32,7 +33,7 @@ class SmartRefreshLayoutInitializer : Initializer() {
             }
         }
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { _, _ ->
-            StoreHouseHeader(application).initWithString("WHDX")
+            ClassicsHeader(application)
         }
 
         SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  ClassicsFooter(application) }

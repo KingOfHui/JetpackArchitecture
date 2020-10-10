@@ -50,8 +50,6 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
                 mProductItemList.value = it
             }
             notifyResultToTopViewModel(items)
-        } else if (productList is ResultData.Error) {
-            doneError(productList.exception.message ?: "")
         }
     }
 

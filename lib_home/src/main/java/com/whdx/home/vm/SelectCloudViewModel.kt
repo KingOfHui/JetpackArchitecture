@@ -39,8 +39,6 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
                 }
             }
             notifyResultToTopViewModel(items)
-        } else if (productList is ResultData.Error) {
-            doneError(productList.exception.message ?: "")
         }
         refreshing.value = false
         getUSDTBalance()
@@ -62,8 +60,6 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
             if (requestInvestLease is ResultData.Success) {
                 mLeaseSuccessLive.value = true
                 LiveEventBus.get("investSuccess").broadcast(true,false,true)
-            } else if (requestInvestLease is ResultData.Error){
-                SmartToast.error(requestInvestLease.exception.message?:"")
             }
             doneSuccess()
         }

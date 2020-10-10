@@ -29,10 +29,6 @@ class UserViewModel(private val userRepository: UserRepository) : BaseViewModel(
             if (login is ResultData.Success) {
                 doneSuccess()
                 mUser.value = login.data
-            } else if (login is ResultData.Error) {
-//                SmartToast.complete("空")
-//                doneEmpty()
-                doneError(login.exception.message?:"")
             }
         }
 

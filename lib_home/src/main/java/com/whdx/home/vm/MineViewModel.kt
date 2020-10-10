@@ -40,7 +40,7 @@ class MineViewModel(private val userRepository: UserRepository) :
     fun openBid(code: String) {
         launchUI { val openBid = userRepository.openBid(code)
             if (openBid is ResultData.Success) {
-                SmartToast.show("开通BID成功")
+                SmartToast.successLong("恭喜您BID已成功开通")
                 getUserInfo()
             }
         }

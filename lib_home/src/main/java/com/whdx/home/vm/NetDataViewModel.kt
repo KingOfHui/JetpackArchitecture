@@ -15,8 +15,6 @@ class NetDataViewModel(private val userRepository: UserRepository):BaseViewModel
             val netData = userRepository.getNetData()
             if (netData is ResultData.Success) {
                 mNetDataLive.value = netData.data
-            }else if(netData is ResultData.Error){
-                doneError(netData.exception.message?:"")
             }
         }
     }

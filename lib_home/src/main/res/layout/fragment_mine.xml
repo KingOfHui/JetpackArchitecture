@@ -36,13 +36,13 @@
             app:layout_constraintBottom_toBottomOf="@id/tv_title"
             android:layout_marginRight="28dp"/>
         <TextView
-            android:id="@+id/tv_chongzhi"
+            android:id="@+id/tv_open_bid"
             android:layout_width="0dp"
             android:layout_height="38dp"
             android:gravity="center"
             android:layout_marginTop="@dimen/dimen_20dp"
             android:layout_marginLeft="@dimen/dimen_20dp"
-            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_20dp"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:background="@drawable/shape_withdraw_text_bg"
@@ -53,7 +53,7 @@
         <TextView
             android:id="@+id/tv_withdraw"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_40"
+            android:layout_height="38dp"
             android:gravity="center"
             android:text="我的邀请码"
             android:background="@drawable/shape_rect_stroke_text_bg"
@@ -61,7 +61,7 @@
             android:layout_marginTop="@dimen/dimen_20dp"
             android:textSize="16sp"
             android:layout_marginLeft="@dimen/dimen_20dp"
-            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_20dp"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toRightOf="@id/guideline5"
@@ -79,7 +79,7 @@
             android:layout_margin="20dp"
             app:rv_cornerRadius="5dp"
             android:background="@mipmap/img_net_data_bg"
-            app:layout_constraintTop_toBottomOf="@id/tv_chongzhi"
+            app:layout_constraintTop_toBottomOf="@id/tv_open_bid"
             tools:layout_editor_absoluteX="20dp">
 
             <androidx.constraintlayout.widget.Guideline

@@ -1,5 +1,6 @@
 package com.whdx.data.respository.base
 
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.base.ResultData
 import com.wwy.android.data.api.ApiService
@@ -28,6 +29,7 @@ abstract class BaseDataSource {
         return try {
             call()
         } catch (e: Exception) {
+            SmartToast.error(DealException.handlerException(e).msg)
             ResultData.Error(DealException.handlerException(e))
         }
     }
@@ -43,6 +45,7 @@ abstract class BaseDataSource {
                 ResultData.Success(response.data)
             } else {
                 errorBlock?.let { it() }
+                SmartToast.error(response.msg)
                 ResultData.Error(ResultException(
                     response.code.toString(),
                     response.msg
