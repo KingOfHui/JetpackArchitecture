@@ -19,137 +19,135 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
             android:src="@mipmap/img_background"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvTitle" />
-
+            android:scaleType="fitXY"
+            />
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="26dp"
             android:text="阿联酋云算力"
-            android:textColor="@color/white"
             android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="26dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/tvRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_rank_bg"
-            android:drawablePadding="7dp"
-            android:paddingLeft="@dimen/dp_10"
-            android:paddingTop="5dp"
-            android:paddingRight="@dimen/dimen_20dp"
-            android:paddingBottom="@dimen/dimen_5dp"
             android:text="收益排行榜"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:drawableStartCompat="@mipmap/icon_rank"
-            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvTitle" />
-
+            android:background="@drawable/shape_rank_bg"
+            android:paddingTop="5dp"
+            android:paddingBottom="@dimen/dimen_5dp"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dimen_20dp"
+            android:drawablePadding="7dp"
+            app:drawableStartCompat="@mipmap/icon_rank" />
         <ImageView
             android:id="@+id/tvTopic"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
             android:src="@mipmap/icon_topic"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
-
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintLeft_toLeftOf="parent"/>
         <TextView
             android:id="@+id/tvTopicTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:text="这里是后续的公告内容，展示区域"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintLeft_toRightOf="@id/tvTopic"
-            app:layout_constraintTop_toTopOf="@id/tvTopic" />
-
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/tvTopic"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopic"
+            app:layout_constraintLeft_toRightOf="@id/tvTopic"/>
         <TextView
             android:id="@+id/tvTopicTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
             android:text="2020.09.23"
-            android:textColor="@color/color_94A0C1"
             android:textSize="12sp"
-            app:layout_constraintRight_toLeftOf="@id/iv_arrow"
-            app:layout_constraintTop_toTopOf="@id/tvTopic" />
-
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/color_94A0C1"
+            app:layout_constraintTop_toTopOf="@id/tvTopic"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopic"
+            app:layout_constraintRight_toLeftOf="@id/iv_arrow"/>
         <ImageView
             android:id="@+id/iv_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
             android:src="@mipmap/icon_right_arrow"
-            app:layout_constraintBottom_toBottomOf="@id/tvTopic"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvTopic" />
+            app:layout_constraintTop_toTopOf="@id/tvTopic"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopic"
+            android:layout_marginEnd="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="80dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/shape_rect_primary"
-            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tvTopic"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTopic">
+            android:background="@drawable/shape_rect_primary"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_title"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#333D61"
-                app:tabIndicator="@null"
-                app:tabSelectedTextColor="@color/white"
-                app:tabTextAppearance="@style/HomeTabLayoutTextAppearance"
-                app:tabTextColor="@color/color_94A0C1" />
+        <com.google.android.material.tabs.TabLayout
+            android:background="#333D61"
+            android:id="@+id/tab_title"
+            android:layout_width="match_parent"
+            app:tabBackground="@android:color/transparent"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextColor="@color/color_94A0C1"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/HomeTabLayoutTextAppearance"
+            android:layout_height="60dp"
+            app:tabIndicator="@null"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-
+                android:layout_height="60dp"
+                >
                 <TextView
                     android:id="@+id/tv1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:text="精选算力基金"
-                    android:textColor="@color/white"
                     android:textSize="14sp"
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
+                    android:textColor="@color/white"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:text="收益稳 · 省心选"
-                    android:textColor="@color/color_94A0C1"
-                    android:textSize="10sp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/tv1"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/color_94A0C1"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="10dp"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Group
