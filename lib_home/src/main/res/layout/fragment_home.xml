@@ -107,6 +107,8 @@
             android:background="#333D61"
             android:id="@+id/tab_title"
             android:layout_width="match_parent"
+            app:tabBackground="@android:color/transparent"
+            app:tabRippleColor="@android:color/transparent"
             app:tabTextColor="@color/color_94A0C1"
             app:tabSelectedTextColor="@color/white"
             app:tabTextAppearance="@style/HomeTabLayoutTextAppearance"
