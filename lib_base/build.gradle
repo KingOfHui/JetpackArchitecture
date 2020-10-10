@@ -132,6 +132,7 @@ dependencies {
     api 'org.bitcoinj:bitcoinj-core:0.15.5'
     api 'io.github.novacrypto:BIP39:0.1.9'
     api 'com.google.guava:guava:27.0.1-android'
-
-
+    //zxing
+    api 'com.google.zxing:core:3.3.2'
+    api 'com.github.jokar:multi-languages:0.0.7'
 }

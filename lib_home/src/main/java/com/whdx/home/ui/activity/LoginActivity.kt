@@ -3,6 +3,7 @@ package com.whdx.home.ui.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.navigation.setupWithKeepStateNav

@@ -6,6 +6,7 @@ if (Boolean.valueOf(isModule)) {
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'multi-languages'
 
 android {
     compileSdkVersion 30
@@ -57,6 +58,11 @@ android {
                 }
             }
         }
+    }
+
+    multiLanguages {
+        //set plugin is enable( default)
+        enable = true
     }
 }
 

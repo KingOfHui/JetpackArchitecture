@@ -3,6 +3,14 @@
     package="com.whdx.home">
 
     <application>
+        <activity android:name="com.whdx.home.ui.activity.SplashActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.activity.MainActivity"
             android:windowSoftInputMode="adjustPan"
@@ -15,11 +23,6 @@
         </activity>
         <activity android:name=".ui.activity.LoginActivity"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <nav-graph android:value="@navigation/nav_graph_login" />
         </activity>
     </application>

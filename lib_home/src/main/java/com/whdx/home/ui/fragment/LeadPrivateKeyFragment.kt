@@ -5,12 +5,21 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.util.BtcWalletUtils
 import com.whdx.home.vm.WalletViewModel
 import kotlinx.android.synthetic.main.fragment_lead_private_key.*
+import kotlinx.android.synthetic.main.fragment_lead_private_key.checkbox
+import kotlinx.android.synthetic.main.fragment_lead_private_key.import_zjc_content
+import kotlinx.android.synthetic.main.fragment_lead_private_key.input_account_pwd
+import kotlinx.android.synthetic.main.fragment_lead_private_key.input_account_pwd_two
+import kotlinx.android.synthetic.main.fragment_lead_private_key.input_submit_view
+import kotlinx.android.synthetic.main.fragment_lead_private_key.lead_in_create_view
+import kotlinx.android.synthetic.main.fragment_lead_private_key.tv_fuwu
+import kotlinx.android.synthetic.main.fragment_zjc_lead.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -73,6 +82,9 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
                     mViewModel.insertWallet()
                 }
             }
+        }
+        tv_fuwu.clickWithTrigger {
+            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy","服务及隐私条款")
         }
     }
 

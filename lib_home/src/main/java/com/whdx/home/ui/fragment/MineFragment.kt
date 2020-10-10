@@ -4,13 +4,16 @@ import android.content.Intent
 import androidx.lifecycle.Observer
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.data.data.user.InviteListItem
 import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMineBinding
 import com.whdx.home.databinding.ItemMyInviteBinding
+import com.whdx.home.ui.activity.SettingActivity
 import com.whdx.home.vm.MineViewModel
 import kotlinx.android.synthetic.main.fragment_mine.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -21,7 +24,7 @@ import timber.log.Timber
  * @Author dinghui
  * @Date 2020/9/24 0024 9:56
  */
-class MineFragment:BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
+class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
 
     lateinit var mAdapter: BaseQuickAdapter<InviteListItem, BaseDataBindingHolder<ItemMyInviteBinding>>
 
@@ -35,7 +38,13 @@ class MineFragment:BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             } else {
                 mAdapter.setList(it)
             }
-
+        })
+        mViewModel.userInfoLive.observe(viewLifecycleOwner, Observer {
+            tv_chongzhi.text = if (it.referer_id.isNullOrEmpty()) {
+                "未开通BID"
+            } else {
+                "已开通BID"
+            }
         })
     }
 
@@ -49,6 +58,16 @@ class MineFragment:BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
                     LoginActivity::class.java
                 )
             )
+        }
+        iv_setting.clickWithTrigger { SettingActivity.start(requireContext()) }
+        tv_withdraw.clickWithTrigger {
+            mViewModel.userInfoLive.value?.let {
+                if (it.referer_id.isNullOrEmpty()) {
+                    SmartToast.show("未开通BID")
+                } else{
+                    SmartToast.show(it.invite_code)
+                }
+            }
         }
         mAdapter = object :
             BaseQuickAdapter<InviteListItem, BaseDataBindingHolder<ItemMyInviteBinding>>(R.layout.item_my_invite) {
@@ -64,7 +83,7 @@ class MineFragment:BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             }
 
         }
-        rvInvite.adapter= mAdapter
+        rvInvite.adapter = mAdapter
         mDataBinding.vm = mViewModel
     }
 

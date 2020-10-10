@@ -7,13 +7,11 @@ import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.product.InvestProduct
 import com.whdx.data.data.product.Product
 import com.whdx.data.data.topic.Topic
-import com.whdx.data.data.user.InviteData
-import com.whdx.data.data.user.InviteListResponse
-import com.whdx.data.data.user.TokenBean
-import com.whdx.data.data.user.User
+import com.whdx.data.data.user.*
 import com.whdx.data.data.wallet.DepositRecord
 import com.whdx.data.data.wallet.InvestBonus
 import com.whdx.data.data.wallet.USDTBalance
+import com.whdx.data.data.wallet.WithdrawRecord
 import okhttp3.RequestBody
 import retrofit2.http.*
 
@@ -87,7 +85,10 @@ interface ApiService {
     ): BaseResponse<InviteListResponse>
 
     @GET("v1/wallet/getDepositAddress/USDT")
-    suspend fun getDepositAddress(@HeaderMap headers: Map<String, String>): BaseResponse<Any>
+    suspend fun getDepositAddress(@HeaderMap headers: Map<String, String>): BaseResponse<String>
+
+    @GET("v1/user/info")
+    suspend fun getUserInfo(@HeaderMap headers: Map<String, String>): BaseResponse<UserInfo>
 
     @GET("v1/wallet/depositList")
     suspend fun getDepositList(
@@ -96,9 +97,29 @@ interface ApiService {
         @Query("limit") limit: Int
     ): BaseResponse<DepositRecord>
 
+    @GET("v1/wallet/withdrawList")
+    suspend fun getWithdrawList(
+        @HeaderMap headers: Map<String, String>,
+        @Query("page") page: Int,
+        @Query("limit") limit: Int
+    ): BaseResponse<WithdrawRecord>
+
     @GET("v1/invest/bonusList")
     suspend fun getInvestBonusList(
         @HeaderMap headers: Map<String, String>, @Query("page") page: Int,
         @Query("limit") limit: Int, @Query("investId") investId: Int
     ): BaseResponse<InvestBonus>
+
+
+    @POST("v1/wallet/withdraw")
+    suspend fun requestWithdraw(
+        @HeaderMap headers: Map<String, String>,
+        @Body requestBody: RequestBody
+    ): BaseResponse<Any>
+
+    @POST("v1/user/openBid")
+    suspend fun openBid(
+        @HeaderMap headers: Map<String, String>,
+        @Body requestBody: RequestBody
+    ): BaseResponse<Any>
 }

@@ -1,9 +1,11 @@
 package com.whdx.home.ui
 
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.whdx.base.adapter.SimpleFragmentStateAdapter
+import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.vm.HomeViewModel
@@ -74,6 +76,12 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 val topic = it[0]
                 tvTopicTitle.text = topic.title
                 tvTopicTime.text = topic.create_at
+                tvTopicTitle.clickWithTrigger {
+                    CommonWebActivity.start(requireContext(),topic.content,topic.title)
+                }
+//                group.isVisible = true
+            } else{
+//                group.isVisible = false
             }
         })
     }

@@ -9,11 +9,16 @@ import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.wallet.BtcDo
 import com.whdx.data.data.wallet.WalletModel
 import com.whdx.data.respository.base.LocalDataSource
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.withContext
 import org.jetbrains.anko.collections.forEachWithIndex
 
 class WalletViewModel(private val localDataSource: LocalDataSource) : BaseViewModel() {
     private val _insertSuccess: MutableLiveData<Boolean> = MutableLiveData()
+
+    val mCurrentWallet:MutableLiveData<WalletModel> = MutableLiveData()
+    val hasWallet:MutableLiveData<Boolean> = MutableLiveData()
     val walletModel: MutableLiveData<WalletModel> = MutableLiveData<WalletModel>()
         get() {
             field.value ?: (WalletModel().also { field.value = it })
@@ -53,6 +58,18 @@ class WalletViewModel(private val localDataSource: LocalDataSource) : BaseViewMo
 
     fun copy() {
         mBtcDo.value?.privateKey?.clickToCopy(BaseApplication.CONTEXT)
+    }
+
+    fun getCurrentWallet() {
+        launchUI {
+            val current = withContext(Dispatchers.IO){localDataSource.walletDao.getCurrent()}
+            if (!current.isNullOrEmpty()) {
+                mCurrentWallet.value = current[0]
+                hasWallet.value =true
+            } else {
+                hasWallet.value = false
+            }
+        }
     }
 
     fun loadAll() {

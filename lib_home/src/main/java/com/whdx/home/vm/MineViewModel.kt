@@ -1,11 +1,13 @@
 package com.whdx.home.vm
 
 import androidx.lifecycle.MutableLiveData
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.InviteData
 import com.whdx.data.data.user.InviteListItem
+import com.whdx.data.data.user.UserInfo
 import com.whdx.data.respository.UserRepository
 
 /**
@@ -17,6 +19,7 @@ class MineViewModel(private val userRepository: UserRepository) :
     BaseLoadMoreViewModel<List<InviteListItem>>() {
 
     val inviteData: MutableLiveData<InviteData> = MutableLiveData()
+    val userInfoLive: MutableLiveData<UserInfo> = MutableLiveData()
     val inviteListLive: MutableLiveData<MutableList<InviteListItem>> = MutableLiveData()
         get() {
             if (field.value == null) field.value = mutableListOf()
@@ -29,8 +32,25 @@ class MineViewModel(private val userRepository: UserRepository) :
             if (requestInviteData is com.whdx.data.data.base.ResultData.Success) {
                 inviteData.value = requestInviteData.data
             }
+            getUserInfo()
             refresh()
         }
+    }
+
+    fun openBid(code: String) {
+        launchUI { val openBid = userRepository.openBid(code)
+            if (openBid is ResultData.Success) {
+                SmartToast.show("开通BID成功")
+                getUserInfo()
+            }
+        }
+    }
+    suspend fun getUserInfo() {
+         val userInfo = userRepository.getUserInfo()
+            if (userInfo is ResultData.Success) {
+                userInfoLive.value = userInfo.data
+            }
+
     }
 
     override suspend fun load(isClear: Boolean, pageNum: Int) {

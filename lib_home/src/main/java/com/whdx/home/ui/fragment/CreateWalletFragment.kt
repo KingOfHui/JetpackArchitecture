@@ -3,6 +3,7 @@ package com.whdx.home.ui.fragment
 import android.text.TextUtils
 import androidx.navigation.Navigation
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
@@ -57,6 +58,9 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
         }
         wallet_select_import_view.clickWithTrigger {
             Navigation.findNavController(it).navigate(R.id.action_navigation_create_wallet_to_leadInAccountFragment)
+        }
+        txtXy.clickWithTrigger {
+            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy","服务及隐私条款")
         }
     }
 

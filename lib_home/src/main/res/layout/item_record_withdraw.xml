@@ -5,7 +5,7 @@
     <data>
         <variable
             name="model"
-            type="com.whdx.data.data.wallet.DepositRecordItem" />
+            type="com.whdx.data.data.wallet.WithdrawRecordItem" />
 
     </data>
 
@@ -39,7 +39,7 @@
             android:textSize="14sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="@{`+`+model.amount,default=`-`}"
+            android:text="@{`-`+model.amount,default=`-`}"
             />
 
 

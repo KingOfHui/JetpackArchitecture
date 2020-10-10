@@ -70,6 +70,9 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
     suspend fun getUSDTBalance() =
         safeApiCall { call(teacherService.getUSDTBalance(getHeaderMap())) }
 
+    suspend fun getUserInfo() =
+        safeApiCall { call(teacherService.getUserInfo(getHeaderMap())) }
+
     suspend fun requestInvestLease(pro_id: String, quantity: String): ResultData<Any> {
         val json = Gson().toJson(mapOf("prod_id" to pro_id, "quantity" to quantity))
         return safeApiCall {
@@ -81,26 +84,70 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
         }
     }
 
+    suspend fun requestWithdraw(address: String, btw_amount: String): ResultData<Any> {
+        val json = Gson().toJson(mapOf("address" to address, "btw_amount" to btw_amount))
+        return safeApiCall {
+            call(
+                teacherService.requestWithdraw(
+                    getHeaderMap(), json.toRequestBody("application/json".toMediaTypeOrNull())
+                )
+            )
+        }
+    }
+
+    suspend fun openBid(invest_code: String): ResultData<Any> {
+        val json = Gson().toJson(mapOf("invest_code" to invest_code))
+        return safeApiCall {
+            call(
+                teacherService.openBid(
+                    getHeaderMap(),
+                    json.toRequestBody("application/json".toMediaTypeOrNull())
+                )
+            )
+        }
+    }
+
     suspend fun requestInviteData(): ResultData<InviteData> {
         return safeApiCall { call(teacherService.requestInviteData(getHeaderMap())) }
     }
 
     suspend fun getInviteList(page: Int, limit: Int): ResultData<InviteListResponse> {
-        return safeApiCall { call(teacherService.getInviteList(getHeaderMap(),page, limit)) }
+        return safeApiCall { call(teacherService.getInviteList(getHeaderMap(), page, limit)) }
     }
 
-    suspend fun getDepositAddress(): BaseResponse<Any> {
+    suspend fun getDepositAddress(): BaseResponse<String> {
         return teacherService.getDepositAddress(getHeaderMap())
     }
 
-    suspend fun getDepositList(page: Int,limit: Int)= safeApiCall {
+    suspend fun getDepositList(page: Int, limit: Int) = safeApiCall {
         call(
             teacherService.getDepositList(
                 getHeaderMap(),
                 page,
                 limit
             )
-        ) }
-    suspend fun getInvestBonusList(page: Int,limit: Int,investId:Int)=
-        safeApiCall { call(teacherService.getInvestBonusList(getHeaderMap(),page, limit, investId)) }
+        )
+    }
+
+    suspend fun getWithdrawList(page: Int, limit: Int) = safeApiCall {
+        call(
+            teacherService.getWithdrawList(
+                getHeaderMap(),
+                page,
+                limit
+            )
+        )
+    }
+
+    suspend fun getInvestBonusList(page: Int, limit: Int, investId: Int) =
+        safeApiCall {
+            call(
+                teacherService.getInvestBonusList(
+                    getHeaderMap(),
+                    page,
+                    limit,
+                    investId
+                )
+            )
+        }
 }

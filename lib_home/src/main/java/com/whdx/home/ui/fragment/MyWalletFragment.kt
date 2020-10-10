@@ -1,13 +1,13 @@
 package com.whdx.home.ui.fragment
 
-import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayoutMediator
 import com.whdx.base.adapter.SimpleFragmentStateAdapter
 import com.whdx.base.ui.fragment.BaseBindingFragment
-import com.whdx.base.ui.fragment.BaseVMFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyWalletBinding
+import com.whdx.home.ui.activity.DepositAddressActivity
 import com.whdx.home.vm.MyWalletViewModel
 import kotlinx.android.synthetic.main.fragment_my_wallet.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -32,10 +32,10 @@ class MyWalletFragment:BaseBindingFragment<MyWalletViewModel,FragmentMyWalletBin
         viewPager.adapter = SimpleFragmentStateAdapter(requireActivity(), listOf(RecordChongZhiFragment(),RecordWithdrawFragment()))
         TabLayoutMediator(tabLayout,viewPager) { tab, position -> tab.text = titleArr[position] }.attach()
         tv_chongzhi.clickWithTrigger {
-
+            DepositAddressActivity.start(requireContext())
         }
         tv_withdraw.clickWithTrigger {
-
+            mViewModel.requestWithdraw("","")
         }
     }
 

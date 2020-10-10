@@ -30,6 +30,7 @@ class UserRepository(private val dataSource: RemoteDataSource) : BaseRepository(
     suspend fun getProductList(page: Int, limit: Int): ResultData<Product> {
         return dataSource.getProduceList(page, limit)
     }
+
     suspend fun getInviteList(page: Int, limit: Int): ResultData<InviteListResponse> {
         return dataSource.getInviteList(page, limit)
     }
@@ -66,10 +67,18 @@ class UserRepository(private val dataSource: RemoteDataSource) : BaseRepository(
         return dataSource.requestInviteData()
     }
 
-    suspend fun getDepositAddress(): BaseResponse<Any> {
+    suspend fun getDepositAddress(): BaseResponse<String> {
         return dataSource.getDepositAddress()
     }
 
-    suspend fun getDepositList(page: Int,limit: Int) = dataSource.getDepositList(page, limit)
-    suspend fun getInvestBonusList(page: Int,limit: Int,investId:Int) = dataSource.getInvestBonusList(page, limit, investId)
+    suspend fun getDepositList(page: Int, limit: Int) = dataSource.getDepositList(page, limit)
+    suspend fun getWithdrawList(page: Int, limit: Int) = dataSource.getWithdrawList(page, limit)
+    suspend fun getInvestBonusList(page: Int, limit: Int, investId: Int) =
+        dataSource.getInvestBonusList(page, limit, investId)
+
+    suspend fun requestWithdraw(address: String, amount: String) =
+        dataSource.requestWithdraw(address, amount)
+
+    suspend fun openBid(address: String) = dataSource.openBid(address)
+    suspend fun getUserInfo() = dataSource.getUserInfo()
 }

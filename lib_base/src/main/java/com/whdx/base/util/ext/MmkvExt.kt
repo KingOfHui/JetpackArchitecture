@@ -17,9 +17,18 @@ private const val KEY_NIGHT_MODE = "key_night_mode"
 private const val SAVE_NIGHT_MODE = "save_night_mode"
 private const val IS_CHECK = "is_check"
 private const val KEY_SEARCH_HISTORY = "searchHistory"
+private const val KEY_SELECT_LANGUAGE = "key_select_language"
 private val mGson by lazy { Gson() }
 fun setAppTheme(theme: Int) {
     MMKV.defaultMMKV().putInt(THEME, theme)
+}
+
+fun saveLanguage(select: Int) {
+    MMKV.defaultMMKV().putInt(KEY_SELECT_LANGUAGE,select)
+}
+
+fun getLanguage(): Int {
+    return MMKV.defaultMMKV().getInt(KEY_SELECT_LANGUAGE, 0)
 }
 
 fun getAppTheme(): Int {

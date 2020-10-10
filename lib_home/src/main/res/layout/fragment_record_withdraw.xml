@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.whdx.home.vm.MyWalletViewModel" />
+            type="com.whdx.home.vm.RecordWithdrawViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
