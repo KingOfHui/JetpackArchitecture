@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             bind:hasMore="@{vm.hasMore}"
@@ -26,6 +26,6 @@
                 android:layout_height="match_parent"
                 bind:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 />
-        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

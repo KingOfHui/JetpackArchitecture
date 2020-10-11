@@ -1,8 +1,11 @@
 package com.whdx.base.app.init
 
 import android.app.Application
-import com.scwang.smart.refresh.header.ClassicsHeader
-import com.scwang.smart.refresh.layout.SmartRefreshLayout
+import com.scwang.smartrefresh.header.StoreHouseHeader
+import com.scwang.smartrefresh.layout.SmartRefreshLayout
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter
+import com.scwang.smartrefresh.layout.footer.FalsifyFooter
+import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.whdx.base.R
 
 /**
@@ -33,6 +36,6 @@ class SmartRefreshLayoutInitializer : Initializer() {
             ClassicsHeader(application)
         }
 
-//        SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  ClassicsFooter(application) }
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  ClassicsFooter(application) }
     }
 }
