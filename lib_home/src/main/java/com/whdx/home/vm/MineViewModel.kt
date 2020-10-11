@@ -25,6 +25,7 @@ class MineViewModel(private val userRepository: UserRepository) :
             if (field.value == null) field.value = mutableListOf()
             return field
         }
+    val openSuccess:MutableLiveData<Boolean> = MutableLiveData()
 
     fun requestInviteData() {
         launchUI {
@@ -41,6 +42,7 @@ class MineViewModel(private val userRepository: UserRepository) :
         launchUI { val openBid = userRepository.openBid(code)
             if (openBid is ResultData.Success) {
                 SmartToast.successLong("恭喜您BID已成功开通")
+                openSuccess.value = true
                 getUserInfo()
             }
         }

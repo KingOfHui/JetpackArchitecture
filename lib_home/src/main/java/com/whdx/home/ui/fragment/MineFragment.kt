@@ -4,11 +4,9 @@ import android.content.Intent
 import androidx.lifecycle.Observer
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.data.data.user.InviteListItem
-import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMineBinding
@@ -48,6 +46,9 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             } else {
                 "已开通BID"
             }
+        })
+        mViewModel.openSuccess.observe(viewLifecycleOwner, Observer {
+            inputPasswordDialog.dismiss()
         })
     }
 
@@ -93,10 +94,11 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
         mDataBinding.vm = mViewModel
     }
 
+    private lateinit var inputPasswordDialog:InputPasswordDialog;
     private fun showOpenDialog() {
         val warningDialog = WarningDialog(requireContext())
         warningDialog.setOnClickListener {
-            val inputPasswordDialog = InputPasswordDialog(requireContext(), "请输入邀请码")
+            inputPasswordDialog = InputPasswordDialog(requireContext(), "请输入邀请码")
             inputPasswordDialog.setInputListener { code ->
                 mViewModel.openBid(code)
             }
