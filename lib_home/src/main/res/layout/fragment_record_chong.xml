@@ -19,11 +19,12 @@
             bind:hasMore="@{vm.hasMore}"
             bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
             bind:onRefreshListener="@{()->vm.refresh()}"
-            bind:refreshing="@{vm.refreshing}">
-            <androidx.recyclerview.widget.RecyclerView
+            bind:refreshing="@{vm.refreshing}">2
+            <com.whdx.base.ui.view.FixRecyclerView
                 android:id="@+id/rvRecord"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                bind:empty_text="@string/no_data"
                 bind:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 />
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>

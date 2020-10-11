@@ -45,4 +45,9 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1px</item>
     </style>
+    <style name="LineStyle_4C587D">
+        <item name="android:background">#4C587D</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
 </resources>

@@ -1,6 +1,5 @@
 package com.whdx.data.respository.base
 
-import com.bumptech.glide.load.engine.cache.SafeKeyGenerator
 import com.google.gson.Gson
 import com.whdx.base.util.bitcoinj.BitcoinjKit
 import com.whdx.data.data.base.BaseResponse
@@ -9,9 +8,7 @@ import com.whdx.data.data.user.InviteData
 import com.whdx.data.data.user.InviteListResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 
 
@@ -40,6 +37,9 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
         safeApiCall {
             call(teacherService.login(username, password))
         }
+
+    suspend fun getAppOnline(version: String) =
+        safeApiCall { call(teacherService.getAppOnline(version)) }
 
     suspend fun getProduceList(page: Int, limit: Int) =
         safeApiCall {

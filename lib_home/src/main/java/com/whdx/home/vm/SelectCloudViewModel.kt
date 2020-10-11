@@ -5,12 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.jeremyliao.liveeventbus.LiveEventBus
+import com.whdx.base.app.BaseApplication
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.ProductItem
 import com.whdx.data.data.wallet.USDTBalance
 import com.whdx.data.respository.UserRepository
+import com.whdx.home.R
 
 class SelectCloudViewModel(private val userRepository: UserRepository) :
     BaseLoadMoreViewModel<List<ProductItem>>() {
@@ -55,9 +57,10 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
 
     fun requestInvestLease(pro_id:String,quantity:String) {
         launchUI {
-            doLoading("租借请求中，请稍候...")
+            doLoading(BaseApplication.CONTEXT.getString(R.string.loading_lease))
             val requestInvestLease = userRepository.requestInvestLease(pro_id, quantity)
             if (requestInvestLease is ResultData.Success) {
+                SmartToast.show(R.string.lease_success)
                 mLeaseSuccessLive.value = true
                 LiveEventBus.get("investSuccess").broadcast(true,false,true)
             }

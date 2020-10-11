@@ -20,8 +20,9 @@
             bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
             bind:onRefreshListener="@{()->vm.refresh()}"
             bind:refreshing="@{vm.refreshing}">
-            <androidx.recyclerview.widget.RecyclerView
+            <com.whdx.base.ui.view.FixRecyclerView
                 android:id="@+id/rvRecord"
+                bind:empty_text="@string/no_data"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 bind:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

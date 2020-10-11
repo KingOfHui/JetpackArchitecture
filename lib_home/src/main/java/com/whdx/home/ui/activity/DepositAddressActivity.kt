@@ -31,6 +31,7 @@ class DepositAddressActivity:BaseBindingActivity<MyWalletViewModel,FragmentChong
 
     override fun initView(savedInstanceState: Bundle?) {
         mDataBinding.vm = mViewModel
+        tool_bar.setOnLeftClickListener { finish() }
     }
 
     override fun initData() {

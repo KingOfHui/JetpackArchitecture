@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.widget.ImageView
 import com.whdx.base.ui.dialog.BaseBottomDialog
 import com.whdx.base.util.ext.clickWithTrigger
+import com.whdx.base.util.ext.hideSoftInput
 import com.whdx.home.R
 import kotlinx.android.synthetic.main.dialog_withdraw.*
 
@@ -39,6 +40,7 @@ class WithdrawDialog(context: Context) :BaseBottomDialog(context) {
 
         }
         tvSure.clickWithTrigger {
+            etPWD.hideSoftInput()
             listener(etPWD.text.toString())
         }
     }

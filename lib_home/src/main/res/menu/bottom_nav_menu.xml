@@ -14,7 +14,7 @@
     <item
         android:id="@+id/navigation_wallet"
         android:icon="@mipmap/icon_home"
-        android:title="我的资金" />
+        android:title="@string/my_funds" />
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@mipmap/icon_mine"

@@ -25,7 +25,7 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="全网算力"
+            android:text="@string/net_power"
             android:textColor="@color/white"
             android:layout_margin="20dp"
             android:textSize="24sp"
@@ -69,7 +69,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50"
                 app:topStr="@{vm.MNetDataLive.net_all_bonus,default =`0`}"
-                app:bottom_textStr="全网总能量（BTW）" />
+                app:bottom_textStr="全网总能量（BIW）" />
 
 <!--            app:topStr="@{String.valueOf(vm.MNetDataLive.net_all_energy)}"-->
             <com.whdx.base.ui.view.CustomVerticalView
@@ -83,7 +83,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
                 app:topStr="@{vm.MNetDataLive.btw_price,default =`0`}"
-                app:bottom_textStr="BTW价格（USDT）" />
+                app:bottom_textStr="BIW价格（USDT）" />
 
 <!--            app:topStr="@{String.valueOf(vm.MNetDataLive.btw_price)}"-->
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -154,7 +154,7 @@
             android:id="@+id/tv_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="最大节点日收益"
+            android:text="@string/max_level_bonus"
             app:layout_constraintTop_toBottomOf="@id/cl_middle"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="@dimen/dimen_20dp"
@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_20dp"
                 android:paddingBottom="@dimen/dimen_20dp"
-                android:text="全网等级分布"
+                android:text="@string/net_level"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -207,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="55dp"
-                    android:text="卫星"
+                    android:text="@string/satellite"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
@@ -244,7 +244,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="55dp"
-                    android:text="恒星"
+                    android:text="@string/star"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
@@ -280,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="55dp"
-                    android:text="行星"
+                    android:text="@string/planet"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
@@ -316,7 +316,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="55dp"
-                    android:text="星系"
+                    android:text="@string/Galaxy"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
@@ -352,7 +352,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="55dp"
-                    android:text="宇宙"
+                    android:text="@string/universe"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 

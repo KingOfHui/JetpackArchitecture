@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-15dp"
         android:gravity="center"
-        android:text="我的邀请码"
+        android:text="@string/my_invite_code"
         android:textColor="#888B9A"
         android:textSize="@dimen/sp_15" />
 
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50dp"
         android:gravity="center"
-        android:text="复制邀请码"
+        android:text="@string/copy_invite_code"
         android:textColor="@color/color_4D66FF"
         android:textSize="@dimen/sp_18"/>
 

@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.whdx.base.ui.view.JRecyclerView
 import com.whdx.base.R
 
 /**
@@ -14,7 +15,8 @@ import com.whdx.base.R
  * @Author dinghui
  * @Date 2020/9/25 0025 11:05
  */
-class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize: Int = 0) :RecyclerView.ItemDecoration() {
+class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize: Int = 0) :
+    RecyclerView.ItemDecoration() {
 
 
     private val TAG = DividerLine::class.java.canonicalName

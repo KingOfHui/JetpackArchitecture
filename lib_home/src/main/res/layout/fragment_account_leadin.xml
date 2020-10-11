@@ -37,19 +37,6 @@
             android:textColor="@drawable/selector_radio_text_color"/>
 
         <RadioButton
-            android:id="@+id/radioKeyStore"
-            android:layout_width="@dimen/dimen_80dp"
-            android:layout_height="@dimen/dimen_30dp"
-            android:layout_marginLeft="@dimen/dimen_15dp"
-            android:background="@drawable/selector_radio"
-            android:button="@null"
-            android:drawablePadding="10dip"
-            android:gravity="center"
-            android:text="KeyStore"
-            android:visibility="gone"
-            android:textColor="@drawable/selector_radio_text_color"/>
-
-        <RadioButton
             android:id="@+id/radioPrivateKey"
             android:layout_width="@dimen/dimen_80dp"
             android:layout_height="@dimen/dimen_30dp"

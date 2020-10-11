@@ -28,11 +28,12 @@
             bind:onRefreshListener="@{()->vm.refresh()}"
             bind:refreshing="@{vm.refreshing}">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.whdx.base.ui.view.FixRecyclerView
                 android:id="@+id/rv"
+                app:empty_text="@string/no_data"
+                app:empty_text_top_margin = "30dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                android:layout_height="match_parent" />
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

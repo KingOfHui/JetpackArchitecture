@@ -64,12 +64,12 @@
         <Button
             android:id="@+id/check_zjc_submit"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_45dp"
+            android:layout_height="@dimen/dimen_60dp"
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:layout_marginTop="@dimen/dimen_40dp"
             android:layout_marginRight="@dimen/dimen_20dp"
             android:backgroundTint="@color/color_4D66FF"
-            android:text="@string/sure_sure"
+            android:text="@string/sure"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold" />

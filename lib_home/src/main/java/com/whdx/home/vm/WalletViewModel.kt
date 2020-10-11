@@ -8,6 +8,7 @@ import com.whdx.base.util.ext.clickToCopy
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.wallet.BtcDo
 import com.whdx.data.data.wallet.WalletModel
+import com.whdx.data.respository.UserRepository
 import com.whdx.data.respository.base.LocalDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull

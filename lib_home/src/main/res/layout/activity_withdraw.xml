@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.whdx.home.vm.MyWalletViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <com.whdx.base.ui.view.CustomTitleBarView
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isShow_left_img="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color="@color/white"
+            app:title_textStr="@string/my_balance" />
+
+        <com.whdx.base.ui.view.RoundLinearLayout
+            android:id="@+id/llBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            app:rv_backgroundEndColor="#333D61"
+            app:rv_backgroundStartColor="#5A6892"
+            app:rv_cornerRadius="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="@{vm.MBalanceLive.balance.stripTrailingZeros().toPlainString(),default=`0`}"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                tools:text="fdjsljfdslfjds" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_20dp"
+                android:text="@string/usdt_can_used"
+                android:textColor="@color/text_color_tip_94A0C1"
+                android:textSize="12sp" />
+        </com.whdx.base.ui.view.RoundLinearLayout>
+
+
+        <com.whdx.base.ui.view.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/llBalance"
+            app:rv_backgroundEndColor="#333D61"
+            app:rv_backgroundStartColor="#5A6892"
+            app:rv_cornerRadius="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="收款人钱包地址" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:background="@null"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:hint="请输入地址"
+                android:textColor="@color/text_color_tip_94A0C1"
+                android:textColorHint="@color/text_color_tip_94A0C1"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                style="@style/LineStyle"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="提现金额（仅可提现BIW）"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                tools:text="收款人钱包地址" />
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:background="@null"
+                android:hint="请输入地址"
+                android:textColor="@color/text_color_tip_94A0C1"
+                android:textColorHint="@color/text_color_tip_94A0C1"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                style="@style/LineStyle"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_marginBottom="@dimen/dimen_20dp" />
+        </com.whdx.base.ui.view.RoundLinearLayout>
+
+        <TextView
+            android:id="@+id/tvSure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:background="@color/color_4D66FF"
+            android:gravity="center"
+            android:padding="@dimen/dimen_10dp"
+            android:text="@string/sureWithdraw"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

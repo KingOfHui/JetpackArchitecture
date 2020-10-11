@@ -239,4 +239,24 @@
         <attr name="isShow_tab_layout" />
         <attr name="bg_color" />
     </declare-styleable>
+
+
+    <declare-styleable name="JRecyclerView">
+        <attr name="empty_text" format="string|reference" />
+        <attr name="empty_image" format="reference" />
+        <attr name="empty_text_top_margin" format="dimension|reference" />
+        <attr name="empty_text_gravity" format="flags" >
+            <flag name="top" value="0"/>
+            <flag name="center" value="1"/>
+        </attr>
+        <attr name="empty_text_color" format="color|reference" />
+        <attr name="empty_text_size" format="dimension|reference" />
+        <attr name="empty_text_style" format="flags">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="rvMaxHeight" format="dimension" />
+    </declare-styleable>
+
 </resources>

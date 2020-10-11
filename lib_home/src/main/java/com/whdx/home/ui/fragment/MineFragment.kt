@@ -34,11 +34,7 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
     override fun startObserve() {
 
         mViewModel.inviteListLive.observe(viewLifecycleOwner, Observer {
-            if (it.isNullOrEmpty()) {
-                mAdapter.setEmptyView(R.layout.layout_empty)
-            } else {
                 mAdapter.setList(it)
-            }
         })
         mViewModel.userInfoLive.observe(viewLifecycleOwner, Observer {
             tv_open_bid.text = if (it.referer_id.isNullOrEmpty()) {
@@ -65,7 +61,11 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
         }
         iv_setting.clickWithTrigger { SettingActivity.start(requireContext()) }
         tv_open_bid.clickWithTrigger {
-            showOpenDialog()
+            mViewModel.userInfoLive.value?.let {
+                if (it.referer_id.isNullOrEmpty()) {
+                    showOpenDialog()
+                }
+            }
         }
         tv_withdraw.clickWithTrigger {
             mViewModel.userInfoLive.value?.let {

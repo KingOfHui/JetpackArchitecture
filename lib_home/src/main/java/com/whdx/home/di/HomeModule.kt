@@ -25,7 +25,7 @@ val homeViewModelModule = module {
     viewModel { RecordChongZhiViewModel(get()) }
     viewModel { RecordWithdrawViewModel(get()) }
     viewModel { BonusViewModel(get()) }
-    viewModel { SettingViewModel() }
+    viewModel { SettingViewModel(get()) }
 }
 
 val homeRepositoryModule = module {

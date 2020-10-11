@@ -24,11 +24,7 @@ class RecordWithdrawFragment:BaseBindingFragment<RecordWithdrawViewModel,Fragmen
 
     override fun startObserve() {
         mViewModel.mWithdrawRecordLive.observe(viewLifecycleOwner, Observer {
-            if (it.isNullOrEmpty()) {
-                mAdapter.setEmptyView(R.layout.layout_empty)
-            } else{
                 mAdapter.setList(it)
-            }
         })
     }
 

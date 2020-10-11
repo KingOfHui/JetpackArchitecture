@@ -124,7 +124,7 @@
                     <Button
                         android:id="@+id/btnLeadToLogin"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_60dp"
                         android:layout_marginLeft="@dimen/dimen_15dp"
                         android:layout_marginRight="@dimen/dimen_15dp"
                         android:backgroundTint="@color/color_4D66FF"
@@ -136,7 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_50dp"
                         android:layout_marginLeft="@dimen/dimen_15dp"
-                        android:layout_marginTop="@dimen/dimen_15dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
                         android:layout_marginRight="@dimen/dimen_15dp"
                         android:background="@drawable/shape_rect_text_stroke"
                         android:text="@string/copy"

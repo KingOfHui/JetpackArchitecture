@@ -33,7 +33,8 @@ class SmartRefreshLayoutInitializer : Initializer() {
             }
         }
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { _, _ ->
-            ClassicsHeader(application)
+//            ClassicsHeader(application)
+            StoreHouseHeader(application).initWithString("Bit Talk")
         }
 
         SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  ClassicsFooter(application) }

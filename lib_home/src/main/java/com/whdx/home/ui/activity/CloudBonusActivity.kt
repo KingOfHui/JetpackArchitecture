@@ -26,11 +26,11 @@ class CloudBonusActivity:BaseBindingActivity<BonusViewModel,ActivityCloudBonusBi
 
     override fun startObserve() {
         mViewModel.mInvestBonusItemLive.observe(this, Observer {
-            if (it.isNullOrEmpty()) {
-                adapter.setEmptyView(R.layout.layout_empty)
-            } else {
+//            if (it.isNullOrEmpty()) {
+//                adapter.setEmptyView(R.layout.layout_empty)
+//            } else {
                 adapter.setList(it)
-            }
+//            }
         })
     }
 
@@ -38,7 +38,7 @@ class CloudBonusActivity:BaseBindingActivity<BonusViewModel,ActivityCloudBonusBi
 
     override fun initView(savedInstanceState: Bundle?) {
         mDataBinding.vm = mViewModel
-
+        titleBar.setOnLeftClickListener { finish() }
         adapter= object :BaseQuickAdapter<InvestBonusItem,BaseDataBindingHolder<ItemInvestBonusBinding>>(R.layout.item_invest_bonus){
             override fun convert(
                 holder: BaseDataBindingHolder<ItemInvestBonusBinding>,

@@ -11,7 +11,7 @@ data class DepositRecord(
 data class DepositRecordItem(
     val address: String,
     val admin_id: Int,
-    val amount: Int,
+    val amount: String,
     val audit_at: String,
     val audit_status: String,
     val chain: String,

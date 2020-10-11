@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_15dp"
-                android:text="明文私钥"
+                android:text="@string/mingwen_siyao"
                 android:textSize="15sp"
                 android:textColor="@color/white" />
 
@@ -50,7 +50,7 @@
                 android:textColorHint="@color/text_color_tip_94A0C1"
                 android:textSize="14dp" />
 
-            <LinearLayout
+           <!-- <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_15dp"
@@ -81,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#575669" />
-            </LinearLayout>
+            </LinearLayout>-->
 
 
             <LinearLayout
@@ -91,13 +91,6 @@
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:layout_marginRight="@dimen/dimen_15dp"
                 android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lead_in_set_pwd"
-                    android:textColor="@color/white"
-                    android:visibility="gone" />
 
                 <EditText
                     android:id="@+id/input_account_pwd"
@@ -180,11 +173,11 @@
             <Button
                 android:id="@+id/input_submit_view"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_60dp"
                 android:layout_marginLeft="@dimen/dimen_15dp"
                 android:layout_marginTop="@dimen/dimen_80dp"
                 android:layout_marginRight="@dimen/dimen_15dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/color_4D66FF"
                 android:text="@string/lead_in_begin_import"
                 android:textSize="@dimen/sp_18"

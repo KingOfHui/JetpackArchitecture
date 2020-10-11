@@ -10,8 +10,8 @@ data class InviteListResponse(
 
 data class InviteListItem(
     val address: String,
-    val bonus_all: Int,
+    val bonus_all: String,
     val create_time: String,
     val user_id: Int,
-    val vip_degree: Int
+    val vip_degree: String
 )

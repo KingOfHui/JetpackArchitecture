@@ -59,7 +59,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20dp"
-                        android:text="选择币种"
+                        android:text="@string/select_symbol"
                         android:textSize="14sp"
                         android:visibility="invisible" />
 
@@ -109,7 +109,7 @@
                         android:layout_width="102dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="保存二维码"
+                        android:text="@string/save_code"
                         android:onClick="@{()->vm.saveBitmap()}"
                         android:textColor="#7184FF"
                         android:textSize="12sp" />
@@ -118,7 +118,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="充币地址"
+                        android:text="@string/deposit_address"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 
@@ -159,7 +159,7 @@
                     android:layout_height="match_parent"
                     android:drawablePadding="5dp"
                     android:gravity="center"
-                    android:text="复制充币地址"
+                    android:text="@string/copy_deposit_address"
                     android:onClick="@{()->vm.copy()}"
                     android:textColor="@color/text_color_tip_94A0C1" />
             </LinearLayout>

@@ -38,7 +38,7 @@ class LeaseDialog(
             findViewById<ImageView>(R.id.ivRightNavigationBarOne).clickWithTrigger { dismiss() }
         }
         tvAmount.text = "$amount USDT"
-        tvBalance.text = "可用余额：$balance USDT"
+        tvBalance.text = String.format(context.getString(R.string.can_used_balance), balance)
         cbPwdStatus.setOnCheckedChangeListener { _, isChecked ->
             etPWD.inputType =
                 if (isChecked) InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD else (InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)

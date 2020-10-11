@@ -29,6 +29,7 @@ abstract class BaseDataSource {
         return try {
             call()
         } catch (e: Exception) {
+            e.printStackTrace()
             SmartToast.error(DealException.handlerException(e).msg)
             ResultData.Error(DealException.handlerException(e))
         }

@@ -43,7 +43,7 @@ open class BaseApplication : Application() {
         /**
          * The user saves the system selection language when switching languages on the system settings page (in order to select when the system language is used, if it is not saved, it will not be available after switching languages)
          */
-//        LocalManageUtil.saveSystemCurrentLanguage(applicationContext, newConfig)
+//        LocalLanguageUtil.saveSystemCurrentLanguage(applicationContext, newConfig)
         MultiLanguage.onConfigurationChanged(applicationContext)
     }
 

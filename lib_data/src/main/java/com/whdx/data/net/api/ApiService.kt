@@ -122,4 +122,7 @@ interface ApiService {
         @HeaderMap headers: Map<String, String>,
         @Body requestBody: RequestBody
     ): BaseResponse<Any>
+
+    @GET("v1/getAppOnline")
+    suspend fun getAppOnline(@Query("version") version:String):BaseResponse<Any>
 }

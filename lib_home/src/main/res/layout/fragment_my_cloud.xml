@@ -67,7 +67,7 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toLeftOf="@id/gl_v_50_2"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:topStr="@{vm.MMyStorage.invest_amount,default =`0`}" />
+                            app:topStr="@{vm.MMyStorage.invest_amount.stripTrailingZeros().toPlainString(),default =`0`}" />
 
                         <com.whdx.base.ui.view.CustomVerticalView
                             android:id="@+id/cvv_max_energy"
@@ -79,7 +79,7 @@
                             app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:topStr="@{vm.MMyStorage.balance,default =`0`}" />
+                            app:topStr="@{vm.MMyStorage.balance.stripTrailingZeros().toPlainString(),default =`0`}" />
 
                         <View
                             android:id="@+id/divider"
@@ -99,9 +99,9 @@
                             app:bottom_textStr="我的今日收益(USDT)"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toLeftOf="@id/gl_v_50"
+                            app:layout_constraintRight_toLeftOf="@id/gl_v_50_2"
                             app:layout_constraintTop_toBottomOf="@id/cvv_total_mineral"
-                            app:topStr="@{vm.MMyStorage.member_bonus.toString(),default =`0`}" />
+                            app:topStr="@{vm.MMyStorage.member_bonus.stripTrailingZeros().toString(),default =`0`}" />
 
                         <com.whdx.base.ui.view.CustomVerticalView
                             android:layout_width="0dp"
@@ -111,7 +111,7 @@
                             app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="@id/cvv_my_star"
-                            app:topStr="@{vm.MMyStorage.member_bonus.toPlainString(),default=`0`}" />
+                            app:topStr="@{vm.MMyStorage.member_bonus.stripTrailingZeros().toPlainString(),default=`0`}" />
                     </com.whdx.base.ui.view.RoundConstraintLayout>
 
 
@@ -119,11 +119,12 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.whdx.base.ui.view.FixRecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="true"
+                app:empty_text="@string/no_data"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 

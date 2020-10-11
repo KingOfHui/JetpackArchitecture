@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.whdx.base.R
+import com.wjx.android.weather.common.util.DisplayUtil
 import kotlinx.android.synthetic.main.layout_custom_vertical_view.view.*
 import java.math.BigDecimal
 
@@ -38,10 +39,22 @@ class CustomVerticalView @JvmOverloads constructor(
     }
 
     fun setTopStr(topText:String?){
+        tv_top.textSize = DisplayUtil.sp2px(context,10)
+        topText?.let {
+            if (it.length > 7) {
+                tv_top.textSize = DisplayUtil.sp2px(context,7)
+            }
+        }
         tv_top.text = topText?:"0"
     }
 
     fun setTopStr(top: BigDecimal?) {
+        tv_top.textSize = DisplayUtil.sp2px(context,10)
+        top?.let {
+            if (it.stripTrailingZeros().toPlainString().length > 7) {
+                tv_top.textSize = DisplayUtil.sp2px(context,7)
+            }
+        }
         tv_top.text = "${top?: BigDecimal.ZERO}"
     }
 

@@ -48,7 +48,7 @@
             android:layout_height="@dimen/dimen_50dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/dialog_wallet_two"
+            android:text="@string/cancel"
             android:textColor="#979797"
             android:textSize="@dimen/dimen_15dp"/>
 
@@ -63,7 +63,7 @@
             android:layout_height="@dimen/dimen_50dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/dialog_wallet_three"
+            android:text="@string/sure"
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_15dp"/>
     </LinearLayout>

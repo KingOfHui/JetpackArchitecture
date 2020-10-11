@@ -6,5 +6,7 @@
     <string name="language_auto">系统</string>
     <string name="language_cn">中文</string>
     <string name="language_en">英文</string>
+    <string name="net_power_t">全网总算力（T）</string>
+    <string name="no_data">暂无数据~</string>
 
 </resources>

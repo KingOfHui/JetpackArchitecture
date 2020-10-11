@@ -25,11 +25,11 @@ class RecordChongZhiFragment : BaseBindingFragment<RecordChongZhiViewModel, Frag
 
     override fun startObserve() {
         mViewModel.depositRecordItemLive.observe(viewLifecycleOwner, Observer {
-            if (it.isNullOrEmpty()) {
-                mAdapter.setEmptyView(R.layout.layout_empty)
-            } else {
+//            if (it.isNullOrEmpty()) {
+//                mAdapter.setEmptyView(R.layout.layout_empty)
+//            } else {
                 mAdapter.setList(it)
-            }
+//            }
         })
     }
 

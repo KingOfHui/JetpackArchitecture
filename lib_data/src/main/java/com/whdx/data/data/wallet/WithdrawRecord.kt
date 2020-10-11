@@ -17,15 +17,15 @@ data class WithdrawRecord(
 data class WithdrawRecordItem(
     val address: String,
     val admin_id: Int,
-    val amount: Int,
+    val amount: String,
     val arrived_amount: Int,
     val audit_at: String,
     val audit_status: String,
-    val btw_price: Int,
+    val btw_price: String,
     val chain: String,
     val create_time: String,
     val deal_time: String,
-    val fee: Int,
+    val fee: String,
     val height: Int,
     val id: Int,
     val memo: String,
@@ -36,6 +36,6 @@ data class WithdrawRecordItem(
     val trade_no: String,
     val txid: String,
     val update_time: String,
-    val usdt_cost: Int,
+    val usdt_cost: String,
     val user_id: Int
 )

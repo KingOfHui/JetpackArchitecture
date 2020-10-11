@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="model"
             type="com.whdx.data.data.wallet.WithdrawRecordItem" />
@@ -12,36 +13,45 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/dimen_20dp">
+        android:paddingRight="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:paddingLeft="@dimen/dimen_20dp">
+
+
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:paddingRight="@dimen/dimen_10dp"
+            android:lines="1"
             android:text="@{model.address,default=``}"
-            app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintLeft_toLeftOf="parent"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvName"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:textSize="14sp"
-            android:textColor="@color/text_color_tip_94A0C1"
-            android:text="@{model.create_time,default=`-`}"
-            />
+            app:layout_constraintRight_toLeftOf="@id/tvAmount"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="@{model.create_time,default=`-`}"
+            android:textColor="@color/text_color_tip_94A0C1"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvAmount"
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+        <TextView
+            android:id="@+id/tvAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{`-`+model.amount+`USDT`,default=`-`}"
+            android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="@{`-`+model.amount,default=`-`}"
-            />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

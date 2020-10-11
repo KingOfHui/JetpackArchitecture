@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 /**
  * @Description
- * @Author dinghui
+ * @Author dinghui.
  * @Date 2020/9/25 0025 11:09
  */
 object LineDivideManagers {

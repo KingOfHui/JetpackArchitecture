@@ -4,6 +4,7 @@ import android.content.ClipboardManager
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.app.BaseApplication
 import com.whdx.base.util.QrCodeUtil
 import com.whdx.base.util.ext.clickToCopy
@@ -12,6 +13,7 @@ import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.wallet.USDTBalance
 import com.whdx.data.respository.UserRepository
+import com.whdx.home.R
 
 /**
  * @Description
@@ -23,6 +25,7 @@ class MyWalletViewModel(private val userRepository: UserRepository) :
 
     val mBalanceLive: MutableLiveData<USDTBalance> = MutableLiveData()
 
+    val success:MutableLiveData<Boolean> = MutableLiveData()
     val mAddressLive: MutableLiveData<String> = MutableLiveData()
     val mAddressBitmapLive: MutableLiveData<Bitmap> = MutableLiveData()
 
@@ -65,8 +68,9 @@ class MyWalletViewModel(private val userRepository: UserRepository) :
         launchUI {
             val requestWithdraw = userRepository.requestWithdraw(address, amount)
             if (requestWithdraw is ResultData.Success) {
-                SmartToast.show("提现成功")
-                getMyBalance()
+                SmartToast.show((R.string.withdraw_success))
+                success.value = true
+                LiveEventBus.get("refresh_balance").post(true)
             }
         }
     }

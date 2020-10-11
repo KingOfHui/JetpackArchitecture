@@ -19,4 +19,5 @@
     <dimen name="dimen_110dp">110dp</dimen>
     <dimen name="dimen_35dp">35dp</dimen>
     <dimen name="sp_15">15sp</dimen>
+    <dimen name="dimen_60dp">60dp</dimen>
 </resources>

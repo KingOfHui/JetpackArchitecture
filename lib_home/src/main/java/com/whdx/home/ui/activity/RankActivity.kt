@@ -6,11 +6,10 @@ import android.os.Bundle
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isInvisible
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.whdx.base.ui.activity.BaseBindingActivity
-import com.whdx.base.ui.activity.BaseVMActivity
-import com.whdx.base.ui.fragment.BaseVMFragment
 import com.whdx.data.data.Rank
 import com.whdx.home.R
 import com.whdx.home.databinding.ActivityRankBinding
@@ -26,11 +25,11 @@ class RankActivity : BaseBindingActivity<RankViewModel,ActivityRankBinding>() {
     override fun initVM(): RankViewModel = getViewModel()
     override fun startObserve() {
         mViewModel.mRankList.observe(this, Observer {
-            if (it.isNullOrEmpty()) {
-                mAdapter.setEmptyView(R.layout.layout_empty)
-            } else {
+//            if (it.isNullOrEmpty()) {
+//                mAdapter.setEmptyView(R.layout.layout_empty)
+//            } else {
                 mAdapter.setList(it)
-            }
+//            }
         })
     }
 
@@ -38,6 +37,7 @@ class RankActivity : BaseBindingActivity<RankViewModel,ActivityRankBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         titleBar.setOnLeftClickListener { finish() }
+        rvRank.layoutManager = LinearLayoutManager(this)
         mAdapter = object :
             BaseQuickAdapter<Rank, BaseDataBindingHolder<ItemRankBinding>>(R.layout.item_rank) {
             override fun convert(holder: BaseDataBindingHolder<ItemRankBinding>, item: Rank) {

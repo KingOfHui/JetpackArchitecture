@@ -1,6 +1,7 @@
 package com.whdx.home.ui.fragment
 
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.coder.zzq.smartshow.toast.SmartToast
@@ -23,11 +24,10 @@ class SelectCloudComputeFragment :
 
     override fun startObserve() {
         mViewModel.mProductItemList.observe(viewLifecycleOwner, Observer {
-            if (it.isNullOrEmpty()) {
-                adapter.setEmptyView(R.layout.layout_empty)
-            } else {
                 adapter.setList(it)
-            }
+        })
+        mViewModel.mLeaseSuccessLive.observe(this, Observer {
+            dialog?.dismiss()
         })
     }
 
@@ -63,6 +63,7 @@ class SelectCloudComputeFragment :
 
         }
         rv.adapter = adapter
+        rv.layoutManager = LinearLayoutManager(requireContext())
         mViewModel.refresh()
         mDataBinding.vm = mViewModel
     }
