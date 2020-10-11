@@ -88,10 +88,10 @@ dependencies {
     //分包 方法数超限制
     api 'androidx.multidex:multidex:2.0.1'
     //下来刷新框架
-//    api  'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
-//    api  'com.scwang.smart:refresh-headers:2.0.0'
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
-    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
+    api  'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
+    api  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    //    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+//    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
     //tablayout
     api 'com.github.angcyo.DslTablayout:TabLayout:1.5.4'
     api 'com.github.angcyo.DslTablayout:ViewPager2Delegate:1.5.4'

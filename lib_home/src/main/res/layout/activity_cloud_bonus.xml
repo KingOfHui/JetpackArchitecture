@@ -227,7 +227,7 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 bind:hasMore="@{vm.hasMore}"
@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     />
-            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
         </com.whdx.base.ui.view.RoundLinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
