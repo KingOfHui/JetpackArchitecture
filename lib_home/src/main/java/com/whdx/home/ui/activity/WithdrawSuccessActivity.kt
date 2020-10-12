@@ -18,7 +18,7 @@ class WithdrawSuccessActivity:BaseActivity() {
     override fun initView(savedInstanceState: Bundle?) {
         subscribe = Observable.interval(1000, TimeUnit.MILLISECONDS)
             .subscribe {
-                tvFinish.text = String.format("返回(%sS)", --time)
+                tvFinish.text = String.format(getString(R.string.return_time), --time)
                 if (time == 0) {
                     finish()
                 }

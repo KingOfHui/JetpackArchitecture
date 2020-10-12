@@ -17,6 +17,7 @@ import com.whdx.base.util.ext.hideSoftInput
 import com.whdx.base.util.wrap.CallbackNoReturn
 import com.whdx.base.util.wrap.CallbackWithReturn
 import com.whdx.home.R
+import com.whdx.home.util.ConfigHolder
 import com.whdx.home.vm.SelectCloudViewModel
 import kotlinx.android.synthetic.main.dialog_lease.*
 import java.math.BigDecimal
@@ -74,6 +75,10 @@ class LeaseDialog(
         })
         tvSure.clickWithTrigger {
             etPWD.hideSoftInput()
+            if (!ConfigHolder.isCorrectPassword(etPWD.text.toString().trim())) {
+                SmartToast.error(R.string.passwrod_error)
+                return@clickWithTrigger
+            }
             if (as_amount.number.compareTo(BigDecimal.ZERO) > 0) {
                 viewModel?.requestInvestLease(id, as_amount.number.toPlainString())
             } else {

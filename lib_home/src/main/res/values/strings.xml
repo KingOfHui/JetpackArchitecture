@@ -197,7 +197,7 @@
     <string name="zjc_sure_view">确认你的助记词</string>
     <string name="zjc_click_in_order">请按顺序点击助记词，以确保你的备份助记词正确</string>
     <string name="wrong_zjc_wrong">助记词错误</string>
-    <string name="loading_lease">租借请求中，请稍候...</string>
+    <string name="loading_lease">租借请求中，请稍候…</string>
     <string name="lease_success">租借成功</string>
     <string name="my_balance">我的余额</string>
     <string name="usdt_can_used">USDT可用余额</string>
@@ -205,6 +205,16 @@
     <string name="withdraw_success">提现成功</string>
     <string name="depositRecord">充值记录</string>
     <string name="withdrawRecord">提现记录</string>
+    <string name="input_withdraw_address">请输入提现地址</string>
+    <string name="input_withdraw_amount">请输入提现金额</string>
+    <string name="receive_wallet_address">收款人钱包地址</string>
+    <string name="tip_withdraw_amount">提现金额（仅可提现BIW）</string>
+    <string name="return_time">返回(%sS)</string>
+    <string name="withdraw_result">提现结果</string>
+    <string name="tip_withdraw_submit_success">提现已提交成功</string>
+    <string name="arrived_after_24h">24小时后到账</string>
+    <string name="return_3s">返回(3s)</string>
+    <string name="passwrod_error">密码输入错误</string>
 
 
 </resources>

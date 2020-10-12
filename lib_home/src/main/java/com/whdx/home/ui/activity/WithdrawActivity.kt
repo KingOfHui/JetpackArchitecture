@@ -10,6 +10,7 @@ import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.databinding.ActivityWithdrawBinding
 import com.whdx.home.ui.dialog.WithdrawDialog
+import com.whdx.home.util.ConfigHolder
 import com.whdx.home.vm.MyWalletViewModel
 import kotlinx.android.synthetic.main.activity_withdraw.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -37,14 +38,18 @@ class WithdrawActivity : BaseBindingActivity<MyWalletViewModel, ActivityWithdraw
             val address = etAddress.text.toString().trim()
             val amount = etAmount.text.toString().trim()
             if (address.isNullOrEmpty()) {
-                SmartToast.show("请输入提现地址")
+                SmartToast.show(getString(R.string.input_withdraw_address))
                 return@clickWithTrigger
             }
             if (amount.isNullOrEmpty()) {
-                SmartToast.show("请输入提现金额")
+                SmartToast.show(getString(R.string.input_withdraw_amount))
                 return@clickWithTrigger
             }
             withdrawDialog.setOnTextListener {
+                if (!ConfigHolder.isCorrectPassword(it)) {
+                    SmartToast.error(getString(R.string.passwrod_error))
+                    return@setOnTextListener
+                }
                 mViewModel.requestWithdraw(address, amount)
 
             }

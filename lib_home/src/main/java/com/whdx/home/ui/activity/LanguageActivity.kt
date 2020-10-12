@@ -20,6 +20,7 @@ class LanguageActivity: BaseVMActivity<SettingViewModel>() {
     override fun setLayoutId()= R.layout.activity_language
 
     override fun initView(savedInstanceState: Bundle?) {
+        titleBar.setOnLeftClickListener { finish() }
         rgSelect.setOnCheckedChangeListener { radioGroup, i ->
             when(i){
                 R.id.tv_en->language = 3

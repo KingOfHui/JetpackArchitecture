@@ -24,6 +24,7 @@ class SettingActivity: BaseVMActivity<SettingViewModel>() {
     override fun setLayoutId()= R.layout.activity_setting
 
     override fun initView(savedInstanceState: Bundle?) {
+        titleBar.setOnLeftClickListener { finish() }
         tvLanguage.clickWithTrigger {
             LanguageActivity.start(this)
         }

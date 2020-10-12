@@ -45,6 +45,9 @@ abstract class BaseDataSource {
                 successBlock?.let { it() }
                 ResultData.Success(response.data)
             } else {
+                if (response.code == 400) {
+                    return@coroutineScope ResultData.Error(VersionEmptyException())
+                }
                 errorBlock?.let { it() }
                 SmartToast.error(response.msg)
                 ResultData.Error(ResultException(
@@ -54,4 +57,5 @@ abstract class BaseDataSource {
             }
         }
     }
+    class VersionEmptyException:java.lang.Exception()
 }

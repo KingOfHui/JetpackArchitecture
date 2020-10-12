@@ -49,15 +49,15 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
 
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     tab_title.background = if (tab?.position == 0) {
-                        resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_select)
-                    } else {
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
+                    } else {
+                        resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_select)
                     }
                 }
 
             })
         }
-        tab_title.background = resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_select)
+        tab_title.background = resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
         tvRank.clickWithTrigger {
             RankActivity.start(requireContext())
         }
