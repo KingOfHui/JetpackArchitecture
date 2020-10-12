@@ -1,6 +1,7 @@
 package com.whdx.base.app.init
 
 import android.app.Application
+import android.graphics.Color
 import com.scwang.smartrefresh.header.StoreHouseHeader
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
@@ -37,6 +38,6 @@ class SmartRefreshLayoutInitializer : Initializer() {
             StoreHouseHeader(application).initWithString("Bit Talk")
         }
 
-        SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  ClassicsFooter(application) }
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { _, _ ->  ClassicsFooter(application).setAccentColor(Color.parseColor("#8E94A9")) }
     }
 }
