@@ -47,8 +47,8 @@ public class FixRecyclerView extends RecyclerView {
 		mPaint.setAntiAlias(true);
 
 		TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.JRecyclerView);
-		int color = ta.getColor(R.styleable.JRecyclerView_empty_text_color, Color.GRAY);
-		float textsize = ta.getDimension(R.styleable.JRecyclerView_empty_text_size, DisplayUtil.sp2px(context,18));
+		int color = ta.getColor(R.styleable.JRecyclerView_empty_text_color, Color.parseColor("#8E94A9"));
+		float textsize = ta.getDimension(R.styleable.JRecyclerView_empty_text_size, DisplayUtil.sp2px(context,16));
 		int style = ta.getInt(R.styleable.JRecyclerView_empty_text_style, Typeface.NORMAL);
 		gravity = ta.getInt(R.styleable.JRecyclerView_empty_text_gravity, GRAVITY_CENTER);
 		mTopMargin = (int) ta.getDimension(R.styleable.JRecyclerView_empty_text_top_margin, DisplayUtil.dip2px(context,10));
