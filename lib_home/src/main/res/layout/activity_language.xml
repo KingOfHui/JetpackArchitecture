@@ -32,6 +32,8 @@
             android:textSize="@dimen/sp_14"
             android:button="@drawable/selector_check_box_selected"/>
         <View style="@style/LineStyle"
+            android:layout_height="0.5dp"
+            android:background="#4C587D"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:layout_marginRight="@dimen/dimen_20dp"
@@ -52,6 +54,8 @@
             app:layout_constraintTop_toBottomOf="@id/tv_en"
             app:layout_constraintRight_toRightOf="parent"/>
         <View style="@style/LineStyle"
+            android:layout_height="0.5dp"
+            android:background="#4C587D"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:layout_marginRight="@dimen/dimen_20dp"
