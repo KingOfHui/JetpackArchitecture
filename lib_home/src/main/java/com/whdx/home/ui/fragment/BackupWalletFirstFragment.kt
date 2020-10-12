@@ -19,6 +19,7 @@ class BackupWalletFirstFragment:BaseBindingFragment<WalletViewModel,FragmentBack
     override fun setLayoutResId()= R.layout.fragment_backup_wallet_first
 
     override fun initView() {
+        titleBar.setOnLeftClickListener { Navigation.findNavController(titleBar).navigateUp() }
         next_view_btn.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_backupWalletFirstFragment_to_backupWalletSecondFragment)
         }

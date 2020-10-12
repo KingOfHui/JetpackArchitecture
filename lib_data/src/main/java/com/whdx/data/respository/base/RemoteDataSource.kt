@@ -150,4 +150,14 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
                 )
             )
         }
+    suspend fun getTotalBonusList(page: Int, limit: Int) =
+        safeApiCall {
+            call(
+                teacherService.getTotalBonusList(
+                    getHeaderMap(),
+                    page,
+                    limit
+                )
+            )
+        }
 }

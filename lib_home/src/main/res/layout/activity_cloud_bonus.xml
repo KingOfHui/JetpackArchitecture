@@ -27,7 +27,7 @@
             app:isShow_left_img="true"
             app:layout_constraintTop_toTopOf="parent"
             app:text_color="@color/white"
-            app:title_textStr="云算力收益详情" />
+            app:title_textStr="@string/cloud_power_bonus_detail" />
 
         <TextView
             android:id="@+id/tvTime"
@@ -82,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@{`分储算力:合约`+ model.prod_storage+`P`}"
+                android:text="@{`算力:合约`+ model.prod_storage+`P`}"
                 android:textColor="@color/color_94A0C1"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
@@ -241,7 +241,7 @@
                     android:id="@+id/rvBonus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:empty_text="@string/no_data"
+                    app:empty_image="@mipmap/icon_data_empty"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     />
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>

@@ -28,12 +28,19 @@ class WithdrawActivity : BaseBindingActivity<MyWalletViewModel, ActivityWithdraw
                 finish()
             }
         })
+        mViewModel.mBalanceLive.observe(this, Observer {
+            cvv_top.setTopStrLittle(
+                "≈ " + it.balance.multiply(it.btw_price).stripTrailingZeros()
+                    .toPlainString() + " BIW"
+            )
+        })
     }
 
     override fun setLayoutId() = R.layout.activity_withdraw
 
     override fun initView(savedInstanceState: Bundle?) {
         mDataBinding.vm = mViewModel
+        titleBar.setOnLeftClickListener { finish() }
         tvSure.clickWithTrigger {
             val address = etAddress.text.toString().trim()
             val amount = etAmount.text.toString().trim()

@@ -81,5 +81,7 @@ class UserRepository(private val dataSource: RemoteDataSource) : BaseRepository(
 
     suspend fun openBid(address: String) = dataSource.openBid(address)
     suspend fun getUserInfo() = dataSource.getUserInfo()
-    suspend fun getAppOnline(version:String) = dataSource.getAppOnline(version)
+    suspend fun getAppOnline(version: String) = dataSource.getAppOnline(version)
+    suspend fun getTotalBonusList(page: Int, limit: Int) =
+        dataSource.getTotalBonusList(page, limit)
 }

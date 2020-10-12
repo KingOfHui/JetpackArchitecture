@@ -10,8 +10,7 @@ class ProhibitionStatementFragment:BaseFragment() {
 
     override fun initView() {
         stop_sure_btn.setOnClickListener {
-            MainActivity.start(requireContext())
-            requireActivity().finish()
+
         }
     }
 

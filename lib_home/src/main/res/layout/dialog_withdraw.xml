@@ -19,7 +19,7 @@
         android:id="@+id/view1"
         app:layout_constraintTop_toBottomOf="@id/titleBar"
         app:layout_constraintLeft_toLeftOf="parent"
-        style="@style/LineStyle"/>
+        style="@style/LineStyle_E5E5E5"/>
    <!-- <TextView
         android:id="@+id/tvAddressTip"
         android:layout_width="wrap_content"
@@ -70,6 +70,7 @@
         android:textColorHint="#C7C7C7"
         android:layout_marginLeft="@dimen/dimen_20dp"
         android:textSize="@dimen/sp_14"
+        android:textColor="@color/black"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/tvPasswordTip"
         android:background="@null"
@@ -91,7 +92,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="@dimen/dimen_20dp"
         android:layout_marginRight="@dimen/dimen_20dp"
-        style="@style/LineStyle"/>
+        style="@style/LineStyle_E5E5E5"/>
     <TextView
         android:id="@+id/tvSure"
         android:layout_width="match_parent"

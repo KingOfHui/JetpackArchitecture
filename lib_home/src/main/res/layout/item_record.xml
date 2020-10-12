@@ -42,7 +42,7 @@
             android:textSize="14sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="@{`+`+model.amount+`USDT`,default=`-`}"
+            android:text="@{`+`+model.amount+`BIW`,default=`-`}"
             />
 
 

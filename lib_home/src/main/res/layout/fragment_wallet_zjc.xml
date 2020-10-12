@@ -41,6 +41,7 @@
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_marginRight="@dimen/dimen_15dp"
             android:gravity="center|left"
+            android:textSize="@dimen/sp_12"
             android:paddingTop="@dimen/dimen_10dp"
             android:paddingBottom="@dimen/dimen_10dp"
             android:text="@string/zjc_tip"
@@ -80,20 +81,21 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:visibility="gone"
-            android:textStyle="bold" />
+             />
 
-        <Button
+        <TextView
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/dimen_41dp"
             android:layout_marginLeft="@dimen/dimen_15dp"
             android:layout_marginTop="80dp"
             android:layout_marginRight="@dimen/dimen_15dp"
-            android:backgroundTint="@color/color_4D66FF"
+            android:background="@color/color_4D66FF"
+            android:gravity="center"
             android:text="@string/trade_next_step"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_18"
-            android:textStyle="bold" />
+             />
 
     </LinearLayout>
 </layout>

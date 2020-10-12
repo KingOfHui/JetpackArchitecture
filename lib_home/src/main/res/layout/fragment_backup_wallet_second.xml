@@ -20,6 +20,7 @@
             android:layout_height="wrap_content">
 
             <com.whdx.base.ui.view.CustomTitleBarView
+                android:id="@+id/titleBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:isShow_left_img="true"
@@ -45,7 +46,7 @@
                     android:layout_below="@+id/img"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/dimen_15dp"
-                    android:textStyle="bold"
+
                     android:text="@string/create_wallet_last_step"
                     android:textColor="@color/white"
                     android:textSize="@dimen/sp_18" />
@@ -73,8 +74,9 @@
                     android:layout_marginLeft="@dimen/dimen_15dp"
                     android:layout_marginRight="@dimen/dimen_15dp"
                     android:text="@string/public_key"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
+                    android:textSize="@dimen/sp_15"
+
+                    android:textColor="@color/text_color_tip_94A0C1" />
 
                 <TextView
                     android:id="@+id/txtPublicKey"
@@ -86,7 +88,7 @@
                     android:layout_marginTop="@dimen/dimen_5dp"
                     android:text="@{vm.MBtcDo.publicKey,default=``}"
                     android:textColor="@color/text_color_tip_94A0C1"
-                    android:textSize="@dimen/dimen_15dp" />
+                    android:textSize="@dimen/sp_12" />
 
                 <TextView
                     android:id="@+id/editPrivateKey"
@@ -111,6 +113,7 @@
                     android:layout_marginRight="@dimen/dimen_15dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
+                    android:textSize="@dimen/sp_12"
                     android:text="@string/back_up_private_txt"
                     android:textColor="@color/text_color_tip_94A0C1" />
 
@@ -121,28 +124,33 @@
                     android:layout_marginTop="@dimen/dimen_10dp"
                     android:orientation="vertical">
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnLeadToLogin"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_60dp"
+                        android:layout_height="@dimen/dimen_41dp"
                         android:layout_marginLeft="@dimen/dimen_15dp"
                         android:layout_marginRight="@dimen/dimen_15dp"
-                        android:backgroundTint="@color/color_4D66FF"
+                        android:background="@color/color_4D66FF"
+                        android:textSize="@dimen/sp_18"
+                        android:textColor="@color/white"
+                        android:gravity="center"
                         android:text="@string/direct_import_login"
-                        android:textStyle="bold" />
+                         />
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnCopy"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_41dp"
                         android:layout_marginLeft="@dimen/dimen_15dp"
                         android:layout_marginTop="@dimen/dimen_10dp"
                         android:layout_marginRight="@dimen/dimen_15dp"
                         android:background="@drawable/shape_rect_text_stroke"
                         android:text="@string/copy"
+                        android:textSize="@dimen/sp_18"
+                        android:gravity="center"
                         android:onClick="@{()->vm.copy()}"
                         android:textColor="@color/color_4D66FF"
-                        android:textStyle="bold" />
+                         />
 
                 </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.whdx.home.ui
 
+import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayout
@@ -11,6 +12,7 @@ import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentHomeBinding
+import com.whdx.home.ui.activity.MyTotalBonusActivity
 import com.whdx.home.ui.activity.RankActivity
 import com.whdx.home.ui.fragment.MyCloudComputeFragment
 import com.whdx.home.ui.fragment.SelectCloudComputeFragment
@@ -29,7 +31,7 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun setLayoutResId() = R.layout.fragment_home;
 
     override fun initView() {
-        val tabArr = arrayOf("精选云算力", "我的云算力")
+        val tabArr = arrayOf(getString(R.string.select_cloud_power), getString(R.string.my_cloud_power))
 
 
         activity?.let {
@@ -49,8 +51,10 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
 
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     tab_title.background = if (tab?.position == 0) {
+                        group2.visibility = View.GONE
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
                     } else {
+                        group2.visibility = View.VISIBLE
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_select)
                     }
                 }
@@ -60,6 +64,9 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
         tab_title.background = resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
         tvRank.clickWithTrigger {
             RankActivity.start(requireContext())
+        }
+        tvBonusForward.clickWithTrigger {
+            MyTotalBonusActivity.start(requireContext())
         }
 
     }

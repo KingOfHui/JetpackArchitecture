@@ -103,7 +103,7 @@
                     android:paddingBottom="5dp"
                     android:textColor="@color/white"
                     android:textColorHint="@color/text_color_tip_94A0C1"
-                    android:textSize="13sp" />
+                    android:textSize="15sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -137,7 +137,7 @@
                     android:paddingBottom="5dp"
                     android:textColor="@color/white"
                     android:textColorHint="@color/text_color_tip_94A0C1"
-                    android:textSize="13sp" />
+                    android:textSize="15sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -159,6 +159,7 @@
                     android:textColor="@color/text_color_tip_94A0C1"
                     android:button="@drawable/selector_check_box_selected"
                     android:paddingLeft="@dimen/dimen_10dp"
+                    android:textSize="@dimen/sp_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -167,21 +168,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/wallet_xieyi_content"
+                    android:textSize="@dimen/sp_12"
                     android:textColor="@color/color_4D66FF" />
             </LinearLayout>
 
-            <Button
+            <TextView
                 android:id="@+id/input_submit_view"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_60dp"
+                android:layout_height="@dimen/dimen_41dp"
                 android:layout_marginLeft="@dimen/dimen_15dp"
                 android:layout_marginTop="@dimen/dimen_80dp"
                 android:layout_marginRight="@dimen/dimen_15dp"
                 android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/color_4D66FF"
+                android:background="@color/color_4D66FF"
                 android:text="@string/lead_in_begin_import"
+                android:textColor="@color/white"
+                android:gravity="center"
                 android:textSize="@dimen/sp_18"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:id="@+id/lead_in_create_view"
@@ -195,7 +199,7 @@
                 android:text="@string/create_wallet_sign_content"
                 android:textSize="15sp"
                 android:textColor="@color/text_color_tip_94A0C1"
-                android:textStyle="bold" />
+                 />
 
         </LinearLayout>
 

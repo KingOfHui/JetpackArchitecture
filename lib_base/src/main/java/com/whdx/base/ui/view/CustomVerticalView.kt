@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import com.whdx.base.R
 import com.wjx.android.weather.common.util.DisplayUtil
 import kotlinx.android.synthetic.main.layout_custom_vertical_view.view.*
@@ -17,11 +19,15 @@ class CustomVerticalView @JvmOverloads constructor(
         val obtainStyledAttributes =
             context.obtainStyledAttributes(attrs, R.styleable.CustomVerticalView)
         val topText = obtainStyledAttributes.getString(R.styleable.CustomVerticalView_topStr)
+        val topTextLittle = obtainStyledAttributes.getString(R.styleable.CustomVerticalView_topStrLittle)
+        val visible = obtainStyledAttributes.getBoolean(R.styleable.CustomVerticalView_topStrLittleVisible,false)
         val bottomText = obtainStyledAttributes.getString(R.styleable.CustomVerticalView_bottom_textStr)
         obtainStyledAttributes.recycle()
         val view = View.inflate(context, R.layout.layout_custom_vertical_view, this)
         tv_top.text = topText?:""
         tv_bottom.text = bottomText?:""
+        tv_biw.text = topTextLittle?:""
+        tv_biw.isVisible =  visible
 
     }
 
@@ -46,6 +52,11 @@ class CustomVerticalView @JvmOverloads constructor(
             }
         }
         tv_top.text = topText?:"0"
+    }
+    fun setTopStrLittle(text: String?) {
+
+        tv_biw.textSize = DisplayUtil.sp2px(context,4)
+        tv_biw.text = text?:"0"
     }
 
     fun setTopStr(top: BigDecimal?) {

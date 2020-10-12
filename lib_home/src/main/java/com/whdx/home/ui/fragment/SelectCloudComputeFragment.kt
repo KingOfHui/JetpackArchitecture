@@ -24,7 +24,10 @@ class SelectCloudComputeFragment :
 
     override fun startObserve() {
         mViewModel.mProductItemList.observe(viewLifecycleOwner, Observer {
-                adapter.setList(it)
+            if(mViewModel.isClearLive.value != false){
+                adapter.data.clear()
+            }
+            adapter.addData(it)
         })
         mViewModel.mLeaseSuccessLive.observe(this, Observer {
             dialog?.dismiss()

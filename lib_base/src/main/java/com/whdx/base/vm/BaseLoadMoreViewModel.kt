@@ -11,6 +11,7 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
     val refreshing = MutableLiveData<Boolean>()
     val hasMore = MutableLiveData<Boolean>()
     val autoRefresh = MutableLiveData<Boolean>()//SmartRefreshLayout自动刷新标记
+    val isClearLive=MutableLiveData<Boolean>()
     private val INIT_PAGE_NUM = 1
     private var pageNum = 1
     var any:Any?= null
@@ -19,12 +20,14 @@ abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
     fun refresh(any: Any?=null) {
         this.any = any
         pageNum = INIT_PAGE_NUM
+        isClearLive.value = true
         launchUI {
             load(true, pageNum)
         }
     }
 
     fun tryToLoadNext() {
+        isClearLive.value = false
         launchUI {
             load(false, pageNum)
         }

@@ -9,6 +9,7 @@ import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
+import com.whdx.home.ui.activity.MainActivity
 import com.whdx.home.util.BtcWalletUtils
 import com.whdx.home.vm.WalletViewModel
 import kotlinx.android.synthetic.main.fragment_zjc_lead.*
@@ -26,7 +27,9 @@ class LeadZJCFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding>() {
     override fun startObserve() {
         mViewModel.insertSuccess.observe(viewLifecycleOwner, Observer {
             if (it){
-                Navigation.findNavController(input_submit_view).navigate(R.id.action_leadInAccountFragment_to_prohibitionStatementFragment)
+//                Navigation.findNavController(input_submit_view).navigate(R.id.action_leadInAccountFragment_to_prohibitionStatementFragment)
+                MainActivity.start(requireContext())
+                requireActivity().finish()
             }
         })
     }
@@ -41,7 +44,7 @@ class LeadZJCFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding>() {
 
             val trim = import_zjc_content.text.toString().trim()
             if (trim.isEmpty()) {
-                SmartToast.show("请输入助记词")
+                SmartToast.show(getString(R.string.input_zjc))
                 return@clickWithTrigger
             }
             if (!checkbox.isChecked) {

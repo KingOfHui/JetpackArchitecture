@@ -8,6 +8,7 @@ import com.whdx.home.databinding.FragmentBackupWalletFirstBinding
 import com.whdx.home.databinding.FragmentBackupWalletSecondBinding
 import com.whdx.home.databinding.FragmentCheckZjcBinding
 import com.whdx.home.databinding.FragmentWalletCreateBinding
+import com.whdx.home.ui.activity.MainActivity
 import com.whdx.home.vm.WalletViewModel
 import kotlinx.android.synthetic.main.fragment_backup_wallet_second.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -18,7 +19,9 @@ class BackupWalletSecondFragment:BaseBindingFragment<WalletViewModel,FragmentBac
     override fun startObserve() {
         mViewModel.insertSuccess.observe(viewLifecycleOwner, Observer {
             if (it){
-                Navigation.findNavController(btnLeadToLogin).navigate(R.id.action_backupWalletSecondFragment_to_prohibitionStatementFragment)
+//                Navigation.findNavController(btnLeadToLogin).navigate(R.id.action_backupWalletSecondFragment_to_prohibitionStatementFragment)
+                MainActivity.start(requireContext())
+                requireActivity().finish()
             }
         })
     }
@@ -27,6 +30,7 @@ class BackupWalletSecondFragment:BaseBindingFragment<WalletViewModel,FragmentBac
 
     override fun initView() {
         mDataBinding.vm = mViewModel
+        titleBar.setOnLeftClickListener { Navigation.findNavController(titleBar).navigateUp() }
         btnLeadToLogin.setOnClickListener {
             mViewModel.insertWallet()
         }

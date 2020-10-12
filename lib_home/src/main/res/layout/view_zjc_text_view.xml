@@ -12,6 +12,6 @@
         android:layout_margin="@dimen/dimen_5dp"
         android:background="@drawable/selector_zjc_text_bg"
         android:padding="@dimen/dimen_5dp"
-        android:textColor="@color/text_color_tip_94A0C1"
+        android:textColor="@color/white"
         android:textSize="@dimen/sp_14"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

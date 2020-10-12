@@ -1,11 +1,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 圆角 -->
-    <corners
-        android:bottomLeftRadius="2dp"
-        android:bottomRightRadius="2dp"
-        android:topLeftRadius="2dp"
-        android:topRightRadius="2dp" /><!-- 设置圆角半径 -->
+<!--    <corners-->
+<!--        android:bottomLeftRadius="2dp"-->
+<!--        android:bottomRightRadius="2dp"-->
+<!--        android:topLeftRadius="2dp"-->
+<!--        android:topRightRadius="2dp" />&lt;!&ndash; 设置圆角半径 &ndash;&gt;-->
 
     <solid android:color="#394469" /><!-- 填充的颜色 -->
 

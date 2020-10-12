@@ -9,6 +9,7 @@ import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
+import com.whdx.home.ui.activity.MainActivity
 import com.whdx.home.util.BtcWalletUtils
 import com.whdx.home.vm.WalletViewModel
 import kotlinx.android.synthetic.main.fragment_lead_private_key.*
@@ -33,7 +34,9 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
     override fun startObserve() {
         mViewModel.insertSuccess.observe(viewLifecycleOwner, Observer {
             if (it){
-                Navigation.findNavController(lead_in_create_view).navigate(R.id.action_leadInAccountFragment_to_prohibitionStatementFragment)
+//                Navigation.findNavController(lead_in_create_view).navigate(R.id.action_leadInAccountFragment_to_prohibitionStatementFragment)
+                MainActivity.start(requireContext())
+                requireActivity().finish()
             }
         })
     }
@@ -48,7 +51,7 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
 
             val trim = import_zjc_content.text.toString().trim()
             if (trim.isEmpty()) {
-                SmartToast.show("请输入您的私钥")
+                SmartToast.show(getString(R.string.input_private_key))
                 return@clickWithTrigger
             }
             if (!checkbox.isChecked) {
@@ -71,7 +74,7 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
             }
             val btcDo = BtcWalletUtils.findWalletByKey(trim)
             if (btcDo == null) {
-                SmartToast.showInCenter(getString(R.string.wrong_zjc_wrong))
+                SmartToast.showInCenter(getString(R.string.input_private_key_error))
                 return@clickWithTrigger
             }
             mViewModel.apply {

@@ -16,7 +16,7 @@ import com.whdx.home.R
 
 class SelectCloudViewModel(private val userRepository: UserRepository) :
     BaseLoadMoreViewModel<List<ProductItem>>() {
-    val mProductItemList: MutableLiveData<MutableList<ProductItem>> = MutableLiveData()
+    val mProductItemList: MutableLiveData<List<ProductItem>> = MutableLiveData()
         get() {
             if (field.value == null) field.value = mutableListOf()
             return field
@@ -26,20 +26,21 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
 
     override suspend fun load(isClear: Boolean, pageNum: Int) {
         refreshing.value = true
-        if (isClear) {
-            mProductItemList.value?.clear()
-        }
+//        if (isClear) {
+//            mProductItemList.value?.clear()
+//        }
         val productList = userRepository.getProductList(pageNum, 20)
         if (productList is ResultData.Success) {
             val items = productList.data.items
-            mProductItemList.value?.let {
-                it.addAll(items)
-                mProductItemList.value = it
-            }?:let {
-                if (isClear) {
-                    doneEmpty()
-                }
-            }
+//            mProductItemList.value?.let {
+//                it.addAll(items)
+//                mProductItemList.value = it
+//            }?:let {
+//                if (isClear) {
+//                    doneEmpty()
+//                }
+//            }
+            mProductItemList.value = items
             notifyResultToTopViewModel(items)
         }
         refreshing.value = false

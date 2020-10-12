@@ -45,4 +45,10 @@ object ActivityHelper {
         }
     }
 
+    fun finishAll() {
+        activities.forEach {
+            it.finish()
+        }
+    }
+
 }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.whdx.home.vm.MyTotalBonusViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <com.whdx.base.ui.view.CustomTitleBarView
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isShow_left_img="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color="@color/white"
+            app:title_textStr="@string/my_total_bonus_record" />
+
+        <com.whdx.base.ui.view.RoundConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            app:rv_backgroundColor="#3B4669"
+            app:rv_cornerRadius="@dimen/dimen_5dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/llTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/bonus"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/time"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                style="@style/LineStyle"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                app:layout_constraintTop_toBottomOf="@id/llTitle" />
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dimen_20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                bind:autoRefresh="@{vm.autoRefresh}"
+                bind:hasMore="@{vm.hasMore}"
+                bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
+                bind:onRefreshListener="@{()->vm.refresh()}"
+                bind:refreshing="@{vm.refreshing}">
+
+                <com.whdx.base.ui.view.JRecyclerView
+                    android:id="@+id/rvBonusRecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:empty_image="@mipmap/icon_data_empty"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        </com.whdx.base.ui.view.RoundConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

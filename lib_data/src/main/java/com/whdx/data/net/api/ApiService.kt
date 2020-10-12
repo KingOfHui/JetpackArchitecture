@@ -8,10 +8,7 @@ import com.whdx.data.data.product.InvestProduct
 import com.whdx.data.data.product.Product
 import com.whdx.data.data.topic.Topic
 import com.whdx.data.data.user.*
-import com.whdx.data.data.wallet.DepositRecord
-import com.whdx.data.data.wallet.InvestBonus
-import com.whdx.data.data.wallet.USDTBalance
-import com.whdx.data.data.wallet.WithdrawRecord
+import com.whdx.data.data.wallet.*
 import okhttp3.RequestBody
 import retrofit2.http.*
 
@@ -110,6 +107,12 @@ interface ApiService {
         @Query("limit") limit: Int, @Query("investId") investId: Int
     ): BaseResponse<InvestBonus>
 
+    @GET("v1/invest/memberBonusList")
+    suspend fun getTotalBonusList(
+        @HeaderMap headers: Map<String, String>, @Query("page") page: Int,
+        @Query("limit") limit: Int
+    ): BaseResponse<MemberBonusList>
+
 
     @POST("v1/wallet/withdraw")
     suspend fun requestWithdraw(
@@ -124,5 +127,5 @@ interface ApiService {
     ): BaseResponse<Any>
 
     @GET("v1/getAppOnline")
-    suspend fun getAppOnline(@Query("version") version:String):BaseResponse<Any>
+    suspend fun getAppOnline(@Query("version") version: String): BaseResponse<Any>
 }

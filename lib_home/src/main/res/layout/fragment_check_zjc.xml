@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <com.whdx.base.ui.view.CustomTitleBarView
+            android:id="@+id/titleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title_textStr="备份助记词"
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:layout_marginRight="@dimen/dimen_20dp"
+            android:textSize="@dimen/sp_12"
             android:layout_marginTop="@dimen/dimen_20dp"
             android:text="@string/zjc_click_in_order"
             android:textColor="@color/text_color_tip_94A0C1" />
@@ -61,18 +63,19 @@
             android:layout_height="wrap_content" />
 
 
-        <Button
+        <TextView
             android:id="@+id/check_zjc_submit"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_60dp"
+            android:layout_height="@dimen/dimen_41dp"
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:layout_marginTop="@dimen/dimen_40dp"
             android:layout_marginRight="@dimen/dimen_20dp"
-            android:backgroundTint="@color/color_4D66FF"
+            android:background="@color/color_4D66FF"
+            android:gravity="center"
             android:text="@string/sure"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_18"
-            android:textStyle="bold" />
+             />
 
 
     </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
@@ -25,6 +26,7 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
             R.id.nav_main_host_fragment,
             R.navigation.nav_graph_home
         )
+//        val navController = findNavController(R.id.nav_main_host_fragment)
         bottom_navigation_view.setupWithNavController(navController)
     }
 

@@ -10,7 +10,6 @@ import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyWalletBinding
 import com.whdx.home.ui.activity.DepositAddressActivity
 import com.whdx.home.ui.activity.WithdrawActivity
-import com.whdx.home.ui.dialog.WithdrawDialog
 import com.whdx.home.vm.MyWalletViewModel
 import kotlinx.android.synthetic.main.fragment_my_wallet.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -27,6 +26,9 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
     override fun startObserve() {
         LiveEventBus.get("refresh_balance").observe(viewLifecycleOwner, Observer {
             mViewModel.getMyBalance()
+        })
+        mViewModel.mBalanceLive.observe(viewLifecycleOwner, Observer {
+            cvv_top.setTopStrLittle("≈ " + it.balance.multiply(it.btw_price).stripTrailingZeros().toPlainString() + " BIW")
         })
     }
 
@@ -54,6 +56,13 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
     }
 
     override fun initData() {
-        mViewModel.getMyBalance()
+//        mViewModel.getMyBalance()
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        if (!hidden) {
+            mViewModel.getMyBalance()
+        }
     }
 }

@@ -24,6 +24,7 @@ class CheckZJCFragment:BaseBindingFragment<WalletViewModel,FragmentCheckZjcBindi
     override fun setLayoutResId()= R.layout.fragment_check_zjc
 
     override fun initView() {
+        titleBar.setOnLeftClickListener { Navigation.findNavController(titleBar).navigateUp() }
         qfl_content.removeAllViews()
         val listZjc = mViewModel.mMnemonic.value?: listOf()
 
@@ -50,6 +51,10 @@ class CheckZJCFragment:BaseBindingFragment<WalletViewModel,FragmentCheckZjcBindi
         }
 
         check_zjc_submit.setOnClickListener {
+            if (selectedWords.isEmpty()) {
+                SmartToast.showInCenter(R.string.zjc_check_fail)
+                return@setOnClickListener
+            }
             selectedWords.forEachIndexed { index, s ->
                 if (listZjc[index]!=s) {
                     SmartToast.showInCenter(R.string.zjc_check_fail)

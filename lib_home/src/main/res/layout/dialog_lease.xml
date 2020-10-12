@@ -20,7 +20,7 @@
         android:id="@+id/view1"
         app:layout_constraintTop_toBottomOf="@id/titleBar"
         app:layout_constraintLeft_toLeftOf="parent"
-        style="@style/LineStyle"/>
+        style="@style/LineStyle_E5E5E5"/>
     <TextView
         android:id="@+id/tvCount"
         android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
     <View
         app:layout_constraintTop_toBottomOf="@id/tvCount"
         app:layout_constraintLeft_toLeftOf="parent"
-        style="@style/LineStyle"/>
+        style="@style/LineStyle_E5E5E5"/>
     <TextView
         android:id="@+id/tvAmountTip"
         android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvBalance"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/dimen_20dp"
-        style="@style/LineStyle"/>
+        style="@style/LineStyle_E5E5E5"/>
 
     <TextView
         android:id="@+id/tvPasswordTip"
@@ -102,6 +102,7 @@
         android:hint="@string/input_pwd"
         android:textColorHint="#C7C7C7"
         android:textSize="@dimen/sp_14"
+        android:textColor="@color/black"
         android:inputType="textPassword"
         app:layout_constraintBaseline_toBaselineOf="@id/tvPasswordTip"
         app:layout_constraintTop_toTopOf="@id/tvPasswordTip"
@@ -131,7 +132,7 @@
         android:id="@+id/view3"
         app:layout_constraintTop_toBottomOf="@id/tvPasswordTip"
         app:layout_constraintLeft_toLeftOf="parent"
-        style="@style/LineStyle"/>
+        style="@style/LineStyle_E5E5E5"/>
     <TextView
         android:id="@+id/tvSure"
         android:layout_width="match_parent"

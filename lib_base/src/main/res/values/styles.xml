@@ -9,6 +9,9 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">normal</item>
     </style>
+    <style name="HomeNavigationViewStyle">
+        <item name="android:textSize">10sp</item>
+    </style>
 
     <!--弹窗样式的Activity-->
     <style name="Theme.ActivityDialogStyle" parent="Theme.AppCompat.Light.NoActionBar">
@@ -36,18 +39,19 @@
 
 
     <style name="VerticalLineStyle">
-        <item name="android:background">#E5E5E5</item>
+        <item name="android:background">#4C587D</item>
         <item name="android:layout_width">1dp</item>
         <item name="android:layout_height">match_parent</item>
     </style>
     <style name="LineStyle">
-        <item name="android:background">#E5E5E5</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1px</item>
-    </style>
-    <style name="LineStyle_4C587D">
         <item name="android:background">#4C587D</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1px</item>
     </style>
+      <style name="LineStyle_E5E5E5">
+        <item name="android:background">#E5E5E5</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
 </resources>

@@ -30,7 +30,7 @@
 
             <com.whdx.base.ui.view.FixRecyclerView
                 android:id="@+id/rv"
-                app:empty_text="@string/no_data"
+                app:empty_image="@mipmap/icon_data_empty"
                 app:empty_text_top_margin = "30dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

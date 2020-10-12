@@ -179,14 +179,14 @@
     <string name="public_key">公钥</string>
     <string name="direct_import_login">直接导入登录</string>
     <string name="copy">复制</string>
-    <string name="back_up_private_sign_view">请备份你的私钥</string>
-    <string name="back_up_private_txt">请抄录下来,或者存在某个地方，千万不要保存在网络上</string>
+    <string name="back_up_private_sign_view">请备份你的keystore文件\n本页面面uone不保存</string>
+    <string name="back_up_private_txt">请抄录下来，或者存在某个地方，千万不要保存在网络上</string>
     <string name="create_wallet_last_step">最后一步：立即备份你的钱包私钥</string>
     <string name="back_up_wallet_private_key">备份私钥</string>
     <string name="back_up_wallet_walletsign">备份钱包</string>
     <string name="view_backup_details_tutorial">查看备份详细教程</string>
     <string name="create_wallet_last_step_two">最后一步：立即备份你的钱包</string>
-    <string name="create_wallet_last_notice_sign">直接复制粘贴钱包私钥文件内容至输入框。或者通过生成私钥内容的二维码，扫描录入。</string>
+    <string name="create_wallet_last_notice_sign">直接复制粘帖以太坊官方钱包 keystore 文件内容至输入框。或者通过生成 keystore 内容的二维码，扫描录入。</string>
     <string name="zjc_long_copy">长按下方助记词，可复制到剪切板</string>
     <string name="zjc_check_fail">验证失败，请检查备份</string>
     <string name="wallet_create_xieyi">请阅读并同意隐私协议</string>
@@ -215,6 +215,15 @@
     <string name="arrived_after_24h">24小时后到账</string>
     <string name="return_3s">返回(3s)</string>
     <string name="passwrod_error">密码输入错误</string>
+    <string name="cloud_power_bonus_detail">云算力收益详情</string>
+    <string name="select_cloud_power">精选云算力</string>
+    <string name="my_cloud_power">我的云算力</string>
+    <string name="my_total_bonus_record">我的总收益记录</string>
+    <string name="address">地址</string>
+    <string name="password">密码</string>
+    <string name="input_private_key_error">私钥输入错误</string>
+    <string name="input_private_key">请输入您的私钥</string>
+    <string name="input_zjc">请输入助记词</string>
 
 
 </resources>

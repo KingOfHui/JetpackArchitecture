@@ -26,6 +26,7 @@ val homeViewModelModule = module {
     viewModel { RecordWithdrawViewModel(get()) }
     viewModel { BonusViewModel(get()) }
     viewModel { SettingViewModel(get()) }
+    viewModel { MyTotalBonusViewModel(get()) }
 }
 
 val homeRepositoryModule = module {

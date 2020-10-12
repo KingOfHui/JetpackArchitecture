@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.whdx.data.data.wallet.MemberBonusItem" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tvBonus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text="@{model.bonus_all+` `+model.symbol}"
+            android:gravity="center"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:lines="1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{model.create_time}"
+            android:gravity="center"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+</layout>

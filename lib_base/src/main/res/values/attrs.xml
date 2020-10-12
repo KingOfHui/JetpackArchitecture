@@ -214,9 +214,13 @@
         <attr name="isLoop" format="boolean" />
     </declare-styleable>
     <attr name="topStr" format="string" />
+    <attr name="topStrLittle" format="string" />
+    <attr name="topStrLittleVisible" format="boolean" />
     <attr name="bottom_textStr" format="string" />
     <declare-styleable name="CustomVerticalView">
         <attr name="topStr" />
+        <attr name="topStrLittle" />
+        <attr name="topStrLittleVisible" />
         <attr name="bottom_textStr" />
     </declare-styleable>
     <declare-styleable name="CommonTitleBarView">
