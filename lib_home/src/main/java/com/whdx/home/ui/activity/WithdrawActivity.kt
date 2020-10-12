@@ -30,7 +30,7 @@ class WithdrawActivity : BaseBindingActivity<MyWalletViewModel, ActivityWithdraw
         })
         mViewModel.mBalanceLive.observe(this, Observer {
             cvv_top.setTopStrLittle(
-                "≈ " + it.balance.multiply(it.btw_price).stripTrailingZeros()
+                "≈ " + it.balance.divide(it.btw_price).stripTrailingZeros()
                     .toPlainString() + " BIW"
             )
         })

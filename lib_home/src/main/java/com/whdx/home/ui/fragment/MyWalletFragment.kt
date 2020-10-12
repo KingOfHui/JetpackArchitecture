@@ -28,7 +28,7 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
             mViewModel.getMyBalance()
         })
         mViewModel.mBalanceLive.observe(viewLifecycleOwner, Observer {
-            cvv_top.setTopStrLittle("≈ " + it.balance.multiply(it.btw_price).stripTrailingZeros().toPlainString() + " BIW")
+            cvv_top.setTopStrLittle("≈ " + it.balance.divide(it.btw_price).stripTrailingZeros().toPlainString() + " BIW")
         })
     }
 
