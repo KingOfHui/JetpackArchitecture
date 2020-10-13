@@ -23,10 +23,39 @@ android {
         }
     }
 
+
+    signingConfigs {
+        release {
+            storeFile new File(getProjectDir(), "/doc/bittalk.jks")
+            keyAlias "key0"
+            keyPassword "123456"
+            storePassword "123456"
+        }
+    }
+
     buildTypes {
         release {
+            debuggable false
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debug {
+                debuggable true//是否支持断点调试
+                // 动态配置信息
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                if (variant.name.contains("debug")) {
+                    outputFileName = new File("BitTalk-test-${variant.versionName}.apk")
+                } else {
+                    outputFileName = new File("BitTalk-${variant.name}-${variant.versionName}.apk")
+                }
+            }
         }
     }
     buildFeatures {

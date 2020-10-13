@@ -53,7 +53,7 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     tab_title.background = if (tab?.position == 0) {
                         group2.visibility = View.GONE
-                        tvFirst.text= "Selected Power Fund"
+                        tvFirst.text= getString(R.string.select_power)
                         tvSecond.isInvisible = false
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
                     } else {
