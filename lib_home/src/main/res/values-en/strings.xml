@@ -131,8 +131,8 @@
     <string name="return_3s">Return(3s)</string>
     <string name="passwrod_error">Incorrect Password </string>
     <string name="cloud_power_bonus_detail">Cloud Force Bonus</string>
-    <string name="select_cloud_power">Select Cloud Force</string>
-    <string name="my_cloud_power">My Cloud Force</string>
+    <string name="select_cloud_power">Cloud Power</string>
+    <string name="my_cloud_power">My Cloud Power</string>
     <string name="my_total_bonus_record">My Total Earnings Record</string>
     <string name="address">Address</string>
     <string name="password">Password</string>

@@ -6,7 +6,7 @@
         <item name="android:textStyle">bold</item>
     </style>
     <style name="HomeTabLayoutTextAppearance">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textStyle">normal</item>
     </style>
     <style name="HomeNavigationViewStyle">
