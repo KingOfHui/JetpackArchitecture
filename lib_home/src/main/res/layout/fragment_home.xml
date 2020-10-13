@@ -118,6 +118,8 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabTextColor="@color/color_94A0C1"
             app:tabSelectedTextColor="@color/white"
+            app:tabPaddingStart="0dp"
+            app:tabPaddingEnd="0dp"
             app:tabTextAppearance="@style/HomeTabLayoutTextAppearance"
             android:layout_height="60dp"
             app:tabIndicator="@null"/>
@@ -127,7 +129,7 @@
                 android:layout_height="60dp">
 
                 <TextView
-                    android:id="@+id/tv1"
+                    android:id="@+id/tvFirst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -139,6 +141,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tvSecond"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -146,7 +149,7 @@
                     android:textColor="@color/color_94A0C1"
                     android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/tv1"
+                    app:layout_constraintLeft_toRightOf="@id/tvFirst"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -165,7 +168,7 @@
                     android:id="@+id/ivBonusFoward"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_forward_white_10"
+                    android:src="@drawable/ic_arrow_forward_white_8"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

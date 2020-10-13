@@ -4,6 +4,7 @@
 
     <data>
 
+        <import type="com.whdx.base.util.DateUtils"/>
         <variable
             name="model"
             type="com.whdx.data.data.user.InviteListItem" />
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:lines="1"
             android:ellipsize="end"
-            android:text="@{model.create_time,default=`-`}"
+            android:text="@{DateUtils.INSTANCE.reformatStringDate(model.create_time,`yyyy.MM.dd`)}"
             android:textSize="14sp"
             android:gravity="left"
             android:textColor="@color/white"
@@ -49,7 +50,6 @@
             android:id="@+id/tvDegree"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{model.vip_degree,default=`-`}"
             android:textSize="14sp"
             android:lines="1"
             android:ellipsize="end"
@@ -64,7 +64,7 @@
             android:id="@+id/tvBonus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{model.bonus_all,default=`-`}"
+            android:text="@{model.bonus_all.stripTrailingZeros().toPlainString()+`USDT`,default=`-`}"
             android:textSize="14sp"
             android:lines="1"
             android:ellipsize="end"
@@ -79,14 +79,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.25" />
+            app:layout_constraintGuide_percent="0.28" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.50" />
+            app:layout_constraintGuide_percent="0.60" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"

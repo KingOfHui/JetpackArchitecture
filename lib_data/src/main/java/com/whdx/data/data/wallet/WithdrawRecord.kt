@@ -1,5 +1,7 @@
 package com.whdx.data.data.wallet
 
+import java.math.BigDecimal
+
 
 /**
  * @Description
@@ -17,7 +19,7 @@ data class WithdrawRecord(
 data class WithdrawRecordItem(
     val address: String,
     val admin_id: Int,
-    val amount: String,
+    val amount: BigDecimal,
     val arrived_amount: Int,
     val audit_at: String,
     val audit_status: String,

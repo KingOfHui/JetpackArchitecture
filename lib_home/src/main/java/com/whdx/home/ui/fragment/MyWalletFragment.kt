@@ -13,6 +13,7 @@ import com.whdx.home.ui.activity.WithdrawActivity
 import com.whdx.home.vm.MyWalletViewModel
 import kotlinx.android.synthetic.main.fragment_my_wallet.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import timber.log.Timber
 
 /**
  * @Description
@@ -56,7 +57,7 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
     }
 
     override fun initData() {
-//        mViewModel.getMyBalance()
+        mViewModel.getMyBalance()
     }
 
     override fun onHiddenChanged(hidden: Boolean) {

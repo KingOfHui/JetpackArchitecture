@@ -58,7 +58,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 app:topStr="@{vm.MNetDataLive.net_all_storage , default =`0`}"
-                app:bottom_textStr="全网总算力 (T)" />
+                app:bottom_textStr="@string/net_all_storage" />
 
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
@@ -69,7 +69,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50"
                 app:topStr="@{vm.MNetDataLive.net_all_bonus,default =`0`}"
-                app:bottom_textStr="全网总能量（BIW）" />
+                app:bottom_textStr="@string/net_all_power" />
 
 <!--            app:topStr="@{String.valueOf(vm.MNetDataLive.net_all_energy)}"-->
             <com.whdx.base.ui.view.CustomVerticalView
@@ -83,7 +83,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
                 app:topStr="@{vm.MNetDataLive.btw_price,default =`0`}"
-                app:bottom_textStr="BIW价格（USDT）" />
+                app:bottom_textStr="@string/biw_price" />
 
 <!--            app:topStr="@{String.valueOf(vm.MNetDataLive.btw_price)}"-->
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -113,7 +113,7 @@
                 app:layout_constraintRight_toLeftOf="@id/gl_v_50_2"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                app:bottom_textStr="总矿机数（个）"
+                app:bottom_textStr="@string/net_total_mineral"
                 app:topStr="@{vm.MNetDataLive.count_invest, default=`0`}" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:id="@+id/cvv_max_energy"
@@ -124,7 +124,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
-                app:bottom_textStr="最大节点日收益(USDT)"
+                app:bottom_textStr="@string/max_node_bonus"
                 app:topStr="@{vm.MNetDataLive.max_node_bonus, default=`0`}" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:id="@+id/cvv_my_star"
@@ -137,7 +137,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
-                app:bottom_textStr="我的星级有效业绩(U)"
+                app:bottom_textStr="@string/mine_performance"
                 app:topStr="@{vm.MNetDataLive.mine_performance, default=`0`}" />
             <com.whdx.base.ui.view.CustomVerticalView
                 android:layout_width="0dp"
@@ -146,7 +146,7 @@
                 app:layout_constraintTop_toTopOf="@id/cvv_my_star"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/gl_v_50_2"
-                app:bottom_textStr="节点总业绩(U)"
+                app:bottom_textStr="@string/mine_performance_node"
                 app:topStr="@{vm.MNetDataLive.mine_performance_node, default=`0`}" />
         </com.whdx.base.ui.view.RoundConstraintLayout>
 
@@ -218,7 +218,7 @@
                     android:layout_below="@id/tv_level_5"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                    android:text="@{String.valueOf(vm.MNetDataLive.count_level1)+`人`}"
+                    android:text="@{@string/level_people(vm.MNetDataLive.count_level1)}"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -255,7 +255,7 @@
                     android:layout_below="@id/tv_level_4"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                    android:text="@{String.valueOf(vm.MNetDataLive.count_level2)+`人`}"
+                    android:text="@{@string/level_people(vm.MNetDataLive.count_level2)}"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -291,7 +291,7 @@
                     android:layout_below="@id/tv_level_3"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                    android:text="@{String.valueOf(vm.MNetDataLive.count_level3)+`人`}"
+                    android:text="@{@string/level_people(vm.MNetDataLive.count_level3)}"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -327,7 +327,7 @@
                     android:layout_below="@id/tv_level_2"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                    android:text="@{String.valueOf(vm.MNetDataLive.count_level4)+`人`}"
+                    android:text="@{@string/level_people(vm.MNetDataLive.count_level4)}"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -363,7 +363,7 @@
                     android:layout_below="@id/tv_level_1"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                    android:text="@{String.valueOf(vm.MNetDataLive.count_level5)+`人`}"
+                    android:text="@{@string/level_people(vm.MNetDataLive.count_level5)}"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </RelativeLayout>

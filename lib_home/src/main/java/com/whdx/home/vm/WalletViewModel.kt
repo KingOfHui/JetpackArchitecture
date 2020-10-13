@@ -10,6 +10,7 @@ import com.whdx.data.data.wallet.BtcDo
 import com.whdx.data.data.wallet.WalletModel
 import com.whdx.data.respository.UserRepository
 import com.whdx.data.respository.base.LocalDataSource
+import com.whdx.home.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.withContext
@@ -53,7 +54,7 @@ class WalletViewModel(private val localDataSource: LocalDataSource) : BaseViewMo
                 doneSuccess()
                 _insertSuccess.value = true
             }
-            SmartToast.showInCenter("导入钱包成功")
+            SmartToast.showInCenter((R.string.lead_wallet_success))
         }
     }
 

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.whdx.base.language.LocalLanguageUtil
 import com.whdx.base.ui.activity.BaseVMActivity
+import com.whdx.base.util.ActivityHelper
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.vm.SettingViewModel
@@ -29,8 +30,9 @@ class LanguageActivity: BaseVMActivity<SettingViewModel>() {
         }
         tvSure.clickWithTrigger {
             LocalLanguageUtil.saveSelectLanguage(this,language)
+            ActivityHelper.finishAll()
             MainActivity.start(this)
-            finish()
+            overridePendingTransition(0, 0)
         }
     }
 

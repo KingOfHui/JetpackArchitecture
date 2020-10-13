@@ -1,5 +1,7 @@
 package com.whdx.data.data.user
 
+import java.math.BigDecimal
+
 data class InviteListResponse(
     val items: List<InviteListItem>,
     val limit: Int,
@@ -10,8 +12,8 @@ data class InviteListResponse(
 
 data class InviteListItem(
     val address: String,
-    val bonus_all: String,
+    val bonus_all: BigDecimal,
     val create_time: String,
     val user_id: Int,
-    val vip_degree: String
+    val vip_degree: Int
 )

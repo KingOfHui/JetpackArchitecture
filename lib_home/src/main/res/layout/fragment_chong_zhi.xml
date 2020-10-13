@@ -104,10 +104,11 @@
 
                     </RelativeLayout>
 
-                    <Button
+                    <TextView
                         android:id="@+id/btn_save"
                         android:layout_width="102dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/dimen_41dp"
+                        android:gravity="center"
                         android:layout_marginTop="20dp"
                         android:text="@string/save_code"
                         android:onClick="@{()->vm.saveBitmap()}"

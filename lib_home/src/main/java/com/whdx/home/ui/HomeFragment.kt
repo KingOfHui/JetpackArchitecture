@@ -1,6 +1,7 @@
 package com.whdx.home.ui
 
 import android.view.View
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayout
@@ -55,6 +56,8 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
                     } else {
                         group2.visibility = View.VISIBLE
+                        tvFirst.text= "My Power Fund"
+                        tvSecond.isInvisible = true
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_select)
                     }
                 }
@@ -88,7 +91,7 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 }
                 llTopic.isVisible = true
             } else{
-                llTopic.isVisible = false
+                llTopic.isInvisible = true
             }
         })
     }

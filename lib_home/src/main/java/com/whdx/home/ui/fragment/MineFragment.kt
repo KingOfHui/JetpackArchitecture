@@ -34,13 +34,13 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
     override fun startObserve() {
 
         mViewModel.inviteListLive.observe(viewLifecycleOwner, Observer {
-                mAdapter.setList(it)
+            mAdapter.setList(it)
         })
         mViewModel.userInfoLive.observe(viewLifecycleOwner, Observer {
             tv_open_bid.text = if (it.referer_id.isNullOrEmpty()) {
-                "未开通BID"
+                getString(R.string.no_open_bid)
             } else {
-                "已开通BID"
+                getString(R.string.already_open_bid)
             }
         })
         mViewModel.openSuccess.observe(viewLifecycleOwner, Observer {
@@ -71,8 +71,8 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             mViewModel.userInfoLive.value?.let {
                 if (it.referer_id.isNullOrEmpty()) {
                     showOpenDialog()
-                } else{
-                    InviteCodeDialog.show(requireContext(),it.invite_code)
+                } else {
+                    InviteCodeDialog.show(requireContext(), it.invite_code)
                 }
             }
         }
@@ -84,6 +84,21 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
             ) {
                 holder.dataBinding?.let {
                     it.model = item
+                    it.tvDegree.text = when (item.vip_degree) {
+                        /**
+                         * "satellit
+                        "star">恒星
+                        "planet">
+                        "Galaxy">
+                        "universe
+                         */
+                        1 -> getString(R.string.satellite)
+                        2 -> getString(R.string.star)
+                        3 -> getString(R.string.planet)
+                        4 -> getString(R.string.Galaxy)
+                        5 -> getString(R.string.universe)
+                        else -> getString(R.string.none)
+                    }
                     it.executePendingBindings()
                 }
 
@@ -94,11 +109,12 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
         mDataBinding.vm = mViewModel
     }
 
-    private lateinit var inputPasswordDialog:InputPasswordDialog;
+    private lateinit var inputPasswordDialog: InputPasswordDialog;
     private fun showOpenDialog() {
         val warningDialog = WarningDialog(requireContext())
         warningDialog.setOnClickListener {
-            inputPasswordDialog = InputPasswordDialog(requireContext(), "请输入邀请码")
+            inputPasswordDialog =
+                InputPasswordDialog(requireContext(), getString(R.string.input_invite_code))
             inputPasswordDialog.setInputListener { code ->
                 mViewModel.openBid(code)
             }

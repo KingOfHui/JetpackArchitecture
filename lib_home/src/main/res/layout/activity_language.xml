@@ -22,7 +22,7 @@
         <RadioButton
             android:id="@+id/tv_en"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dimen_41dp"
             android:gravity="center_vertical|right"
             android:layout_marginTop="@dimen/dimen_20dp"
             android:layout_marginLeft="@dimen/dimen_20dp"
@@ -44,7 +44,7 @@
             android:layout_marginRight="@dimen/dimen_20dp"
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/dimen_20dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dimen_41dp"
             android:gravity="center_vertical|right"
             android:layout_marginLeft="@dimen/dimen_20dp"
             android:text="@string/language_cn"

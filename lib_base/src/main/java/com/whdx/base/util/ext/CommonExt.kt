@@ -15,6 +15,7 @@ import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.R
 import com.whdx.base.util.TipHelper
 import java.text.SimpleDateFormat
 import java.util.*
@@ -184,6 +185,6 @@ fun String.clickToCopy(context: Context) {
     val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     val newPlainText = ClipData.newPlainText(null, this)
     clipboardManager.setPrimaryClip(newPlainText)
-    SmartToast.showInCenter("已复制到粘贴板")
+    SmartToast.showInCenter(R.string.copy_bord_content)
     TipHelper.Vibrate(context, longArrayOf(200,300),false)
 }

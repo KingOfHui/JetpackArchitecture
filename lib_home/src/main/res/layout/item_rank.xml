@@ -43,7 +43,7 @@
             android:id="@+id/tv_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{model.user_id}"
+            android:text="@{model.user_address}"
             tools:text="用户"
             android:textSize="14sp"
             android:textColor="@color/white"

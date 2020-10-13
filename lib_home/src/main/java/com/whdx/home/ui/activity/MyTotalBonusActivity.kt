@@ -41,6 +41,10 @@ class MyTotalBonusActivity : BaseBindingActivity<MyTotalBonusViewModel, Activity
                 holder: BaseDataBindingHolder<ItemMyTotalBonusBinding>,
                 item: MemberBonusItem
             ) {
+                holder.dataBinding?.let {
+                    it.model = item
+                    it.executePendingBindings()
+                }
 
             }
 
