@@ -23,7 +23,7 @@
             app:isShow_left_img="true"
             app:layout_constraintTop_toTopOf="parent"
             app:text_color="@color/white"
-            app:title_textStr="收益排行榜" />
+            app:title_textStr="@string/bonus_rank" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
