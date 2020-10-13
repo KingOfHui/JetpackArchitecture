@@ -141,7 +141,7 @@
     <string name="input_zjc">Please enter the mnemonic</string>
     <string name="no_open_bid">Non Activated BID</string>
     <string name="already_open_bid">Activated BID</string>
-    <string name="net_total_mineral">Net Total Mine(个)</string>
+    <string name="net_total_mineral">Net Total Mine</string>
     <string name="max_node_bonus">Max Node Bonus Daily(USDT)</string>
     <string name="mine_performance">Effective Performance(U)</string>
     <string name="mine_performance_node">Node Performance(U)</string>
@@ -164,6 +164,11 @@
     <string name="buy_num">Buy No.: %s </string>
     <string name="prod_amount">Amount: %s %s</string>
     <string name="buy_time">Buy Time: %s</string>
+    <string name="real_time_price">BIW real-time price toady</string>
+    <string name="my_invite_num">Invite No.(People)</string>
+    <string name="invite_bonus">Invite Bonus(USDT)</string>
+    <string name="rebate_today">Rebate Toady(USDT)</string>
+    <string name="history_rebate">History Rebate(USDT)</string>
 
 
 

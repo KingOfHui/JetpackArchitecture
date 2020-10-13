@@ -163,6 +163,11 @@
     <string name="buy_num">购买数量: %s </string>
     <string name="prod_amount">总额度: %s %s</string>
     <string name="buy_time">购买时间: %s</string>
+    <string name="real_time_price">今日BIW实时价格</string>
+    <string name="my_invite_num">我的邀请人数(人)</string>
+    <string name="invite_bonus">邀请人数总收益(USDT)</string>
+    <string name="rebate_today">我的今日返佣(USDT)</string>
+    <string name="history_rebate">我的历史返佣(USDT)</string>
 
 
 </resources>
