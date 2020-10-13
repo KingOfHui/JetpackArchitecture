@@ -5,6 +5,7 @@ import android.app.UiModeManager
 import android.content.Context
 import android.content.res.Configuration
 import com.github.jokar.multilanguages.library.MultiLanguage
+import com.tencent.mmkv.MMKV
 import com.whdx.base.language.LocalLanguageUtil
 import com.whdx.base.util.ext.getNightMode
 import kotlin.properties.Delegates
@@ -31,7 +32,8 @@ open class BaseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         CONTEXT = applicationContext
-        (getSystemService(Context.UI_MODE_SERVICE) as UiModeManager).nightMode = getNightMode()
+        MMKV.initialize(this)
+//        (getSystemService(Context.UI_MODE_SERVICE) as UiModeManager).nightMode = getNightMode()
         MultiLanguage.init { context -> //返回自己本地保存选择的语言设置
             LocalLanguageUtil.getSetLanguageLocale(context)
         }

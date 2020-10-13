@@ -169,7 +169,9 @@
     <string name="invite_bonus">Invite Bonus(USDT)</string>
     <string name="rebate_today">Rebate Toady(USDT)</string>
     <string name="history_rebate">History Rebate(USDT)</string>
-
+    <string name="address_id">My Address:%s</string>
+    <string name="update_to">update to V%s</string>
+    <string name="update_address_no">更新地址为空~</string>
 
 
 </resources>

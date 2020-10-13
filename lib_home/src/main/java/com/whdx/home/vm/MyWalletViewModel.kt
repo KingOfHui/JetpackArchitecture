@@ -32,7 +32,7 @@ class MyWalletViewModel(private val userRepository: UserRepository) :
     fun getDepositAddress() {
         launchUI {
             val depositAddress = userRepository.getDepositAddress()
-            if (depositAddress.code == 0) {
+            if (depositAddress is ResultData.Success){
                 mAddressLive.value = depositAddress.data
                 mAddressBitmapLive.value =
                     QrCodeUtil.createQRCode(depositAddress.data, 200, 200, null)

@@ -115,8 +115,12 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
         return safeApiCall { call(teacherService.getInviteList(getHeaderMap(), page, limit)) }
     }
 
-    suspend fun getDepositAddress(): BaseResponse<String> {
-        return teacherService.getDepositAddress(getHeaderMap())
+    suspend fun getDepositAddress(): ResultData<String> {
+        return safeApiCall {
+            call(
+                teacherService.getDepositAddress(getHeaderMap())
+            )
+        }
     }
 
     suspend fun getDepositList(page: Int, limit: Int) = safeApiCall {
@@ -150,6 +154,7 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
                 )
             )
         }
+
     suspend fun getTotalBonusList(page: Int, limit: Int) =
         safeApiCall {
             call(

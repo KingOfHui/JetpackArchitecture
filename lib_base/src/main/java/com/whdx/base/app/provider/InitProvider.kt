@@ -34,7 +34,6 @@ class InitProvider : ContentProvider() {
         }
         ARouter.init(APPLICATION)
 //        LoadMoreModuleConfig.defLoadMoreView = CustomLoadMoreView()
-        MMKV.initialize(context)
         ActivityHelper.init(APPLICATION)
         SmartShow.init(APPLICATION)
         LiveEventBus.config()

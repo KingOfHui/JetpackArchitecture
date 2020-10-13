@@ -119,6 +119,7 @@ dependencies {
     api 'androidx.navigation:navigation-ui-ktx:2.3.0'
     //动态权限
 //    implementation 'com.qw:soulpermission:1.2.2_x'
+    debugApi 'cat.ereza:customactivityoncrash:2.1.0'
 
     api "com.alibaba:arouter-api:1.5.0"
     kapt "com.alibaba:arouter-compiler:1.2.2"

@@ -38,6 +38,7 @@ fun Context.packageInfo(): PackageInfo = this.packageManager.getPackageInfo(this
 //获取颜色
 fun Context.color(colorRes: Int) = ContextCompat.getColor(this, colorRes)
 fun View.color(colorRes: Int) = context.color(colorRes)
+
 //设置颜色
 fun Context.text(textRes: Int) = this.resources.getString(textRes)
 fun View.text(textRes: Int) = context.text(textRes)
@@ -186,5 +187,27 @@ fun String.clickToCopy(context: Context) {
     val newPlainText = ClipData.newPlainText(null, this)
     clipboardManager.setPrimaryClip(newPlainText)
     SmartToast.showInCenter(R.string.copy_bord_content)
-    TipHelper.Vibrate(context, longArrayOf(200,300),false)
+    TipHelper.Vibrate(context, longArrayOf(200, 300), false)
+}
+
+fun String.compareVersionCode(serverVersion: String): Boolean {
+    return getVersionCode(this) < getVersionCode(serverVersion)
+}
+
+fun getVersionCode(code: String?): Float {
+    if (code.isNullOrEmpty()) {
+        return 0f
+    }
+
+    val index = code.indexOf(".")
+    if (index < 0) {
+
+        return code.toFloat()
+    }
+    if (index == code.length - 1) {
+        return code.substring(0, index).toFloat()
+    }
+    val prefix = code.substring(0, index + 1)
+    val suffix = code.substring(index + 1).replace(".", "")
+    return prefix.plus(suffix).toFloat()
 }

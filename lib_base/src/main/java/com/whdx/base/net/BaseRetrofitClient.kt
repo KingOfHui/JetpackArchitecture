@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit
 abstract class BaseRetrofitClient {
 
     companion object {
-        private const val TIME_OUT = 5
+        private const val TIME_OUT = 20
     }
 
     private val client: OkHttpClient

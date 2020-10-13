@@ -2,6 +2,8 @@ package com.whdx.home.vm
 
 import androidx.lifecycle.MutableLiveData
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.app.BaseApplication
+import com.whdx.base.util.ext.clickToCopy
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
@@ -71,6 +73,10 @@ class MineViewModel(private val userRepository: UserRepository) :
         }
 
         refreshing.value = false
+    }
+
+    fun copyAddress() {
+        userInfoLive.value?.address?.clickToCopy(BaseApplication.CONTEXT)
     }
 
 }

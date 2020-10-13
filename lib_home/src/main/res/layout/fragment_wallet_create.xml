@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             app:title_textStr="创建钱包"
             app:text_color="@color/white"
-            app:isShow_left_img="false" />
+            app:isShow_left_img="true" />
 
         <LinearLayout
             android:id="@+id/lay_content_view"

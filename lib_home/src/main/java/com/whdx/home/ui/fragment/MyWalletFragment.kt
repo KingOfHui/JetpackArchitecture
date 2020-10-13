@@ -60,10 +60,10 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
         mViewModel.getMyBalance()
     }
 
-    override fun onHiddenChanged(hidden: Boolean) {
-        super.onHiddenChanged(hidden)
-        if (!hidden) {
-            mViewModel.getMyBalance()
-        }
-    }
+//    override fun onHiddenChanged(hidden: Boolean) {
+//        super.onHiddenChanged(hidden)
+//        if (!hidden) {
+//            mViewModel.getMyBalance()
+//        }
+//    }
 }

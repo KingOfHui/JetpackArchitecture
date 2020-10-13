@@ -3,6 +3,7 @@ package com.wwy.android.data.api
 import com.whdx.data.data.MyStorage
 import com.whdx.data.data.NetData
 import com.whdx.data.data.Rank
+import com.whdx.data.data.UpdateVersion
 import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.product.InvestProduct
 import com.whdx.data.data.product.Product
@@ -127,5 +128,5 @@ interface ApiService {
     ): BaseResponse<Any>
 
     @GET("v1/getAppOnline")
-    suspend fun getAppOnline(@Query("version") version: String): BaseResponse<Any>
+    suspend fun getAppOnline(@Query("version") version: String): BaseResponse<UpdateVersion>
 }

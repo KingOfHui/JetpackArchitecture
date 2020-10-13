@@ -3,14 +3,19 @@ package com.whdx.home.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.app.BaseApplication
+import com.whdx.base.util.ext.packageInfo
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.data.data.NetData
+import com.whdx.data.data.UpdateVersion
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.ProductItem
 import com.whdx.data.data.topic.Topic
 import com.whdx.data.data.user.User
 import com.whdx.data.data.wallet.USDTBalance
 import com.whdx.data.respository.UserRepository
+import com.whdx.data.respository.base.BaseDataSource
 import kotlinx.coroutines.delay
 import timber.log.Timber
 
@@ -31,6 +36,7 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
 
     fun getTopic() {
         launchUI {
+            getAppOnline()
             val topic = userRepository.getTopic()
             if (topic is ResultData.Success) {
                 mTopic.value = topic.data
@@ -53,6 +59,21 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
         }
     }
 
+    val updateVersionLive:MutableLiveData<UpdateVersion> = MutableLiveData()
+
+    fun getAppOnline() {
+        launchUI {
+            val appOnline =
+                userRepository.getAppOnline(BaseApplication.CONTEXT.packageInfo().versionName)
+            if (appOnline is ResultData.Success) {
+                updateVersionLive.value = appOnline.data
+            }else if (appOnline is ResultData.Error){
+                if (appOnline.exception !is BaseDataSource.VersionEmptyException) {
+                    SmartToast.error(appOnline.exception.message?:"")
+                }
+            }
+        }
+    }
     fun onClick() {
         Timber.tag("dhdhdh").e("clicked")
         val user = User()

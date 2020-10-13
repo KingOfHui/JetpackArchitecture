@@ -87,7 +87,7 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 tvTopicTitle.text = topic.title
                 tvTopicTime.text = topic.create_at
                 tvTopicTitle.clickWithTrigger {
-                    CommonWebActivity.start(requireContext(),topic.content,topic.title)
+                    CommonWebActivity.start(requireContext(),topic.content?:"",topic.title?:"Topic")
                 }
                 llTopic.isVisible = true
             } else{

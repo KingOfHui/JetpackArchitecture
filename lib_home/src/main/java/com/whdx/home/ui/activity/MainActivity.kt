@@ -2,17 +2,22 @@ package com.whdx.home.ui.activity
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
+import com.whdx.base.util.ext.compareVersionCode
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithKeepStateNav
+import com.whdx.home.BuildConfig
 import com.whdx.home.R
 import com.whdx.home.databinding.ActivityMainBinding
+import com.whdx.home.ui.dialog.UpdateDialog
 import com.whdx.home.vm.HomeViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_setting.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 
@@ -31,17 +36,33 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
     }
 
     override fun initData() {
+        mViewModel.getAppOnline()
     }
 
     override fun startObserve() {
         mViewModel.run {
-            mUser.observe(this@MainActivity, Observer {
-                SmartToast.complete(mUser.value?.username)
+            updateVersionLive.observe(this@MainActivity, Observer {
+                if (BuildConfig.VERSION_NAME.compareVersionCode(it.version?:"")) {
+                    mViewModel.updateVersionLive.value?.let { version ->
+                        if (it.internal_android_url.isNullOrEmpty()) {
+                            SmartToast.error(getString(R.string.update_address_no))
+                            return@let
+                        }
+                        UpdateDialog(this@MainActivity) {
+
+                            val intent = Intent().apply {
+                                action = "android.intent.action.VIEW"
+                                data = Uri.parse(it.internal_android_url)
+                            }
+                            startActivity(intent)
+                        }.show()
+                    }
+                }
             })
         }
     }
 
-    companion object{
+    companion object {
         fun start(context: Context) {
             context.startActivity(Intent(context, MainActivity::class.java))
         }

@@ -168,6 +168,9 @@
     <string name="invite_bonus">邀请人数总收益(USDT)</string>
     <string name="rebate_today">我的今日返佣(USDT)</string>
     <string name="history_rebate">我的历史返佣(USDT)</string>
+    <string name="address_id">我的地址:%s</string>
+    <string name="update_to">更新至V%s</string>
+    <string name="update_address_no">更新地址为空~</string>
 
 
 </resources>

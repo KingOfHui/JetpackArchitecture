@@ -24,7 +24,7 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
     override fun setLayoutResId()= R.layout.fragment_wallet_create
 
     override fun initView() {
-        titleBar.setOnLeftClickListener { requireActivity().finish() }
+        titleBar.setOnLeftClickListener { Navigation.findNavController(titleBar).navigateUp() }
 
         btnNext.setOnClickListener {
             if (!checkbox.isChecked) {

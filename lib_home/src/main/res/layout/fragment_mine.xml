@@ -72,6 +72,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5" />
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/address_id(vm.userInfoLive.address)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_open_bid"
+            tools:text="我的地址：jfkdasfkldsjflsdjlfsjdlaf"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:onClick="@{()->vm.copyAddress()}"
+            />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rcl_top"
             android:layout_width="match_parent"
@@ -79,7 +94,7 @@
             android:layout_margin="20dp"
             app:rv_cornerRadius="5dp"
             android:background="@mipmap/img_net_data_bg"
-            app:layout_constraintTop_toBottomOf="@id/tv_open_bid"
+            app:layout_constraintTop_toBottomOf="@id/tv_address"
             tools:layout_editor_absoluteX="20dp">
 
             <androidx.constraintlayout.widget.Guideline

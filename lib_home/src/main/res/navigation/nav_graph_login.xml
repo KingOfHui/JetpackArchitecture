@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navigation"
-    app:startDestination="@+id/navigation_create_wallet">
+    app:startDestination="@+id/selectLoginFragment">
     <keep_state_fragment
         android:id="@+id/selectLoginFragment"
         android:name="com.whdx.home.ui.fragment.SelectLoginFragment"
@@ -39,7 +39,6 @@
             android:id="@+id/action_navigation_create_wallet_to_leadInAccountFragment"
             app:launchSingleTop="true"
             app:popUpToInclusive="true"
-            app:popUpTo="@id/leadInAccountFragment"
             app:destination="@id/leadInAccountFragment" />
     </keep_state_fragment>
 
@@ -109,7 +108,6 @@
             android:id="@+id/action_leadInAccountFragment_to_navigation_create_wallet"
             app:launchSingleTop="true"
             app:popUpToInclusive="true"
-            app:popUpTo="@id/navigation_create_wallet"
             app:destination="@id/navigation_create_wallet" />
         <action
             android:id="@+id/action_leadInAccountFragment_to_navigation_forget"

@@ -67,7 +67,7 @@ class UserRepository(private val dataSource: RemoteDataSource) : BaseRepository(
         return dataSource.requestInviteData()
     }
 
-    suspend fun getDepositAddress(): BaseResponse<String> {
+    suspend fun getDepositAddress(): ResultData<String> {
         return dataSource.getDepositAddress()
     }
 
