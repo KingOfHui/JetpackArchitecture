@@ -2,19 +2,23 @@ package com.whdx.base.ui.activity
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.ViewGroup
 import android.webkit.ConsoleMessage
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
+import android.widget.FrameLayout
 import com.just.agentweb.*
 import com.whdx.base.R
 import com.whdx.base.util.ext.color
 import com.wwy.android.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_common_web.*
 import kotlinx.android.synthetic.main.layout_custom_title_bar_view.view.*
+import org.jetbrains.anko.backgroundColorResource
 import timber.log.Timber
+
 
 /**
  * @Description
@@ -64,7 +68,8 @@ class CommonWebActivity:BaseActivity() {
             .createAgentWeb()
             .ready()
             .get()
-
+        val frameLayout: FrameLayout? = agentWeb?.getWebCreator()?.getWebParentLayout()
+        frameLayout?.setBackgroundColor(resources.getColor(R.color.colorPrimary))
         agentWeb?.webCreator?.webView?.run {
             overScrollMode = WebView.OVER_SCROLL_NEVER
             settings.run {
@@ -74,6 +79,7 @@ class CommonWebActivity:BaseActivity() {
                 loadWithOverviewMode = true
 //                textZoom = SettingsStore.getWebTextZoom()
             }
+            backgroundColorResource = R.color.colorPrimary
         }
         detailNv.setOnLeftClickListener { finish() }
     }
@@ -81,7 +87,13 @@ class CommonWebActivity:BaseActivity() {
     override fun initData() {
         val url = intent.extras?.getString("url")
         val title = intent.extras?.getString("title")
-        agentWeb?.urlLoader?.loadUrl(url)
+        agentWeb?.urlLoader?.let {
+            if (url?.startsWith("http") == true) {
+                it.loadUrl(url)
+            }else{
+                it.loadData(url,"","")
+            }
+        }
         setTitle(title)
     }
 

@@ -5,7 +5,7 @@ data class Topic(
     var create_at: String?,
     var english_content: String?,
     var english_title: String?,
-    var id: Int,
+    var id: Int?,
     var image_url: String?,
     var is_show: Int?,
     var is_top: Int?,

@@ -5,14 +5,19 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.ActivityHelper
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.base.util.ext.compareVersionCode
+import com.whdx.data.respository.base.LocalDataSource
 import com.whdx.home.BuildConfig
 import com.whdx.home.R
 import com.whdx.home.vm.SettingViewModel
 import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -25,8 +30,8 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
 
     override fun startObserve() {
         mViewModel.updateVersionLive.observe(this, Observer {
-            if (BuildConfig.VERSION_NAME.compareVersionCode(it.version?:"")) {
-                tv_version.text = String.format(getString(R.string.update_to),it.version)
+            if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
+                tv_version.text = String.format(getString(R.string.update_to), it.version)
                 tv_update_version.isClickable = true
             }
         })
@@ -53,8 +58,12 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
             }
         }
         tvCancel.clickWithTrigger {
-            ActivityHelper.finishAll()
-            LoginActivity.start(this)
+            lifecycleScope.launch {
+                withContext(Dispatchers.IO) { LocalDataSource().walletDao.deleteAllWallet() }
+                ActivityHelper.finishAll()
+                LoginActivity.start(this@SettingActivity)
+                overridePendingTransition(0,0)
+            }
         }
     }
 

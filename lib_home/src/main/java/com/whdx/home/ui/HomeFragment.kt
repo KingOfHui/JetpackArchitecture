@@ -10,11 +10,13 @@ import com.whdx.base.adapter.SimpleFragmentStateAdapter
 import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
+import com.whdx.base.util.ext.getLanguage
 import com.whdx.home.vm.HomeViewModel
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentHomeBinding
 import com.whdx.home.ui.activity.MyTotalBonusActivity
 import com.whdx.home.ui.activity.RankActivity
+import com.whdx.home.ui.activity.TopicDetailActivity
 import com.whdx.home.ui.fragment.MyCloudComputeFragment
 import com.whdx.home.ui.fragment.SelectCloudComputeFragment
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -32,7 +34,8 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun setLayoutResId() = R.layout.fragment_home;
 
     override fun initView() {
-        val tabArr = arrayOf(getString(R.string.select_cloud_power), getString(R.string.my_cloud_power))
+        val tabArr =
+            arrayOf(getString(R.string.select_cloud_power), getString(R.string.my_cloud_power))
 
 
         activity?.let {
@@ -53,12 +56,12 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     tab_title.background = if (tab?.position == 0) {
                         group2.visibility = View.GONE
-                        tvFirst.text= getString(R.string.select_power)
+                        tvFirst.text = getString(R.string.select_power)
                         tvSecond.isInvisible = false
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_my)
                     } else {
                         group2.visibility = View.VISIBLE
-                        tvFirst.text= "My Power Fund"
+                        tvFirst.text = getString(R.string.my_power_fund)
                         tvSecond.isInvisible = true
                         resources.getDrawable(com.whdx.base.R.mipmap.img_home_tab_bg_select)
                     }
@@ -83,16 +86,25 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     override fun startObserve() {
-        mViewModel.mTopic.observe(viewLifecycleOwner, Observer {
+        mViewModel.mTopicList.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()) {
                 val topic = it[0]
-                tvTopicTitle.text = topic.title
-                tvTopicTime.text = topic.create_at
-                tvTopicTitle.clickWithTrigger {
-                    CommonWebActivity.start(requireContext(),topic.content?:"",topic.title?:"Topic")
-                }
+                mViewModel.getTopicDetail(topic.id ?: 1)
+                mViewModel.mTopic.observe(viewLifecycleOwner, Observer { detail ->
+                    tvTopicTitle.text =
+                        if (getLanguage() == 1) detail.title else detail.english_title
+                    tvTopicTime.text = detail.create_at
+                    llTopic.clickWithTrigger {
+                        TopicDetailActivity.start(requireContext(),
+                            (if (getLanguage() == 1) detail.content else detail.english_content)
+                                ?: "",
+                            (if (getLanguage() == 1) detail.title else detail.english_title)
+                                ?: "Topic"
+                        )
+                    }
+                })
                 llTopic.isVisible = true
-            } else{
+            } else {
                 llTopic.isInvisible = true
             }
         })

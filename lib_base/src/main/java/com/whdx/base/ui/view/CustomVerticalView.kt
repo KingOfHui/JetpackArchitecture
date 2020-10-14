@@ -45,9 +45,9 @@ class CustomVerticalView @JvmOverloads constructor(
     }
 
     fun setTopStr(topText:String?){
-        tv_top.textSize = DisplayUtil.sp2px(context,10)
+        tv_top.textSize = DisplayUtil.sp2px(context,8)
         topText?.let {
-            if (it.length > 7) {
+            if (it.length > 9) {
                 tv_top.textSize = DisplayUtil.sp2px(context,7)
             }
         }

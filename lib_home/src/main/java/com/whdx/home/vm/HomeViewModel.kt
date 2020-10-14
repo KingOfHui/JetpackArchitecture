@@ -1,22 +1,17 @@
 package com.whdx.home.vm
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.app.BaseApplication
 import com.whdx.base.util.ext.packageInfo
 import com.whdx.base.vm.BaseLoadMoreViewModel
-import com.whdx.data.data.NetData
 import com.whdx.data.data.UpdateVersion
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.ProductItem
 import com.whdx.data.data.topic.Topic
 import com.whdx.data.data.user.User
-import com.whdx.data.data.wallet.USDTBalance
 import com.whdx.data.respository.UserRepository
 import com.whdx.data.respository.base.BaseDataSource
-import kotlinx.coroutines.delay
 import timber.log.Timber
 
 /**
@@ -27,7 +22,8 @@ import timber.log.Timber
 class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<List<ProductItem>>() {
 
     val mUser: MutableLiveData<User> = MutableLiveData()
-    val mTopic: MutableLiveData<List<Topic>> = MutableLiveData()
+    val mTopicList: MutableLiveData<List<Topic>> = MutableLiveData()
+    val mTopic: MutableLiveData<Topic> = MutableLiveData()
     val mProductItemList: MutableLiveData<MutableList<ProductItem>> = MutableLiveData()
         get() {
             if (field.value == null) field.value = mutableListOf()
@@ -38,6 +34,16 @@ class HomeViewModel(val userRepository: UserRepository) : BaseLoadMoreViewModel<
         launchUI {
             getAppOnline()
             val topic = userRepository.getTopic()
+            if (topic is ResultData.Success) {
+                mTopicList.value = topic.data
+            }
+        }
+
+    }
+    fun getTopicDetail(id: Int) {
+        launchUI {
+            getAppOnline()
+            val topic = userRepository.getTopicDetail(id)
             if (topic is ResultData.Success) {
                 mTopic.value = topic.data
             }

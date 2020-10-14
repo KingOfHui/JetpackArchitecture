@@ -2,10 +2,13 @@ package com.whdx.base.util.binding.recyclerview
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.whdx.base.ui.view.JRecyclerView
 import com.whdx.base.R
@@ -15,7 +18,7 @@ import com.whdx.base.R
  * @Author dinghui
  * @Date 2020/9/25 0025 11:05
  */
-class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize: Int = 0) :
+class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize: Int = 1) :
     RecyclerView.ItemDecoration() {
 
 
@@ -42,8 +45,8 @@ class DividerLine(val context: Context, mode: LineDrawMode? = null, dividerSize:
         mContext = context
         //获取样式中对应的属性值
         val attrArray = context.obtainStyledAttributes(ATTRS)
-        dividerDrawable = attrArray.getDrawable(0)
         attrArray.recycle()
+        dividerDrawable = ColorDrawable(Color.parseColor("#4C587D"))
 //        dividerDrawable = ContextCompat.getDrawable(context, drawables[0])
         mMode = mode
         this.dividerSize = dividerSize

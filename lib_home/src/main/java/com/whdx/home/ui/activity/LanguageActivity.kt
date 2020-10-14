@@ -7,6 +7,7 @@ import com.whdx.base.language.LocalLanguageUtil
 import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.ActivityHelper
 import com.whdx.base.util.ext.clickWithTrigger
+import com.whdx.base.util.ext.getLanguage
 import com.whdx.home.R
 import com.whdx.home.vm.SettingViewModel
 import kotlinx.android.synthetic.main.activity_language.*
@@ -33,6 +34,10 @@ class LanguageActivity: BaseVMActivity<SettingViewModel>() {
             ActivityHelper.finishAll()
             MainActivity.start(this)
             overridePendingTransition(0, 0)
+        }
+        when (getLanguage()) {
+            1-> tv_cn.isChecked = true
+            else->tv_en.isChecked = true
         }
     }
 

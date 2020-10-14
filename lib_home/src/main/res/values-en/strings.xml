@@ -169,7 +169,7 @@
     <string name="invite_bonus">Invite Bonus(USDT)</string>
     <string name="rebate_today">Rebate Toady(USDT)</string>
     <string name="history_rebate">History Rebate(USDT)</string>
-    <string name="address_id">My Address:%s</string>
+    <string name="address_id">Address:%s</string>
     <string name="update_to">update to V%s</string>
     <string name="update_address_no">Update Address is Null~</string>
     <string name="tip_have_update_version">A new version has been detected\n Do you want to update it?</string>
@@ -177,6 +177,9 @@
     <string name="to_update">Update</string>
     <string name="tip_later">Later</string>
     <string name="setting">Setting</string>
+    <string name="my_power_fund">My Power Fund</string>
+    <string name="tip_correct_no">Please input correct number</string>
+    <string name="tip_lease_amount">Input is greater than the number of available balance </string>
 
 
 </resources>

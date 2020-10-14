@@ -4,13 +4,11 @@ import com.whdx.base.reponsitory.BaseRepository
 import com.whdx.data.data.MyStorage
 import com.whdx.data.data.NetData
 import com.whdx.data.data.Rank
-import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.InvestProduct
 import com.whdx.data.data.product.Product
 import com.whdx.data.data.topic.Topic
 import com.whdx.data.data.user.InviteData
-import com.whdx.data.data.user.InviteListItem
 import com.whdx.data.data.user.InviteListResponse
 import com.whdx.data.data.user.User
 import com.whdx.data.data.wallet.USDTBalance
@@ -38,6 +36,10 @@ class UserRepository(private val dataSource: RemoteDataSource) : BaseRepository(
     suspend fun getTopic(): ResultData<List<Topic>> {
         return dataSource.getTopic()
     }
+
+    suspend fun getTopTopic() = dataSource.getTopTopic()
+    suspend fun getTopicDetail(id: Int) = dataSource.getTopicDetail(id)
+
 
     suspend fun getNetData(): ResultData<NetData> {
         return dataSource.getNetData()

@@ -68,8 +68,9 @@ class LeaseDialog(
                     .isNotEmpty()
                 tvSure.isEnabled =
                     p.multiply(amount) <= balance && etPWD.text.toString().isNotEmpty()
+                tvAmount.text = as_amount.number.multiply(amount).stripTrailingZeros().toPlainString()
                 if (p.multiply(amount) > balance) {
-                    SmartToast.error("输入数量大于可用余额")
+                    SmartToast.error(context.getString(R.string.tip_lease_amount))
                 }
             }
         })
@@ -82,9 +83,10 @@ class LeaseDialog(
             if (as_amount.number.compareTo(BigDecimal.ZERO) > 0) {
                 viewModel?.requestInvestLease(id, as_amount.number.toPlainString())
             } else {
-                SmartToast.error("请输入正确数量")
+                SmartToast.error(context.getString(R.string.tip_correct_no))
             }
         }
+        as_amount.setNum(BigDecimal.ONE)
     }
 
     companion object {

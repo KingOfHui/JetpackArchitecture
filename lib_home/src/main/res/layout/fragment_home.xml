@@ -142,7 +142,6 @@
                     android:id="@+id/tvFirst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:text="@string/select_power"
                     android:textColor="@color/white"
                     android:textSize="14sp"

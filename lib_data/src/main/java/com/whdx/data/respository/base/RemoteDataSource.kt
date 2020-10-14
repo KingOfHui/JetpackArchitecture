@@ -2,7 +2,6 @@ package com.whdx.data.respository.base
 
 import com.google.gson.Gson
 import com.whdx.base.util.bitcoinj.BitcoinjKit
-import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.user.InviteData
 import com.whdx.data.data.user.InviteListResponse
@@ -56,6 +55,8 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
         safeApiCall {
             call(teacherService.getTopic())
         }
+    suspend fun getTopTopic() = safeApiCall { call(teacherService.getTopTopic()) }
+    suspend fun getTopicDetail(id: Int)= safeApiCall { call(teacherService.getTopicDetail(id)) }
 
     suspend fun getNetData() = safeApiCall { call(teacherService.getNetData(getHeaderMap())) }
 

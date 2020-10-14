@@ -64,7 +64,7 @@
             android:id="@+id/tvBonus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{model.bonus_all.stripTrailingZeros().toPlainString()+`USDT`,default=`-`}"
+            android:text="@{model.bonus_all.toPlainString(),default=`-`}"
             android:textSize="12sp"
             android:lines="1"
             android:ellipsize="end"

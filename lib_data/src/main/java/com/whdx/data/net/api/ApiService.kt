@@ -40,6 +40,11 @@ interface ApiService {
     @GET("v1/announcement/list")
     suspend fun getTopic(): BaseResponse<List<Topic>>
 
+    @GET("v1/announcement/getTop")
+    suspend fun getTopTopic(): BaseResponse<Topic>
+    @GET("v1/announcement/detail/{id}")
+    suspend fun getTopicDetail(@Path("id") id:Int): BaseResponse<Topic>
+
     @GET("v1/net/data")
     suspend fun getNetData(
         @HeaderMap headers: Map<String, String>

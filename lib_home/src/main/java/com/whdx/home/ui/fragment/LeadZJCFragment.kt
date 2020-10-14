@@ -47,6 +47,10 @@ class LeadZJCFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding>() {
                 SmartToast.show(getString(R.string.input_zjc))
                 return@clickWithTrigger
             }
+            if (trim.split(" ").size < 12) {
+                SmartToast.show(getString(R.string.zjc_sure_view))
+                return@clickWithTrigger
+            }
             if (!checkbox.isChecked) {
                 SmartToast.showInCenter(getString(R.string.wallet_create_xieyi))
                 return@clickWithTrigger

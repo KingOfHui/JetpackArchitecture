@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <com.whdx.base.ui.view.CustomTitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isShow_left_img="true"
+        app:text_color="@color/white" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_margin="@dimen/dimen_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/webContainer"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            android:text="121212"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
