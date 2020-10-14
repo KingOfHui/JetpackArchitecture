@@ -181,6 +181,7 @@
     <string name="tip_lease_amount">输入数量大于可用余额</string>
     <string name="max_bonus">最高收益: %sUSDT </string>
     <string name="already_bonus">已收益: %sUSDT </string>
+    <string name="already_buy">已购买</string>
 
 
 </resources>

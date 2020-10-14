@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
 import com.whdx.base.util.ext.compareVersionCode
+import com.whdx.base.util.ext.getLanguage
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithKeepStateNav
 import com.whdx.home.BuildConfig
 import com.whdx.home.R
@@ -52,7 +53,7 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
 
                             val intent = Intent().apply {
                                 action = "android.intent.action.VIEW"
-                                data = Uri.parse(it.internal_android_url)
+                                data = Uri.parse(if (getLanguage()==1) it.internal_android_url else it.abroad_android_url)
                             }
                             startActivity(intent)
                         }.show()

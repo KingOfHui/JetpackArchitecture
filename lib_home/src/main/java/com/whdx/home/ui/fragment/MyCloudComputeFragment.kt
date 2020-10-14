@@ -41,8 +41,8 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
                 holder.dataBinding?.let {
                     it.model = item
 //                    it.tvStorage.text = item.format(getString(R.string.prod_storage),item.prod_storage)
-//                    it.tvStorage.text = item.format(getString(R.string.price_usdt),item.amount.stripTrailingZeros().toPlainString())
-//                    it.tvStorage.text = item.format(getString(R.string.buy_num),item.quantity.toString())
+//                    it.tvPerPrice.text = item.format(getString(R.string.price_usdt),item.amount.stripTrailingZeros().toPlainString())
+//                    it.tvBuyNum.text = item.format(getString(R.string.buy_num),item.quantity.toString())
                     it.executePendingBindings()
                 }
                 holder.itemView.clickWithTrigger {

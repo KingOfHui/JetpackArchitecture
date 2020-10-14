@@ -182,6 +182,7 @@
     <string name="tip_lease_amount">Input is greater than the number of available balance </string>
     <string name="max_bonus">Max Bonus: %s USDT </string>
     <string name="already_bonus">Total Bonus: %s USDT </string>
+    <string name="already_buy">Purchased</string>
 
 
 </resources>

@@ -7,5 +7,6 @@ class MyStorage(
     val btw_price: BigDecimal,
     val deposit_address: String,
     val invest_amount: BigDecimal,
-    val member_bonus: BigDecimal
+    val member_bonus: BigDecimal,
+    val yesterday_member_bonus: BigDecimal
 )

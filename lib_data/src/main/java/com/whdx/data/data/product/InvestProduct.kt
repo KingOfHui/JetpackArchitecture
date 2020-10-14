@@ -35,7 +35,8 @@ data class InvestProductItem(
     val user_id: String
 ) : Serializable {
     fun format(s1: String, s2: String): String {
-        return SpannableStringUtil.getBuilder(s1).setForegroundColor(Color.parseColor("#94A0C1"))
-            .append(s2).setForegroundColor(Color.WHITE).create().toString()
+//        return SpannableStringUtil.getBuilder("").setForegroundColor(Color.parseColor("#94A0C1"))
+        return SpannableStringUtil.getBuilder("").setForegroundColor(Color.WHITE)
+            .append(s1).setForegroundColor(Color.WHITE).append(s2).create().toString()
     }
 }

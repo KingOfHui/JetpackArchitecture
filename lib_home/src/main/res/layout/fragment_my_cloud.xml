@@ -101,7 +101,7 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toLeftOf="@id/gl_v_50_2"
                             app:layout_constraintTop_toBottomOf="@id/cvv_total_mineral"
-                            app:topStr="@{vm.MMyStorage.member_bonus.stripTrailingZeros().toString(),default =`0`}" />
+                            app:topStr="@{vm.MMyStorage.yesterday_member_bonus.stripTrailingZeros().toPlainString(),default =`0`}" />
 
                         <com.whdx.base.ui.view.CustomVerticalView
                             android:layout_width="0dp"
