@@ -6,6 +6,7 @@
 
     <data>
 
+        <import type="java.math.BigDecimal"/>
         <variable
             name="vm"
             type="com.whdx.home.vm.BonusViewModel" />
@@ -78,6 +79,19 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已购买"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvReleaseMutiple"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:background="@drawable/shape_cloud_buy_bg"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"/>
+            <TextView
                 android:id="@+id/tvStorage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,7 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@{@string/prod_amount(model.prod_amount,model.prod_symbol)}"
+                android:text="@{@string/prod_amount(model.amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString(),model.prod_symbol)}"
                 android:textColor="@color/text_color_tip_94A0C1"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/tvStorage"
@@ -131,9 +145,18 @@
                 android:layout_height="1px"
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:background="#4C587D"
-                android:visibility="invisible"
                 app:layout_constraintTop_toBottomOf="@+id/tvAmount"
                 tools:layout_editor_absoluteX="14dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:text="@{@string/max_bonus(model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString())}"
+                android:textColor="@color/text_color_tip_94A0C1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -190,6 +213,16 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cl_top" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_tip"
+            app:layout_constraintBottom_toBottomOf="@id/tv_tip"
+            android:text="@{@string/already_bonus(model.bonus.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString())}"/>
         <com.whdx.base.ui.view.RoundLinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

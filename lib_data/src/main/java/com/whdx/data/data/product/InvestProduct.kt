@@ -1,7 +1,11 @@
 package com.whdx.data.data.product
 
+import android.graphics.Color
 import android.os.Parcelable
+import com.whdx.base.util.SpannableStringUtil
+import com.whdx.data.R
 import java.io.Serializable
+import java.math.BigDecimal
 
 data class InvestProduct(
     val items: List<InvestProductItem>,
@@ -12,12 +16,12 @@ data class InvestProduct(
 )
 
 data class InvestProductItem(
-    val amount: String,
-    val bonus: String,
+    val amount: BigDecimal,
+    val bonus: BigDecimal,
     val create_time: String,
     val finish_time: String,
     val id: Int,
-    val prod_amount: String,
+    val prod_amount: BigDecimal,
     val prod_id: Int,
     val prod_name: String,
     val prod_rate: String,
@@ -25,8 +29,13 @@ data class InvestProductItem(
     val prod_storage: String,
     val prod_symbol: String,
     val quantity: Int,
-    val release_amount: String,
+    val release_amount: BigDecimal,
     val state: String,
     val update_time: String,
     val user_id: String
-):Serializable
+) : Serializable {
+    fun format(s1: String, s2: String): String {
+        return SpannableStringUtil.getBuilder(s1).setForegroundColor(Color.parseColor("#94A0C1"))
+            .append(s2).setForegroundColor(Color.WHITE).create().toString()
+    }
+}

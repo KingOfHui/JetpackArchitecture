@@ -1,13 +1,20 @@
 package com.whdx.pen
 
+import android.animation.ObjectAnimator
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import com.gyf.immersionbar.ktx.immersionBar
 import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.home.ui.activity.MainActivity
 import com.whdx.home.vm.WalletViewModel
 import com.whdx.paper.pen.R
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -19,19 +26,23 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_splash)
+        immersionBar { statusBarColor(R.color.color_F7F7FA) }
+        ObjectAnimator.ofInt(findViewById(R.id.fl_bg), "alpha", 0, 1).setDuration(1000).start()
         val mViewModel: WalletViewModel = getViewModel()
         mViewModel.getCurrentWallet()
         mViewModel.hasWallet.observe(this, Observer {
-            mViewModel.launchUI {
-                async { delay(2000) }.await()
+            lifecycleScope.launch {
+                delay(1200)
                 if (it) {
                     MainActivity.start(this@SplashActivity)
                 } else{
                     LoginActivity.start(this@SplashActivity)
                 }
+                overridePendingTransition(0,0)
                 finish()
             }
         })
     }
+
 }
