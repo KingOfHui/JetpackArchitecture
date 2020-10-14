@@ -25,6 +25,10 @@ open class BaseApplication : Application() {
     override fun attachBaseContext(base: Context?) {
         //Save the system language selection when entering the app for the first time.
 //        LocalManageUtil.saveSystemCurrentLanguage(base)
+        MMKV.initialize(base)
+        MultiLanguage.init { context -> //返回自己本地保存选择的语言设置
+            LocalLanguageUtil.getSetLanguageLocale(context)
+        }
         super.attachBaseContext(MultiLanguage.setLocal(base))
         APPLICATION = this
     }
@@ -32,12 +36,8 @@ open class BaseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         CONTEXT = applicationContext
-        MMKV.initialize(this)
-//        (getSystemService(Context.UI_MODE_SERVICE) as UiModeManager).nightMode = getNightMode()
-        MultiLanguage.init { context -> //返回自己本地保存选择的语言设置
-            LocalLanguageUtil.getSetLanguageLocale(context)
-        }
         MultiLanguage.setApplicationLanguage(this)
+//        (getSystemService(Context.UI_MODE_SERVICE) as UiModeManager).nightMode = getNightMode()
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
