@@ -15,6 +15,7 @@ data class ProductItem(
     val create_time: String,
     val id: String,
     val name: String,
+    val name_en: String?,
     val rate: BigDecimal,
     val release_multiple: BigDecimal,
     val state: Int,

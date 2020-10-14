@@ -66,7 +66,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="25dp"
-            android:text="@{@string/power_bonus(model.release_multiple)}"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/imageView"
