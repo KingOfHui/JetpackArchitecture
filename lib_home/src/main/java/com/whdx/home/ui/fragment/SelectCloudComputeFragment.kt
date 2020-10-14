@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
+import com.whdx.base.util.ext.getLanguage
 import com.whdx.data.data.product.ProductItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentSelectCloudBinding
@@ -58,6 +59,11 @@ class SelectCloudComputeFragment :
                         }?:let {
                             SmartToast.error("获取余额信息失败~")
                         }
+                    }
+                    it.tvReleaseMutiple.text = if (getLanguage() == 1) {
+                        item.name
+                    } else{
+                        item.name_en?:""
                     }
                     it.model = item
                     it.executePendingBindings()
