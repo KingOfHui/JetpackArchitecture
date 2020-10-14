@@ -159,7 +159,7 @@
     <string name="power_is">Power %sT</string>
     <string name="power_bonus">%s times Power Bonus</string>
     <string name="price_is">Price: %s</string>
-    <string name="prod_storage">Reserve Force:≈ %sP</string>
+    <string name="prod_storage">Reserve Force: ≈ %sP</string>
     <string name="price_usdt">Price: %sUSDT</string>
     <string name="buy_num">Buy No.: %s </string>
     <string name="prod_amount">Amount: %s %s</string>

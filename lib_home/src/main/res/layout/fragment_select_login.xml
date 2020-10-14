@@ -33,8 +33,8 @@
         android:id="@+id/tv_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/tv_name"
         app:layout_constraintLeft_toRightOf="@id/tv_name"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
         android:textColor="@color/white"
         android:textSize="8sp"
         android:layout_marginLeft="3dp"
@@ -51,7 +51,7 @@
         android:layout_marginLeft="@dimen/dimen_15dp"
         android:layout_marginRight="@dimen/dimen_15dp"
         android:textColor="@color/text_color_tip_94A0C1"
-        android:layout_marginTop="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
         />
 
     <TextView

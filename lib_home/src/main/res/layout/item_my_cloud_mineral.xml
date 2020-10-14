@@ -112,6 +112,7 @@
             android:layout_marginRight="@dimen/dimen_10dp"
             android:gravity="center"
             android:layout_marginLeft="@dimen/dimen_20dp"
+            android:textSize="10sp"
             android:text="@{@string/max_bonus(model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString())}"
             android:textColor="@color/text_color_tip_94A0C1"
             app:layout_constraintLeft_toLeftOf="parent"

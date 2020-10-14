@@ -179,8 +179,8 @@
     <string name="my_power_fund">我的算力基金</string>
     <string name="tip_correct_no">请输入正确数量</string>
     <string name="tip_lease_amount">输入数量大于可用余额</string>
-    <string name="max_bonus">最高收益: %s USDT </string>
-    <string name="already_bonus">已收益: %s USDT </string>
+    <string name="max_bonus">最高收益: %sUSDT </string>
+    <string name="already_bonus">已收益: %sUSDT </string>
 
 
 </resources>

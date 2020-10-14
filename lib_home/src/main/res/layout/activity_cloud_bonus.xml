@@ -155,6 +155,7 @@
                 android:layout_marginLeft="@dimen/dimen_20dp"
                 android:text="@{@string/max_bonus(model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString())}"
                 android:textColor="@color/text_color_tip_94A0C1"
+                android:textSize="10sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
 
@@ -217,7 +218,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="13sp"
+            android:textSize="10sp"
             android:layout_marginRight="@dimen/dimen_20dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_tip"
