@@ -2,19 +2,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:opacity="opaque">
     <item>
-        <shape android:shape="rectangle">
-            <gradient
-                android:angle="-90"
-                android:startColor="#7184ff"
-                android:endColor="#17181D"/>
-        </shape>
+        <bitmap android:src="@mipmap/ic_launch_bg"/>
     </item>
-    <item android:bottom="50dp">
-        <bitmap
-            android:gravity="bottom|center_horizontal"
-            android:src="@mipmap/ic_cloud"
-            android:alpha="0"
-            android:tileMode="disabled" />
-    </item>
-
 </layer-list>

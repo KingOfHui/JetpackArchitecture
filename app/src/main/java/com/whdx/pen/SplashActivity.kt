@@ -6,8 +6,8 @@ import androidx.lifecycle.Observer
 import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.home.ui.activity.MainActivity
 import com.whdx.home.vm.WalletViewModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import com.whdx.paper.pen.R
+import kotlinx.coroutines.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -17,19 +17,21 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
  */
 class SplashActivity : AppCompatActivity() {
 
-
-//    override fun setLayoutId()= R.layout.activity_splash
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_splash)
         val mViewModel: WalletViewModel = getViewModel()
         mViewModel.getCurrentWallet()
         mViewModel.hasWallet.observe(this, Observer {
-            runBlocking { delay(300) }
-            if (it) MainActivity.start(this) else LoginActivity.start(
-                this
-            )
-            finish()
+            mViewModel.launchUI {
+                async { delay(2000) }.await()
+                if (it) {
+                    MainActivity.start(this@SplashActivity)
+                } else{
+                    LoginActivity.start(this@SplashActivity)
+                }
+                finish()
+            }
         })
     }
 }
