@@ -182,6 +182,7 @@
     <string name="max_bonus">最高收益: %sUSDT </string>
     <string name="already_bonus">已收益: %sUSDT </string>
     <string name="already_buy">已购买</string>
+    <string name="create_wallet">创建钱包</string>
 
 
 </resources>

@@ -114,7 +114,7 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
         val warningDialog = WarningDialog(requireContext())
         warningDialog.setOnClickListener {
             inputPasswordDialog =
-                InputPasswordDialog(requireContext(), getString(R.string.input_invite_code))
+                InputPasswordDialog(requireContext(), getString(R.string.input_invite_code),true)
             inputPasswordDialog.setInputListener { code ->
                 mViewModel.openBid(code)
             }

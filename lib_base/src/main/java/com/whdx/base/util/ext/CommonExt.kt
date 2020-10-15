@@ -15,6 +15,7 @@ import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.whdx.base.R
 import com.whdx.base.util.TipHelper
 import java.text.SimpleDateFormat
@@ -211,3 +212,16 @@ fun getVersionCode(code: String?): Float {
     val suffix = code.substring(index + 1).replace(".", "")
     return prefix.plus(suffix).toFloat()
 }
+
+//清除长按时的toast
+
+fun BottomNavigationView.clearToast(ids: List<Int>) {
+
+    val bottomNavigationMenuView: ViewGroup = (getChildAt(0) as ViewGroup)
+    //遍历子View,重写长按点击事件   
+    for (position in ids.indices) {
+        bottomNavigationMenuView.getChildAt(position).findViewById<View>(ids[position])
+            .setOnLongClickListener { true }
+    }
+}
+

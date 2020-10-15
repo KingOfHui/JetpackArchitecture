@@ -82,7 +82,7 @@
     <string name="universe">Universe</string>
     <string name="pwd_tip">Password prompt information (optional)</string>
     <string name="trade_next_step">The Next Step</string>
-    <string name="loading_wallet_sign_two">Import wallet</string>
+    <string name="loading_wallet_sign_two">Import Wallet</string>
     <string name="liji_zujie">Rent now</string>
     <string name="private_key_put_pwd">Please enter your password</string>
     <string name="cancel">Cancel</string>
@@ -183,6 +183,7 @@
     <string name="max_bonus">Max Bonus: %s USDT </string>
     <string name="already_bonus">Total Bonus: %s USDT </string>
     <string name="already_buy">Purchased</string>
+    <string name="create_wallet">Create Wallet</string>
 
 
 </resources>
