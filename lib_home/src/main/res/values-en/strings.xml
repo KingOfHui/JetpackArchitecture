@@ -180,10 +180,12 @@
     <string name="my_power_fund">My Power Fund</string>
     <string name="tip_correct_no">Please input correct number</string>
     <string name="tip_lease_amount">Input is greater than the number of available balance </string>
-    <string name="max_bonus">Max Bonus: %s USDT </string>
+    <string name="max_bonus">Max Bonus: </string>
     <string name="already_bonus">Total Bonus: %s USDT </string>
     <string name="already_buy">Purchased</string>
     <string name="create_wallet">Create Wallet</string>
+    <string name="select_language">Select Language</string>
+    <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>
 
 
 </resources>

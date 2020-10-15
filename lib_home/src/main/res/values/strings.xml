@@ -179,10 +179,12 @@
     <string name="my_power_fund">我的算力基金</string>
     <string name="tip_correct_no">请输入正确数量</string>
     <string name="tip_lease_amount">输入数量大于可用余额</string>
-    <string name="max_bonus">最高收益: %sUSDT </string>
+    <string name="max_bonus">最高收益: </string>
     <string name="already_bonus">已收益: %sUSDT </string>
     <string name="already_buy">已购买</string>
     <string name="create_wallet">创建钱包</string>
+    <string name="select_language">选择语言</string>
+    <string name="tip_login_text">自由全球沟通，创造无限可能\n 区块链让个人社交、支付数据、财产归属于当前私钥</string>
 
 
 </resources>

@@ -131,11 +131,10 @@ object DateUtils {
         val from = SimpleDateFormat(fromPattern)
         val to = SimpleDateFormat(pattern)
         from.timeZone = defTimeZone
-        val date = from.parse(strDate)
         return try {
-            to.format(date)
+            to.format(from.parse(strDate))
         } catch (e: Exception) {
-            ""
+            strDate
         }
     }
 

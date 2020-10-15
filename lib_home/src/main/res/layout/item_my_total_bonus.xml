@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="com.whdx.base.util.DateUtils"/>
         <variable
             name="model"
             type="com.whdx.data.data.wallet.MemberBonusItem" />
@@ -10,7 +11,7 @@
     <LinearLayout
         android:id="@+id/llTitle"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_50dp"
+        android:layout_height="@dimen/dimen_35dp"
         android:orientation="horizontal"
         >
         <TextView
@@ -31,7 +32,7 @@
             android:lines="1"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@{model.create_time}"
+            android:text="@{DateUtils.INSTANCE.reformatStringDate(model.create_time,`yyyy-MM-dd HH:mm`),default=`-`}"
             android:gravity="center"
             android:textSize="@dimen/sp_14"
             android:textColor="@color/white"

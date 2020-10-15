@@ -148,17 +148,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvAmount"
                 tools:layout_editor_absoluteX="14dp" />
             <TextView
+                android:id="@+id/tvMaxBonus"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
+                android:layout_marginRight="2dp"
                 android:gravity="center"
                 android:layout_marginLeft="@dimen/dimen_20dp"
-                android:text="@{@string/max_bonus(model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString())}"
+                android:text="@string/max_bonus"
                 android:textColor="@color/text_color_tip_94A0C1"
                 android:textSize="10sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:text="@{model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString()+`USDT`}"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toRightOf="@id/tvMaxBonus"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"

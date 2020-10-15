@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/iv_logo"
-        android:text="自由全球沟通，创造无限可能\n 区块链让个人社交、支付数据、财产归属于当前私钥"
+        android:text="@string/tip_login_text"
         android:textSize="@dimen/sp_14"
         android:gravity="center"
         android:layout_marginLeft="@dimen/dimen_15dp"
