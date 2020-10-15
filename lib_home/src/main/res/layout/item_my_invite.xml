@@ -22,6 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:lines="1"
+            android:layout_marginLeft="@dimen/dimen_10dp"
             android:ellipsize="end"
             android:text="@{DateUtils.INSTANCE.reformatStringDate(model.create_time,`yyyy.MM.dd`)}"
             android:textSize="12sp"

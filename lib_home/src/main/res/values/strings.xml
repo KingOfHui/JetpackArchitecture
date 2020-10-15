@@ -144,7 +144,7 @@
     <string name="mine_performance">我的星级有效业绩(USDT)</string>
     <string name="mine_performance_node">节点总业绩(USDT)</string>
     <string name="biw_price">BIW价格(USDT)</string>
-    <string name="net_all_power">全网总能量(BIW)</string>
+    <string name="net_all_power">全网总能量(USDT)</string>
     <string name="net_all_storage">全网总算力 (T)</string>
     <string name="net_power">全网算力</string>
     <string name="lead_wallet_success">导入钱包成功</string>
@@ -155,10 +155,10 @@
     <string name="my_total_bonus">我的总收益(USDT)</string>
     <string name="my_invite">我的邀请</string>
     <string name="level_people">%s人</string>
-    <string name="power_is">算力合约 %sT</string>
+    <string name="power_is">算力: 合约 %sT</string>
     <string name="power_bonus">%s倍 算力收益</string>
     <string name="price_is">价格: %s</string>
-    <string name="prod_storage">分储算力:合约 %sP</string>
+    <string name="prod_storage">算力: 合约 %sP</string>
     <string name="price_usdt">单价: %sUSDT</string>
     <string name="buy_num">购买数量: %s </string>
     <string name="prod_amount">已支付: %s %s</string>
@@ -185,6 +185,7 @@
     <string name="create_wallet">创建钱包</string>
     <string name="select_language">选择语言</string>
     <string name="tip_login_text">自由全球沟通，创造无限可能\n 区块链让个人社交、支付数据、财产归属于当前私钥</string>
+    <string name="rent_force">租借算力</string>
 
 
 </resources>

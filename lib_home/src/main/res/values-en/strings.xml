@@ -146,7 +146,7 @@
     <string name="mine_performance">Valid Performance(USDT)</string>
     <string name="mine_performance_node">Node Performance(USDT)</string>
     <string name="biw_price">BIW Price(USDT)</string>
-    <string name="net_all_power">Net Energy(BIW)</string>
+    <string name="net_all_power">Net Energy(USDT)</string>
     <string name="net_all_storage">Net Force(T)</string>
     <string name="net_power">Net Power</string>
     <string name="lead_wallet_success">Import Wallet Success</string>
@@ -159,7 +159,7 @@
     <string name="power_is">Power %sT</string>
     <string name="power_bonus">%s times Power Bonus</string>
     <string name="price_is">Price: %s</string>
-    <string name="prod_storage">Reserve Force: ≈ %sP</string>
+    <string name="prod_storage">Force: ≈ %sP</string>
     <string name="price_usdt">Price: %sUSDT</string>
     <string name="buy_num">Buy No.: %s </string>
     <string name="prod_amount">Paid: %s %s</string>
@@ -186,6 +186,7 @@
     <string name="create_wallet">Create Wallet</string>
     <string name="select_language">Select Language</string>
     <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>
+    <string name="rent_force">Rent Force</string>
 
 
 </resources>

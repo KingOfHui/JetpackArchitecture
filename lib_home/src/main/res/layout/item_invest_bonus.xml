@@ -22,7 +22,7 @@
             android:gravity="center"
             android:text="@{model.bonus+`USDT`,default=`-`}"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -32,6 +32,6 @@
             android:gravity="center"
             android:text="@{DateUtils.INSTANCE.reformatStringDate(model.create_time,`yyyy-MM-dd HH:mm`),default=`-`}"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 </layout>

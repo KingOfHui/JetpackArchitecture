@@ -1,6 +1,7 @@
 package com.whdx.data.respository.base
 
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.whdx.base.net.exception.ApiResultCode
 import com.whdx.data.data.base.BaseResponse
 import com.whdx.data.data.base.ResultData
 import com.wwy.android.data.api.ApiService
@@ -30,7 +31,11 @@ abstract class BaseDataSource {
             call()
         } catch (e: Exception) {
             e.printStackTrace()
-            SmartToast.error(DealException.handlerException(e).msg)
+
+            val handlerException = DealException.handlerException(e)
+            if (handlerException.errCode != ApiResultCode.UNKNOWN) {
+                SmartToast.error(handlerException.msg)
+            }
             ResultData.Error(DealException.handlerException(e))
         }
     }

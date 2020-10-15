@@ -183,11 +183,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rcl_top" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
+                <com.whdx.base.ui.view.RoundConstraintLayout                    android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="@dimen/dimen_20dp"
-                    android:background="#3B4669"
+                    app:rv_backgroundColor="#3B4669"
+                    app:rv_cornerRadius="5dp"
                     android:paddingLeft="@dimen/dimen_10dp"
                     android:paddingTop="@dimen/dimen_20dp"
                     android:paddingRight="@dimen/dimen_10dp"
@@ -305,7 +305,7 @@
                             app:linearManager="@{LineDivideManagers.INSTANCE.horizontal()}"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
                     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.whdx.base.ui.view.RoundConstraintLayout >
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

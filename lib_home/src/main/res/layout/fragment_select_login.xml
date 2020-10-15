@@ -26,7 +26,8 @@
         android:id="@+id/tvSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CN/EN"
+        android:text="CN"
+        android:textSize="@dimen/sp_15"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:padding="@dimen/dimen_20dp"
@@ -59,11 +60,12 @@
     <TextView
         android:id="@+id/tv_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dimen_80dp"
         app:layout_constraintTop_toBottomOf="@id/iv_logo"
         android:text="@string/tip_login_text"
+        android:lineHeight="@dimen/dimen_20dp"
         android:textSize="@dimen/sp_14"
-        android:gravity="center"
+        android:gravity="center|top"
         android:layout_marginLeft="@dimen/dimen_15dp"
         android:layout_marginRight="@dimen/dimen_15dp"
         android:textColor="@color/text_color_tip_94A0C1"
@@ -82,7 +84,7 @@
         android:layout_marginLeft="@dimen/dimen_45dp"
         android:layout_marginRight="@dimen/dimen_45dp"
         android:textSize="@dimen/sp_15"
-        android:background="@drawable/shape_rect_stroke_text_bg"
+        android:background="@drawable/shape_rect_stroke_text_bg_2px"
         />
     <TextView
         android:id="@+id/tvImport"

@@ -30,6 +30,7 @@ class SplashActivity : AppCompatActivity() {
         mViewModel.getCurrentWallet()
         mViewModel.hasWallet.observe(this, Observer {
             lifecycleScope.launch {
+                delay(700)
                 if (it) {
                     MainActivity.start(this@SplashActivity)
                 } else{

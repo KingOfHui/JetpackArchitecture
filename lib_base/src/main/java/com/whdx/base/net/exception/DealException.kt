@@ -2,6 +2,8 @@ package com.whdx.base.net.exception
 
 import android.net.ParseException
 import com.google.gson.JsonParseException
+import com.whdx.base.R
+import com.whdx.base.app.BaseApplication
 
 import org.json.JSONException
 import retrofit2.HttpException
@@ -30,13 +32,13 @@ object DealException {
                 ApiResultCode.REQUEST_TIMEOUT,
                 ApiResultCode.GATEWAY_TIMEOUT -> ResultException(
                     t.code().toString(),
-                    "网络连接超时"
+                    BaseApplication.CONTEXT.getString(R.string.network_timeout)
                 )
                 ApiResultCode.INTERNAL_SERVER_ERROR,
                 ApiResultCode.BAD_GATEWAY,
                 ApiResultCode.SERVICE_UNAVAILABLE -> ResultException(
                     t.code().toString(),
-                    "服务器错误"
+                    BaseApplication.CONTEXT.getString(R.string.server_error)
                 )
                 else -> ResultException(t.code().toString(), "网络错误")
             }
@@ -51,12 +53,12 @@ object DealException {
         } else if (t is SocketException) {
             ex = ResultException(
                 ApiResultCode.REQUEST_TIMEOUT.toString(),
-                "网络连接错误，请重试"
+                BaseApplication.CONTEXT.getString(R.string.network_error)
             )
         } else if (t is SocketTimeoutException) {
             ex = ResultException(
                 ApiResultCode.REQUEST_TIMEOUT.toString(),
-                "网络连接超时"
+                BaseApplication.CONTEXT.getString(R.string.net_timeout)
             )
         } else if (t is SSLHandshakeException) {
             ex = ResultException(
@@ -67,13 +69,13 @@ object DealException {
         } else if (t is UnknownHostException) {
             ex = ResultException(
                 ApiResultCode.UNKNOW_HOST,
-                "网络错误，请切换网络重试"
+                BaseApplication.CONTEXT.getString(R.string.tip_network_error)
             )
             return ex
         } else if (t is UnknownServiceException) {
             ex = ResultException(
                 ApiResultCode.UNKNOW_HOST,
-                "网络错误，请切换网络重试"
+                BaseApplication.CONTEXT.getString(R.string.tip_network_error)
             )
         } else if (t is NumberFormatException) {
             ex = ResultException(
@@ -85,6 +87,7 @@ object DealException {
                 ApiResultCode.UNKNOWN,
                 "未知错误"
             )
+            ex.printStackTrace()
         }
         return ex
     }

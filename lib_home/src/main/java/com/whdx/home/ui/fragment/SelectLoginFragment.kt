@@ -4,6 +4,7 @@ import androidx.navigation.Navigation
 import com.whdx.base.language.LocalLanguageUtil
 import com.whdx.base.ui.fragment.BaseFragment
 import com.whdx.base.util.ext.clickWithTrigger
+import com.whdx.base.util.ext.getLanguage
 import com.whdx.home.BuildConfig
 import com.whdx.home.R
 import com.whdx.home.ui.activity.LoginActivity
@@ -31,8 +32,13 @@ class SelectLoginFragment:BaseFragment() {
             requireActivity().finish()
             requireActivity().overridePendingTransition(0,0)
         }
+        switchUI()
     }
 
     override fun initData() {
+    }
+
+    fun switchUI() {
+        tvSwitch.text= if (getLanguage() == 1) "EN" else "CN"
     }
 }

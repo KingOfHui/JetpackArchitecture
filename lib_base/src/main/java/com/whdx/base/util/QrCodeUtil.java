@@ -160,7 +160,7 @@ public class QrCodeUtil {
         File dir = getAppDir();
         File CQFile = new File(dir, "CQ-" + "USDT" + "-" + System.currentTimeMillis() + ".jpg");
         saveBitmap(bitmap, CQFile);
-        SmartToast.show("二维码已保存至: " + CQFile.getAbsolutePath());
+        SmartToast.show("QrCode Saved: " + CQFile.getAbsolutePath());
     }
     public static File getAppDir() {
         File dir = BaseApplication.Companion.getAPPLICATION().getExternalFilesDir(null);

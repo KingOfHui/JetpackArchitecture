@@ -11,4 +11,9 @@
     <string name="no_data">暂无数据~</string>
     <string name="copy_bord_content">已复制到剪切板</string>
     <string name="launch_text">自由沟通、支付\n区块链创造无限可能</string>
+    <string name="net_timeout">网络连接超时</string>
+    <string name="network_error">网络连接错误，请重试</string>
+    <string name="network_timeout">网络连接超时</string>
+    <string name="tip_network_error">网络错误，请切换网络重试</string>
+    <string name="server_error">服务器错误</string>
 </resources>

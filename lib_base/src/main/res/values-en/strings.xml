@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="launch_text">Free communication and\npayment blockchain create\nunlimited possibilities</string>
+    <string name="net_timeout">NetWork Timeout</string>
+    <string name="network_error">Network Error</string>
+    <string name="network_timeout">NetWork Timeout</string>
+    <string name="tip_network_error">Network Error</string>
+    <string name="server_error">Server Error</string>
+    <string name="copy_bord_content">Copid to Clipboard</string>
+
 </resources>
