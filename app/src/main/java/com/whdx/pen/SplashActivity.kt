@@ -11,10 +11,7 @@ import com.whdx.home.ui.activity.LoginActivity
 import com.whdx.home.ui.activity.MainActivity
 import com.whdx.home.vm.WalletViewModel
 import com.whdx.paper.pen.R
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
@@ -33,7 +30,6 @@ class SplashActivity : AppCompatActivity() {
         mViewModel.getCurrentWallet()
         mViewModel.hasWallet.observe(this, Observer {
             lifecycleScope.launch {
-                delay(1200)
                 if (it) {
                     MainActivity.start(this@SplashActivity)
                 } else{

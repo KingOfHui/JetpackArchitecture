@@ -16,6 +16,7 @@ class NetDataViewModel(private val userRepository: UserRepository):BaseViewModel
             if (netData is ResultData.Success) {
                 mNetDataLive.value = netData.data
             }
+            refreshing.value = false
         }
     }
 

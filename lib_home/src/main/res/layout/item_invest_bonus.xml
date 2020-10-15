@@ -2,16 +2,16 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="com.whdx.base.util.DateUtils"/>
         <variable
             name="model"
             type="com.whdx.data.data.wallet.InvestBonusItem" />
-
     </data>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
+        android:layout_height="@dimen/dimen_35dp"
         android:orientation="horizontal">
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@{model.create_time,default=`-`}"
+            android:text="@{DateUtils.INSTANCE.reformatStringDate(model.create_time,`yyyy-MM-dd HH:mm`),default=`-`}"
             android:textColor="@color/white"
             android:textSize="14sp" />
     </LinearLayout>

@@ -6,6 +6,7 @@
 
     <data>
 
+        <import type="com.whdx.base.util.binding.recyclerview.LineDivideManagers"/>
         <import type="java.math.BigDecimal"/>
         <variable
             name="vm"
@@ -108,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@{@string/price_usdt(model.amount)}"
+                android:text="@{@string/price_usdt(model.prod_amount.stripTrailingZeros().toPlainString())}"
                 android:textColor="@color/color_94A0C1"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
@@ -148,17 +149,28 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvAmount"
                 tools:layout_editor_absoluteX="14dp" />
             <TextView
+                android:id="@+id/tvMaxBonus"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
+                android:layout_marginRight="2dp"
                 android:gravity="center"
                 android:layout_marginLeft="@dimen/dimen_20dp"
-                android:text="@{@string/max_bonus(model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString())}"
+                android:text="@string/max_bonus"
                 android:textColor="@color/text_color_tip_94A0C1"
                 android:textSize="10sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:text="@{model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString()+`USDT`}"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toRightOf="@id/tvMaxBonus"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -263,6 +275,10 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
+            <View style="@style/LineStyle"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"/>
+
             <com.scwang.smartrefresh.layout.SmartRefreshLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -275,9 +291,12 @@
                     android:id="@+id/rvBonus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
                     app:empty_image="@mipmap/icon_data_empty"
                     app:empty_text_gravity="top"
                     app:empty_text_top_margin="@dimen/dimen_50dp"
+                    app:linearManager="@{LineDivideManagers.INSTANCE.horizontal()}"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     />
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>

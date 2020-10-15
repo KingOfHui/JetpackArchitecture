@@ -47,6 +47,8 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/dimen_15dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
                 android:text="@string/create_wallet_last_step_two"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_18"

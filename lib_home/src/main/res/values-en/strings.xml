@@ -82,7 +82,7 @@
     <string name="universe">Universe</string>
     <string name="pwd_tip">Password prompt information (optional)</string>
     <string name="trade_next_step">The Next Step</string>
-    <string name="loading_wallet_sign_two">Import wallet</string>
+    <string name="loading_wallet_sign_two">Import Wallet</string>
     <string name="liji_zujie">Rent now</string>
     <string name="private_key_put_pwd">Please enter your password</string>
     <string name="cancel">Cancel</string>
@@ -143,8 +143,8 @@
     <string name="already_open_bid">Activated BID</string>
     <string name="net_total_mineral">Net Total Mine</string>
     <string name="max_node_bonus">Max Node Bonus Daily(USDT)</string>
-    <string name="mine_performance">Effective Performance(U)</string>
-    <string name="mine_performance_node">Node Performance(U)</string>
+    <string name="mine_performance">Valid Performance(USDT)</string>
+    <string name="mine_performance_node">Node Performance(USDT)</string>
     <string name="biw_price">BIW Price(USDT)</string>
     <string name="net_all_power">Net Energy(BIW)</string>
     <string name="net_all_storage">Net Force(T)</string>
@@ -162,7 +162,7 @@
     <string name="prod_storage">Reserve Force: ≈ %sP</string>
     <string name="price_usdt">Price: %sUSDT</string>
     <string name="buy_num">Buy No.: %s </string>
-    <string name="prod_amount">Amount: %s %s</string>
+    <string name="prod_amount">Paid: %s %s</string>
     <string name="buy_time">Buy Time: %s</string>
     <string name="real_time_price">BIW real-time price toady</string>
     <string name="my_invite_num">Invite No.(People)</string>
@@ -180,9 +180,12 @@
     <string name="my_power_fund">My Power Fund</string>
     <string name="tip_correct_no">Please input correct number</string>
     <string name="tip_lease_amount">Input is greater than the number of available balance </string>
-    <string name="max_bonus">Max Bonus: %s USDT </string>
+    <string name="max_bonus">Max Bonus: </string>
     <string name="already_bonus">Total Bonus: %s USDT </string>
     <string name="already_buy">Purchased</string>
+    <string name="create_wallet">Create Wallet</string>
+    <string name="select_language">Select Language</string>
+    <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>
 
 
 </resources>

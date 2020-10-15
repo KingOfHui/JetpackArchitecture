@@ -10,7 +10,7 @@
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title_textStr="导入钱包"
+        app:title_textStr="@string/loading_wallet_sign_two"
         app:text_color="@color/white"
         app:isShow_left_img="true"
         />

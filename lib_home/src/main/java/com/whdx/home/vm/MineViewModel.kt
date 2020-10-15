@@ -37,6 +37,7 @@ class MineViewModel(private val userRepository: UserRepository) :
             }
             getUserInfo()
             refresh()
+            refreshing.value = false
         }
     }
 

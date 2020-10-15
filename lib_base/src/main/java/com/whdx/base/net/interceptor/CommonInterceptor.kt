@@ -20,7 +20,7 @@ class CommonInterceptor : Interceptor {
 
     private fun addHeaders(builder: Request.Builder): Request {
         return builder.addHeader("Content-Type", "application/json")
-            .addHeader("Accept-Language", if (getLanguage() == 1) "zh_CN" else "en_US")
+            .addHeader("Accept-Language", if (getLanguage() == 1) "zh-CN" else "en-US")
             .addHeader("charset", "UTF-8").build()
     }
 }

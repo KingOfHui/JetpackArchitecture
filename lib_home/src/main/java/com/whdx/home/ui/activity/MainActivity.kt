@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
+import com.whdx.base.util.ext.clearToast
 import com.whdx.base.util.ext.compareVersionCode
 import com.whdx.base.util.ext.getLanguage
 import com.whdx.base.util.navigation.setupBottomNavigationViewWithKeepStateNav
@@ -34,6 +35,14 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
         )
 //        val navController = findNavController(R.id.nav_main_host_fragment)
         bottom_navigation_view.setupWithNavController(navController)
+        bottom_navigation_view.clearToast(
+            listOf(
+                R.id.navigation_home,
+                R.id.navigation_dashboard,
+                R.id.navigation_wallet,
+                R.id.navigation_notifications
+            )
+        )
     }
 
     override fun initData() {
@@ -43,7 +52,7 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
     override fun startObserve() {
         mViewModel.run {
             updateVersionLive.observe(this@MainActivity, Observer {
-                if (BuildConfig.VERSION_NAME.compareVersionCode(it.version?:"")) {
+                if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
                     mViewModel.updateVersionLive.value?.let { version ->
                         if (it.internal_android_url.isNullOrEmpty()) {
                             SmartToast.error(getString(R.string.update_address_no))
@@ -53,7 +62,8 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
 
                             val intent = Intent().apply {
                                 action = "android.intent.action.VIEW"
-                                data = Uri.parse(if (getLanguage()==1) it.internal_android_url else it.abroad_android_url)
+                                data =
+                                    Uri.parse(if (getLanguage() == 1) it.internal_android_url else it.abroad_android_url)
                             }
                             startActivity(intent)
                         }.show()
