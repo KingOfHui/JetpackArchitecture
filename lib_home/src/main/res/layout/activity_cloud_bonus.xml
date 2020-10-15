@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@{@string/price_usdt(model.prod_amount)}"
+                android:text="@{@string/price_usdt(model.prod_amount.stripTrailingZeros().toPlainString())}"
                 android:textColor="@color/color_94A0C1"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
@@ -275,7 +275,9 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <View style="@style/LineStyle" />
+            <View style="@style/LineStyle"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"/>
 
             <com.scwang.smartrefresh.layout.SmartRefreshLayout
                 android:layout_width="match_parent"

@@ -146,6 +146,8 @@
 
             <View
                 style="@style/LineStyle"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
                 app:layout_constraintBottom_toTopOf="@id/viewPager" />
 
             <androidx.viewpager2.widget.ViewPager2
