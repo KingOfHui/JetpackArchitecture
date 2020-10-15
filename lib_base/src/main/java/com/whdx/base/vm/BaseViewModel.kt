@@ -13,6 +13,7 @@ import kotlinx.coroutines.*
  * @Date 2020/9/22 0018 16:29
  */
 open class BaseViewModel() : ViewModel(), LifecycleObserver {
+    val refreshing = MutableLiveData<Boolean>()
 
     val loadState by lazy {
         MutableLiveData<State>()

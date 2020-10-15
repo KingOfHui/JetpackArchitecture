@@ -27,12 +27,12 @@ fun setLineManager(
 fun setItemAnimator(recyclerView: RecyclerView, itemAnimator: RecyclerView.ItemAnimator) {
     recyclerView.itemAnimator = itemAnimator
 }
-
-@BindingAdapter(value = ["refreshing", "moreLoading", "hasMore"], requireAll = false)
+//, "moreLoading"
+@BindingAdapter(value = ["refreshing", "hasMore"], requireAll = false)
 fun bindSmartRefreshLayout(
     smartLayout: SmartRefreshLayout,
     refreshing: Boolean,
-    moreLoading: Boolean,
+//    moreLoading: Boolean,
     hasMore: Boolean?
 
 ) {
@@ -40,8 +40,8 @@ fun bindSmartRefreshLayout(
         smartLayout.finishRefresh()
         smartLayout.finishLoadMore()
     }
-    if (!moreLoading) {
-    }
+//    if (!moreLoading) {
+//    }
 
     if (hasMore != null)
         smartLayout.setNoMoreData(!hasMore)//调用次方法会停止刷新动作
@@ -53,6 +53,13 @@ fun bindSmartRefreshLayoutRefresh(
     refreshEnable: Boolean
 ) {
     smartLayout.setEnableRefresh(refreshEnable)
+}
+@BindingAdapter(value = ["loadMoreEnable"])
+fun bindSmartRefreshLayoutLoadMore(
+    smartLayout: SmartRefreshLayout,
+    loadMoreEnable:Boolean
+) {
+    smartLayout.setEnableLoadMore(loadMoreEnable)
 }
 
 @BindingAdapter(

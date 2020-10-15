@@ -49,6 +49,7 @@ class MyWalletViewModel(private val userRepository: UserRepository) :
                 mBalanceLive.value = usdtBalance.data
             }
             getDepositAddress()
+            refreshing.value = false
         }
     }
 

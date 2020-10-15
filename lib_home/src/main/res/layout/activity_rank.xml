@@ -5,7 +5,7 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="com.whdx.base.util.binding.recyclerview.LineDivideManagers"/>
         <variable
             name="vm"
             type="com.whdx.home.vm.RankViewModel" />
@@ -105,10 +105,11 @@
                 bind:autoRefresh="@{vm.autoRefresh}"
                 bind:refreshing="@{vm.refreshing}">
 
-                <androidx.recyclerview.widget.RecyclerView
+                <com.whdx.base.ui.view.JRecyclerView
                     android:id="@+id/rvRank"
+                    app:linearManager="@{LineDivideManagers.INSTANCE.horizontal()}"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

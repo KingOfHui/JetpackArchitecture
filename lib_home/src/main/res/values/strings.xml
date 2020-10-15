@@ -141,8 +141,8 @@
     <string name="already_open_bid">已开通BID</string>
     <string name="net_total_mineral">全网总矿机数(个)</string>
     <string name="max_node_bonus">最大节点日收益(USDT)</string>
-    <string name="mine_performance">我的星级有效业绩(U)</string>
-    <string name="mine_performance_node">节点总业绩(U)</string>
+    <string name="mine_performance">我的星级有效业绩(USDT)</string>
+    <string name="mine_performance_node">节点总业绩(USDT)</string>
     <string name="biw_price">BIW价格(USDT)</string>
     <string name="net_all_power">全网总能量(BIW)</string>
     <string name="net_all_storage">全网总算力 (T)</string>
@@ -161,7 +161,7 @@
     <string name="prod_storage">分储算力:合约 %sP</string>
     <string name="price_usdt">单价: %sUSDT</string>
     <string name="buy_num">购买数量: %s </string>
-    <string name="prod_amount">总额度: %s %s</string>
+    <string name="prod_amount">已支付: %s %s</string>
     <string name="buy_time">购买时间: %s</string>
     <string name="real_time_price">今日BIW实时价格</string>
     <string name="my_invite_num">我的邀请人数(人)</string>

@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
  * @Date 2020/9/24 0024 15:57
  */
 abstract class BaseLoadMoreViewModel<DATA : List<*>> : BaseViewModel() {
-    val refreshing = MutableLiveData<Boolean>()
     val hasMore = MutableLiveData<Boolean>()
     val autoRefresh = MutableLiveData<Boolean>()//SmartRefreshLayout自动刷新标记
     val isClearLive=MutableLiveData<Boolean>()

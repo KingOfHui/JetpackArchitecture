@@ -29,8 +29,7 @@ class SplashActivity : AppCompatActivity() {
         val mViewModel: WalletViewModel = getViewModel()
         mViewModel.getCurrentWallet()
         mViewModel.hasWallet.observe(this, Observer {
-//            lifecycleScope.launch {
-                runBlocking { delay(1200) }
+            lifecycleScope.launch {
                 if (it) {
                     MainActivity.start(this@SplashActivity)
                 } else{
@@ -38,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
                 }
                 overridePendingTransition(0,0)
                 finish()
-//            }
+            }
         })
     }
 

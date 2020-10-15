@@ -4,7 +4,7 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.whdx.base.util.binding.recyclerview.LineDivideManagers"/>
         <variable
             name="vm"
             type="com.whdx.home.vm.MyTotalBonusViewModel" />
@@ -66,8 +66,6 @@
             <View
                 android:id="@+id/view"
                 style="@style/LineStyle"
-                android:layout_marginLeft="@dimen/dimen_20dp"
-                android:layout_marginRight="@dimen/dimen_20dp"
                 app:layout_constraintTop_toBottomOf="@id/llTitle" />
 
             <com.scwang.smartrefresh.layout.SmartRefreshLayout
@@ -86,9 +84,12 @@
                     android:id="@+id/rvBonusRecord"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginRight="@dimen/dimen_15dp"
                     app:empty_image="@mipmap/icon_data_empty"
                     app:empty_text_gravity="top"
                     app:empty_text_top_margin="@dimen/dimen_50dp"
+                    app:linearManager="@{LineDivideManagers.INSTANCE.horizontal()}"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
