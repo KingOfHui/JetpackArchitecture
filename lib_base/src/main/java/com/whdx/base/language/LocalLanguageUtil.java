@@ -1,7 +1,6 @@
 package com.whdx.base.language;
 
 import android.content.Context;
-import android.content.res.Configuration;
 
 import com.github.jokar.multilanguages.library.MultiLanguage;
 import com.whdx.base.R;
@@ -59,6 +58,10 @@ public class LocalLanguageUtil {
         }
     }
 
+    public static void switchLanguage(Context context) {
+        int language = getLanguage();
+        saveSelectLanguage(context, (language == 1) ? 3 : 1);
+    }
 
   /*  public static void saveSystemCurrentLanguage(Context context) {
         SPUtil.getInstance(context).setSystemCurrentLocal(MultiLanguage.getSystemLocal(context));

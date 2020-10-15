@@ -1,10 +1,12 @@
 package com.whdx.home.ui.fragment
 
 import androidx.navigation.Navigation
+import com.whdx.base.language.LocalLanguageUtil
 import com.whdx.base.ui.fragment.BaseFragment
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.BuildConfig
 import com.whdx.home.R
+import com.whdx.home.ui.activity.LoginActivity
 import kotlinx.android.synthetic.main.fragment_select_login.*
 
 /**
@@ -22,6 +24,12 @@ class SelectLoginFragment:BaseFragment() {
         }
         tvImport.clickWithTrigger {
             Navigation.findNavController(it).navigate(R.id.action_selectLoginFragment_to_leadInAccountFragment)
+        }
+        tvSwitch.clickWithTrigger {
+            LocalLanguageUtil.switchLanguage(requireContext())
+            LoginActivity.start(requireContext())
+            requireActivity().finish()
+            requireActivity().overridePendingTransition(0,0)
         }
     }
 
