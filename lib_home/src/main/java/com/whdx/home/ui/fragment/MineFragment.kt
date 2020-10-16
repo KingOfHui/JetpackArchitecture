@@ -51,14 +51,6 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
     override fun setLayoutResId() = R.layout.fragment_mine;
 
     override fun initView() {
-        textView.setOnClickListener {
-            startActivity(
-                Intent(
-                    requireContext(),
-                    LoginActivity::class.java
-                )
-            )
-        }
         iv_setting.clickWithTrigger { SettingActivity.start(requireContext()) }
         tv_open_bid.clickWithTrigger {
             mViewModel.userInfoLive.value?.let {
