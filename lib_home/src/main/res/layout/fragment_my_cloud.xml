@@ -20,7 +20,7 @@
         android:layout_height="match_parent"
         bind:hasMore="@{vm.hasMore}"
         bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
-        bind:onRefreshListener="@{()->vm.refresh()}"
+        bind:onRefreshListener="@{()->vm.getMyStorage()}"
         bind:refreshing="@{vm.refreshing}">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout

@@ -6,6 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.REFRESH_BALANCE
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.data.data.product.InvestProductItem
 import com.whdx.home.R
@@ -26,9 +27,9 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
         mViewModel.mInvestList.observe(viewLifecycleOwner, Observer {
             adapter.setList(it)
         })
-        LiveEventBus.get("investSuccess").observe(viewLifecycleOwner, Observer {
+        LiveEventBus.get(REFRESH_BALANCE).observe(viewLifecycleOwner, Observer {
             if ((it as Boolean)) {
-                mViewModel.refresh()
+                mViewModel.getMyStorage()
             }
         })
     }

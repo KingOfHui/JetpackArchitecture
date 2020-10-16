@@ -6,6 +6,7 @@ import androidx.lifecycle.Transformations
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.app.BaseApplication
+import com.whdx.base.util.ext.REFRESH_BALANCE
 import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
@@ -63,7 +64,7 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
             if (requestInvestLease is ResultData.Success) {
                 SmartToast.show(R.string.lease_success)
                 mLeaseSuccessLive.value = true
-                LiveEventBus.get("investSuccess").broadcast(true,false,true)
+                LiveEventBus.get(REFRESH_BALANCE).post(true)
             }
             doneSuccess()
         }

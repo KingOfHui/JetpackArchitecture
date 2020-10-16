@@ -39,7 +39,7 @@
     <string name="can_used_balance">Can Used：%s USDT</string>
     <string name="deal_pwd">Deal Password</string>
     <string name="input_pwd">Please enter deal password </string>
-    <string name="sure_zujie">Confirm Lease</string>
+    <string name="sure_zujie">BUY</string>
     <string name="no_open_tip">You haven\'t opened the BID yet. Go to open the BID</string>
     <string name="open_bid">Open BID</string>
     <string name="lead_in_zjc_sign">Words</string>
@@ -83,7 +83,7 @@
     <string name="pwd_tip">Password prompt information (optional)</string>
     <string name="trade_next_step">The Next Step</string>
     <string name="loading_wallet_sign_two">Import Wallet</string>
-    <string name="liji_zujie">Rent now</string>
+    <string name="liji_zujie">BUY</string>
     <string name="private_key_put_pwd">Please enter your password</string>
     <string name="cancel">Cancel</string>
     <string name="stop_notice_sign">Prohibition statement</string>

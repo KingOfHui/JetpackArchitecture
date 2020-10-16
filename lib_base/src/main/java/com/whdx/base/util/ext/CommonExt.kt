@@ -28,10 +28,7 @@ import java.util.*
  * @Date 2020/9/22 0018 16:22
  */
 const val SET_THEME = "set_theme"
-const val MY_PAGE_SET_THEME_COLOR = "my_page_set_theme_color"
-const val HOME_PAGE_CUT = "home_page_cut"
-const val MAIN_PLAZA_CUT = "main_plaza_cut"
-const val UPDATE_COLLECT_STATE = "update_collect_state"
+const val REFRESH_BALANCE = "refresh_balance" //购买产品，提现等操作 刷新余额
 
 //获取包名
 fun Context.packageInfo(): PackageInfo = this.packageManager.getPackageInfo(this.packageName, 0)

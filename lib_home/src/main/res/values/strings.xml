@@ -37,7 +37,7 @@
     <string name="can_used_balance">可用余额：%s USDT</string>
     <string name="deal_pwd">交易密码</string>
     <string name="input_pwd">请输入交易密码</string>
-    <string name="sure_zujie">确认租借</string>
+    <string name="sure_zujie">确认购买</string>
     <string name="no_open_tip">您还未开通BID，去开通BID</string>
     <string name="open_bid">开通BID</string>
     <string name="lead_in_zjc_sign">助记词</string>
@@ -81,7 +81,7 @@
     <string name="pwd_tip">密码提示信息(可不填)</string>
     <string name="trade_next_step">下一步</string>
     <string name="loading_wallet_sign_two">导入钱包</string>
-    <string name="liji_zujie">立即租借</string>
+    <string name="liji_zujie">立即购买</string>
     <string name="private_key_put_pwd">请输入密码</string>
     <string name="cancel">取消</string>
     <string name="stop_notice_sign">禁止声明</string>

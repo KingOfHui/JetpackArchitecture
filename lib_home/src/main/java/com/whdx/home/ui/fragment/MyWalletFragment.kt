@@ -5,6 +5,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.adapter.SimpleFragmentStateAdapter
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.REFRESH_BALANCE
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyWalletBinding
@@ -25,7 +26,7 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
     override fun initVM(): MyWalletViewModel = getViewModel()
 
     override fun startObserve() {
-        LiveEventBus.get("refresh_balance").observe(viewLifecycleOwner, Observer {
+        LiveEventBus.get(REFRESH_BALANCE).observe(viewLifecycleOwner, Observer {
             mViewModel.getMyBalance()
         })
         mViewModel.mBalanceLive.observe(viewLifecycleOwner, Observer {
