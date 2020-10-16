@@ -26,9 +26,8 @@
                 android:id="@+id/rvRecord"
                 app:empty_image="@mipmap/icon_data_empty"
                 app:empty_text_gravity="top"
-                app:empty_text_top_margin = "50dp"
+                app:empty_text_top_margin = "80dp"
                 app:empty_text="@string/no_data"
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dimen_20dp"

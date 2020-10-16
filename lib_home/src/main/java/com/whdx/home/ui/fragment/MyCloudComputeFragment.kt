@@ -1,5 +1,8 @@
 package com.whdx.home.ui.fragment
 
+import android.view.LayoutInflater
+import android.view.View
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -12,6 +15,7 @@ import com.whdx.data.data.product.InvestProductItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyCloudBinding
 import com.whdx.home.databinding.ItemMyCloudMineralBinding
+import com.whdx.home.databinding.LayoutHeaderMyCloudBinding
 import com.whdx.home.ui.activity.CloudBonusActivity
 import com.whdx.home.vm.MyCloudViewModel
 import kotlinx.android.synthetic.main.activity_cloud_bonus.*
@@ -25,7 +29,11 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
 
     override fun startObserve() {
         mViewModel.mInvestList.observe(viewLifecycleOwner, Observer {
-            adapter.setList(it)
+            if (it.isNullOrEmpty()) {
+                adapter.setEmptyView(R.layout.layout_empty)
+            } else {
+                adapter.setList(it)
+            }
         })
         LiveEventBus.get(REFRESH_BALANCE).observe(viewLifecycleOwner, Observer {
             if ((it as Boolean)) {
@@ -61,6 +69,11 @@ class MyCloudComputeFragment : BaseBindingFragment<MyCloudViewModel,FragmentMyCl
 
         }
         rv.adapter = adapter
+//        val binding:LayoutHeaderMyCloudBinding  = DataBindingUtil.inflate(LayoutInflater.from(requireContext()), R.layout.layout_header_my_cloud, null, false)
+//        adapter.addHeaderView(binding.root)
+//        binding.vm = mViewModel
+//        binding.lifecycleOwner = this
+//        binding.executePendingBindings()
         mDataBinding.vm = mViewModel
     }
 

@@ -87,7 +87,7 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
             }
         }
         tv_fuwu.clickWithTrigger {
-            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy","服务及隐私条款")
+            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy-bittalk","getString(R.string.wallet_xieyi_content_two)")
         }
     }
 

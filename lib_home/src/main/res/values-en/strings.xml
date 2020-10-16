@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_home">Fund</string>
+    <string name="title_home">Home</string>
     <string name="title_net">Net</string>
     <string name="title_mine">Mine</string>
     <string name="wallet_pwd_notice">Password protection for private and transaction authorization, the strength is very important</string>
@@ -185,7 +185,8 @@
     <string name="already_buy">Purchased</string>
     <string name="create_wallet">Create Wallet</string>
     <string name="select_language">Select Language</string>
-    <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>
+<!--    <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>-->
+    <string name="tip_login_text">Blockchain allows individuals to socialize, pay data, and property to belong to the current private key</string>
     <string name="rent_force">Rent Force</string>
     <string name="get_address_fail">Get Address Failed</string>
     <string name="erc20_usdt">Ethereum(ERC20)USDT</string>
