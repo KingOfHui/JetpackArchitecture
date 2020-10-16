@@ -18,6 +18,7 @@ import com.whdx.home.databinding.ItemInvestBonusBinding
 import com.whdx.home.vm.BonusViewModel
 import kotlinx.android.synthetic.main.activity_cloud_bonus.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import java.math.BigDecimal
 
 class CloudBonusActivity:BaseBindingActivity<BonusViewModel,ActivityCloudBonusBinding>() {
     lateinit var adapter:BaseQuickAdapter<InvestBonusItem,BaseDataBindingHolder<ItemInvestBonusBinding>>
@@ -58,6 +59,11 @@ class CloudBonusActivity:BaseBindingActivity<BonusViewModel,ActivityCloudBonusBi
         val productItem = intent.extras?.getSerializable("investBonusItem") as InvestProductItem
         mViewModel.refresh(productItem.id)
         mDataBinding.model= productItem
+        tvStorage.text = if (productItem.prod_storage >= BigDecimal.valueOf(1000)) {
+            String.format(getString(R.string.power_is),productItem.prod_storage.divide(BigDecimal.valueOf(1000)).stripTrailingZeros().toPlainString()+"P")
+        } else{
+            String.format(getString(R.string.power_is),productItem.prod_storage.stripTrailingZeros().toPlainString()+"T")
+        }
     }
 
     companion object{

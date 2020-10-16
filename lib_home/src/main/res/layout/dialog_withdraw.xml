@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:isShow_left_img="true"
-        app:title_textStr="请输入密码"
+        app:title_textStr="@string/private_key_put_pwd"
         app:left_img="@drawable/ic_arrow_back_black"
         app:isShow_right_img1="true"
         app:right_img1="@drawable/ic_close_black"/>

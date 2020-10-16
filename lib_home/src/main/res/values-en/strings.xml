@@ -156,10 +156,10 @@
     <string name="my_toady_bonus">Bonus Toady(USDT)</string>
     <string name="my_total_bonus">Total Bonus(USDT)</string>
     <string name="level_people">%s People</string>
-    <string name="power_is">Power %sT</string>
+    <string name="power_is">Force: %s</string>
     <string name="power_bonus">%s times Power Bonus</string>
     <string name="price_is">Price: %s</string>
-    <string name="prod_storage">Force: ≈ %sP</string>
+    <string name="prod_storage">Force: %s</string>
     <string name="price_usdt">Price: %sUSDT</string>
     <string name="buy_num">Buy No.: %s </string>
     <string name="prod_amount">Paid: %s %s</string>

@@ -58,7 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@{@string/prod_storage(model.prod_storage)}"
             android:textColor="@color/color_94A0C1"
             android:textSize="10sp"
             app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"

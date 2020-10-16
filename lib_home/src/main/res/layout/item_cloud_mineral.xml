@@ -41,7 +41,6 @@
             android:id="@+id/tvStorage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{@string/power_is(model.storage)}"
             tools:text="分出算例合约2.5T"
             android:layout_marginTop="@dimen/dimen_5dp"
             android:textColor="@color/color_94A0C1"

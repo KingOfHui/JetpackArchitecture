@@ -27,7 +27,7 @@ data class InvestProductItem(
     val prod_name: String,
     val prod_rate: String,
     val prod_release_multiple: String,
-    val prod_storage: String,
+    val prod_storage: BigDecimal,
     val prod_symbol: String,
     val quantity: Int,
     val release_amount: BigDecimal,

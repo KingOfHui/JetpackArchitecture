@@ -155,10 +155,10 @@
     <string name="my_total_bonus">我的总收益(USDT)</string>
     <string name="my_invite">我的邀请</string>
     <string name="level_people">%s人</string>
-    <string name="power_is">算力: 合约 %sT</string>
+    <string name="power_is">算力合约: %s</string>
     <string name="power_bonus">%s倍 算力收益</string>
     <string name="price_is">价格: %s</string>
-    <string name="prod_storage">算力: 合约 %sP</string>
+    <string name="prod_storage">算力合约: %s</string>
     <string name="price_usdt">单价: %sUSDT</string>
     <string name="buy_num">购买数量: %s </string>
     <string name="prod_amount">已支付: %s %s</string>

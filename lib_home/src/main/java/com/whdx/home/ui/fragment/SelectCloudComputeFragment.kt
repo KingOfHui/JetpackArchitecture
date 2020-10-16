@@ -16,6 +16,7 @@ import com.whdx.home.ui.dialog.LeaseDialog
 import com.whdx.home.vm.SelectCloudViewModel
 import kotlinx.android.synthetic.main.fragment_select_cloud.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import java.math.BigDecimal
 
 class SelectCloudComputeFragment :
     BaseBindingFragment<SelectCloudViewModel, FragmentSelectCloudBinding>() {
@@ -56,14 +57,18 @@ class SelectCloudComputeFragment :
                                 mViewModel,
                                 viewLifecycleOwner
                             )
-                        }?:let {
-                            SmartToast.error("获取余额信息失败~")
                         }
                     }
                     it.tvReleaseMutiple.text = if (getLanguage() == 1) {
                         item.name
                     } else{
                         item.name_en?:""
+                    }
+                    it.tvStorage.text = if (item.storage >= BigDecimal.valueOf(1000)) {
+                        String.format(getString(R.string.power_is),item.storage.divide(
+                            BigDecimal.valueOf(1000)).stripTrailingZeros().toPlainString()+"P")
+                    } else{
+                        String.format(getString(R.string.power_is),item.storage.stripTrailingZeros().toPlainString()+"T")
                     }
                     it.model = item
                     it.executePendingBindings()
