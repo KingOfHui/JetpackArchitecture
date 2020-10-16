@@ -23,13 +23,12 @@ android {
         }
     }
 
-
     signingConfigs {
         release {
             storeFile new File(getProjectDir(), "/doc/bittalk.jks")
-            keyAlias "key0"
-            keyPassword "123456"
-            storePassword "123456"
+            keyAlias "bittalk"
+            keyPassword "password"
+            storePassword "password"
         }
     }
 
