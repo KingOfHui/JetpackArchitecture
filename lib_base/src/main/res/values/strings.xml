@@ -8,7 +8,7 @@
     <string name="language_cn">中文</string>
     <string name="language_en">英文</string>
     <string name="net_power_t">全网总算力（T）</string>
-    <string name="no_data">暂无数据~</string>
+    <string name="no_data">暂无记录</string>
     <string name="copy_bord_content">已复制到剪切板</string>
     <string name="launch_text">自由沟通、支付\n区块链创造无限可能</string>
     <string name="net_timeout">网络连接超时</string>

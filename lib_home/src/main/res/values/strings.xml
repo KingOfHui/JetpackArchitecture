@@ -186,6 +186,8 @@
     <string name="select_language">选择语言</string>
     <string name="tip_login_text">自由全球沟通，创造无限可能\n 区块链让个人社交、支付数据、财产归属于当前私钥</string>
     <string name="rent_force">租借算力</string>
+    <string name="get_address_fail">获取地址失败</string>
+    <string name="erc20_usdt">以太坊(ERC20)USDT</string>
 
 
 </resources>

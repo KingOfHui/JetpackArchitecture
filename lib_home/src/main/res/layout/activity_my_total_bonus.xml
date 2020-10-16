@@ -90,7 +90,9 @@
                     android:layout_marginRight="@dimen/dimen_15dp"
                     app:empty_image="@mipmap/icon_data_empty"
                     app:empty_text_gravity="top"
-                    app:empty_text_top_margin="@dimen/dimen_50dp"
+                    app:empty_text_top_margin = "50dp"
+                    app:empty_text="@string/no_data"
+
                     app:linearManager="@{LineDivideManagers.INSTANCE.horizontal()}"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>

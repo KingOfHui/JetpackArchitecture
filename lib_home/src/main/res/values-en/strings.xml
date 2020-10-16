@@ -187,6 +187,8 @@
     <string name="select_language">Select Language</string>
     <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>
     <string name="rent_force">Rent Force</string>
+    <string name="get_address_fail">Get Address Failed</string>
+    <string name="erc20_usdt">Ethereum(ERC20)USDT</string>
 
 
 </resources>

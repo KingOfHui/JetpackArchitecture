@@ -47,8 +47,8 @@ public class FixRecyclerView extends RecyclerView {
 		mPaint.setAntiAlias(true);
 
 		TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.JRecyclerView);
-		int color = ta.getColor(R.styleable.JRecyclerView_empty_text_color, Color.parseColor("#8E94A9"));
-		float textsize = ta.getDimension(R.styleable.JRecyclerView_empty_text_size, DisplayUtil.sp2px(context,16));
+		int color = ta.getColor(R.styleable.JRecyclerView_empty_text_color, Color.parseColor("#94A0C1"));
+		float textsize = ta.getDimension(R.styleable.JRecyclerView_empty_text_size, DisplayUtil.sp2px(context,12));
 		int style = ta.getInt(R.styleable.JRecyclerView_empty_text_style, Typeface.NORMAL);
 		gravity = ta.getInt(R.styleable.JRecyclerView_empty_text_gravity, GRAVITY_CENTER);
 		mTopMargin = (int) ta.getDimension(R.styleable.JRecyclerView_empty_text_top_margin, DisplayUtil.dip2px(context,10));
@@ -81,7 +81,9 @@ public class FixRecyclerView extends RecyclerView {
 	public void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		if(isEmpty()){
-			if(TextUtils.isEmpty(mEmptyText)){
+			if (!TextUtils.isEmpty(mEmptyText) && mEmptyDrawable != null) {
+				drawEmptyIconAndText(canvas);
+			} else if(TextUtils.isEmpty(mEmptyText)){
 				drawEmptyIcon(canvas);
 			}else {
 				drawEmptyText(canvas);
@@ -89,21 +91,6 @@ public class FixRecyclerView extends RecyclerView {
 		}
 	}
 
-	public final boolean isEmpty(){
-		Adapter adapter = getAdapter();
-		return adapter != null && adapter.getItemCount() == 0;
-	}
-
-	private void drawEmptyText(Canvas canvas) {
-		switch (gravity) {
-			case GRAVITY_TOP:
-				CanvasUtils.drawTopText(mEmptyText, mTextWidth, canvas, mPaint, this, mTopMargin);
-				break;
-			case GRAVITY_CENTER:
-				CanvasUtils.drawCenterText(mEmptyText, mTextWidth, canvas, mPaint, this);
-				break;
-		}
-	}
 
 	@Override
 //	protected void onMeasure(int widthSpec, int heightSpec) {
@@ -136,5 +123,33 @@ public class FixRecyclerView extends RecyclerView {
 		int bottom = top + mEmptyDrawable.getIntrinsicHeight();
 		mEmptyDrawable.setBounds(left, top, right, bottom);
 		mEmptyDrawable.draw(canvas);
+	}
+
+	private void drawEmptyIconAndText(Canvas canvas) {
+		switch (gravity) {
+			case GRAVITY_TOP:
+				drawEmptyIcon(canvas);
+				CanvasUtils.drawTopText(mEmptyText, mTextWidth, canvas, mPaint, this, mTopMargin+mEmptyDrawable.getIntrinsicHeight()+15);
+				break;
+			case GRAVITY_CENTER:
+				CanvasUtils.drawCenterText(mEmptyText, mTextWidth, canvas, mPaint, this);
+				break;
+		}
+	}
+
+	public final boolean isEmpty(){
+		Adapter adapter = getAdapter();
+		return adapter != null && adapter.getItemCount() == 0;
+	}
+
+	private void drawEmptyText(Canvas canvas) {
+		switch (gravity) {
+			case GRAVITY_TOP:
+				CanvasUtils.drawTopText(mEmptyText, mTextWidth, canvas, mPaint, this, mTopMargin);
+				break;
+			case GRAVITY_CENTER:
+				CanvasUtils.drawCenterText(mEmptyText, mTextWidth, canvas, mPaint, this);
+				break;
+		}
 	}
 }

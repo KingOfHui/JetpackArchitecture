@@ -37,7 +37,7 @@ class MyWalletViewModel(private val userRepository: UserRepository) :
                 mAddressBitmapLive.value =
                     QrCodeUtil.createQRCode(depositAddress.data, 200, 200, null)
             } else {
-                SmartToast.showInCenter("获取地址失败")
+                SmartToast.showInCenter(R.string.get_address_fail)
             }
         }
     }
