@@ -7,13 +7,14 @@ import com.whdx.data.BuildConfig
  * @Author dinghui
  * @Date 2020/9/22 0018 16:29
  */
+const val isTestEnvironment = true
 const val WHDX_TEACHER = 1
 const val WHDX_STUDENT = 2
 val teacherUrl:String by lazy {
-    if (BuildConfig.DEBUG) {
+    if (BuildConfig.DEBUG && isTestEnvironment) {
         "https://t.bvw.im/finance/"
-    } else{
-        "https://t.bvw.im/finance/"
+    } else {
+        "https://api.bitw.im/finance/"
     }
 }
 const val studentUrl = "https://www.baidu.io"

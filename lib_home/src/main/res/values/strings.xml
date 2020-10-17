@@ -110,8 +110,8 @@
     <string name="zjc_sure_view">确认你的助记词</string>
     <string name="zjc_click_in_order">请按顺序点击助记词，以确保你的备份助记词正确</string>
     <string name="wrong_zjc_wrong">助记词错误</string>
-    <string name="loading_lease">租借请求中，请稍候…</string>
-    <string name="lease_success">租借成功</string>
+    <string name="loading_lease">购买请求中，请稍候…</string>
+    <string name="lease_success">购买成功</string>
     <string name="my_balance">我的余额</string>
     <string name="usdt_can_used">USDT可用余额</string>
     <string name="sureWithdraw">立即提现</string>
@@ -186,7 +186,7 @@
     <string name="select_language">选择语言</string>
 <!--    <string name="tip_login_text">自由全球沟通，创造无限可能\n 区块链让个人社交、支付数据、财产归属于当前私钥</string>-->
     <string name="tip_login_text">区块链让个人社交、支付数据、财产\n 归属于当前私钥</string>
-    <string name="rent_force">租借算力</string>
+    <string name="rent_force">购买算力</string>
     <string name="get_address_fail">获取地址失败</string>
     <string name="erc20_usdt">以太坊(ERC20)USDT</string>
 

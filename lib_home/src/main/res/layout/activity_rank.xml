@@ -25,12 +25,13 @@
             app:text_color="@color/white"
             app:title_textStr="@string/bonus_rank" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.whdx.base.ui.view.RoundConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/titleBar"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:background="#3B4669"
+            app:rv_backgroundColor="#3B4669"
+            app:rv_cornerRadius="@dimen/dimen_5dp"
             android:layout_margin="@dimen/dimen_20dp"
             android:padding="@dimen/dimen_20dp">
 
@@ -90,6 +91,7 @@
             <View
                 android:id="@+id/view"
                 app:layout_constraintTop_toBottomOf="@id/cl_title"
+                app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:layout_marginTop="@dimen/dimen_10dp"
@@ -99,19 +101,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintBottom_toBottomOf="parent"
                 bind:hasMore="@{vm.hasMore}"
                 bind:onLoadMoreListener="@{()->vm.tryToLoadNext()}"
                 bind:onRefreshListener="@{()->vm.refresh()}"
                 bind:autoRefresh="@{vm.autoRefresh}"
                 bind:refreshing="@{vm.refreshing}">
 
-                <com.whdx.base.ui.view.JRecyclerView
+                <com.whdx.base.ui.view.FixRecyclerView
                     android:id="@+id/rvRank"
                     app:linearManager="@{LineDivideManagers.INSTANCE.horizontal()}"
+                    app:empty_image="@mipmap/icon_data_empty"
+                    app:empty_text_gravity="top"
+                    app:empty_text_top_margin = "50dp"
+                    app:empty_text="@string/no_data"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.whdx.base.ui.view.RoundConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

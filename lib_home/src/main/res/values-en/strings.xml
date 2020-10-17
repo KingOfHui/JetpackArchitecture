@@ -112,8 +112,8 @@
     <string name="zjc_sure_view">Make sure your Mnemonic</string>
     <string name="zjc_click_in_order">Please click on the mnemonic order to ensure that your backup Mnemonic correct</string>
     <string name="wrong_zjc_wrong">Mnemonic Error</string>
-    <string name="loading_lease">Loan request, please wait …</string>
-    <string name="lease_success">Rental success</string>
+    <string name="loading_lease">Buy request, please wait …</string>
+    <string name="lease_success">Buy success</string>
     <string name="my_balance">My Balance</string>
     <string name="usdt_can_used">USDT Available Balance</string>
     <string name="sureWithdraw">Immediately Withdraw</string>
@@ -161,11 +161,11 @@
     <string name="price_is">Price: %s</string>
     <string name="prod_storage">Force: %s</string>
     <string name="price_usdt">Price: %sUSDT</string>
-    <string name="buy_num">Buy No.: %s </string>
+    <string name="buy_num">Buy No: %s </string>
     <string name="prod_amount">Paid: %s %s</string>
     <string name="buy_time">Buy Time: %s</string>
     <string name="real_time_price">BIW real-time price toady</string>
-    <string name="my_invite_num">Invite No.(People)</string>
+    <string name="my_invite_num">Invite No(People)</string>
     <string name="invite_bonus">Invite Bonus(USDT)</string>
     <string name="rebate_today">Rebate Toady(USDT)</string>
     <string name="history_rebate">History Rebate(USDT)</string>
@@ -187,7 +187,7 @@
     <string name="select_language">Select Language</string>
 <!--    <string name="tip_login_text">Free global communication, create endless possibilities. Block chain individuals socialize, payment data, private property belonging to the current </string>-->
     <string name="tip_login_text">Blockchain allows individuals to socialize, pay data, and property to belong to the current private key</string>
-    <string name="rent_force">Rent Force</string>
+    <string name="rent_force">Buy Force</string>
     <string name="get_address_fail">Get Address Failed</string>
     <string name="erc20_usdt">Ethereum(ERC20)USDT</string>
 

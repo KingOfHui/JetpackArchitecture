@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.REFRESH_BALANCE
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.base.util.ext.getLanguage
 import com.whdx.data.data.product.ProductItem
@@ -35,6 +36,7 @@ class SelectCloudComputeFragment :
         mViewModel.mLeaseSuccessLive.observe(this, Observer {
             dialog?.dismiss()
         })
+        LiveEventBus.get(REFRESH_BALANCE).observe(this, Observer { mViewModel.getUSDTBalance() })
     }
 
     override fun setLayoutResId() = R.layout.fragment_select_cloud;

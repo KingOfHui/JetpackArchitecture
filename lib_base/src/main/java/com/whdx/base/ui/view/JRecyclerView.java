@@ -52,7 +52,7 @@ public class JRecyclerView extends RecyclerView {
 		gravity = ta.getInt(R.styleable.JRecyclerView_empty_text_gravity, GRAVITY_CENTER);
 		mTopMargin = (int) ta.getDimension(R.styleable.JRecyclerView_empty_text_top_margin, DisplayUtil.dip2px(context,20));
 		mEmptyText = ta.getString(R.styleable.JRecyclerView_empty_text);
-		int emptyResId = ta.getResourceId(R.styleable.JRecyclerView_empty_image, R.mipmap.icon_empty);
+		int emptyResId = ta.getResourceId(R.styleable.JRecyclerView_empty_image, R.mipmap.icon_data_empty);
 		ta.recycle();
 		mEmptyDrawable = context.getResources().getDrawable(emptyResId);
 		mPaint.setTypeface(Typeface.defaultFromStyle(style));
