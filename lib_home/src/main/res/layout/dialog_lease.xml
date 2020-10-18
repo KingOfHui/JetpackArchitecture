@@ -97,7 +97,7 @@
     
     <EditText
         android:id="@+id/etPWD"
-        android:layout_width="@dimen/dimen_120dp"
+        android:layout_width="@dimen/dimen_150dp"
         android:layout_height="wrap_content"
         android:hint="@string/input_pwd"
         android:textColorHint="#C7C7C7"

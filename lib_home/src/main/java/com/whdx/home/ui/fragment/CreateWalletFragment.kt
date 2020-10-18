@@ -60,7 +60,7 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
             Navigation.findNavController(it).navigate(R.id.action_navigation_create_wallet_to_leadInAccountFragment)
         }
         txtXy.clickWithTrigger {
-            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy-bittalk","getString(R.string.wallet_xieyi_content_two)")
+            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy-bittalk",getString(R.string.wallet_xieyi_content_two))
         }
     }
 

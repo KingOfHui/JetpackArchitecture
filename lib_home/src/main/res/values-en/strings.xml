@@ -38,7 +38,7 @@
     <string name="pay_amount">Pay Amount</string>
     <string name="can_used_balance">Can Used：%s USDT</string>
     <string name="deal_pwd">Deal Password</string>
-    <string name="input_pwd">Please enter deal password </string>
+    <string name="input_pwd">Please enter password</string>
     <string name="sure_zujie">BUY</string>
     <string name="no_open_tip">You haven\'t opened the BID yet. Go to open the BID</string>
     <string name="open_bid">Open BID</string>
@@ -190,6 +190,7 @@
     <string name="rent_force">Buy Force</string>
     <string name="get_address_fail">Get Address Failed</string>
     <string name="erc20_usdt">Ethereum(ERC20)USDT</string>
+    <string name="open_bid_success">Success to open BID</string>
 
 
 </resources>

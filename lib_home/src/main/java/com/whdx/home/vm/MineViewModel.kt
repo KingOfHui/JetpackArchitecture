@@ -11,6 +11,7 @@ import com.whdx.data.data.user.InviteData
 import com.whdx.data.data.user.InviteListItem
 import com.whdx.data.data.user.UserInfo
 import com.whdx.data.respository.UserRepository
+import com.whdx.home.R
 
 /**
  * @Description
@@ -27,7 +28,7 @@ class MineViewModel(private val userRepository: UserRepository) :
             if (field.value == null) field.value = mutableListOf()
             return field
         }
-    val openSuccess:MutableLiveData<Boolean> = MutableLiveData()
+    val openSuccess: MutableLiveData<Boolean> = MutableLiveData()
 
     fun requestInviteData() {
         launchUI {
@@ -42,30 +43,32 @@ class MineViewModel(private val userRepository: UserRepository) :
     }
 
     fun openBid(code: String) {
-        launchUI { val openBid = userRepository.openBid(code)
+        launchUI {
+            val openBid = userRepository.openBid(code)
             if (openBid is ResultData.Success) {
-                SmartToast.successLong("恭喜您BID已成功开通")
+                SmartToast.successLong(R.string.open_bid_success)
                 openSuccess.value = true
                 getUserInfo()
             }
         }
     }
+
     suspend fun getUserInfo() {
-         val userInfo = userRepository.getUserInfo()
-            if (userInfo is ResultData.Success) {
-                userInfoLive.value = userInfo.data
-            }
+        val userInfo = userRepository.getUserInfo()
+        if (userInfo is ResultData.Success) {
+            userInfoLive.value = userInfo.data
+        }
 
     }
 
     override suspend fun load(isClear: Boolean, pageNum: Int) {
-        if (isClear) {
-            inviteListLive.value?.clear()
-        }
         val inviteList = userRepository.getInviteList(pageNum, 20)
         if (inviteList is ResultData.Success) {
             val elements = inviteList.data.items
             inviteListLive.value?.let {
+                if (isClear) {
+                    it.clear()
+                }
                 it.addAll(elements)
                 inviteListLive.value = it
 

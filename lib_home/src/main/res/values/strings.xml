@@ -189,6 +189,7 @@
     <string name="rent_force">购买算力</string>
     <string name="get_address_fail">获取地址失败</string>
     <string name="erc20_usdt">以太坊(ERC20)USDT</string>
+    <string name="open_bid_success">恭喜您BID已成功开通</string>
 
 
 </resources>
