@@ -23,7 +23,7 @@ data class UserInfo(
     val nickname: String,
     val password_update_at: String,
     val qr_image: String,
-    val referer_id: String,
+    var referer_id: String?=null,
     val register_ip: String,
     val signature: String,
     val state: Int,

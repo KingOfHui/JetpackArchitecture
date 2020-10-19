@@ -11,12 +11,17 @@ import com.whdx.base.vm.BaseLoadMoreViewModel
 import com.whdx.base.vm.BaseViewModel
 import com.whdx.data.data.base.ResultData
 import com.whdx.data.data.product.ProductItem
+import com.whdx.data.data.user.UserInfo
 import com.whdx.data.data.wallet.USDTBalance
 import com.whdx.data.respository.UserRepository
 import com.whdx.home.R
 
 class SelectCloudViewModel(private val userRepository: UserRepository) :
     BaseLoadMoreViewModel<List<ProductItem>>() {
+
+    val userInfoLive: MutableLiveData<UserInfo> = MutableLiveData()
+    val openSuccess: MutableLiveData<Boolean> = MutableLiveData()
+
     val mProductItemList: MutableLiveData<List<ProductItem>> = MutableLiveData()
         get() {
             if (field.value == null) field.value = mutableListOf()
@@ -54,6 +59,7 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
             if (usdtBalance is ResultData.Success) {
                 mBalanceLive.value = usdtBalance.data
             }
+            getUserInfo()
         }
     }
 
@@ -67,6 +73,23 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
                 LiveEventBus.get(REFRESH_BALANCE).post(true)
             }
             doneSuccess()
+        }
+    }
+
+    suspend fun getUserInfo() {
+        val userInfo = userRepository.getUserInfo()
+        if (userInfo is ResultData.Success) {
+            userInfoLive.value = userInfo.data
+        }
+    }
+    fun openBid(code: String) {
+        launchUI {
+            val openBid = userRepository.openBid(code)
+            if (openBid is ResultData.Success) {
+                SmartToast.successLong(R.string.open_bid_success)
+                openSuccess.value = true
+                getUserInfo()
+            }
         }
     }
 }

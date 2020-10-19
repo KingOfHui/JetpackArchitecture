@@ -14,7 +14,9 @@ import com.whdx.data.data.product.ProductItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentSelectCloudBinding
 import com.whdx.home.databinding.ItemCloudMineralBinding
+import com.whdx.home.ui.dialog.InputPasswordDialog
 import com.whdx.home.ui.dialog.LeaseDialog
+import com.whdx.home.ui.dialog.WarningDialog
 import com.whdx.home.vm.SelectCloudViewModel
 import kotlinx.android.synthetic.main.fragment_select_cloud.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -36,6 +38,9 @@ class SelectCloudComputeFragment :
         mViewModel.mLeaseSuccessLive.observe(this, Observer {
             dialog?.dismiss()
         })
+        mViewModel.openSuccess.observe(viewLifecycleOwner, Observer {
+            inputPasswordDialog?.dismiss()
+        })
         LiveEventBus.get(REFRESH_BALANCE).observe(this, Observer { mViewModel.getUSDTBalance() })
     }
 
@@ -51,15 +56,21 @@ class SelectCloudComputeFragment :
             ) {
                 holder.dataBinding?.let {
                     it.textView5.clickWithTrigger {
-                        mViewModel.mBalanceLive.value?.let {
-                             dialog = LeaseDialog.show(
-                                requireContext(),
-                                it.balance,
-                                item.amount,
-                                item.id,
-                                mViewModel,
-                                viewLifecycleOwner
-                            )
+                        mViewModel.userInfoLive.value?.let {
+                            if (it.referer_id.isNullOrEmpty()) {
+                                showOpenDialog()
+                            } else{
+                                mViewModel.mBalanceLive.value?.let {
+                                    dialog = LeaseDialog.show(
+                                        requireContext(),
+                                        it.balance,
+                                        item.amount,
+                                        item.id,
+                                        mViewModel,
+                                        viewLifecycleOwner
+                                    )
+                                }
+                            }
                         }
                     }
                     it.tvReleaseMutiple.text = if (getLanguage() == 1) {
@@ -83,6 +94,20 @@ class SelectCloudComputeFragment :
         rv.layoutManager = LinearLayoutManager(requireContext())
         mViewModel.refresh()
         mDataBinding.vm = mViewModel
+    }
+
+    private var inputPasswordDialog: InputPasswordDialog?=null
+    private fun showOpenDialog() {
+        val warningDialog = WarningDialog(requireContext())
+        warningDialog.setOnClickListener {
+            inputPasswordDialog =
+                InputPasswordDialog(requireContext(), getString(R.string.input_invite_code),true)
+            inputPasswordDialog?.setInputListener { code ->
+                mViewModel.openBid(code)
+            }
+            inputPasswordDialog?.show()
+        }
+        warningDialog.show()
     }
 
     override fun initData() {
