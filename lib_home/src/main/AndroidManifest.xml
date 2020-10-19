@@ -27,6 +27,7 @@
         <activity android:name=".ui.activity.WithdrawSuccessActivity" />
         <activity android:name=".ui.activity.MyTotalBonusActivity" />
         <activity android:name=".ui.activity.TopicDetailActivity" />
+        <activity android:name=".ui.activity.ExportKeyActivity" />
     </application>
 
 </manifest>

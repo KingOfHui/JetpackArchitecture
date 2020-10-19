@@ -48,7 +48,7 @@ object DealException {
         ) {
             ex = ResultException(
                 ApiResultCode.PARSE_ERROR,
-                "解析错误"
+                BaseApplication.CONTEXT.getString(R.string.parse_error)
             )
         } else if (t is SocketException) {
             ex = ResultException(

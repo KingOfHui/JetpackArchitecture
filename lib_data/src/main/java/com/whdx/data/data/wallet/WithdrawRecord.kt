@@ -18,9 +18,9 @@ data class WithdrawRecord(
 
 data class WithdrawRecordItem(
     val address: String,
-    val admin_id: Int,
+    val admin_id: String,
     val amount: BigDecimal,
-    val arrived_amount: Int,
+    val arrived_amount: BigDecimal,
     val audit_at: String,
     val audit_status: String,
     val btw_price: String,
@@ -28,7 +28,7 @@ data class WithdrawRecordItem(
     val create_time: String,
     val deal_time: String,
     val fee: String,
-    val height: Int,
+    val height: String,
     val id: Int,
     val memo: String,
     val pay_status: String,

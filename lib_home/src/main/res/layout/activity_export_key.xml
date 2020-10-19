@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 app:isShow_left_img="true"
                 app:text_color="@color/white"
-                app:title_textStr="@string/back_up_wallet_walletsign" />
+                app:title_textStr="@string/back_up_wallet_private_key" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                     android:layout_marginLeft="@dimen/dimen_20dp"
                     android:layout_marginRight="@dimen/dimen_20dp"
                     android:gravity="center"
-                    android:text="@string/create_wallet_last_step"
+                    android:text="@string/export_key"
                     android:textColor="@color/white"
                     android:textSize="@dimen/sp_18" />
 
@@ -63,7 +63,7 @@
                     android:layout_marginRight="@dimen/dimen_15dp"
                     android:layout_marginTop="@dimen/dimen_5dp"
                     android:gravity="center"
-                    android:text="@string/back_up_private_sign_view"
+                    android:text="@string/backup_key"
                     android:textColor="@color/text_color_tip_94A0C1"
                     android:textSize="@dimen/dimen_15dp" />
 
@@ -126,7 +126,7 @@
                     android:layout_marginTop="@dimen/dimen_10dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <!--<TextView
                         android:id="@+id/btnLeadToLogin"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen_41dp"
@@ -137,7 +137,7 @@
                         android:textColor="@color/white"
                         android:gravity="center"
                         android:text="@string/direct_import_login"
-                         />
+                         />-->
 
                     <TextView
                         android:id="@+id/btnCopy"

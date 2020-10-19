@@ -86,7 +86,7 @@ class LeaseDialog(
                 SmartToast.error(context.getString(R.string.tip_correct_no))
             }
         }
-        as_amount.setNum(BigDecimal.ONE)
+//        as_amount.setNum(BigDecimal.ONE)
     }
 
     companion object {
