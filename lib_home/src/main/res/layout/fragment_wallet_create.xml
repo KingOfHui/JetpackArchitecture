@@ -89,12 +89,14 @@
                 android:hint="@string/wallet_name"
                 android:lines="1"
                 android:gravity="bottom"
+                android:visibility="gone"
                 android:paddingBottom="5dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/color_94A0C1"
                 android:textSize="15dp" />
 
             <View
+                android:visibility="gone"
                 style="@style/LineStyle" />
 
             <EditText

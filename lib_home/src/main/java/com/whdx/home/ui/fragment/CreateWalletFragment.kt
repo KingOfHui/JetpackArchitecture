@@ -31,13 +31,13 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
                 SmartToast.showInCenter(getString(R.string.wallet_create_xieyi))
                 return@setOnClickListener
             }
-            val walletName = editWalletName.text.toString().trim()
+//            val walletName = editWalletName.text.toString().trim()
             val pwd = editWalletPassword.text.toString().trim()
             val repeatPwd = editRepeatPassword.text.toString().trim()
-            if (TextUtils.isEmpty(walletName)) {
+            /*if (TextUtils.isEmpty(walletName)) {
                 SmartToast.showInCenter(R.string.wallet_create_sign_name)
                 return@setOnClickListener
-            }
+            }*/
             if (TextUtils.isEmpty(pwd)||pwd.length<6) {
                 SmartToast.showInCenter(R.string.wallet_pwd_six)
                 return@setOnClickListener
@@ -52,7 +52,7 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
             }
             mViewModel.walletModel.value?.let { model ->
                 model.password = pwd
-                model.name = walletName
+//                model.name = walletName
             }
             Navigation.findNavController(it).navigate(R.id.action_navigation_create_to_navigation_zjc)
         }
