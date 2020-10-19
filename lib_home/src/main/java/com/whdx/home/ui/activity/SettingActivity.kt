@@ -11,6 +11,7 @@ import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.ActivityHelper
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.base.util.ext.compareVersionCode
+import com.whdx.base.util.ext.getLanguage
 import com.whdx.data.respository.base.LocalDataSource
 import com.whdx.home.BuildConfig
 import com.whdx.home.R
@@ -34,10 +35,11 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
 
     override fun startObserve() {
         mViewModel.updateVersionLive.observe(this, Observer {
-            if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
+//            if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
                 tv_version.text = String.format(getString(R.string.update_to), it.version)
                 tv_update_version.isClickable = true
-            }
+                tv_update_version.isEnabled = true
+//            }
         })
     }
 
@@ -45,6 +47,7 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         tv_update_version.isClickable = false
+        tv_update_version.isEnabled = false
         titleBar.setOnLeftClickListener { finish() }
         tvLanguage.clickWithTrigger {
             LanguageActivity.start(this)
@@ -56,7 +59,7 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
                 }
                 val intent = Intent().apply {
                     action = "android.intent.action.VIEW"
-                    data = Uri.parse(version.internal_android_url)
+                    data = Uri.parse(if (getLanguage() == 1) version.internal_android_url else version.abroad_android_url)
                 }
                 startActivity(intent)
             }

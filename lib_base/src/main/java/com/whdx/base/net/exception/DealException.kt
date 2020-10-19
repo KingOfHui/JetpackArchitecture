@@ -85,7 +85,7 @@ object DealException {
         } else {
             ex = ResultException(
                 ApiResultCode.UNKNOWN,
-                "未知错误"
+                BaseApplication.CONTEXT.getString(R.string.unknown_error)
             )
             ex.printStackTrace()
         }

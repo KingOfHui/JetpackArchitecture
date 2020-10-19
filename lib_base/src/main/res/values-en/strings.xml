@@ -9,4 +9,5 @@
     <string name="copy_bord_content">Copid to Clipboard</string>
     <string name="no_data">Empty Data</string>
     <string name="parse_error">Parse Error</string>
+    <string name="unknown_error">Unknown Error</string>
 </resources>
