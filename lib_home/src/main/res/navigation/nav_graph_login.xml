@@ -90,6 +90,7 @@
         <action
             android:id="@+id/action_backupWalletSecondFragment_to_prohibitionStatementFragment"
             app:destination="@id/prohibitionStatementFragment" />
+        <deepLink app:uri="www.bittalk.com/{source}" />
     </keep_state_fragment>
     <keep_state_fragment
         android:id="@+id/prohibitionStatementFragment"

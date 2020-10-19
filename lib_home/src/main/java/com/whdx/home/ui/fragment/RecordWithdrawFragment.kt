@@ -3,7 +3,9 @@ package com.whdx.home.ui.fragment
 import androidx.lifecycle.Observer
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.REFRESH_BALANCE
 import com.whdx.data.data.wallet.WithdrawRecordItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentRecordWithdrawBinding
@@ -25,6 +27,9 @@ class RecordWithdrawFragment:BaseBindingFragment<RecordWithdrawViewModel,Fragmen
     override fun startObserve() {
         mViewModel.mWithdrawRecordLive.observe(viewLifecycleOwner, Observer {
                 mAdapter.setList(it)
+        })
+        LiveEventBus.get(REFRESH_BALANCE).observe(viewLifecycleOwner, Observer {
+            mViewModel.refresh()
         })
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseBindingActivity
+import com.whdx.base.util.ViewUtil
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.home.R
 import com.whdx.home.databinding.ActivityWithdrawBinding
@@ -62,6 +63,7 @@ class WithdrawActivity : BaseBindingActivity<MyWalletViewModel, ActivityWithdraw
             }
             withdrawDialog.show()
         }
+        etAmount.filters = arrayOf(ViewUtil.get2NumPoint(2,30))
     }
 
     override fun initData() {

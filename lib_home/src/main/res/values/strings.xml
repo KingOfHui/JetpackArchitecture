@@ -189,6 +189,8 @@
     <string name="rent_force">购买算力</string>
     <string name="get_address_fail">获取地址失败</string>
     <string name="erc20_usdt">以太坊(ERC20)USDT</string>
+    <string name="export_key">导出私钥</string>
+    <string name="backup_key">请备份你的私钥</string>
 
 
 </resources>

@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.ui.activity.BaseVMActivity
 import com.whdx.base.util.ActivityHelper
 import com.whdx.base.util.ext.clickWithTrigger
@@ -13,6 +14,9 @@ import com.whdx.base.util.ext.compareVersionCode
 import com.whdx.data.respository.base.LocalDataSource
 import com.whdx.home.BuildConfig
 import com.whdx.home.R
+import com.whdx.home.ui.dialog.InputPasswordDialog
+import com.whdx.home.ui.dialog.WithdrawDialog
+import com.whdx.home.util.ConfigHolder
 import com.whdx.home.vm.SettingViewModel
 import kotlinx.android.synthetic.main.activity_setting.*
 import kotlinx.coroutines.Dispatchers
@@ -64,6 +68,18 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
                 LoginActivity.start(this@SettingActivity)
                 overridePendingTransition(0,0)
             }
+        }
+        tvExportKey.clickWithTrigger {
+            val withdrawDialog = WithdrawDialog(this)
+            withdrawDialog.setOnTextListener {
+                if (!ConfigHolder.isCorrectPassword(it)) {
+                    SmartToast.error(getString(R.string.passwrod_error))
+                    return@setOnTextListener
+                }
+                withdrawDialog.dismiss()
+                ExportKeyActivity.start(this)
+            }
+            withdrawDialog.show()
         }
     }
 

@@ -127,6 +127,7 @@
                 android:layout_marginRight="@dimen/dimen_20dp"
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:background="@null"
+                android:inputType="numberDecimal"
                 android:hint="@string/input_withdraw_amount"
                 android:textColor="@color/text_color_tip_94A0C1"
                 android:textColorHint="@color/text_color_tip_94A0C1"

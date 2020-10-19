@@ -15,7 +15,6 @@ import com.whdx.data.data.product.InvestProductItem
 import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMyCloudBinding
 import com.whdx.home.databinding.ItemMyCloudMineralBinding
-import com.whdx.home.databinding.LayoutHeaderMyCloudBinding
 import com.whdx.home.ui.activity.CloudBonusActivity
 import com.whdx.home.vm.MyCloudViewModel
 import kotlinx.android.synthetic.main.activity_cloud_bonus.*

@@ -190,6 +190,8 @@
     <string name="rent_force">Buy Force</string>
     <string name="get_address_fail">Get Address Failed</string>
     <string name="erc20_usdt">Ethereum(ERC20)USDT</string>
+    <string name="export_key">Export the private key</string>
+    <string name="backup_key">Please back up your private key </string>
 
 
 </resources>
