@@ -153,7 +153,7 @@
     <string name="none">None</string>
     <string name="my_invest_amount">Total Invest(USDT)</string>
     <string name="ny_balance_usdt">Balance(USDT)</string>
-    <string name="my_toady_bonus">Bonus Toady(USDT)</string>
+    <string name="my_toady_bonus">Bonus Today(USDT)</string>
     <string name="my_total_bonus">Total Bonus(USDT)</string>
     <string name="level_people">%s People</string>
     <string name="power_is">Force: %s</string>
@@ -164,10 +164,10 @@
     <string name="buy_num">Buy No: %s </string>
     <string name="prod_amount">Paid: %s %s</string>
     <string name="buy_time">Buy Time: %s</string>
-    <string name="real_time_price">BIW real-time price toady</string>
+    <string name="real_time_price">BIW real-time price today</string>
     <string name="my_invite_num">Invite No(People)</string>
     <string name="invite_bonus">Invite Bonus(USDT)</string>
-    <string name="rebate_today">Rebate Toady(USDT)</string>
+    <string name="rebate_today">Rebate Today(USDT)</string>
     <string name="history_rebate">History Rebate(USDT)</string>
     <string name="address_id">Address:%s</string>
     <string name="update_to">update to V%s</string>
