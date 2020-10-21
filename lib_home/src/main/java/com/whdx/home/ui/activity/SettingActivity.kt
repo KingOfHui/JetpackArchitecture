@@ -35,11 +35,11 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
 
     override fun startObserve() {
         mViewModel.updateVersionLive.observe(this, Observer {
-//            if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
+            if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
                 tv_version.text = String.format(getString(R.string.update_to), it.version)
                 tv_update_version.isClickable = true
                 tv_update_version.isEnabled = true
-//            }
+            }
         })
     }
 
