@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bit Talk"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home_title"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:textColor="@color/white"
             android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
             app:layout_constraintBottom_toBottomOf="@id/tvTitle"
             app:layout_constraintTop_toTopOf="@id/tvName"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="12dp"
             android:background="@drawable/shape_rank_bg"
             android:paddingTop="5dp"
             android:paddingBottom="@dimen/dimen_5dp"
@@ -88,7 +88,7 @@
                 android:layout_gravity="center_vertical"
                 tools:text="@string/topic_title"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="12dp"
                 android:layout_marginLeft="10dp"/>
             <TextView
                 android:id="@+id/tvTopicTime"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="2020.09.23"
                 android:layout_gravity="center_vertical"
-                android:textSize="12sp"
+                android:textSize="12dp"
                 android:layout_marginEnd="5dp"
                 android:textColor="@color/color_94A0C1"/>
             <ImageView
@@ -144,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/select_power"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -156,7 +156,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="@string/select_power_tip"
                     android:textColor="@color/color_94A0C1"
-                    android:textSize="10sp"
+                    android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/tvFirst"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -168,7 +168,7 @@
                     android:layout_marginRight="@dimen/dimen_5dp"
                     android:text="@string/my_total_bonus_record"
                     android:textColor="@color/white"
-                    android:textSize="12sp"
+                    android:textSize="12dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toLeftOf="@id/ivBonusFoward"
                     app:layout_constraintTop_toTopOf="parent" />

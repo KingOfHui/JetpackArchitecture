@@ -27,7 +27,7 @@
             android:layout_margin="20dp"
             android:text="@string/net_power"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -181,7 +181,7 @@
                         android:layout_marginTop="@dimen/dimen_20dp"
                         android:text="@string/max_level_bonus"
                         android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         android:visibility="gone"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_middle" />
@@ -206,7 +206,7 @@
                             android:paddingBottom="@dimen/dimen_20dp"
                             android:text="@string/net_level"
                             android:textColor="@color/white"
-                            android:textSize="15sp"
+                            android:textSize="15dp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -232,7 +232,7 @@
                                 android:layout_marginTop="55dp"
                                 android:text="@string/satellite"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:id="@+id/tv_level_5_num"
@@ -243,7 +243,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level1)}"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -269,7 +269,7 @@
                                 android:layout_marginTop="55dp"
                                 android:text="@string/star"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:id="@+id/tv_level_4_num"
@@ -280,7 +280,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level2)}"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -305,7 +305,7 @@
                                 android:layout_marginTop="55dp"
                                 android:text="@string/planet"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:id="@+id/tv_level_3_num"
@@ -316,7 +316,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level3)}"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -341,7 +341,7 @@
                                 android:layout_marginTop="55dp"
                                 android:text="@string/Galaxy"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:id="@+id/tv_level_2_num"
@@ -352,7 +352,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level4)}"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -377,7 +377,7 @@
                                 android:layout_marginTop="55dp"
                                 android:text="@string/universe"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:id="@+id/tv_level_1_num"
@@ -388,7 +388,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level5)}"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:textSize="12dp" />
                         </RelativeLayout>
 
                     </com.whdx.base.ui.view.RoundConstraintLayout>

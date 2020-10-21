@@ -47,7 +47,7 @@ public class JRecyclerView extends RecyclerView {
 
 		TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.JRecyclerView);
 		int color = ta.getColor(R.styleable.JRecyclerView_empty_text_color, Color.parseColor("#94A0C1"));
-		float textsize = ta.getDimension(R.styleable.JRecyclerView_empty_text_size, DisplayUtil.sp2px(context,12));
+		float textsize = ta.getDimension(R.styleable.JRecyclerView_empty_text_size, DisplayUtil.dip2px(context,12));
 		int style = ta.getInt(R.styleable.JRecyclerView_empty_text_style, Typeface.NORMAL);
 		gravity = ta.getInt(R.styleable.JRecyclerView_empty_text_gravity, GRAVITY_CENTER);
 		mTopMargin = (int) ta.getDimension(R.styleable.JRecyclerView_empty_text_top_margin, DisplayUtil.dip2px(context,20));

@@ -39,7 +39,7 @@
             android:layout_marginTop="@dimen/dimen_30dp"
             android:text="@{@string/buy_time(model.create_time)}"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleBar" />
 
@@ -75,7 +75,7 @@
                 android:layout_marginTop="20dp"
                 android:text="@{@string/power_bonus(model.prod_release_multiple)}"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,7 +86,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvReleaseMutiple"
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
                 android:background="@drawable/shape_cloud_buy_bg"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/color_94A0C1"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
                 app:layout_constraintTop_toBottomOf="@+id/tvReleaseMutiple"
                 tools:text="分储算例合约2.5T" />
@@ -110,7 +110,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@{@string/price_usdt(model.prod_amount.stripTrailingZeros().toPlainString())}"
                 android:textColor="@color/color_94A0C1"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
                 app:layout_constraintTop_toBottomOf="@+id/tvStorage"
                 tools:text="分储算例合约2.5T" />
@@ -122,7 +122,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@{@string/buy_num(model.quantity)}"
                 android:textColor="@color/color_94A0C1"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
                 app:layout_constraintTop_toBottomOf="@+id/tvPerPrice"
                 tools:text="分储算例合约2.5T" />
@@ -134,7 +134,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@{@string/prod_amount(model.amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString(),model.prod_symbol)}"
                 android:textColor="@color/text_color_tip_94A0C1"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 app:layout_constraintStart_toStartOf="@+id/tvStorage"
                 app:layout_constraintTop_toBottomOf="@+id/tvBuyNum"
                 tools:text="总额度:10000USDT" />
@@ -156,7 +156,7 @@
                 android:layout_marginLeft="@dimen/dimen_20dp"
                 android:text="@string/max_bonus"
                 android:textColor="@color/text_color_tip_94A0C1"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
 
@@ -167,7 +167,7 @@
                 android:gravity="center"
                 android:text="@{model.release_amount.setScale(2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString()+`USDT`}"
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="10dp"
                 app:layout_constraintLeft_toRightOf="@id/tvMaxBonus"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
             <TextView
@@ -198,7 +198,7 @@
                  android:layout_height="wrap_content"
                  android:layout_marginEnd="15dp"
                  android:text="立即租借"
-                 android:textSize="11sp"
+                 android:textSize="11dp"
                  android:textColor="@color/white"
                  android:paddingTop="7dp"
                  app:layout_constraintBaseline_toBaselineOf="@id/tvAmount"
@@ -221,7 +221,7 @@
             android:layout_marginTop="@dimen/dimen_30dp"
             android:text="@string/mineral_bonus_record"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cl_top" />
 
@@ -229,7 +229,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="11sp"
+            android:textSize="11dp"
             android:layout_marginRight="@dimen/dimen_20dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_tip"
@@ -262,7 +262,7 @@
                     android:gravity="center"
                     android:text="@string/bonus"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_marginRight="@dimen/dimen_20dp"
@@ -273,7 +273,7 @@
                     android:gravity="center"
                     android:text="@string/time"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
             </LinearLayout>
 
             <View style="@style/LineStyle"

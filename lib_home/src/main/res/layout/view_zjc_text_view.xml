@@ -13,5 +13,5 @@
         android:background="@drawable/selector_zjc_text_bg"
         android:padding="@dimen/dimen_5dp"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_14"/>
+        android:textSize="14dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

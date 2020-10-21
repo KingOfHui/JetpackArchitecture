@@ -79,7 +79,7 @@
             android:lineHeight="@dimen/dimen_25dp"
             android:padding="@dimen/dimen_10dp"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:visibility="gone"
              />
 

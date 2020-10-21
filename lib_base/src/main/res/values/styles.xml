@@ -2,15 +2,15 @@
 <resources>
     <!--设置TabLayout内文字的字体大小-->
     <style name="MyTabLayoutTextAppearance">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="HomeTabLayoutTextAppearance">
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">17dp</item>
         <item name="android:textStyle">normal</item>
     </style>
     <style name="HomeNavigationViewStyle">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">10dp</item>
     </style>
 
     <!--弹窗样式的Activity-->
