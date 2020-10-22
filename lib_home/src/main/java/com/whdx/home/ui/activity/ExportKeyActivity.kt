@@ -24,7 +24,7 @@ class ExportKeyActivity: BaseBindingActivity<WalletViewModel, ActivityExportKeyB
     override fun startObserve() {
 
         mViewModel.mCurrentWallet.observe(this, Observer {
-            txtPublicKey.text = it.publicKey
+            txtPublicKey.text = it.address
             val privateKey = it.privateKey
             editPrivateKey.text = privateKey
             btnCopy.clickWithTrigger { privateKey?.clickToCopy(this) }

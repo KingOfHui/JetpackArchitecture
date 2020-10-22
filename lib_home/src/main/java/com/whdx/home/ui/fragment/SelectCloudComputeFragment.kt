@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.OPEN_BID_SUCCESS
 import com.whdx.base.util.ext.REFRESH_BALANCE
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.base.util.ext.getLanguage
@@ -40,6 +41,7 @@ class SelectCloudComputeFragment :
         })
         mViewModel.openSuccess.observe(viewLifecycleOwner, Observer {
             inputPasswordDialog?.dismiss()
+            LiveEventBus.get(OPEN_BID_SUCCESS).post(true)
         })
         LiveEventBus.get(REFRESH_BALANCE).observe(this, Observer { mViewModel.getUSDTBalance() })
     }
@@ -56,6 +58,19 @@ class SelectCloudComputeFragment :
             ) {
                 holder.dataBinding?.let {
                     it.textView5.clickWithTrigger {
+                        if (mViewModel.openSuccess.value == true) {
+                            mViewModel.mBalanceLive.value?.let {
+                                dialog = LeaseDialog.show(
+                                    requireContext(),
+                                    it.balance,
+                                    item.amount,
+                                    item.id,
+                                    mViewModel,
+                                    viewLifecycleOwner
+                                )
+                            }
+                            return@clickWithTrigger
+                        }
                         mViewModel.userInfoLive.value?.let {
                             if (it.referer_id.isNullOrEmpty()) {
                                 showOpenDialog()

@@ -2,7 +2,9 @@ package com.whdx.home.ui.fragment
 
 import android.text.TextUtils
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
@@ -58,6 +60,8 @@ class CreateWalletFragment:BaseBindingFragment<WalletViewModel,FragmentWalletCre
         }
         wallet_select_import_view.clickWithTrigger {
             Navigation.findNavController(it).navigate(R.id.action_navigation_create_wallet_to_leadInAccountFragment)
+//            findNavController().navigateUp()
+//            LiveEventBus.get("TURN_PAGER").post("to_lead")
         }
         txtXy.clickWithTrigger {
             CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy-bittalk",getString(R.string.wallet_xieyi_content_two))

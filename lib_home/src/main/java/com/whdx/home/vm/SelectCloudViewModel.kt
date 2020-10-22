@@ -80,6 +80,7 @@ class SelectCloudViewModel(private val userRepository: UserRepository) :
         val userInfo = userRepository.getUserInfo()
         if (userInfo is ResultData.Success) {
             userInfoLive.value = userInfo.data
+            openSuccess.value = !userInfo.data.referer_id.isNullOrEmpty()
         }
     }
     fun openBid(code: String) {

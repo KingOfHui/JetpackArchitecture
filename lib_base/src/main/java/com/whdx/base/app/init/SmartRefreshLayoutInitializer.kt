@@ -27,7 +27,7 @@ class SmartRefreshLayoutInitializer : Initializer() {
         //设置全局默认配置（优先级最低，会被其他设置覆盖）
         SmartRefreshLayout.setDefaultRefreshInitializer { context, layout ->
             layout.apply {
-                setHeaderHeight(110f)
+                setHeaderHeight(80f)
                 setHeaderTriggerRate(0.8f)
                 setDisableContentWhenLoading(false)
                 setPrimaryColorsId(R.color.qmui_config_color_transparent, R.color.white)

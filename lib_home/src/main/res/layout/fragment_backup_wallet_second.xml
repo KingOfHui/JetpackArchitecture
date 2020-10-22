@@ -88,7 +88,7 @@
                     android:layout_marginLeft="@dimen/dimen_15dp"
                     android:layout_marginRight="@dimen/dimen_15dp"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                    android:text="@{vm.MBtcDo.publicKey,default=``}"
+                    android:text="@{vm.MBtcDo.address,default=``}"
                     android:textColor="@color/text_color_tip_94A0C1"
                     android:textSize="@dimen/sp_12" />
 

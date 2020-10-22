@@ -28,17 +28,9 @@
             app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_navigation_create_to_navigation_zjc"
             app:destination="@id/navigation_zjc" />
-        <action
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_navigation_login_to_navigation_forget"
-            app:destination="@id/navigation_forget" />
+<!--            app:launchSingleTop="true"-->
         <action
             android:id="@+id/action_navigation_create_wallet_to_leadInAccountFragment"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true"
             app:destination="@id/leadInAccountFragment" />
     </keep_state_fragment>
 
@@ -48,22 +40,9 @@
         android:label="WalletZJCFragment"
         tools:layout="@layout/fragment_wallet_zjc" >
         <action
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_navigation_register_to_navigation_forget"
-            app:destination="@id/navigation_forget" />
-        <action
             android:id="@+id/action_navigation_zjc_to_checkZJCFragment"
             app:destination="@id/checkZJCFragment" />
     </keep_state_fragment>
-
-    <keep_state_fragment
-        android:id="@+id/navigation_forget"
-        android:name="com.whdx.home.ui.ForgetPwdFragment"
-        android:label="ForgetPwdFragment"
-        tools:layout="@layout/fragment_forget_password" />
     <keep_state_fragment
         android:id="@+id/checkZJCFragment"
         android:name="com.whdx.home.ui.fragment.CheckZJCFragment"
@@ -107,11 +86,7 @@
             app:destination="@id/prohibitionStatementFragment" />
         <action
             android:id="@+id/action_leadInAccountFragment_to_navigation_create_wallet"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true"
             app:destination="@id/navigation_create_wallet" />
-        <action
-            android:id="@+id/action_leadInAccountFragment_to_navigation_forget"
-            app:destination="@id/navigation_forget" />
+<!--            app:launchSingleTop="true"-->
     </keep_state_fragment>
 </navigation>

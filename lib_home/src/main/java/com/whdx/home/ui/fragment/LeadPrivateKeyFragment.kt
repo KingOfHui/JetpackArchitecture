@@ -4,7 +4,10 @@ import android.text.TextUtils
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
@@ -45,7 +48,10 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
 
     override fun initView() {
         lead_in_create_view.clickWithTrigger {
-            Navigation.findNavController(it).navigateUp()
+            findNavController().navigate(R.id.action_leadInAccountFragment_to_navigation_create_wallet)
+//            findNavController().popBackStack(R.id.navigation_create_wallet,false)
+//            findNavController().navigateUp()
+//            LiveEventBus.get("TURN_PAGER").post("to_create")
         }
         input_submit_view.clickWithTrigger {
 
@@ -87,7 +93,7 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
             }
         }
         tv_fuwu.clickWithTrigger {
-            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy-bittalk","getString(R.string.wallet_xieyi_content_two)")
+            CommonWebActivity.start(requireContext(),"https://h5.bvw.im/privacy-bittalk",getString(R.string.wallet_xieyi_content_two))
         }
     }
 

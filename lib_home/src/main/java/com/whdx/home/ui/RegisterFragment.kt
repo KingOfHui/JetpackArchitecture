@@ -22,7 +22,6 @@ class RegisterFragment :BaseVMFragment<HomeViewModel>() {
     override fun setLayoutResId()= R.layout.fragment_register;
 
     override fun initView() {
-        register.setOnClickListener { findNavController().navigate(R.id.action_navigation_register_to_navigation_forget) }
     }
 
     override fun initData() {

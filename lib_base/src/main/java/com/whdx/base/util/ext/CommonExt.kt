@@ -29,6 +29,7 @@ import java.util.*
  */
 const val SET_THEME = "set_theme"
 const val REFRESH_BALANCE = "refresh_balance" //购买产品，提现等操作 刷新余额
+const val OPEN_BID_SUCCESS = "open_bid_success" //开通bid成功
 
 //获取包名
 fun Context.packageInfo(): PackageInfo = this.packageManager.getPackageInfo(this.packageName, 0)

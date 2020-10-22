@@ -2,9 +2,12 @@ package com.whdx.home.ui.fragment
 
 import android.content.Intent
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.ext.OPEN_BID_SUCCESS
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.data.data.user.InviteListItem
 import com.whdx.home.ui.activity.LoginActivity
@@ -17,6 +20,9 @@ import com.whdx.home.ui.dialog.InviteCodeDialog
 import com.whdx.home.ui.dialog.WarningDialog
 import com.whdx.home.vm.MineViewModel
 import kotlinx.android.synthetic.main.fragment_mine.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
 
@@ -45,6 +51,9 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
         })
         mViewModel.openSuccess.observe(viewLifecycleOwner, Observer {
             inputPasswordDialog.dismiss()
+        })
+        LiveEventBus.get(OPEN_BID_SUCCESS).observe(viewLifecycleOwner, Observer {
+            mViewModel.getUserInfo()
         })
     }
 
@@ -85,8 +94,8 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
                         "universe
                          */
                         1 -> getString(R.string.satellite)
-                        2 -> getString(R.string.star)
-                        3 -> getString(R.string.planet)
+                        2 -> getString(R.string.planet)
+                        3 -> getString(R.string.star)
                         4 -> getString(R.string.Galaxy)
                         5 -> getString(R.string.universe)
                         else -> getString(R.string.none)
@@ -116,7 +125,6 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
     }
 
     override fun initData() {
-        Timber.tag("dhdhdh").e("initData ThirdFragment")
         mViewModel.requestInviteData()
     }
 }

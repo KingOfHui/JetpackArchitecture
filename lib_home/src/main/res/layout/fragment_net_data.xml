@@ -267,7 +267,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="55dp"
-                                android:text="@string/star"
+                                android:text="@string/planet"
                                 android:textColor="@color/white"
                                 android:textSize="12dp" />
 
@@ -303,7 +303,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="55dp"
-                                android:text="@string/planet"
+                                android:text="@string/star"
                                 android:textColor="@color/white"
                                 android:textSize="12dp" />
 

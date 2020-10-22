@@ -1,6 +1,7 @@
 package com.whdx.home.ui.dialog
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -10,7 +11,10 @@ import com.whdx.base.ui.dialog.BaseBottomDialog
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.base.util.ext.hideSoftInput
 import com.whdx.home.R
-import kotlinx.android.synthetic.main.dialog_withdraw.*
+import kotlinx.android.synthetic.main.dialog_withdraw.cbPwdStatus
+import kotlinx.android.synthetic.main.dialog_withdraw.etPWD
+import kotlinx.android.synthetic.main.dialog_withdraw.titleBar
+import kotlinx.android.synthetic.main.dialog_withdraw.tvSure
 
 class WithdrawDialog(context: Context) :BaseBottomDialog(context) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +52,10 @@ class WithdrawDialog(context: Context) :BaseBottomDialog(context) {
     fun isClickEnable(enable: Boolean) {
         tvSure.isEnabled = enable;
         tvSure.isClickable = enable
+        tvSure.setBackgroundColor(
+            if(enable) Color.parseColor("#4D66FF")
+            else Color.parseColor("#554D66FF")
+        )
     }
 
     lateinit var listener:(String)->Unit

@@ -53,12 +53,13 @@ class MineViewModel(private val userRepository: UserRepository) :
         }
     }
 
-    suspend fun getUserInfo() {
-        val userInfo = userRepository.getUserInfo()
-        if (userInfo is ResultData.Success) {
-            userInfoLive.value = userInfo.data
+    fun getUserInfo() {
+        launchUI {
+            val userInfo = userRepository.getUserInfo()
+            if (userInfo is ResultData.Success) {
+                userInfoLive.value = userInfo.data
+            }
         }
-
     }
 
     override suspend fun load(isClear: Boolean, pageNum: Int) {

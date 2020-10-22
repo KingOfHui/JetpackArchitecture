@@ -105,7 +105,6 @@
         android:layout_marginTop="@dimen/dimen_40dp"
         android:layout_marginBottom="@dimen/dimen_20dp"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@color/selector_lease_bg"/>
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,14 +36,9 @@ class CheckZJCFragment:BaseBindingFragment<WalletViewModel,FragmentCheckZjcBindi
             val view =
                 View.inflate(requireContext(), R.layout.view_zjc_text_view, null)
             val tv = view.findViewById<TextView>(R.id.walletCreateWords)
+            tv.isSelected = true
             tv.setOnClickListener {
-                if (selectedWords.contains(tempWord)) {
-                    selectedWords.remove(tempWord)
-                    tv.isSelected = false
-                } else{
-                    selectedWords.add(tempWord)
-                    tv.isSelected = true
-                }
+                selectedWords.add(tempWord)
                 showSelectedWords()
             }
             tv.text = tempWord
@@ -76,6 +71,10 @@ class CheckZJCFragment:BaseBindingFragment<WalletViewModel,FragmentCheckZjcBindi
             tv.background =
                 ResourcesCompat.getDrawable(resources, R.drawable.shape_circle_rect_black, null)
             tv.text = tempWord
+            tv.setOnClickListener {
+                selectedWords.remove(tempWord)
+                showSelectedWords()
+            }
             qfl_selected_words.addView(view)
         }
     }

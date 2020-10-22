@@ -1,6 +1,7 @@
 package com.whdx.home.ui.dialog
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -47,8 +48,14 @@ class LeaseDialog(
         }
         tvSure.isClickable = false
         tvSure.isEnabled = false
+        tvSure.setBackgroundColor(Color.parseColor("#554D66FF"))
         etPWD.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
+                tvSure.setBackgroundColor(
+                    if(p0?.toString()?.length!! > (0) && as_amount.number.multiply(amount) <= balance)
+                        Color.parseColor("#4D66FF")
+                    else Color.parseColor("#554D66FF")
+                )
                 tvSure.isClickable =
                     p0?.toString()?.length!! > (0) && as_amount.number.multiply(amount) <= balance
                 tvSure.isEnabled =

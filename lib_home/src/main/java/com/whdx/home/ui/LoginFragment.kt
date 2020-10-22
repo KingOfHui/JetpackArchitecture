@@ -34,9 +34,6 @@ class LoginFragment :BaseBindingFragment<HomeViewModel,FragmentLoginBinding>() {
             user.username = "jflskd"
             mViewModel.mUser.value = user
         }
-        toForget.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_navigation_login_to_navigation_forget)
-        }
     }
 
     override fun initData() {

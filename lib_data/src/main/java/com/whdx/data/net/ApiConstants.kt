@@ -7,7 +7,7 @@ import com.whdx.data.BuildConfig
  * @Author dinghui
  * @Date 2020/9/22 0018 16:29
  */
-const val isTestEnvironment = true
+const val isTestEnvironment = false
 const val WHDX_TEACHER = 1
 const val WHDX_STUDENT = 2
 val teacherUrl:String by lazy {

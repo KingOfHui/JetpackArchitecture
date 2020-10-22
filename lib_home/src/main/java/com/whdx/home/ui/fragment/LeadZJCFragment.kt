@@ -4,7 +4,9 @@ import android.text.TextUtils
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.coder.zzq.smartshow.toast.SmartToast
+import com.jeremyliao.liveeventbus.LiveEventBus
 import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
 import com.whdx.base.util.ext.clickWithTrigger
@@ -38,7 +40,11 @@ class LeadZJCFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding>() {
 
     override fun initView() {
         lead_in_create_view.clickWithTrigger {
-            Navigation.findNavController(it).navigateUp()
+//            findNavController().popBackStack(R.id.navigation_create_wallet,false)
+//            findNavController().navigate(R.id.action_leadInAccountFragment_to_navigation_create_wallet)
+            Navigation.findNavController(it).navigate(R.id.action_leadInAccountFragment_to_navigation_create_wallet)
+//            LiveEventBus.get("TURN_PAGER").post("to_create")
+//            findNavController().navigateUp()
         }
         input_submit_view.clickWithTrigger {
 
