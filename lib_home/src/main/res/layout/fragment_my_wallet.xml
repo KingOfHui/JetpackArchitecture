@@ -21,7 +21,7 @@
             android:layout_margin="20dp"
             android:text="@string/my_funds"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,7 +92,7 @@
                 android:onClick="@{()->vm.getDepositAddress()}"
                 android:text="@string/deposit"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:background="@drawable/shape_withdraw_text_bg"
                 app:layout_constraintTop_toBottomOf="@id/cvv_bottom"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -110,7 +110,7 @@
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginLeft="@dimen/dimen_10dp"
                 android:layout_marginRight="@dimen/dimen_20dp"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintTop_toBottomOf="@id/cvv_bottom"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/guideline"

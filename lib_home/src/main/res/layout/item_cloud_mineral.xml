@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
             android:text="@string/liji_zujie"
-            android:textSize="11sp"
+            android:textSize="11dp"
             android:textColor="@color/white"
             android:paddingTop="5dp"
             app:layout_constraintBaseline_toBaselineOf="@id/tvAmount"
@@ -44,7 +44,7 @@
             tools:text="分出算例合约2.5T"
             android:layout_marginTop="@dimen/dimen_5dp"
             android:textColor="@color/color_94A0C1"
-            android:textSize="10sp"
+            android:textSize="10dp"
             app:layout_constraintStart_toStartOf="@+id/tvReleaseMutiple"
             app:layout_constraintTop_toBottomOf="@+id/tvReleaseMutiple" />
 
@@ -66,7 +66,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="25dp"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,7 +77,7 @@
             android:layout_marginTop="5dp"
             android:text="@{@string/price_is(model.amount+model.symbol)}"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/tvStorage"
             app:layout_constraintTop_toBottomOf="@+id/tvStorage" />
     </com.whdx.base.ui.view.RoundConstraintLayout>

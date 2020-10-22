@@ -52,7 +52,7 @@
                         android:text="@string/erc20_usdt"
                         android:layout_centerInParent="true"
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="14dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20dp"
                         android:text="@string/select_symbol"
-                        android:textSize="14sp"
+                        android:textSize="14dp"
                         android:visibility="invisible" />
 
                     <ImageView
@@ -115,7 +115,7 @@
                         android:onClick="@{()->vm.saveBitmap()}"
                         android:background="@drawable/shape_rect_stroke_text_bg"
                         android:textColor="#7184FF"
-                        android:textSize="12sp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
                         android:layout_marginTop="30dp"
                         android:text="@string/deposit_address"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/tv_address"
@@ -134,7 +134,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_marginBottom="20dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp"
+                        android:textSize="12dp"
                         android:gravity="center"
                         android:text="@{vm.MAddressLive.toString(),default=``}"
                         tools:text="0x7e9cce3735401f2c63" />

@@ -23,7 +23,7 @@
             android:ellipsize="end"
             android:text="@{model.bonus_all+` `+model.symbol}"
             android:gravity="center"
-            android:textSize="@dimen/sp_14"
+            android:textSize="14dp"
             android:textColor="@color/white"
             />
         <TextView
@@ -34,7 +34,7 @@
             android:layout_weight="1"
             android:text="@{DateUtils.INSTANCE.reformatStringDate(model.create_time,`yyyy-MM-dd HH:mm`),default=`-`}"
             android:gravity="center"
-            android:textSize="@dimen/sp_14"
+            android:textSize="14dp"
             android:textColor="@color/white"
             />
     </LinearLayout>

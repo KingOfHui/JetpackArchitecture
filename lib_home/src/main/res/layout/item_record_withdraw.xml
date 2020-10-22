@@ -27,7 +27,7 @@
             android:lines="1"
             android:text="@{model.address,default=``}"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="14dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/tvAmount"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
             android:ellipsize="end"
             android:text="@{model.create_time,default=`-`}"
             android:textColor="@color/text_color_tip_94A0C1"
-            android:textSize="14sp"
+            android:textSize="14dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/tvAmount"
             app:layout_constraintTop_toBottomOf="@id/tvName" />
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="@{`-`+model.amount.stripTrailingZeros().toPlainString()+`BIW`,default=`-`}"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="14dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

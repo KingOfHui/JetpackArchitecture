@@ -20,7 +20,7 @@
             android:paddingLeft="19dp"
             android:text="取消"
             android:textColor="#939393"
-            android:textSize="15sp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/tv_select"
@@ -34,7 +34,7 @@
             android:paddingLeft="19dp"
             android:text="确定"
             android:textColor="#FE484A"
-            android:textSize="15sp" />
+            android:textSize="15dp" />
 
     </RelativeLayout>
 
@@ -70,7 +70,7 @@
                 android:gravity="center"
                 android:text="年"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <com.whdx.base.ui.view.DatePickerView
                 android:id="@+id/month_pv"
@@ -85,7 +85,7 @@
                 android:gravity="center"
                 android:text="月"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <com.whdx.base.ui.view.DatePickerView
                 android:id="@+id/day_pv"
@@ -100,7 +100,7 @@
                 android:gravity="center"
                 android:text="日"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <com.whdx.base.ui.view.DatePickerView
                 android:id="@+id/hour_pv"
@@ -116,7 +116,7 @@
                 android:gravity="center"
                 android:text="时"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
             <com.whdx.base.ui.view.DatePickerView
                 android:id="@+id/minute_pv"
@@ -132,7 +132,7 @@
                 android:gravity="center"
                 android:text="分"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18dp" />
 
         </LinearLayout>
 

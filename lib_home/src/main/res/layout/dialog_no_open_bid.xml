@@ -22,7 +22,7 @@
         android:gravity="center"
         android:paddingLeft="@dimen/dimen_20dp"
         android:paddingRight="@dimen/dimen_20dp"
-        android:textSize="@dimen/sp_14"
+        android:textSize="14dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/ivWarning"
         android:layout_marginTop="@dimen/dimen_20dp"

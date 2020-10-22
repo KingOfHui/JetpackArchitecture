@@ -45,27 +45,27 @@ class CustomVerticalView @JvmOverloads constructor(
     }
 
     fun setTopStr(topText:String?){
-        tv_top.textSize = DisplayUtil.sp2px(context,8)
-        topText?.let {
-            if (it.length > 9) {
-                tv_top.textSize = DisplayUtil.sp2px(context,7)
-            }
-        }
+//        tv_top.textSize = DisplayUtil.dip2px(context,8)
+//        topText?.let {
+//            if (it.length > 9) {
+//                tv_top.textSize = DisplayUtil.dip2px(context,7)
+//            }
+//        }
         tv_top.text = topText?:"0"
     }
     fun setTopStrLittle(text: String?) {
 
-        tv_biw.textSize = DisplayUtil.sp2px(context,4)
+//        tv_biw.textSize = DisplayUtil.dip2px(context,4)
         tv_biw.text = text?:"0"
     }
 
     fun setTopStr(top: BigDecimal?) {
-        tv_top.textSize = DisplayUtil.sp2px(context,10)
-        top?.let {
-            if (it.stripTrailingZeros().toPlainString().length > 7) {
-                tv_top.textSize = DisplayUtil.sp2px(context,7)
-            }
-        }
+//        tv_top.textSize = DisplayUtil.dip2px(context,10)
+//        top?.let {
+//            if (it.stripTrailingZeros().toPlainString().length > 7) {
+//                tv_top.textSize = DisplayUtil.dip2px(context,7)
+//            }
+//        }
         tv_top.text = "${top?: BigDecimal.ZERO}"
     }
 
