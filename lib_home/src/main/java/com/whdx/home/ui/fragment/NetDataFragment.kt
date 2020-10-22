@@ -16,7 +16,7 @@ import timber.log.Timber
  * @Author dinghui
  * @Date 2020/9/24 0024 9:56
  */
-class NetDataFragment:BaseBindingFragment<NetDataViewModel, FragmentNetDataBinding>() {
+class NetDataFragment : BaseBindingFragment<NetDataViewModel, FragmentNetDataBinding>() {
     override fun initVM(): NetDataViewModel = getViewModel()
 
     override fun startObserve() {
@@ -31,5 +31,12 @@ class NetDataFragment:BaseBindingFragment<NetDataViewModel, FragmentNetDataBindi
     override fun initData() {
         mViewModel.getNetData()
         Timber.tag("dhdhdh").e("initData MineFragment")
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        if (!hidden) {
+            mViewModel.getNetData()
+        }
     }
 }
