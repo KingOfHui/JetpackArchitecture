@@ -4,6 +4,7 @@ import android.app.Application
 import android.app.UiModeManager
 import android.content.Context
 import android.content.res.Configuration
+import android.content.res.Resources
 import com.github.jokar.multilanguages.library.MultiLanguage
 import com.tencent.mmkv.MMKV
 import com.whdx.base.language.LocalLanguageUtil

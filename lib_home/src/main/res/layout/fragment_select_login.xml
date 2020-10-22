@@ -84,7 +84,7 @@
         android:textColor="#6F83FF"
         android:layout_marginLeft="@dimen/dimen_45dp"
         android:layout_marginRight="@dimen/dimen_45dp"
-        android:textSize="@dimen/sp_15"
+        android:textSize="15dp"
         android:background="@drawable/shape_rect_stroke_text_bg_2px"
         />
     <TextView
@@ -98,6 +98,7 @@
         android:layout_marginLeft="@dimen/dimen_45dp"
         android:layout_marginRight="@dimen/dimen_45dp"
         android:textColor="@color/white"
+        android:textSize="15dp"
         android:background="@color/color_4D66FF"
         />
 

@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_15dp"
                 android:text="@string/lead_in_zjc_notice_2"
+                android:textSize="13dp"
                 android:textColor="@color/white" />
 
             <EditText

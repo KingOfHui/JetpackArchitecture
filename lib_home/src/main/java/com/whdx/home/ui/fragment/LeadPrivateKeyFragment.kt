@@ -45,7 +45,7 @@ class LeadPrivateKeyFragment:BaseBindingFragment<WalletViewModel,ViewDataBinding
 
     override fun initView() {
         lead_in_create_view.clickWithTrigger {
-            Navigation.findNavController(it).navigate(R.id.action_leadInAccountFragment_to_navigation_create_wallet)
+            Navigation.findNavController(it).navigateUp()
         }
         input_submit_view.clickWithTrigger {
 

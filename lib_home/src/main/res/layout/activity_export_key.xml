@@ -102,6 +102,7 @@
                     android:layout_marginRight="@dimen/dimen_15dp"
                     android:background="@color/color_edit_bg"
                     android:gravity="top"
+                    android:textSize="13dp"
                     android:padding="@dimen/dimen_5dp"
                     android:text="@{vm.MBtcDo.privateKey}"
                     android:textColor="@color/white" />

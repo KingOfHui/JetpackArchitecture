@@ -16,7 +16,7 @@
             android:id="@+id/titleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title_textStr="备份助记词"
+            app:title_textStr="@string/backup_mnemonic"
             app:text_color="@color/white"
             app:isShow_left_img="true" />
 
