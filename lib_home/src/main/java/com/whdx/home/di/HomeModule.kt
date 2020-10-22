@@ -27,6 +27,7 @@ val homeViewModelModule = module {
     viewModel { BonusViewModel(get()) }
     viewModel { SettingViewModel(get()) }
     viewModel { MyTotalBonusViewModel(get()) }
+    viewModel { WalletManageViewModel(get()) }
 }
 
 val homeRepositoryModule = module {

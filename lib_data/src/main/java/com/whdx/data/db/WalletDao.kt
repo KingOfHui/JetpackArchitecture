@@ -16,7 +16,7 @@ interface WalletDao {
     //获取全部钱包
     @Transaction
     @Query("SELECT * FROM WalletModel")
-    fun loadAllWallet(): Flow<List<WalletModel>>
+    suspend fun loadAllWallet(): List<WalletModel>
 
     @Transaction
     @Update

@@ -36,7 +36,14 @@
             android:src="@drawable/ic_settings_white"
             app:layout_constraintBottom_toBottomOf="@id/tv_title"
             app:layout_constraintRight_toRightOf="parent" />
-
+        <ImageView
+            android:id="@+id/iv_wallet_manage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="28dp"
+            android:src="@mipmap/icon_wallet"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintRight_toLeftOf="@id/iv_setting" />
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

@@ -15,6 +15,7 @@ import com.whdx.home.R
 import com.whdx.home.databinding.FragmentMineBinding
 import com.whdx.home.databinding.ItemMyInviteBinding
 import com.whdx.home.ui.activity.SettingActivity
+import com.whdx.home.ui.activity.WalletManageActivity
 import com.whdx.home.ui.dialog.InputPasswordDialog
 import com.whdx.home.ui.dialog.InviteCodeDialog
 import com.whdx.home.ui.dialog.WarningDialog
@@ -61,6 +62,7 @@ class MineFragment : BaseBindingFragment<MineViewModel, FragmentMineBinding>() {
 
     override fun initView() {
         iv_setting.clickWithTrigger { SettingActivity.start(requireContext()) }
+        iv_wallet_manage.clickWithTrigger { WalletManageActivity.start(requireContext()) }
         tv_open_bid.clickWithTrigger {
             mViewModel.userInfoLive.value?.let {
                 if (it.referer_id.isNullOrEmpty()) {
