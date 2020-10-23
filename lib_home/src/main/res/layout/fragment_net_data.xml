@@ -76,7 +76,7 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toLeftOf="@id/gl_v_50"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:topStr="@{vm.MNetDataLive.net_all_storage , default =`0`}" />
+                            app:topStr="@{vm.MNetDataLive.net_all_storage.stripTrailingZeros().toPlainString(), default =`0`}" />
 
                         <com.whdx.base.ui.view.CustomVerticalView
                             android:layout_width="0dp"

@@ -15,6 +15,7 @@ import com.whdx.home.vm.MyWalletViewModel
 import kotlinx.android.synthetic.main.fragment_my_wallet.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
+import java.math.BigDecimal
 
 /**
  * @Description
@@ -30,7 +31,7 @@ class MyWalletFragment : BaseBindingFragment<MyWalletViewModel, FragmentMyWallet
             mViewModel.getMyBalance()
         })
         mViewModel.mBalanceLive.observe(viewLifecycleOwner, Observer {
-            cvv_top.setTopStrLittle("≈ " + it.balance.divide(it.btw_price).stripTrailingZeros().toPlainString() + " BIW")
+            cvv_top.setTopStrLittle("≈ " + it.balance.divide(it.btw_price,2,BigDecimal.ROUND_DOWN).stripTrailingZeros().toPlainString() + " BIW")
         })
     }
 

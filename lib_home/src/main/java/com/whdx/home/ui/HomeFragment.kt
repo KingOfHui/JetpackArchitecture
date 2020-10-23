@@ -9,6 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.whdx.base.adapter.SimpleFragmentStateAdapter
 import com.whdx.base.ui.activity.CommonWebActivity
 import com.whdx.base.ui.fragment.BaseBindingFragment
+import com.whdx.base.util.DateUtils
 import com.whdx.base.util.ext.clickWithTrigger
 import com.whdx.base.util.ext.getLanguage
 import com.whdx.home.vm.HomeViewModel
@@ -93,7 +94,7 @@ class HomeFragment : BaseBindingFragment<HomeViewModel, FragmentHomeBinding>() {
                 mViewModel.mTopic.observe(viewLifecycleOwner, Observer { detail ->
                     tvTopicTitle.text =
                         if (getLanguage() == 1) detail.title else detail.english_title
-                    tvTopicTime.text = detail.create_at
+                    tvTopicTime.text = DateUtils.reformatStringDate(detail.create_at?:"","yyyy.MM.dd")
                     llTopic.clickWithTrigger {
                         TopicDetailActivity.start(requireContext(),
                             (if (getLanguage() == 1) detail.content else detail.english_content)

@@ -1,4 +1,8 @@
-package com.whdx.data.data class NetData(
+package com.whdx.data.data
+
+import java.math.BigDecimal
+
+data class NetData(
     val btw_price: String,
     val count_invest: String,
     val count_level1: Int,
@@ -10,5 +14,5 @@ package com.whdx.data.data class NetData(
     val mine_performance: String,
     val mine_performance_node: String,
     val net_all_bonus: String,
-    val net_all_storage: String
+    val net_all_storage: BigDecimal
 )

@@ -133,5 +133,5 @@ interface ApiService {
     ): BaseResponse<Any>
 
     @GET("v1/getAppOnline")
-    suspend fun getAppOnline(@Query("version") version: String): BaseResponse<UpdateVersion>
+    suspend fun getAppOnline(): BaseResponse<UpdateVersion>
 }

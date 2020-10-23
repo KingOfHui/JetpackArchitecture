@@ -1,5 +1,6 @@
 package com.whdx.base.ui.fragment
 
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.whdx.base.R
@@ -16,8 +17,11 @@ import com.whdx.base.vm.BaseViewModel
 abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     protected lateinit var mViewModel: VM
 
-    override fun onFragmentFirstVisible() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         mViewModel = initVM()
+    }
+    override fun onFragmentFirstVisible() {
         super.onFragmentFirstVisible()
         mViewModel.loadState.observe(this, observer)
         startObserve()

@@ -5,6 +5,7 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="com.whdx.base.util.DateUtils"/>
         <variable
             name="vm"
             type="com.whdx.home.vm.HomeViewModel" />
@@ -89,6 +90,8 @@
                 tools:text="@string/topic_title"
                 android:textColor="@color/white"
                 android:textSize="12dp"
+                android:lines="1"
+                android:ellipsize="end"
                 android:layout_marginLeft="10dp"/>
             <TextView
                 android:id="@+id/tvTopicTime"

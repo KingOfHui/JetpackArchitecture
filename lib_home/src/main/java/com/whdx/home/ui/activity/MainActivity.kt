@@ -53,21 +53,22 @@ class MainActivity : BaseBindingActivity<HomeViewModel, ActivityMainBinding>() {
         mViewModel.run {
             updateVersionLive.observe(this@MainActivity, Observer {
                 if (BuildConfig.VERSION_NAME.compareVersionCode(it.version ?: "")) {
-                    mViewModel.updateVersionLive.value?.let { version ->
-                        if (it.internal_android_url.isNullOrEmpty()) {
-                            SmartToast.error(getString(R.string.update_address_no))
-                            return@let
-                        }
+//                    mViewModel.updateVersionLive.value?.let { version ->
+//                        if (it.internal_android_url.isNullOrEmpty()) {
+//                            SmartToast.error(getString(R.string.update_address_no))
+//                            return@let
+//                        }
                         UpdateDialog(this@MainActivity) {
 
                             val intent = Intent().apply {
                                 action = "android.intent.action.VIEW"
                                 data =
-                                    Uri.parse(if (getLanguage() == 1) it.internal_android_url else it.abroad_android_url)
+                                    Uri.parse("https://bittalk.im/")
+//                                    Uri.parse(if (getLanguage() == 1) it.internal_android_url else it.abroad_android_url)
                             }
                             startActivity(intent)
                         }.show()
-                    }
+//                    }
                 }
             })
         }

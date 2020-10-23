@@ -172,7 +172,7 @@
     <string name="address_id">Address:%s</string>
     <string name="update_to">update to V%s</string>
     <string name="update_address_no">Update Address is Null~</string>
-    <string name="tip_have_update_version">A new version has been detected\n Do you want to update it?</string>
+    <string name="tip_have_update_version">A new version has been detected, Do you want to update it?</string>
     <string name="tip_update_info">Update failed in the update process. Please remove the old version of app and re install it. If you have any problems, please contact the community!</string>
     <string name="to_update">Update</string>
     <string name="tip_later">Later</string>

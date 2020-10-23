@@ -39,7 +39,7 @@ class RemoteDataSource(private val localDataSource: LocalDataSource) : BaseDataS
         }
 
     suspend fun getAppOnline(version: String) =
-        safeApiCall { call(teacherService.getAppOnline(version)) }
+        safeApiCall { call(teacherService.getAppOnline()) }
 
     suspend fun getProduceList(page: Int, limit: Int) =
         safeApiCall {

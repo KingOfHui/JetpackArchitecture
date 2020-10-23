@@ -53,16 +53,17 @@ class SettingActivity : BaseVMActivity<SettingViewModel>() {
             LanguageActivity.start(this)
         }
         tv_update_version.clickWithTrigger {
-            mViewModel.updateVersionLive.value?.let { version ->
-                if (version.internal_android_url.isNullOrEmpty()) {
-                    return@clickWithTrigger
-                }
+//            mViewModel.updateVersionLive.value?.let { version ->
+//                if (version.internal_android_url.isNullOrEmpty()) {
+//                    return@clickWithTrigger
+//                }
                 val intent = Intent().apply {
                     action = "android.intent.action.VIEW"
-                    data = Uri.parse(if (getLanguage() == 1) version.internal_android_url else version.abroad_android_url)
+                    data = Uri.parse("https://bittalk.im/")
+//                    data = Uri.parse(if (getLanguage() == 1) version.internal_android_url else version.abroad_android_url)
                 }
                 startActivity(intent)
-            }
+//            }
         }
         tvCancel.clickWithTrigger {
             lifecycleScope.launch {

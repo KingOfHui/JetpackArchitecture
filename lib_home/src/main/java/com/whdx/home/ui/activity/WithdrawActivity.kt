@@ -15,6 +15,7 @@ import com.whdx.home.util.ConfigHolder
 import com.whdx.home.vm.MyWalletViewModel
 import kotlinx.android.synthetic.main.activity_withdraw.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import java.math.BigDecimal
 
 class WithdrawActivity : BaseBindingActivity<MyWalletViewModel, ActivityWithdrawBinding>() {
 
@@ -31,7 +32,7 @@ class WithdrawActivity : BaseBindingActivity<MyWalletViewModel, ActivityWithdraw
         })
         mViewModel.mBalanceLive.observe(this, Observer {
             cvv_top.setTopStrLittle(
-                "≈ " + it.balance.divide(it.btw_price).stripTrailingZeros()
+                "≈ " + it.balance.divide(it.btw_price,2,BigDecimal.ROUND_DOWN).stripTrailingZeros()
                     .toPlainString() + " BIW"
             )
         })
