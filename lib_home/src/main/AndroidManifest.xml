@@ -29,6 +29,8 @@
         <activity android:name=".ui.activity.TopicDetailActivity" />
         <activity android:name=".ui.activity.ExportKeyActivity" />
         <activity android:name=".ui.activity.WalletManageActivity" />
+        <activity android:name=".ui.activity.WalletDetailActivity" />
+        <activity android:name=".ui.activity.WalletNameChangeActivity" />
     </application>
 
 </manifest>

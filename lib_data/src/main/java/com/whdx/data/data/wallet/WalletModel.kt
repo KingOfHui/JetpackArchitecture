@@ -2,6 +2,7 @@ package com.whdx.data.data.wallet
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class WalletModel(
@@ -18,5 +19,5 @@ data class WalletModel(
     var importType: Int? = 0,    //0新创建，1助记词导入，2keystore导入，3密钥导入
     var keyStoreVal: String? = null,     //存储
     var currentSelect: Int? = 0     //1表示当前选中，0表示未选中
-) {
+):Serializable {
 }

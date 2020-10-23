@@ -33,10 +33,10 @@ class NetDataFragment : BaseBindingFragment<NetDataViewModel, FragmentNetDataBin
         Timber.tag("dhdhdh").e("initData MineFragment")
     }
 
-    override fun onHiddenChanged(hidden: Boolean) {
-        super.onHiddenChanged(hidden)
-        if (!hidden) {
-            mViewModel.getNetData()
-        }
-    }
+//    override fun onHiddenChanged(hidden: Boolean) {
+//        super.onHiddenChanged(hidden)
+//        if (!hidden) {
+//            mViewModel.getNetData()
+//        }
+//    }
 }

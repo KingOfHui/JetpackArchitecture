@@ -17,8 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class WalletManageActivity : BaseBindingActivity<WalletManageViewModel, ViewDataBinding>() {
 
-    var mAdapter: BaseQuickAdapter<WalletModel, BaseDataBindingHolder<ItemWalletManageBinding>>? =
-        null
+    lateinit var mAdapter: BaseQuickAdapter<WalletModel, BaseDataBindingHolder<ItemWalletManageBinding>>
 
     override fun initVM(): WalletManageViewModel = getViewModel()
 
@@ -45,6 +44,9 @@ class WalletManageActivity : BaseBindingActivity<WalletManageViewModel, ViewData
 
         }
         rvWallets.adapter = mAdapter
+        mAdapter.setOnItemClickListener { adapter, view, position ->
+            WalletDetailActivity.start(this,mAdapter.data[position])
+        }
     }
 
     override fun initData() {

@@ -243,7 +243,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level1)}"
                                 android:textColor="@color/white"
-                                android:textSize="12dp" />
+                                android:textSize="11dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -280,7 +280,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level2)}"
                                 android:textColor="@color/white"
-                                android:textSize="12dp" />
+                                android:textSize="11dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -316,7 +316,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level3)}"
                                 android:textColor="@color/white"
-                                android:textSize="12dp" />
+                                android:textSize="11dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -352,7 +352,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level4)}"
                                 android:textColor="@color/white"
-                                android:textSize="12dp" />
+                                android:textSize="11dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -388,7 +388,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:text="@{@string/level_people(vm.MNetDataLive.count_level5)}"
                                 android:textColor="@color/white"
-                                android:textSize="12dp" />
+                                android:textSize="11dp" />
                         </RelativeLayout>
 
                     </com.whdx.base.ui.view.RoundConstraintLayout>

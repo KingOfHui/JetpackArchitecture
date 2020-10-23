@@ -37,4 +37,9 @@ interface WalletDao {
     @Transaction
     @Query("Select * FROM WalletModel WHERE currentSelect =1")
     fun getCurrent():List<WalletModel>
+
+    @Transaction
+    @Query("UPDATE WalletModel SET name= :changeName WHERE id = :changeId")
+    fun updateName(changeName: String, changeId: String)
+
 }
