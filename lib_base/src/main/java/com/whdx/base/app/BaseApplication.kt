@@ -5,10 +5,15 @@ import android.app.UiModeManager
 import android.content.Context
 import android.content.res.Configuration
 import android.content.res.Resources
+import android.os.Build
 import com.github.jokar.multilanguages.library.MultiLanguage
 import com.tencent.mmkv.MMKV
+import com.umeng.analytics.MobclickAgent
+import com.umeng.commonsdk.UMConfigure
+import com.whdx.base.BuildConfig
 import com.whdx.base.language.LocalLanguageUtil
 import com.whdx.base.util.ext.getNightMode
+import timber.log.Timber
 import kotlin.properties.Delegates
 
 
@@ -38,6 +43,24 @@ open class BaseApplication : Application() {
         super.onCreate()
         CONTEXT = applicationContext
         MultiLanguage.setApplicationLanguage(this)
+        if (!BuildConfig.DEBUG) {
+            try {//初始化组件化基础库, 所有友盟业务SDK都必须调用此初始化接口。
+                //建议在宿主App的Application.onCreate函数中调用基础组件库初始化函数。
+
+                UMConfigure.init(
+                    this,
+                    "5f9231724d7bf81a2ea91e9e",
+                    Build.BRAND + "-" + Build.MODEL,
+                    UMConfigure.DEVICE_TYPE_PHONE,
+                    ""
+                );
+                //选择AUTO页面采集模式，统计SDK基础指标无需手动埋点可自动采集。
+                //建议在宿主App的Application.onCreate函数中调用此函数。
+                MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
+            } catch (e: Exception) {
+                Timber.tag("Umeng Init").e(e)
+            }
+        }
 //        (getSystemService(Context.UI_MODE_SERVICE) as UiModeManager).nightMode = getNightMode()
     }
 

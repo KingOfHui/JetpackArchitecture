@@ -16,13 +16,13 @@ data class DepositRecordItem(
     val audit_status: String,
     val chain: String,
     val create_time: String,
-    val height: Int,
-    val id: Int,
-    val state: Int,
+    val height: String,
+    val id: String,
+    val state: String,
     val symbol: String,
     val time: String,
     val trade_no: String,
     val txid: String,
     val update_time: String,
-    val user_id: Int
+    val user_id: String
 )
