@@ -42,6 +42,7 @@
             android:layout_height="24dp"
             android:layout_marginRight="28dp"
             android:src="@mipmap/icon_wallet"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/tv_title"
             app:layout_constraintRight_toLeftOf="@id/iv_setting" />
         <com.scwang.smartrefresh.layout.SmartRefreshLayout

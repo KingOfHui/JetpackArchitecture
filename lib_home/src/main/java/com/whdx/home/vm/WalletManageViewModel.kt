@@ -16,4 +16,10 @@ class WalletManageViewModel(private val localDataSource: LocalDataSource):BaseVi
             mWalletListLive.value = loadAllWallet
         }
     }
+
+    fun updateName(name: String, id: String) {
+        launchUI {
+            localDataSource.walletDao.updateName(name, id)
+        }
+    }
 }

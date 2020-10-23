@@ -27,6 +27,8 @@ class WalletNameChangeActivity: BaseBindingActivity<WalletManageViewModel, ViewD
     }
 
     override fun initData() {
+        val walletModel = intent.extras?.getSerializable("wallet_model") as WalletModel
+
     }
 
     companion object{
@@ -34,7 +36,9 @@ class WalletNameChangeActivity: BaseBindingActivity<WalletManageViewModel, ViewD
             context: Context,
             walletModel: WalletModel
         ) {
-            context.startActivity(Intent(context,WalletNameChangeActivity::class.java))
+            context.startActivity(Intent(context,WalletNameChangeActivity::class.java).apply {
+                putExtra("wallet_model",walletModel)
+            })
         }
     }
 }

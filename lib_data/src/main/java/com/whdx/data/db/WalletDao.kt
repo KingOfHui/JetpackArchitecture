@@ -40,6 +40,6 @@ interface WalletDao {
 
     @Transaction
     @Query("UPDATE WalletModel SET name= :changeName WHERE id = :changeId")
-    fun updateName(changeName: String, changeId: String)
+    suspend fun updateName(changeName: String, changeId: String)
 
 }

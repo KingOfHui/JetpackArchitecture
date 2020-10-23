@@ -39,5 +39,6 @@ data class WithdrawRecordItem(
     val txid: String,
     val update_time: String,
     val usdt_cost: String,
+    var process_timeval :String?=null,
     val user_id: Int
 )

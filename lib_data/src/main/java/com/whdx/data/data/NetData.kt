@@ -14,5 +14,7 @@ data class NetData(
     val mine_performance: String,
     val mine_performance_node: String,
     val net_all_bonus: String,
-    val net_all_storage: BigDecimal
+    val net_all_storage: BigDecimal,
+    var mine_level:Int? = 0,
+    var mine_next_performance:String? = null
 )
